@@ -18,8 +18,7 @@ This document outlines the **functional and non-functional requirements** for th
 - **Backlog** - A detailed, structured representation of all functionalities. (After have all topics, we can construct that)
 
 Each section follows a progressive breakdown of the system’s structure, from high-level requirements to detailed functionalities.
-Nothing in this document is a world rule, if you think that something is wrong discuss with the team and fix it.
-
+Nothing in this document is set in stone; if you notice an error, please discuss it with the team.
 ---
 
 ## **1. Functional Requirements**
