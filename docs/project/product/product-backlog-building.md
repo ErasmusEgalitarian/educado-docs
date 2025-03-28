@@ -24,8 +24,7 @@ Nothing in this document is set in stone; if you notice an error, please discuss
 ## **1. Functional Requirements**
 
 > Defines the system's **core functionalities**.
-> What the system must to do
-
+> What the system must do
 | #     | Description                                                          |
 | ----- | -------------------------------------------------------------------- |
 | FR-01 | The system must have a**hardware-integrated scale prototype**. |
