@@ -1,13 +1,13 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
+title: "[BUG-0000] -"
 labels: bug
 assignees: ''
 
 ---
 
-# [BUG-0000] - [Short Descriptive Title]
+# [Short Descriptive Title]
 
 ## Description  
 [Provide a clear and concise description of the issue, user story, or documentation update.]

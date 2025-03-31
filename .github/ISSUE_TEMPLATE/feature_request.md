@@ -1,13 +1,13 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
+title: "[US-0000] -"
 labels: enhancement
 assignees: ''
 
 ---
 
-# [US-0000] - [Short Descriptive Title]
+# [Short Descriptive Title]
 
 ## Description  
 [Provide a clear and concise description of the issue, user story, or documentation update.]

@@ -1,13 +1,13 @@
 ---
 name: Docs
 about: Suggest an documentation improve
-title: ''
+title: "[DOCS-0000] -"
 labels: documentation
 assignees: ''
 
 ---
 
-# [DOCS-0000] - [Short Descriptive Title]
+# [Short Descriptive Title]
 
 ## Description  
 [Provide a clear and concise description of the issue, user story, or documentation update.]
