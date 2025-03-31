@@ -1,19 +1,24 @@
-## Descrição da Issue
+## Issue
+<!-- Type-N°ISSUE - ISSUE NAME -->
+SETUP-0000 - ISSUE NAME
+US-0000 - ISSUE NAME
+BUGFIX-0000 - ISSUE NAME
 
-<!-- Descreva de forma clara e objetiva o que deve ser desenvolvido -->
+## Description
+<!-- Explain your task -->
 
-## Critérios de Aceitação
+## Acceptance criteria
 
-- [ ] Deve permitir ...
-- [ ] Deve exibir ...
-- [ ] Deve garantir que ...
+- [ ] Must allow ...
+- [ ] Must display ...
+- [ ] Must ensure that ...
 
-## 📌 Informações Relacionadas
+## Other informations
 
 | Tema | Épico | Capacidade | Feature | User Story |
 | ---- | ------ | ---------- | ------- | ---------- |
 | TMXX | EPXX   | CXX        | FXX     | USXX       |
 
-## 🔗 Contexto Adicional
+## 🔗 Aditional Content
 
-<!-- Adicione qualquer informação relevante, como dependências, links ou capturas de tela -->
+<!-- Add any relevant information, like dependencies, links, or screenshots -->
