@@ -38,7 +38,7 @@ Welcome to the `docs-setup` folder! This folder contains all the necessary guide
 
 ---
 
-## Quick Start 
+## Quick Start
 
 1. Set up a Python virtual environment:
 
@@ -51,7 +51,6 @@ Welcome to the `docs-setup` folder! This folder contains all the necessary guide
 
 bash
 
-
 ```
    venv\Scripts\activate
 ```
@@ -60,45 +59,24 @@ bash
 
 bash
 
-
 ```
    source venv/bin/activate
 ```
 
-3. Install MkDocs:
+3. Install requirements:
 
 bash
 
-
 ```
-   pip install mkdocs
+   pip install -r requirements.txt
 ```
 
-4. Create a new MkDocs project:
+    4. Preview your documentation locally:
 
 bash
-
-
-```
-   mkdocs new meu-projeto-docs
-```
-
-5. Preview your documentation locally:
-
-bash
-
 
 ```
    mkdocs serve
-```
-
-6. Publish your documentation to GitHub Pages:
-
-bash
-
-
-```
-   mkdocs gh-deploy
 ```
 
 ---
