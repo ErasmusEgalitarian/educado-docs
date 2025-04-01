@@ -1292,57 +1292,46 @@
 <h3 id="1-python-virtual-environment-setup">1. <strong>Python Virtual Environment Setup</strong></h3>
 <p>Learn how to set up a Python virtual environment for dependency management.</p>
 <ul>
-<li><a href="../python-venv-setup/">View Guide</a></li>
+<li><a href="https://chatgpt.com/c/python-venv-setup.md">View Guide</a></li>
 </ul>
 <hr />
 <h3 id="2-mkdocs-setup">2. <strong>MkDocs Setup</strong></h3>
 <p>Step-by-step instructions to install and configure MkDocs.</p>
 <ul>
-<li><a href="../mkdocs-setup/">View Guide</a></li>
+<li><a href="https://chatgpt.com/c/mkdocs-setup.md">View Guide</a></li>
 </ul>
 <hr />
 <h3 id="3-mkdocs-configuration">3. <strong>MkDocs Configuration</strong></h3>
 <p>Customize your MkDocs project with themes, plugins, and versioning.</p>
 <ul>
-<li><a href="../mkdocs-configuration/">View Guide</a></li>
+<li><a href="https://chatgpt.com/c/mkdocs-configuration.md">View Guide</a></li>
 </ul>
 <hr />
 <h3 id="4-publishing-guide">4. <strong>Publishing Guide</strong></h3>
 <p>Publish your documentation to GitHub Pages and automate the process with GitHub Actions.</p>
 <ul>
-<li><a href="../publishing-guide/">View Guide</a></li>
+<li><a href="https://chatgpt.com/c/publishing-guide.md">View Guide</a></li>
 </ul>
 <hr />
 <h2 id="quick-start">Quick Start</h2>
 <ol>
-<li>Set up a Python virtual environment:</li>
-</ol>
-<pre><code class="language-bash">   python -m venv venv
-</code></pre>
-<ol>
+<li>Set up a Python virtual environment:
+   <code>bash
+   python -m venv venv</code></li>
 <li>Activate the virtual environment:</li>
-<li><strong>On Windows:</strong></li>
+<li><strong>On Windows:</strong>
+     <code>bash
+     venv\Scripts\activate</code></li>
+<li><strong>On macOS/Linux:</strong>
+     <code>bash
+     source venv/bin/activate</code></li>
+<li>Install requirements:
+   <code>bash
+   pip install -r requirements.txt</code></li>
+<li>Preview your documentation locally:
+   <code>bash
+   mkdocs serve</code></li>
 </ol>
-<p>bash</p>
-<pre><code>   venv\Scripts\activate
-</code></pre>
-<ul>
-<li><strong>On macOS/Linux:</strong></li>
-</ul>
-<p>bash</p>
-<pre><code>   source venv/bin/activate
-</code></pre>
-<ol>
-<li>Install requirements:</li>
-</ol>
-<p>bash</p>
-<pre><code>   pip install -r requirements.txt
-</code></pre>
-<pre><code>4. Preview your documentation locally:
-</code></pre>
-<p>bash</p>
-<pre><code>   mkdocs serve
-</code></pre>
 <hr />
 <h2 id="license">License</h2>
 <p>This project is licensed under the  <strong>GNU General Public License v3.0 (GPL-3.0)</strong> .
