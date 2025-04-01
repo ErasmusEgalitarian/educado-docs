@@ -8,76 +8,59 @@ Welcome to the `docs-setup` folder! This folder contains all the necessary guide
 
 ### 1. **Python Virtual Environment Setup**
 
-   Learn how to set up a Python virtual environment for dependency management.
+Learn how to set up a Python virtual environment for dependency management.
 
-- [View Guide](python-venv-setup.md)
+* [View Guide](https://chatgpt.com/c/python-venv-setup.md)
 
 ---
 
 ### 2. **MkDocs Setup**
 
-   Step-by-step instructions to install and configure MkDocs.
+Step-by-step instructions to install and configure MkDocs.
 
-- [View Guide](mkdocs-setup.md)
+* [View Guide](https://chatgpt.com/c/mkdocs-setup.md)
 
 ---
 
 ### 3. **MkDocs Configuration**
 
-   Customize your MkDocs project with themes, plugins, and versioning.
+Customize your MkDocs project with themes, plugins, and versioning.
 
-- [View Guide](mkdocs-configuration.md)
+* [View Guide](https://chatgpt.com/c/mkdocs-configuration.md)
 
 ---
 
 ### 4. **Publishing Guide**
 
-   Publish your documentation to GitHub Pages and automate the process with GitHub Actions.
+Publish your documentation to GitHub Pages and automate the process with GitHub Actions.
 
-- [View Guide](publishing-guide.md)
+* [View Guide](https://chatgpt.com/c/publishing-guide.md)
 
 ---
 
 ## Quick Start
 
 1. Set up a Python virtual environment:
-
-```bash
+   ```bash
    python -m venv venv
-```
-
+   ```
 2. Activate the virtual environment:
    * **On Windows:**
-
-bash
-
-```
-   venv\Scripts\activate
-```
-
-* **On macOS/Linux:**
-
-bash
-
-```
-   source venv/bin/activate
-```
-
+     ```bash
+     venv\Scripts\activate
+     ```
+   * **On macOS/Linux:**
+     ```bash
+     source venv/bin/activate
+     ```
 3. Install requirements:
-
-bash
-
-```
+   ```bash
    pip install -r requirements.txt
-```
-
-    4. Preview your documentation locally:
-
-bash
-
-```
+   ```
+4. Preview your documentation locally:
+   ```bash
    mkdocs serve
-```
+   ```
 
 ---
 
