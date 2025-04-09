@@ -4,9 +4,9 @@
 
 ## Product Description
 
-The [Product Name] is a cutting-edge solution designed to address [insert the core problem your product solves]. With its advanced features and user-centric design, the product offers a seamless experience that aims to improve [insert the target user's main benefit].
+The Educado is a cutting-edge gamified course system to address waste pickers. With this mission and user-centric design, Educado offers a seamless experience that aims to improve wasterpicker's quality of life learning in a light way.
 
-It is developed with modern technologies to provide high scalability, security, and performance. Whether you're a small business, a growing startup, or an enterprise, [Product Name] is built to help you meet your goals more efficiently and effectively.
+The system is currently under development, using modern technologies to ensure high scalability, security, and performance. Educado is being designed to support the waste picker community, whether the user is a waste picker, a university student, a professor, or an individual interested in contributing to this cause.
 
 ## Core Features
 
@@ -19,13 +19,14 @@ It is developed with modern technologies to provide high scalability, security, 
 
 ## Target Audience
 
-[Product Name] is primarily aimed at:
+Educado is primarily aimed at:
 
-| Target Group                                 | Description                                                                                                               |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Small and Medium Businesses (SMBs)** | For businesses seeking an affordable yet powerful solution to [describe problem the product solves].                      |
-| **Enterprises**                        | Designed to scale with enterprises, offering [features] to help streamline operations and improve performance.            |
-| **Freelancers and Individuals**        | Perfect for individuals needing a [describe product use case] without the complexity of traditional enterprise solutions. |
+| Target Group                       | Description                                                                                                     |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Waste Pickers**                 | The main beneficiaries of the platform, receiving support in training, resources, and connection with support networks. |
+| **University Students and Researchers** | Engaged in generating knowledge, developing solutions, and contributing to the social and technological growth of the initiative. |
+| **Professors and Educators**      | Collaborate through research, mentorship, and educational content to empower the waste picker community.        |
+| **Socially Engaged Citizens**     | Individuals interested in volunteering, contributing content, or supporting the cause through civic engagement. |
 
 ## Benefits
 
@@ -53,7 +54,7 @@ It is developed with modern technologies to provide high scalability, security, 
 | **Q3** | Integration & Automation: API integrations with popular platforms.`<br>` Workflow automation and advanced user settings. |
 | **Q4** | Enterprise Features: Enterprise-level scalability.`<br>` Additional security features and compliance updates.            |
 
-# Revision History
+## Revision History
 
 | Date       | Version | Changes                           | Authors |
 | ---------- | ------- | --------------------------------- | ------- |

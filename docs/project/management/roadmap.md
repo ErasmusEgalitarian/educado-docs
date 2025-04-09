@@ -4,7 +4,7 @@
 
 ## Overview
 
-The roadmap outlines the phases and steps involved in the development and delivery of the user and content management system for doctors and administrators. The process follows an agile approach, ensuring continuous iteration, feedback, and improvement.
+The roadmap outlines the phases and steps involved in the development and delivery of the user and content management system solution for stakeholders. The process follows an agile approach, ensuring continuous iteration, feedback, and improvement.
 
 | **Phase**                                          | **Timeline** | **Goals**                                                                                                                                                                                                                                                                                                                            |
 | -------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
