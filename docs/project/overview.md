@@ -30,17 +30,20 @@ Educado is designed to **empower waste pickers** by providing educational resour
 
 **Included:**
 
-- **Web platform** for teachers to upload videos and materials.
-- **Mobile application** with **educational modules** on finance, health, machine operations, and hygiene.
-* Machine learning models to detect performance anomalies and predict potential failures based on historical data.
-* Alerting system with customizable thresholds and multi-channel notifications.
-* Visual dashboard for displaying server health and performance metrics.
+- **Web platform for teachers**: enables educators to upload videos, documents, and educational materials.
+- **Mobile application for waste pickers**: provides access to educational content in video format, with an intuitive interface and offline mode support.
+- **Tailored educational modules**: focused on financial literacy, health, hygiene, and machine operation.
+- **Data synchronization system**: ensures that content uploaded via the web is available in the mobile app.
+- **Offline learning mode**: allows users to download modules and study without an internet connection.
+- **User authentication and role management**: supports different user types (teachers and waste pickers) with appropriate permissions.
+- **Accessibility and usability**: interfaces designed to accommodate users with low digital literacy or limited education.
 
 **Not Included:**
 
-* Monitoring of non-server infrastructure components such as databases, network devices, or virtual machines (though these may be included in future iterations).
-* Full end-to-end security monitoring (the focus is primarily on performance monitoring and anomaly detection).
-* Monitoring for non-production environments (e.g., development and staging environments).
+- **Gamification systems** (e.g., points, badges, leaderboards).
+- **Automated content translation** (multilingual support may be added in future versions).
+- **Real-time learning analytics dashboards** (learning progress is stored locally and synced periodically).
+- **Remote device management for mobile users**.
 
 ---
 
@@ -48,15 +51,17 @@ Educado is designed to **empower waste pickers** by providing educational resour
 
 The key features and deliverables of this project include:
 
-| Feature                            | Description                                                                                                            |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **Data Collection Service**  | Real-time ingestion of server performance metrics.                                                                     |
-| **Anomaly Detection Engine** | Machine learning-based analysis for identifying anomalies and predicting failures.                                     |
-| **Alerting System**          | Multi-channel notifications for administrators.                                                                        |
-| **Web Dashboard**            | A user-friendly interface displaying real-time server status and health metrics.                                       |
-| **Documentation and API**    | Comprehensive documentation on how to deploy, use, and integrate the monitoring platform with existing infrastructure. |
 
----
+| **Feature**                            | **Description**                                                                                           |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Educational Content Upload**         | Teachers can upload videos, PDFs, and other learning materials through the web platform.                 |
+| **Mobile Learning App**                | Intuitive mobile application that allows waste pickers to view educational content in video format.      |
+| **Categorized Learning Modules**       | Content is organized by topic: Finance, Health, Hygiene, Machine Operation.                              |
+| **Offline Access**                     | Enables content download for offline learning when internet is not available.                            |
+| **User Authentication System**         | Role-based login and permissions for teachers and waste pickers.                                         |
+| **Automatic Content Sync**             | Updates the mobile app with the latest materials uploaded by teachers.                                   |
+| **Multi-device Support**               | Compatible with Android smartphones and emulators, with optional iOS support.                            |
+
 
 ### Technologies and Tools
 
@@ -104,8 +109,8 @@ The project is expected to be completed over the following phases:
 
 | Date       | Version | Changes                           | Authors |
 | ---------- | ------- | --------------------------------- | ------- |
-| 02/04/2024 | 0.1     | Document creation                 |         |
-| 06/04/2024 | 0.2     | Updated Documentation, scope, key features and deliverables, timeline  still need changes   |     andreozzi    |
+| 06/04/2024 | 0.1     | Updated Documentation, scope, key features and deliverables, timeline  still need changes   |     andreozzi    |
+| 11/04/2024 | 0.2     | Scope and Key Features Updated.   | andreozzi |
 
 -
 
