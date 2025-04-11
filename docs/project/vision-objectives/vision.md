@@ -1,47 +1,104 @@
+# Vision Document
 
-# Project Vision
+## 1. Introduction
 
-[← Back to the Main Page](../../index.md)
+In modern educational environments, engaging and interactive learning experiences are essential. The increasing demand for accessible and personalized education has driven the need for platforms that leverage interactive content, gamification, and tailored user experiences.
 
-## Vision Statement
+This project addresses these challenges through the development and enhancement of the Educado app, incorporating interactive activities, gamified elements, and user-friendly interfaces designed for a wide audience.
 
-Our vision is to redefine the way people engage with education in the digital age. We aim to create an intelligent, scalable, and accessible platform that empowers learners worldwide to acquire new skills, deepen their knowledge, and transform their careers, no matter where they are.
+The Educado Initiative is a global collaboration of students, educators, and tech enthusiasts creating free, easy-to-use educational tools. One of our key missions is to empower underserved communities, particularly waste pickers, through education. This aligns with the UN’s Sustainable Development Goal 4: Quality Education.
 
-By integrating personalized learning paths, cutting-edge AI recommendations, and a community-driven environment, our platform will provide students with an immersive and adaptive educational experience. We envision a space where learning is not limited by geography, traditional schedules, or rigid curricula, but instead is flexible, dynamic, and driven by the learner’s needs and interests.
+The project's ongoing progress, updates, and technical documentation are openly accessible through the [Educado GitHub repository](https://github.com/Educado-App).
 
-Our platform will cater to individuals, organizations, and educational institutions, offering tools to track progress, measure success, and unlock opportunities for career advancement. Through collaboration with leading educators and content creators, we will ensure high-quality learning experiences that are up-to-date and relevant to the rapidly evolving job market.
+## 2. Vision Statement
 
-In the long run, we aim to be the global leader in online education, creating a future where education is personalized, accessible to all, and an ongoing part of people’s lifelong journey toward self-improvement and success.
+The primary objective is to enhance the Educado app by integrating interactive learning activities, intuitive progress tracking, and engaging user experiences. This will significantly improve usability, accessibility, and user satisfaction, fostering continuous engagement and effective learning outcomes.
 
-Our platform will not only shape the future of education but also democratize learning, breaking down barriers and unlocking opportunities for millions of people around the world.
+Additionally, the initiative aims to offer practical, relevant learning for marginalized groups. For example, waste pickers—often excluded from traditional education—gain access to content on finances, health, hygiene, and equipment operations through mobile-first experiences.
 
-## Key Elements
+## 3. Objectives and Scope
 
-| Element         | Description                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------------------ |
-| Accessibility   | The platform will ensure education is accessible to anyone, anywhere.                            |
-| Personalization | AI-driven learning paths tailored to each individual's needs.                                    |
-| Innovation      | Cutting-edge technology for adaptive learning experiences.                                       |
-| Global Impact   | Democratizing education to provide opportunities for all.                                        |
-| Collaboration   | Partnering with educators, content creators, and industry leaders to provide the best resources. |
+### Objectives:
+- Enhance user engagement through interactive video lessons with integrated quizzes and bonus-point systems.
+- Improve user experience by redesigning progress tracking with a step-by-step progress bar.
+- Implement clear, actionable feedback mechanisms and customizable alerts to encourage active participation.
+- Optimize quiz interfaces for improved usability and clearer feedback presentation.
+- Address specific learning needs of underserved communities such as waste pickers.
 
-## Long-term Goals
+### Scope:
+#### Included:
+- Step-by-step progress bar to clearly visualize lesson completion.
+- Interactive video lessons with embedded questions and adjustable playback speeds.
+- Improved quiz interface with a “Submit Answer” button and clearer, intuitive explanations.
+- Motivational and rewarding messages post-activity.
+- Open-source repository for transparency and collaboration.
+- Learning modules tailored for low-literacy users.
 
-| Goal                                       | Description                                                                |
-| ------------------------------------------ | -------------------------------------------------------------------------- |
-| Become a global leader in online education | Transform the way education is delivered worldwide.                        |
-| Improve learning outcomes                  | Deliver personalized learning experiences that lead to real-world success. |
-| Support lifelong learning                  | Provide ongoing opportunities for growth and career advancement.           |
-| Foster inclusion                           | Break down barriers to education and empower all learners.                 |
+#### Not Included:
+- Comprehensive backend architecture changes.
+- Full redesign of all app interfaces (focus is on targeted usability improvements).
+- Non-educational components or unrelated app functionality enhancements.
 
-# Revision History
+## 4. Key Features and Deliverables
 
-| Date       | Version | Changes                           | Authors |
-| ---------- | ------- | --------------------------------- | ------- |
-| 02/04/2024 | 0.1     | Document creation                 |         |
-| 06/04/2024 | 0.2     | Topics 1.1, 1.2, 1.3, and 3       |         |
-| 16/04/2024 | 0.3     | Documentation on Git Pages        |         |
-| 09/09/2024 | 0.4     | Updated technologies and app type |         |
-| 09/09/2024 | 0.5     | Technology adjustments            |         |
+| Feature                     | Description                                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------------------|
+| Step-by-step Progress Bar   | Clear visualization of users' progress through lessons, improving engagement and motivation.|
+| Interactive Video Lessons   | Embedded interactive elements, adjustable playback speed, and integrated quizzes.           |
+| Enhanced Quiz Experience    | Redesigned quizzes with intentional answer submissions and clearer explanations.            |
+| Motivational Feedback       | Positive reinforcement messages to enhance user motivation and engagement.                  |
+| Community-Centered Content  | Modules on health, finance, and safety designed for waste pickers and low-literacy users.    |
+| Documentation and Guides    | Detailed documentation on updated features and user instructions.                           |
+| GitHub Repository           | Public access to codebase, updates, and community collaboration: [Educado GitHub](https://github.com/Educado-App) |
 
-[← Back to the Main Page](../../index.md)
+## 5. Technologies and Tools
+
+| Technology Area    | Tools and Frameworks           |
+|--------------------|--------------------------------|
+| Frontend           | React.js, D3.js                |
+| Backend            | Python (Flask/FastAPI), Docker |
+| Database           | PostgreSQL, MongoDB            |
+| Alerting Framework | SMTP, Twilio (SMS), Slack API  |
+| Repository Hosting | GitHub                         |
+
+## 6. Project Timeline
+
+| Phase    | Duration    | Tasks                                                                                          |
+|----------|-------------|------------------------------------------------------------------------------------------------|
+| Phase 1  | 0-2 months  | Research, prototype design of progress bar and interactive video features.                     |
+| Phase 2  | 2-4 months  | Development of interactive lessons and integration of quizzes.                                 |
+| Phase 3  | 4-6 months  | Enhanced quiz interface, motivational messaging implementation, UI optimization.               |
+| Phase 4  | 6-8 months  | Deployment, feedback collection, iterative improvements based on user interaction data.        |
+
+## 7. Expected Impact
+
+| Benefit                   | Description                                                                           |
+|---------------------------|---------------------------------------------------------------------------------------|
+| Enhanced Engagement       | Increased user interaction and continuous learning through interactive features.      |
+| Improved Usability        | Clearer progress tracking and intuitive navigation enhancing overall user experience. |
+| Motivational Environment  | Positive reinforcement driving sustained user participation and satisfaction.         |
+| Flexible Learning         | Adjustable learning pace accommodating diverse user preferences and learning styles.  |
+| Social Inclusion          | Educational empowerment for underserved groups like waste pickers.                    |
+| Effective Knowledge Retention| Improved learning outcomes through interactive content and clearer feedback.          |
+
+## 8. Success Criteria
+
+| Criteria             | Description                                                                      |
+|----------------------|----------------------------------------------------------------------------------|
+| User Engagement      | Increased active participation and course completion rates.                      |
+| User Satisfaction    | High positive feedback ratings on usability and interactivity from user surveys. |
+| Functional Integrity | Successful integration and functionality of new interactive features.            |
+| Community Impact     | Active use and positive feedback from low-literacy and marginalized communities. |
+
+## 9. Revision History
+
+| Date       | Version | Changes made                                      | Authors |
+|------------|---------|---------------------------------------------------|---------|
+| 02/04/2024 | 0.1     | Document creation                                 |         |
+| 06/04/2024 | 0.2     | Topics 1.1, 1.2, 1.3, and 3                       |         |
+| 16/04/2024 | 0.3     | Documentation published on Git Pages              |         |
+| 09/09/2024 | 0.4     | Updated technologies and app type                 |         |
+| 09/09/2024 | 0.5     | Technology adjustments                            |         |
+| 28/03/2025 | 0.6     | Integrated features from Vivae insights           |         |
+| 28/03/2025 | 0.7     | GitHub repo, dev transparency and open collaboration added |         |
+| 28/03/2025 | 0.8     | Added Educado Initiative context and community mission |         |
