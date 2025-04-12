@@ -4,9 +4,6 @@
 
 ---
 
-## **Schedule**
-Aqui está a tabela completa com todas as reuniões até o final do projeto em **25 de agosto de 2025**, seguindo a cadência que você definiu.  
-
 ## **Table**  
 
 | **Meeting**                                  | **Date**       | **Participants**                                                 | **Objective**                                                      |

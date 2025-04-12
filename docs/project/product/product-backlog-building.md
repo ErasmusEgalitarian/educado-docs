@@ -18,7 +18,7 @@ This document outlines the **functional and non-functional requirements** for th
 - **Backlog** - A detailed, structured representation of all functionalities. (After have all topics, we can construct that)
 
 Each section follows a progressive breakdown of the system’s structure, from high-level requirements to detailed functionalities.
-Nothing in this document is set in stone; if you notice an error, please discuss it with the team.
+Nothing in this document is set in stone; if you notice an error, please discuss it with the team
 ---
 
 ## **1. Functional Requirements**
@@ -98,6 +98,7 @@ Nothing in this document is set in stone; if you notice an error, please discuss
 | FR-02  | TH-03      | EP-19     | Profile Picture and Personal Info  | Add support for profile pictures and extended metadata.                     |
 | FR-04  | TH-08      | EP-20     | Media Preview and Playback         | Allow safe preview of media before downloading or embedding.                |
 
+# Above here, we do have semantic context, just structure pattern
 
 ---
 
