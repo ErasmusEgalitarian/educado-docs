@@ -41,7 +41,9 @@ nav:
       - Workflow: project/management/workflow.md
       - Issue Tracking & Task Management: project/management/issue-tracking.md
       - Project Deliverables: project/management/deliverables.md
-      - Meeting Minutes: project/management/meetings.md
+      - Meeting Minutes:
+        - Meeting 0: project/management/meetings/meeting_0.md
+        - Meeting 1: project/management/meetings/meeting_1.md
       - Lessons Learned: project/management/lessons-learned.md
   - Development Process:
       - Software Development Lifecycle: project/development/lifecycle.md

@@ -22,7 +22,9 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 |                                 | Workflow                          | [Workflow](project/management/workflow.md)                           |
 |                                 | Issue Tracking & Task Management  | [Issue Tracking](project/management/issue-tracking.md)               |
 |                                 | Project Deliverables              | [Project Deliverables](project/management/deliverables.md)           |
-|                                 | Meeting Minutes                   | [Meeting Minutes](project/management/meetings.md)                    |
+|                                 | Meeting Minutes                   |                                                                        |
+|                                 | March 27, 2025                    | [Meeting Minutes](project/management/meetings/meeting_0.md)                    |
+|                                 | April 10, 2025                    | [Meeting Minutes](project/management/meetings/meeting_1.md)                    |
 |                                 | Lessons Learned                   | [Lessons Learned](project/management/lessons-learned.md)             |
 | **Development Process**   | Software Development Lifecycle    | [Software Development Lifecycle](project/development/lifecycle.md)   |
 |                                 | **Technical Documentation** |                                                                   |
