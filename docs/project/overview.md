@@ -36,7 +36,7 @@ Educado is designed to **empower waste pickers** by providing educational resour
 - **Data synchronization system**: ensures that content uploaded via the web is available in the mobile app.
 - **Offline learning mode**: allows users to download modules and study without an internet connection.
 - **User authentication and role management**: supports different user types (Content Creators and Waste Pickers) with appropriate permissions.
-- **Accessibility and usability**: interfaces designed to accommodate users with low digital literacy or limited education.
+- **Accessibility and usability**: interfaces designed to accommodate users with low digital literacy.
 
 **Not Included:**
 
@@ -55,11 +55,11 @@ The key features and deliverables of this project include:
 | **Feature**                            | **Description**                                                                                           |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | **Educational Content Upload**         | content creators can upload videos, PDFs, and other learning materials through the web platform.                 |
-| **Mobile Learning App**                | Intuitive mobile application that allows waste pickers to view educational content in video format.      |
+| **Mobile Learning App**                | Intuitive mobile application that allows waste pickers to view educational content.      |
 | **Categorized Learning Modules**       | Content is organized by topic: Finance and Health.                              |
 | **Offline Access**                     | Enables content download for offline learning when internet is not available.                            |
 | **User Authentication System**         | Role-based login and permissions for content creators and waste pickers.                                         |
-| **Automatic Content Sync**             | Updates the mobile app with the latest materials uploaded by teachers.                                   |
+| **Automatic Content Sync**             | Updates the mobile app with the latest materials uploaded by Content Creators.                                   |
 | **Multi-device Support**               | Compatible with Android smartphones and emulators, with optional iOS support.                            |
 
 
@@ -109,9 +109,8 @@ The project is expected to be completed over the following phases:
 
 | Date       | Version | Changes                           | Authors |
 | ---------- | ------- | --------------------------------- | ------- |
-| 06/04/2024 | 0.1     | Updated Documentation, scope, key features and deliverables, timeline  still need changes   |     andreozzi    |
-| 11/04/2024 | 0.2     | Scope and Key Features Updated.   | andreozzi |
-| 16/04/2024 | 0.3     | Content creators upload videos to web plataform not only teachers.   | andreozzi |
+| 06/04/2024 | 0.1     |Fixed Documentation |     andreozzi    |
+
 -
 
 [← Back to Main Page](../index.md)
