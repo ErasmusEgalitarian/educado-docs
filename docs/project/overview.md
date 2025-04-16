@@ -12,7 +12,7 @@
 - **University of Minho (Portugal)**  
 - **Saxion University (Netherlands)**  
 
-Educado is designed to **empower waste pickers** by providing educational resources that improve their financial literacy, health, machine operation skills, and hygiene practices. Teachers can upload educational content through a web app, while waste pickers can access the classes through a mobile app. By equipping waste pickers with accessible learning tools, the project contributes to **Sustainable Development Goal (SDG) 4: Quality Education**.
+Educado is designed to **empower waste pickers** by providing educational resources that improve their financial literacy and health. After approval, authorized users can upload Educational Content through the web app, while waste pickers can access the classes through a mobile app. By equipping waste pickers with accessible learning tools, the project contributes to **Sustainable Development Goal (SDG) 4: Quality Education**.
 
 ---
 
@@ -20,22 +20,22 @@ Educado is designed to **empower waste pickers** by providing educational resour
 
 #### Objectives:
 
-* Develop a **web platform for teachers** to upload educational videos and materials.
+* Develop a **web platform** to upload educational videos and materials.
 * Develop a **mobile application** that delivers **educational content** tailored for waste pickers.
 * Improve **financial literacy, health awareness, and professional skills** within the waste-picking community.
-* Provide **easy-to-understand learning materials** through multimedia content.
+* Provide **user-friendly learning materials** through multimedia content.
 * Promote **digital inclusion** by ensuring accessibility and usability of the application.
 
 #### Scope:
 
 **Included:**
 
-- **Web platform for teachers**: enables educators to upload videos, documents, and educational materials.
-- **Mobile application for waste pickers**: provides access to educational content in video format, with an intuitive interface and offline mode support.
-- **Tailored educational modules**: focused on financial literacy, health, hygiene, and machine operation.
+- **Web platform**: enables content creators to upload videos, documents, and educational materials.
+- **Mobile application for waste pickers**: provides access to educational content, with an intuitive interface and offline mode support.
+- **Tailored educational modules**: focused on financial literacy and health.
 - **Data synchronization system**: ensures that content uploaded via the web is available in the mobile app.
 - **Offline learning mode**: allows users to download modules and study without an internet connection.
-- **User authentication and role management**: supports different user types (teachers and waste pickers) with appropriate permissions.
+- **User authentication and role management**: supports different user types (Content Creators and Waste Pickers) with appropriate permissions.
 - **Accessibility and usability**: interfaces designed to accommodate users with low digital literacy or limited education.
 
 **Not Included:**
@@ -54,11 +54,11 @@ The key features and deliverables of this project include:
 
 | **Feature**                            | **Description**                                                                                           |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| **Educational Content Upload**         | Teachers can upload videos, PDFs, and other learning materials through the web platform.                 |
+| **Educational Content Upload**         | content creators can upload videos, PDFs, and other learning materials through the web platform.                 |
 | **Mobile Learning App**                | Intuitive mobile application that allows waste pickers to view educational content in video format.      |
-| **Categorized Learning Modules**       | Content is organized by topic: Finance, Health, Hygiene, Machine Operation.                              |
+| **Categorized Learning Modules**       | Content is organized by topic: Finance and Health.                              |
 | **Offline Access**                     | Enables content download for offline learning when internet is not available.                            |
-| **User Authentication System**         | Role-based login and permissions for teachers and waste pickers.                                         |
+| **User Authentication System**         | Role-based login and permissions for content creators and waste pickers.                                         |
 | **Automatic Content Sync**             | Updates the mobile app with the latest materials uploaded by teachers.                                   |
 | **Multi-device Support**               | Compatible with Android smartphones and emulators, with optional iOS support.                            |
 
@@ -111,7 +111,7 @@ The project is expected to be completed over the following phases:
 | ---------- | ------- | --------------------------------- | ------- |
 | 06/04/2024 | 0.1     | Updated Documentation, scope, key features and deliverables, timeline  still need changes   |     andreozzi    |
 | 11/04/2024 | 0.2     | Scope and Key Features Updated.   | andreozzi |
-
+| 16/04/2024 | 0.3     | Content creators upload videos to web plataform not only teachers.   | andreozzi |
 -
 
 [← Back to Main Page](../index.md)
