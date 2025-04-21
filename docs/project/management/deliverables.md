@@ -35,7 +35,7 @@
 
 | Software_ID | Type     | Delivery Date | Deliverable                              | Description                                                                   | Format                                                             |
 |-------------|----------|---------------|------------------------------------------|-------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| Software_01 | Planning | 04/15/2025    | **Documentation Update - alpha_v_1.0**   | Wiki - Project Overview, Vision, Objectives and Stakeholders                  | [Educado Wiki](https://erasmusegalitarian.github.io/educado-docs/) |
+| Software_01 | Planning | 04/15/2025    | **Documentation Update - alpha_v_1.0**   | Wiki - Project Managment                                                      | [Educado Wiki](https://erasmusegalitarian.github.io/educado-docs/) |
 | Software_02 | Planning | 04/20/2025    | **Field Data Collection Questions**      | Questions for field data collect.                                             | PDF document, markdown documentation.                              |
 | Software_03 | Planning | 04/22/2025    | **Field Data Collection Guide**          | Create a document to guide data collect on cooperative visit.                 | PDF quide, markdown documentation.                                 |
 | Software_04 | Planning | 04/28/2025    | **Documentation Update - alpha_v_1.1**   | Wiki - Product Overview, Backlog, MVP 1                                       | [Educado Wiki](https://erasmusegalitarian.github.io/educado-docs/) |
