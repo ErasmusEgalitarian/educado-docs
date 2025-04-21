@@ -2,19 +2,15 @@
 
 [← Back to Main Page](../../index.md)
 
-This document outlines the Project Workflow, describing the process from initial planning to final delivery. The workflow details the key steps, responsibilities, and activities to ensure smooth execution of the project.
+This document outlines the Project Workflow, describing the process from task discovery to final delivery. The workflow details the key steps, responsibilities, and activities to ensure smooth and efficient task execution.
 
-## Macro Phases of the Project Workflow
-
-Based on the meeting schedule and workflow principles, the macro phases of the project are defined as follows:
-
-| **Phase**                         | **Objective**                                                                    | **Key Activities**                                                                                                                                                                                          | **Responsible Parties**    |
-| ---------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| **1. Initiation**                 | Kickstart the project by defining its purpose, scope, and objectives.            | - Stakeholder identification and engagement  - Project charter creation, including high-level goals and budget  - Establishment of project team and roles                                                     | Project Manager            |
-| **2. Planning**                   | Plan the project’s roadmap, resources, and timelines.                            | - Define project deliverables, timelines, and milestones  - Risk management and identification of potential obstacles  - Detailed project schedule creation with task dependencies                            | Project Manager, Risk Manager |
-| **3. Execution and Iteration**    | Execute the project plan and iterate through sprints to deliver incremental value.| - Sprint planning and task prioritization  - Regular sprint reviews and adjustments  - Continuous communication with stakeholders and team members                                                          | Scrum Master, Product Owner |
-| **4. Monitoring and Controlling** | Ensure the project stays on track by monitoring its performance and addressing issues.| - Tracking progress against planned timelines and milestones  - Managing project scope and quality control  - Adjustments based on feedback and performance metrics                                           | Project Manager, Quality Manager |
-| **5. Closing**                    | Finalize the project, ensuring all deliverables are met and closure is achieved.  | - Final testing and validation of deliverables  - Documentation of project outcomes, lessons learned, and post-project reviews  - Handover of completed project to stakeholders and closure of all activities | QA Manager, Project Manager |
+| **Phase**         | **Objective**                                                                 | **Key Activities**                                                                                                                                                                                          | **Responsible Parties**           |
+|-------------------|-------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| **1. On-boarding** | Understand, refine, and align the task scope to ensure it is ready for development. | - Gather context and requirements with stakeholders <br> - Review acceptance criteria and task impact <br> - Validate dependencies and estimate effort <br> - Ensure compliance with the Definition of Ready (DoR) | Product Owner, Scrum Master         |
+| **2. To-do**       | Prepare the task for execution by prioritizing it in the backlog and ensuring implementation clarity. | - Prioritize in the backlog <br> - Add technical details if needed <br> - Confirm readiness for development <br> - Link with related epics and user stories | Product Owner, Scrum Master       |
+| **3. In-Progress** | Develop the task according to defined criteria, ensuring quality and continuous alignment. | - Implement and version the code <br> - Peer reviews (code review) <br> - Regular status updates <br> - Ongoing team communication | Dev Team, Scrum Master               |
+| **4. In-Review**   | Validate the completed task against acceptance and quality criteria. | - Manual and/or automated testing <br> - Check against Definition of Done (DoD) <br> - Make adjustments based on review feedback <br> - Final approval by QA or PO | Scrum Master, Product Owner         |
+| **5. Done**        | Ensure the task is fully delivered or ready for delivery to the final environment. | - Merge to main branch / deploy <br> - Update technical and functional documentation <br> - Notify team of completion <br> - Mark task as completed in the board | Dev Team, Scrum Master            |
 
 ---
 
