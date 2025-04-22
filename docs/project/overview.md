@@ -5,7 +5,8 @@
 ## Context
 
 
-**Educado** is a web and mobile application developed as part of the **Egalitarian Erasmus Initiative**, an effort within the **Egalitarian SDG Challenge** and supported by the **Erasmus+ Programme**. The project involves collaboration among students from:
+**Educado** is a web and mobile application developed by **EGP**, with efforts from the **Egalitarian Erasmus Initiative** supported by the **Erasmus+ Programme**. The project involves collaboration among students from:
+
 
 - **University of Brasília (Brazil)**  
 - **Aalborg University (Denmark)**  
@@ -25,6 +26,8 @@ Educado is designed to **empower waste pickers** by providing educational resour
 * Improve **financial literacy, health awareness, and professional skills** within the waste-picking community.
 * Provide **user-friendly learning materials** through multimedia content.
 * Promote **digital inclusion** by ensuring accessibility and usability of the application.
+
+[← Go to Objectives](../project/vision-objectives/objectives.md)
 
 #### Scope:
 
