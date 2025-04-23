@@ -1,4 +1,4 @@
-# Vision Document
+[← Back to the Main Page](../../index.md)
 
 ## 1. Introduction
 
@@ -16,40 +16,25 @@ The primary objective is to enhance the Educado app by integrating interactive l
 
 Additionally, the initiative aims to offer practical, relevant learning for marginalized groups. For example, waste pickers—often excluded from traditional education—gain access to content on finances, health, hygiene, and equipment operations through mobile-first experiences.
 
-## 3. Objectives and Scope
+## 3. Key Elements
 
-### Objectives:
-- Enhance user engagement through interactive video lessons with integrated quizzes and bonus-point systems.
-- Improve user experience by redesigning progress tracking with a step-by-step progress bar.
-- Implement clear, actionable feedback mechanisms and customizable alerts to encourage active participation.
-- Optimize quiz interfaces for improved usability and clearer feedback presentation.
-- Address specific learning needs of underserved communities such as waste pickers.
+| Element           | Description                                                                                             |
+|-------------------|---------------------------------------------------------------------------------------------------------|
+| Accessibility     | Project aims to reach low-literacy audiences and diverse communities.                                  |
+| Social Impact     | Focused on underserved populations, including waste pickers.                                             |
+| Sustainability    | Aligns with UN SDG 4 and aims to support long-term community development through accessible education.   |
+| Personalization   | Interactive and adaptive content designed for flexible learning.                                         |
+| Open Collaboration| Built collaboratively with international universities and open-source principles.                        |
 
-### Scope:
-#### Included:
-- Step-by-step progress bar to clearly visualize lesson completion.
-- Interactive video lessons with embedded questions and adjustable playback speeds.
-- Improved quiz interface with a “Submit Answer” button and clearer, intuitive explanations.
-- Motivational and rewarding messages post-activity.
-- Open-source repository for transparency and collaboration.
-- Learning modules tailored for low-literacy users.
+## 4. Long-term Goals
 
-#### Not Included:
-- Comprehensive backend architecture changes.
-- Full redesign of all app interfaces (focus is on targeted usability improvements).
-- Non-educational components or unrelated app functionality enhancements.
-
-## 4. Key Features and Deliverables
-
-| Feature                     | Description                                                                                 |
-|-----------------------------|---------------------------------------------------------------------------------------------|
-| Step-by-step Progress Bar   | Clear visualization of users' progress through lessons, improving engagement and motivation.|
-| Interactive Video Lessons   | Embedded interactive elements, adjustable playback speed, and integrated quizzes.           |
-| Enhanced Quiz Experience    | Redesigned quizzes with intentional answer submissions and clearer explanations.            |
-| Motivational Feedback       | Positive reinforcement messages to enhance user motivation and engagement.                  |
-| Community-Centered Content  | Modules on health, finance, and safety designed for waste pickers and low-literacy users.    |
-| Documentation and Guides    | Detailed documentation on updated features and user instructions.                           |
-| GitHub Repository           | Public access to codebase, updates, and community collaboration: [Educado GitHub](https://github.com/Educado-App) |
+| Goal                        | Description                                                                                   |
+|-----------------------------|-----------------------------------------------------------------------------------------------|
+| Empower communities         | Provide tools for lifelong learning and personal growth, especially for marginalized groups. |
+| Expand reach                | Adapt platform to new languages, regions, and user types.                                     |
+| Integrate data insights     | Enable institutions and educators to use learning data to refine impact.                     |
+| Improve content quality     | Collaborate with educators to expand and update modules regularly.                           |
+| Reference Link              | See also: [MVP and Backlog](../product/mvp-backlog.md)                                        |
 
 ## 5. Technologies and Tools
 
@@ -92,13 +77,8 @@ Additionally, the initiative aims to offer practical, relevant learning for marg
 
 ## 9. Revision History
 
-| Date       | Version | Changes made                                      | Authors |
-|------------|---------|---------------------------------------------------|---------|
-| 02/04/2024 | 0.1     | Document creation                                 |         |
-| 06/04/2024 | 0.2     | Topics 1.1, 1.2, 1.3, and 3                       |         |
-| 16/04/2024 | 0.3     | Documentation published on Git Pages              |         |
-| 09/09/2024 | 0.4     | Updated technologies and app type                 |         |
-| 09/09/2024 | 0.5     | Technology adjustments                            |         |
-| 28/03/2025 | 0.6     | Integrated features from Vivae insights           |         |
-| 28/03/2025 | 0.7     | GitHub repo, dev transparency and open collaboration added |         |
-| 28/03/2025 | 0.8     | Added Educado Initiative context and community mission |         |
+| Date       | Version | Changes made                                 | Authors |
+|------------|---------|----------------------------------------------|---------|
+| 28/03/2025 | 0.1     | Initial version of the Vision Document        |         |
+
+[← Back to the Main Page](../../index.md)
