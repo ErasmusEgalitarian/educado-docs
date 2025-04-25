@@ -1,84 +1,40 @@
+# Project Vision
+
 [← Back to the Main Page](../../index.md)
 
-## 1. Introduction
+## Vision Statement
 
-In modern educational environments, engaging and interactive learning experiences are essential. The increasing demand for accessible and personalized education has driven the need for platforms that leverage interactive content, gamification, and tailored user experiences.
+Our vision is to redefine the way people engage with education in the digital age. We aim to create an intelligent, scalable, and accessible platform that empowers learners worldwide to acquire new skills, deepen their knowledge, and transform their careers, no matter where they are.
 
-This project addresses these challenges through the development and enhancement of the Educado app, incorporating interactive activities, gamified elements, and user-friendly interfaces designed for a wide audience.
+By integrating personalized learning paths, cutting-edge AI recommendations, and a community-driven environment, our platform will provide students with an immersive and adaptive educational experience. We envision a space where learning is not limited by geography, traditional schedules, or rigid curricula, but instead is flexible, dynamic, and driven by the learner’s needs and interests.
 
-The Educado Initiative is a global collaboration of students, educators, and tech enthusiasts creating free, easy-to-use educational tools. One of our key missions is to empower underserved communities, particularly waste pickers, through education. This aligns with the UN’s Sustainable Development Goal 4: Quality Education.
+Our platform will cater to individuals, organizations, and educational institutions, offering tools to track progress, measure success, and unlock opportunities for career advancement. Through collaboration with leading educators and content creators, we will ensure high-quality learning experiences that are up-to-date and relevant to the rapidly evolving job market.
 
-The project's ongoing progress, updates, and technical documentation are openly accessible through the [Educado GitHub repository](https://github.com/Educado-App).
+In the long run, we aim to be the global leader in online education, creating a future where education is personalized, accessible to all, and an ongoing part of people’s lifelong journey toward self-improvement and success.
 
-## 2. Vision Statement
+## Key Elements
 
-The primary objective is to enhance the Educado app by integrating interactive learning activities, intuitive progress tracking, and engaging user experiences. This will significantly improve usability, accessibility, and user satisfaction, fostering continuous engagement and effective learning outcomes.
+| Element         | Description                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------ |
+| Accessibility   | The platform will ensure education is accessible to anyone, anywhere.                            |
+| Personalization | AI-driven learning paths tailored to each individual's needs.                                    |
+| Innovation      | Cutting-edge technology for adaptive learning experiences.                                       |
+| Global Impact   | Democratizing education to provide opportunities for all.                                        |
+| Collaboration   | Partnering with educators, content creators, and industry leaders to provide the best resources. |
 
-Additionally, the initiative aims to offer practical, relevant learning for marginalized groups. For example, waste pickers—often excluded from traditional education—gain access to content on finances, health, hygiene, and equipment operations through mobile-first experiences.
+## Long-term Goals
 
-## 3. Key Elements
+| Goal                                       | Description                                                                |
+| ------------------------------------------ | -------------------------------------------------------------------------- |
+| Become a global leader in online education | Transform the way education is delivered worldwide.                        |
+| Improve learning outcomes                  | Deliver personalized learning experiences that lead to real-world success. |
+| Support lifelong learning                  | Provide ongoing opportunities for growth and career advancement.           |
+| Foster inclusion                           | Break down barriers to education and empower all learners.                 |
 
-| Element           | Description                                                                                             |
-|-------------------|---------------------------------------------------------------------------------------------------------|
-| Accessibility     | Project aims to reach low-literacy audiences and diverse communities.                                  |
-| Social Impact     | Focused on underserved populations, including waste pickers.                                             |
-| Sustainability    | Aligns with UN SDG 4 and aims to support long-term community development through accessible education.   |
-| Personalization   | Interactive and adaptive content designed for flexible learning.                                         |
-| Open Collaboration| Built collaboratively with international universities and open-source principles.                        |
+## Revision History
 
-## 4. Long-term Goals
-
-| Goal                        | Description                                                                                   |
-|-----------------------------|-----------------------------------------------------------------------------------------------|
-| Empower communities         | Provide tools for lifelong learning and personal growth, especially for marginalized groups. |
-| Expand reach                | Adapt platform to new languages, regions, and user types.                                     |
-| Integrate data insights     | Enable institutions and educators to use learning data to refine impact.                     |
-| Improve content quality     | Collaborate with educators to expand and update modules regularly.                           |
-| Reference Link              | See also: [MVP and Backlog](../product/mvp-backlog.md)                                        |
-
-## 5. Technologies and Tools
-
-| Technology Area    | Tools and Frameworks           |
-|--------------------|--------------------------------|
-| Frontend           | React.js, D3.js                |
-| Backend            | Python (Flask/FastAPI), Docker |
-| Database           | PostgreSQL, MongoDB            |
-| Alerting Framework | SMTP, Twilio (SMS), Slack API  |
-| Repository Hosting | GitHub                         |
-
-## 6. Project Timeline
-
-| Phase    | Duration    | Tasks                                                                                          |
-|----------|-------------|------------------------------------------------------------------------------------------------|
-| Phase 1  | 0-2 months  | Research, prototype design of progress bar and interactive video features.                     |
-| Phase 2  | 2-4 months  | Development of interactive lessons and integration of quizzes.                                 |
-| Phase 3  | 4-6 months  | Enhanced quiz interface, motivational messaging implementation, UI optimization.               |
-| Phase 4  | 6-8 months  | Deployment, feedback collection, iterative improvements based on user interaction data.        |
-
-## 7. Expected Impact
-
-| Benefit                   | Description                                                                           |
-|---------------------------|---------------------------------------------------------------------------------------|
-| Enhanced Engagement       | Increased user interaction and continuous learning through interactive features.      |
-| Improved Usability        | Clearer progress tracking and intuitive navigation enhancing overall user experience. |
-| Motivational Environment  | Positive reinforcement driving sustained user participation and satisfaction.         |
-| Flexible Learning         | Adjustable learning pace accommodating diverse user preferences and learning styles.  |
-| Social Inclusion          | Educational empowerment for underserved groups like waste pickers.                    |
-| Effective Knowledge Retention| Improved learning outcomes through interactive content and clearer feedback.          |
-
-## 8. Success Criteria
-
-| Criteria             | Description                                                                      |
-|----------------------|----------------------------------------------------------------------------------|
-| User Engagement      | Increased active participation and course completion rates.                      |
-| User Satisfaction    | High positive feedback ratings on usability and interactivity from user surveys. |
-| Functional Integrity | Successful integration and functionality of new interactive features.            |
-| Community Impact     | Active use and positive feedback from low-literacy and marginalized communities. |
-
-## 9. Revision History
-
-| Date       | Version | Changes made                                 | Authors |
-|------------|---------|----------------------------------------------|---------|
-| 28/03/2025 | 0.1     | Initial version of the Vision Document        |         |
+| Date       | Version | Changes                           | Authors             |
+| ---------- | ------- | --------------------------------- | -------------------- |
+| 02/04/2024 | 0.1     | Document creation                 | Thiago Melo Tonin    |
 
 [← Back to the Main Page](../../index.md)
