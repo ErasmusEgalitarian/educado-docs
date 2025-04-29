@@ -1,17 +1,35 @@
 theme:
   name: material
-  palette:
-    primary: black
-    accent: red
   logo: assets/logo.png
   favicon: assets/favicon.ico
   features:
+    - navigation.tabs
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.copy
     - toc.integrate
     - toc.collapse
+    - navigation.expand
+    - navigation.instant
+    - navigation.top
+    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - navigation.tabs.sticky
+  palette:
+    - scheme: default
+      primary: Blue
+      accent: LightBlue
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - scheme: slate
+      primary: Navy
+      accent: SkyBlue
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
 
 site_name: Educado
 
@@ -22,29 +40,29 @@ site_author: Lucas Antunes
 repo_url: https://github.com/Educado-App/docs
 
 plugins:
-  - search
+  - search:
+      lang: en
+      separator: '[\s\-]+'
 
 nav:
   - Home: index.md
   - Project:
-    # - Overview: project/overview.md
-    #       - Vision & Objectives:
-    #           - Project Vision: project/vision-objectives/vision.md
-    #           - Project Objectives: project/vision-objectives/objectives.md
-    #       - Stakeholders: project/stakeholders.md
-    #       - Product:
-    #           - Product Overview: project/product/overview.md
-    #           - Product Backlog: project/product/product-backlog-building.md
+    - Overview: project/overview.md
+    - Vision: project/vision.md
+    - Objectives: project/objectives.md
+    - Stakeholders: project/stakeholders.md
+    - Product Overview: project/product/overview.md
+    - Product Backlog: project/product/product-backlog-building.md
     #           - MVPs: project/product/mvp.md
-    - Management:
-      - Roadmap: project/management/roadmap.md
-      - Workflow: project/management/workflow.md
-      - Issue Tracking & Task Management: project/management/issue-tracking.md
-      - Project Deliverables: project/management/deliverables.md
-      - Meeting Minutes:
-        - Meeting 0: project/management/meetings/meeting_0.md
-        - Meeting 1: project/management/meetings/meeting_1.md
-    #       - Lessons Learned: project/management/lessons-learned.md
+  - Management:
+    - Roadmap: project/management/roadmap.md
+    - Workflow: project/management/workflow.md
+    - Issue Tracking & Task Management: project/management/issue-tracking.md
+    - Project Deliverables: project/management/deliverables.md
+    - Meeting Minutes:
+      - Meeting 0: project/management/meetings/meeting_0.md
+      - Meeting 1: project/management/meetings/meeting_1.md
+    - Lessons Learned: project/management/lessons-learned.md
     # - Development Process:
         # - Software Development Lifecycle: project/development/lifecycle.md
         #         - Technical Documentation:
@@ -67,6 +85,9 @@ extra:
   analytics:
     provider: google
     property: UA-XXXXX-Y
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ErasmusEgalitarian/educado-docs
 
 strict: true
 use_directory_urls: true

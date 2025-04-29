@@ -26,14 +26,14 @@ Effective stakeholder management is vital to the success of the project. The fol
 
 | **Strategy**              | **Description**                                                                                                                            | **Links**     |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| **Regular Communication** | Maintain consistent communication through weekly or biweekly status reports, meetings, and updates.                                        | [Reports](#)  |
+| **Regular Communication** | Maintain consistent communication through weekly or biweekly status reports, meetings, and updates.                                        | [Meetings](management/meetings/meeting_0.md)  |
 | **Stakeholder Meetings**  | Organize regular meetings to gather feedback, review progress, and address any concerns.                                                   |               |
-| **Feedback Channels**     | Establish formal and informal channels to collect information from stakeholders, especially end users and the Product Owner.               | [Feedback](#) |
+| **Feedback Channels**     | Establish formal and informal channels to collect information from stakeholders, especially end users and the Product Owner.               | [Tools](development/tools.md) |
 | **Conflict Resolution**   | Proactively address any conflicts or misalignments between stakeholders by facilitating transparent discussions and finding common ground. |               |
 
 ---
 
-# Revision History
+## Revision History
 
 | Date       | Version | Changes                                            | Authors                                       |
 | ---------- | ------- | -------------------------------------------------- | --------------------------------------------- |

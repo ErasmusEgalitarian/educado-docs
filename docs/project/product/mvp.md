@@ -84,7 +84,7 @@ The MVP serves as the foundation for product validation and further enhancements
 
 For updates on the MVP progress, refer to the [Project Roadmap](../management/roadmap.md).
 
-# Revision History
+## Revision History
 
 | Date       | Version | Changes                           | Authors |
 | ---------- | ------- | --------------------------------- | ------- |
