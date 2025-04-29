@@ -1,3 +1,4 @@
+
 # Project Vision
 
 [← Back to the Main Page](../../index.md)
@@ -11,6 +12,8 @@ By integrating personalized learning paths, cutting-edge AI recommendations, and
 Our platform will cater to individuals, organizations, and educational institutions, offering tools to track progress, measure success, and unlock opportunities for career advancement. Through collaboration with leading educators and content creators, we will ensure high-quality learning experiences that are up-to-date and relevant to the rapidly evolving job market.
 
 In the long run, we aim to be the global leader in online education, creating a future where education is personalized, accessible to all, and an ongoing part of people’s lifelong journey toward self-improvement and success.
+
+Our platform will not only shape the future of education but also democratize learning, breaking down barriers and unlocking opportunities for millions of people around the world.
 
 ## Key Elements
 
@@ -31,10 +34,14 @@ In the long run, we aim to be the global leader in online education, creating a 
 | Support lifelong learning                  | Provide ongoing opportunities for growth and career advancement.           |
 | Foster inclusion                           | Break down barriers to education and empower all learners.                 |
 
-## Revision History
+# Revision History
 
-| Date       | Version | Changes                           | Authors             |
-| ---------- | ------- | --------------------------------- | -------------------- |
-| 02/04/2024 | 0.1     | Document creation                 | Thiago Melo Tonin    |
+| Date       | Version | Changes                           | Authors |
+| ---------- | ------- | --------------------------------- | ------- |
+| 02/04/2024 | 0.1     | Document creation                 |         |
+| 06/04/2024 | 0.2     | Topics 1.1, 1.2, 1.3, and 3       |         |
+| 16/04/2024 | 0.3     | Documentation on Git Pages        |         |
+| 09/09/2024 | 0.4     | Updated technologies and app type |         |
+| 09/09/2024 | 0.5     | Technology adjustments            |         |
 
 [← Back to the Main Page](../../index.md)
