@@ -6,6 +6,7 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 
 ## 🔗 Quick Links
 
+- [Educado Wiki](wiki_index.md)
 - [Roadmap](project/management/roadmap.md)
 - [Backlog](project/product/product-backlog-building.md)
 - [Deliverables](project/management/deliverables.md)
@@ -65,6 +66,7 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 ## Revision History
 
 | Date       | Version | Changes           | Authors                                                                                          |
-|------------|---------|-------------------|--------------------------------------------------------------------------------------------------|
-| 2025-04-18 | 0.2     | Update home page  | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)   |
+| ---------- | ------- | ----------------- | ------------------------------------------------------------------------------------------------ |
 | 2025-03-28 | 0.1     | Document creation | [Cainã Freitas](https://github.com/freitasc), [Lucas Antunes](https://github.com/LucasGSAntunes) |
+| 2025-04-18 | 0.2     | Update home page  | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)   |
+| 2025-05-14 | 0.3     | Add wiki ref      | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)                                               |
