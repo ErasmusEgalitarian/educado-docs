@@ -46,7 +46,7 @@
 
 | FR-ID | TH-ID | Theme                                      | Description                                                                 |
 |-------|-------|--------------------------------------------|-----------------------------------------------------------------------------|
-| FR-01 | TH-01 | User Authentication and Session Management | Manage login, logout, and session persistence securely.                     |
+| FR-01 | TH-01 | User Authentication System                 | Manage login, registration, and session security.                           |
 | FR-01 | TH-02 | Access Control and Security Policies       | Define and enforce user permissions, roles, and access restrictions.        |
 | FR-02 | TH-03 | User Profile and Role Management           | Handle user registration, profile editing, and role assignments.            |
 | FR-02 | TH-04 | User Search and Account Control            | Enable filtering, listing, and controlling user account statuses.           |
@@ -59,185 +59,172 @@
 
 ---
 
-## **4. Epics**
+## **4. Epics and Capabilities**
 
-> **Epics** define **high-level features** that contribute to system development.
+> Each Epic is broken down into at least two capabilities, representing sub-functionalities.
 
-| FR-ID | Theme-ID | Epic-ID | Epic                              | Description                                                               |
-|-------|----------|---------|-----------------------------------|---------------------------------------------------------------------------|
-| FR-01 | TH-01    | EP-01   | User Login and Registration       | Develop secure login, logout, and registration mechanisms.                |
-| FR-01 | TH-01    | EP-02   | Session Lifecycle Management      | Handle token issuance, refresh, and session expiration.                   |
-| FR-01 | TH-02    | EP-03   | Password and Identity Recovery    | Implement recovery mechanisms like password reset and email confirmation. |
-| FR-01 | TH-02    | EP-04   | Multi-Factor Authentication (MFA) | Add additional layers of authentication for security.                     |
-| FR-02 | TH-03    | EP-05   | User Profile CRUD                 | Allow full editing and visualization of user data.                        |
-| FR-02 | TH-03    | EP-06   | Role Assignment System            | Define and assign roles such as Admin, Instructor, and Student.           |
-| FR-02 | TH-04    | EP-07   | Account Status Management         | Enable account activation, deactivation, and suspension.                  |
-| FR-02 | TH-04    | EP-08   | Advanced User Filtering           | Implement filtering by name, email, role, and status.                     |
-| FR-03 | TH-05    | EP-09   | Course CRUD                       | Enable creation, update, and removal of course structures.                |
-| FR-03 | TH-05    | EP-10   | Lesson and Module Design          | Allow modular content within each course.                                 |
-| FR-03 | TH-06    | EP-11   | Enrollment Control                | Allow enrollment, cancellation, and waiting list handling.                |
-| FR-03 | TH-06    | EP-12   | Progress Tracking                 | Provide visual indicators of user course progress.                        |
-| FR-04 | TH-07    | EP-13   | File Upload Engine                | Enable media upload in various formats (images, audio, video, PDFs).      |
-| FR-04 | TH-07    | EP-14   | Media Classification System       | Categorize media by type, topic, and course relevance.                    |
-| FR-04 | TH-08    | EP-15   | Media Permissions and Access      | Define who can view, reuse, or download media content.                    |
-| FR-04 | TH-08    | EP-16   | Media Embedding in Courses        | Enable reuse of uploaded media inside course content.                     |
-| FR-01 | TH-02    | EP-17   | Access Logs and Audit Trail       | Track all user access and security-related events.                        |
-| FR-03 | TH-06    | EP-18   | Certificate Issuance System       | Automatically generate certificates after course completion.              |
-| FR-02 | TH-03    | EP-19   | Profile Picture and Personal Info | Add support for profile pictures and extended metadata.                   |
-| FR-04 | TH-08    | EP-20   | Media Preview and Playback        | Allow safe preview of media before downloading or embedding.              |
-| FR-05 | TH-09    | EP-21   | Email Notification System         | Send email notifications for important system events.                     |
-| FR-05 | TH-09    | EP-22   | In-app Notification Center        | Provide a centralized location for viewing all notifications.             |
-| FR-06 | TH-10    | EP-23   | Course Analytics                  | Track and display metrics about course engagement and completion.         |
-| FR-06 | TH-10    | EP-24   | User Activity Reports             | Generate reports on user activity and system usage.                       |
-| FR-03 | TH-05    | EP-25   | Course Assessment System          | Create and manage quizzes, assignments, and other assessment tools.       |
-
----
-
-## **5. Capabilities**
-
-> **Capabilities** describe the **system's technical abilities** to support key functionalities.
-
-| #    | Capability | Description |
-|------|------------|-------------|
-| C-01 | User Identity Management | Ability to create, verify, and manage user identities securely across the platform. |
-| C-02 | Role-based Access Control | Ability to assign and enforce different permission levels based on user roles. |
-| C-03 | Content Creation and Management | Ability to create, edit, organize, and publish educational content. |
-| C-04 | Learning Path Management | Ability to define and track sequential learning experiences. |
-| C-05 | Media Processing | Ability to handle, transform, and deliver various media formats. |
-| C-06 | Progress Tracking | Ability to monitor and report on user advancement through courses. |
-| C-07 | Notification Delivery | Ability to send timely alerts through multiple channels. |
-| C-08 | Data Analytics | Ability to collect, process, and visualize usage and performance data. |
-| C-09 | Security Enforcement | Ability to protect against unauthorized access and common security threats. |
-| C-10 | System Integration | Ability to connect with external systems via APIs and other integration methods. |
+| EP-ID | Epic Name (from original document) | Capabilities (ID: Name)                                                                                                                               |
+|-------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| EP-01 | User Login and Registration        | C-EP01-01: User Identity VerificationC-EP01-02: Account Creation Workflow                                                                        |
+| EP-02 | Session Lifecycle Management       | C-EP02-01: Secure Session EstablishmentC-EP02-02: Session Duration Control                                                                         |
+| EP-03 | Password and Identity Recovery     | C-EP03-01: Secure Password Reset MechanismsC-EP03-02: Identity Confirmation Methods                                                                 |
+| EP-04 | Multi-Factor Authentication (MFA)  | C-EP04-01: MFA Method ConfigurationC-EP04-02: MFA Challenge-Response Handling                                                                      |
+| EP-05 | User Profile CRUD                  | C-EP05-01: Profile Data ManagementC-EP05-02: Profile Information Presentation                                                                      |
+| EP-06 | Role Assignment System             | C-EP06-01: Role Definition and ManagementC-EP06-02: User-Role Mapping                                                                              |
+| EP-07 | Account Status Management          | C-EP07-01: Account Lifecycle ControlC-EP07-02: Status Change Auditing                                                                              |
+| EP-08 | Advanced User Filtering            | C-EP08-01: Complex Query ConstructionC-EP08-02: Filterable User Attributes                                                                         |
+| EP-09 | Course CRUD                        | C-EP09-01: Course Structure DefinitionC-EP09-02: Course Metadata Management                                                                        |
+| EP-10 | Lesson and Module Design           | C-EP10-01: Content StructuringC-EP10-02: Learning Object Organization                                                                              |
+| EP-11 | Enrollment Control                 | C-EP11-01: Enrollment Process ManagementC-EP11-02: Access Restriction Enforcement                                                                 |
+| EP-12 | Progress Tracking                  | C-EP12-01: Learner Activity MonitoringC-EP12-02: Progress Data Visualization                                                                        |
+| EP-13 | File Upload Engine                 | C-EP13-01: Media Ingestion and ProcessingC-EP13-02: File Storage Management                                                                        |
+| EP-14 | Media Classification System        | C-EP14-01: Metadata TaggingC-EP14-02: Categorization Schemas                                                                                        |
+| EP-15 | Media Permissions and Access       | C-EP15-01: Access Control Policy DefinitionC-EP15-02: Content Usage Rights Management                                                              |
+| EP-16 | Media Embedding in Courses         | C-EP16-01: Media Integration ToolsC-EP16-02: Content Rendering and Display                                                                         |
+| EP-17 | Access Logs and Audit Trail        | C-EP17-01: Event Logging MechanismC-EP17-02: Audit Log Review and Analysis                                                                          |
+| EP-18 | Certificate Issuance System        | C-EP18-01: Completion Criteria VerificationC-EP18-02: Certificate Generation and Delivery                                                          |
+| EP-19 | Profile Picture and Personal Info  | C-EP19-01: Personal Data CustomizationC-EP19-02: Profile Image Handling                                                                             |
+| EP-20 | Media Preview and Playback         | C-EP20-01: Safe Content PreviewC-EP20-02: Multimedia Playback Controls                                                                              |
+| EP-21 | Email Notification System          | C-EP21-01: Automated Email GenerationC-EP21-02: Email Delivery Management                                                                          |
+| EP-22 | In-app Notification Center         | C-EP22-01: Notification AggregationC-EP22-02: Real-time Alert Display                                                                                |
+| EP-23 | Course Analytics                   | C-EP23-01: Engagement Data CollectionC-EP23-02: Performance Metrics Reporting                                                                       |
+| EP-24 | User Activity Reports              | C-EP24-01: System Usage TrackingC-EP24-02: Customizable Report Generation                                                                          |
+| EP-25 | Course Assessment System           | C-EP25-01: Assessment Creation ToolsC-EP25-02: Grading and Feedback Mechanisms                                                                    |
 
 ---
 
-## **6. Features**
+## **5. Capabilities and Features**
 
-> **Features** define the **specific functionalities** required to implement each capability.
+> Each Capability is further refined into at least two Features, describing specific functionalities.
 
-| #    | Feature | Description |
-|------|---------|-------------|
-| F-01 | User Registration | Allow new users to create accounts with email verification. |
-| F-02 | Login System | Authenticate users with username/email and password. |
-| F-03 | Password Reset | Enable users to recover access through secure password reset. |
-| F-04 | Two-Factor Authentication | Add an extra security layer using SMS, email, or authenticator apps. |
-| F-05 | User Profile Management | Allow users to view and edit their personal information. |
-| F-06 | Role Management | Assign and modify user roles (Admin, Instructor, Student). |
-| F-07 | Account Status Control | Enable/disable user accounts and manage suspension periods. |
-| F-08 | User Search | Find users by various criteria (name, email, status, role). |
-| F-09 | Course Creation | Create new courses with title, description, and basic settings. |
-| F-10 | Module Management | Organize course content into logical modules and sections. |
-| F-11 | Course Enrollment | Allow students to join courses and instructors to manage enrollment. |
-| F-12 | Progress Visualization | Show completion percentage and next steps for courses. |
-| F-13 | Media Upload | Upload images, videos, documents, and audio files. |
-| F-14 | Media Tagging | Categorize media with tags for better organization and search. |
-| F-15 | Media Access Control | Set permissions for who can view or use specific media. |
-| F-16 | Media Embedding | Insert media into course content with proper formatting. |
-| F-17 | Security Logging | Record all security-related events for audit purposes. |
-| F-18 | Certificate Generation | Create and issue digital certificates upon course completion. |
-| F-19 | Profile Customization | Upload profile pictures and customize profile appearance. |
-| F-20 | Media Preview | View media content before downloading or using it. |
-| F-21 | Email Notifications | Send automated emails for important events and updates. |
-| F-22 | Notification Center | Provide a central hub for viewing all system notifications. |
-| F-23 | Course Analytics Dashboard | Display metrics on course engagement and completion. |
-| F-24 | User Activity Reporting | Generate reports on user behavior and system usage. |
-| F-25 | Quiz Creation | Build assessments with various question types. |
-| F-26 | Assignment Submission | Allow file uploads and text submissions for assignments. |
-| F-27 | Grading System | Record and display grades for course activities. |
-| F-28 | Discussion Forums | Enable threaded discussions within courses. |
-| F-29 | Calendar Integration | Sync course events with personal calendars. |
-| F-30 | Mobile Responsiveness | Ensure proper display and functionality on mobile devices. |
-
----
-
-## **7. User Stories**
-
-> **User stories** describe **how different users interact with the system**, providing real-world scenarios.
-
-| #     | Description |
-|-------|-------------|
-| US-01 | As a visitor, I want to register in the system to access available courses. |
-| US-02 | As a user, I want to login with my email and password to access my account. |
-| US-03 | As a user, I want to recover my password in case I forget it. |
-| US-04 | As a user, I want to activate two-factor authentication to increase my account security. |
-| US-05 | As a user, I want to edit my profile to keep my information updated. |
-| US-06 | As an administrator, I want to assign different roles to users to control their permissions. |
-| US-07 | As an administrator, I want to deactivate user accounts that violate the terms of use. |
-| US-08 | As an administrator, I want to search for users by name, email, or role to manage their accounts. |
-| US-09 | As an instructor, I want to create a new course with title, description, and basic settings. |
-| US-10 | As an instructor, I want to organize course content into modules and lessons for a better learning experience. |
-| US-11 | As a student, I want to enroll in courses to access their content. |
-| US-12 | As a student, I want to view my progress in each course to know what I have already completed. |
-| US-13 | As an instructor, I want to upload videos, images, and documents to enrich my courses. |
-| US-14 | As an instructor, I want to categorize media with tags to facilitate organization and search. |
-| US-15 | As an administrator, I want to define access permissions for different types of media. |
-| US-16 | As an instructor, I want to embed media in course content with proper formatting. |
-| US-17 | As an administrator, I want to record all security-related events for audit purposes. |
-| US-18 | As a student, I want to receive a digital certificate after completing a course. |
-| US-19 | As a user, I want to upload a profile picture to personalize my account. |
-| US-20 | As a user, I want to preview media before downloading or using it. |
-| US-21 | As a user, I want to receive email notifications about important updates. |
-| US-22 | As a user, I want to access a notification center to view all my notifications. |
-| US-23 | As an instructor, I want to view metrics about engagement and completion of my courses. |
-| US-24 | As an administrator, I want to generate reports on user behavior and system usage. |
-| US-25 | As an instructor, I want to create quizzes with different types of questions to evaluate students. |
-| US-26 | As a student, I want to submit assignments through file uploads or text. |
-| US-27 | As an instructor, I want to assign grades to student activities. |
-| US-28 | As a student, I want to participate in discussion forums within courses. |
-| US-29 | As a user, I want to sync course events with my personal calendar. |
-| US-30 | As a user, I want to access the system through mobile devices with an appropriate experience. |
-| US-31 | As an administrator, I want to monitor system performance to ensure its availability. |
-| US-32 | As an instructor, I want to define prerequisites for my courses to ensure students have the necessary knowledge. |
-| US-33 | As a student, I want to mark lessons as favorites to access them quickly later. |
-| US-34 | As an instructor, I want to create time-limited assessments to test students' knowledge. |
-| US-35 | As a student, I want to receive detailed feedback on my assessments. |
-| US-36 | As an administrator, I want to configure backup policies to protect system data. |
-| US-37 | As an instructor, I want to reuse content between different courses to save time. |
-| US-38 | As a student, I want to filter courses by category, difficulty level, and rating. |
-| US-39 | As a user, I want to change my notification preferences to control which alerts I receive. |
-| US-40 | As an instructor, I want to export student performance data for external analysis. |
+| Capability-ID | Capability Name                     | Features (ID: Name)                                                                                                                                    |
+|---------------|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| C-EP01-01     | User Identity Verification          | FE-C01.1-01: Standard Credential AuthenticationFE-C01.1-02: Third-Party Identity Provider Integration                                               |
+| C-EP01-02     | Account Creation Workflow           | FE-C01.2-01: User Registration FormFE-C01.2-02: Account Activation Process                                                                           |
+| C-EP02-01     | Secure Session Establishment        | FE-C02.1-01: Encrypted Session Token GenerationFE-C02.1-02: Session Cookie Management                                                                 |
+| C-EP02-02     | Session Duration Control            | FE-C02.2-01: Configurable Session TimeoutFE-C02.2-02: Session Renewal Mechanism                                                                       |
+| C-EP03-01     | Secure Password Reset Mechanisms    | FE-C03.1-01: Email-Based Password Reset LinkFE-C03.1-02: Security Question Verification for Reset                                                      |
+| C-EP03-02     | Identity Confirmation Methods       | FE-C03.2-01: Email Confirmation for Account ChangesFE-C03.2-02: SMS Code Verification                                                                  |
+| C-EP04-01     | MFA Method Configuration            | FE-C04.1-01: Authenticator App Setup (TOTP)FE-C04.1-02: SMS/Email Code for MFA                                                                         |
+| C-EP04-02     | MFA Challenge-Response Handling     | FE-C04.2-01: MFA Code Input and ValidationFE-C04.2-02: Backup Recovery Codes for MFA                                                                  |
+| C-EP05-01     | Profile Data Management             | FE-C05.1-01: Editable User Profile FieldsFE-C05.1-02: Profile Data Validation and Sanitization                                                        |
+| C-EP05-02     | Profile Information Presentation    | FE-C05.2-01: Public Profile ViewFE-C05.2-02: Private Profile Dashboard                                                                                |
+| C-EP06-01     | Role Definition and Management      | FE-C06.1-01: Admin Interface for Role CreationFE-C06.1-02: Permission Assignment to Roles                                                              |
+| C-EP06-02     | User-Role Mapping                   | FE-C06.2-01: Assigning Roles to UsersFE-C06.2-02: Viewing Users by Role                                                                                |
+| C-EP07-01     | Account Lifecycle Control           | FE-C07.1-01: Account Activation/DeactivationFE-C07.1-02: Account Suspension/Deletion                                                                |
+| C-EP07-02     | Status Change Auditing              | FE-C07.2-01: Logging of Account Status ChangesFE-C07.2-02: Notification of Status Changes                                                            |
+| C-EP08-01     | Complex Query Construction          | FE-C08.1-01: Multi-Criteria User Search InterfaceFE-C08.1-02: Saved Search Filters                                                                    |
+| C-EP08-02     | Filterable User Attributes          | FE-C08.2-01: Filtering by Profile Fields (Name, Email, etc.)FE-C08.2-02: Filtering by Account Status and Role                                        |
+| C-EP09-01     | Course Structure Definition         | FE-C09.1-01: Course Creation WizardFE-C09.1-02: Course Outline Editor (Modules, Lessons)                                                              |
+| C-EP09-02     | Course Metadata Management          | FE-C09.2-01: Editing Course Title, Description, CategoryFE-C09.2-02: Setting Course Difficulty and Duration                                           |
+| C-EP10-01     | Content Structuring                 | FE-C10.1-01: Module and Lesson Creation ToolsFE-C10.1-02: Reordering of Course Content                                                                 |
+| C-EP10-02     | Learning Object Organization        | FE-C10.2-01: Associating Media with LessonsFE-C10.2-02: Linking Quizzes and Assignments to Modules                                                    |
+| C-EP11-01     | Enrollment Process Management       | FE-C11.1-01: Student Self-EnrollmentFE-C11.1-02: Instructor/Admin Manual Enrollment                                                                 |
+| C-EP11-02     | Access Restriction Enforcement      | FE-C11.2-01: Prerequisite Checking for EnrollmentFE-C11.2-02: Enrollment Capacity Limits                                                              |
+| C-EP12-01     | Learner Activity Monitoring         | FE-C12.1-01: Tracking Lesson Completion StatusFE-C12.1-02: Logging Time Spent on Activities                                                          |
+| C-EP12-02     | Progress Data Visualization         | FE-C12.2-01: Student Progress DashboardFE-C12.2-02: Instructor View of Class Progress                                                                |
+| C-EP13-01     | Media Ingestion and Processing      | FE-C13.1-01: Multi-Format File UploaderFE-C13.1-02: Background Media Transcoding                                                                     |
+| C-EP13-02     | File Storage Management             | FE-C13.2-01: Integration with Cloud StorageFE-C13.2-02: Media Library Organization                                                                  |
+| C-EP14-01     | Metadata Tagging                    | FE-C14.1-01: Manual Tagging InterfaceFE-C14.1-02: Suggested Tags Based on Content                                                                     |
+| C-EP14-02     | Categorization Schemas              | FE-C14.2-01: Predefined Category ManagementFE-C14.2-02: Custom Category Creation                                                                      |
+| C-EP15-01     | Access Control Policy Definition    | FE-C15.1-01: Setting Media Visibility (Public, Private, Course-Specific)FE-C15.1-02: Defining Download/Reuse Permissions                           |
+| C-EP15-02     | Content Usage Rights Management     | FE-C15.2-01: Watermarking OptionsFE-C15.2-02: Licensing Information Display                                                                           |
+| C-EP16-01     | Media Integration Tools             | FE-C16.1-01: Rich Text Editor with Media EmbeddingFE-C16.1-02: Media Picker from Library                                                              |
+| C-EP16-02     | Content Rendering and Display       | FE-C16.2-01: Responsive Media PlayerFE-C16.2-02: Secure Media Streaming                                                                                |
+| C-EP17-01     | Event Logging Mechanism             | FE-C17.1-01: Centralized Audit Log StorageFE-C17.1-02: Configurable Log Levels                                                                       |
+| C-EP17-02     | Audit Log Review and Analysis       | FE-C17.2-01: Audit Log Search and Filtering InterfaceFE-C17.2-02: Export Audit Log Data                                                               |
+| C-EP18-01     | Completion Criteria Verification    | FE-C18.1-01: Automated Check of Course RequirementsFE-C18.1-02: Manual Override for Completion                                                        |
+| C-EP18-02     | Certificate Generation and Delivery | FE-C18.2-01: Customizable Certificate TemplatesFE-C18.2-02: PDF Certificate Download/Email                                                            |
+| C-EP19-01     | Personal Data Customization         | FE-C19.1-01: Editing Extended Profile Information (Bio, Links)FE-C19.1-02: Privacy Settings for Profile Fields                                       |
+| C-EP19-02     | Profile Image Handling              | FE-C19.2-01: Profile Picture Upload and CroppingFE-C19.2-02: Avatar Generation if No Picture                                                          |
+| C-EP20-01     | Safe Content Preview                | FE-C20.1-01: Document Previewer (PDF, DOCX)FE-C20.1-02: Image Thumbnail Generation                                                                     |
+| C-EP20-02     | Multimedia Playback Controls        | FE-C20.2-01: Video/Audio Player with Standard ControlsFE-C20.2-02: Subtitle/Caption Support                                                             |
+| C-EP21-01     | Automated Email Generation          | FE-C21.1-01: Templated Email SystemFE-C21.1-02: Trigger-Based Email Dispatch (e.g., on registration, enrollment)                                   |
+| C-EP21-02     | Email Delivery Management           | FE-C21.2-01: Email Queue and Sending ServiceFE-C21.2-02: Bounce and Complaint Handling                                                                 |
+| C-EP22-01     | Notification Aggregation            | FE-C22.1-01: Central Notification Feed/PanelFE-C22.1-02: Grouping Similar Notifications                                                               |
+| C-EP22-02     | Real-time Alert Display             | FE-C22.2-01: Unread Notification Badges/IndicatorsFE-C22.2-02: Desktop/Push Notification Options                                                      |
+| C-EP23-01     | Engagement Data Collection          | FE-C23.1-01: Tracking Views, Clicks, CompletionsFE-C23.1-02: Quiz/Assignment Submission Tracking                                                      |
+| C-EP23-02     | Performance Metrics Reporting       | FE-C23.2-01: Course Completion Rate ReportsFE-C23.2-02: Learner Performance Dashboards                                                               |
+| C-EP24-01     | System Usage Tracking               | FE-C24.1-01: Login Frequency and Session Duration MonitoringFE-C24.1-02: Feature Usage Analytics                                                       |
+| C-EP24-02     | Customizable Report Generation      | FE-C24.2-01: Report Builder with Selectable Metrics and FiltersFE-C24.2-02: Scheduled Report Delivery                                                |
+| C-EP25-01     | Assessment Creation Tools           | FE-C25.1-01: Quiz Builder (Multiple Choice, True/False, etc.)FE-C25.1-02: Assignment Creation Interface (File Upload, Text Entry)                     |
+| C-EP25-02     | Grading and Feedback Mechanisms     | FE-C25.2-01: Online Grading InterfaceFE-C25.2-02: Automated Scoring for Quizzes                                                                      |
 
 ---
 
-## **8. Backlog**
+## **6. Backlog**
 
-| FR-ID | Theme-ID | Theme                                      | Epic-ID | Epic                              | Description                                                               | Related US |
-|-------|----------|--------------------------------------------|---------|-----------------------------------|---------------------------------------------------------------------------|------------|
-| FR-01 | TH-01    | User Authentication and Session Management | EP-01   | User Login and Registration       | Develop secure login, logout, and registration mechanisms.                | US-01, US-02 |
-| FR-01 | TH-01    | User Authentication and Session Management | EP-02   | Session Lifecycle Management      | Handle token issuance, refresh, and session expiration.                   | US-02 |
-| FR-01 | TH-02    | Access Control and Security Policies       | EP-03   | Password and Identity Recovery    | Implement recovery mechanisms like password reset and email confirmation. | US-03 |
-| FR-01 | TH-02    | Access Control and Security Policies       | EP-04   | Multi-Factor Authentication (MFA) | Add additional layers of authentication for security.                     | US-04 |
-| FR-01 | TH-02    | Access Control and Security Policies       | EP-17   | Access Logs and Audit Trail       | Track all user access and security-related events.                        | US-17 |
-| FR-02 | TH-03    | User Profile and Role Management           | EP-05   | User Profile CRUD                 | Allow full editing and visualization of user data.                        | US-05 |
-| FR-02 | TH-03    | User Profile and Role Management           | EP-06   | Role Assignment System            | Define and assign roles such as Admin, Instructor, and Student.           | US-06 |
-| FR-02 | TH-03    | User Profile and Role Management           | EP-19   | Profile Picture and Personal Info | Add support for profile pictures and extended metadata.                   | US-19 |
-| FR-02 | TH-04    | User Search and Account Control            | EP-07   | Account Status Management         | Enable account activation, deactivation, and suspension.                  | US-07 |
-| FR-02 | TH-04    | User Search and Account Control            | EP-08   | Advanced User Filtering           | Implement filtering by name, email, role, and status.                     | US-08 |
-| FR-03 | TH-05    | Course Creation and Content Management     | EP-09   | Course CRUD                       | Enable creation, update, and removal of course structures.                | US-09 |
-| FR-03 | TH-05    | Course Creation and Content Management     | EP-10   | Lesson and Module Design          | Allow modular content within each course.                                 | US-10 |
-| FR-03 | TH-05    | Course Creation and Content Management     | EP-25   | Course Assessment System          | Create and manage quizzes, assignments, and other assessment tools.       | US-25, US-26, US-27, US-34, US-35 |
-| FR-03 | TH-06    | Course Enrollment and Progress Tracking    | EP-11   | Enrollment Control                | Allow enrollment, cancellation, and waiting list handling.                | US-11, US-32, US-38 |
-| FR-03 | TH-06    | Course Enrollment and Progress Tracking    | EP-12   | Progress Tracking                 | Provide visual indicators of user course progress.                        | US-12, US-33 |
-| FR-03 | TH-06    | Course Enrollment and Progress Tracking    | EP-18   | Certificate Issuance System       | Automatically generate certificates after course completion.              | US-18 |
-| FR-04 | TH-07    | Media Upload and Categorization            | EP-13   | File Upload Engine                | Enable media upload in various formats (images, audio, video, PDFs).      | US-13 |
-| FR-04 | TH-07    | Media Upload and Categorization            | EP-14   | Media Classification System       | Categorize media by type, topic, and course relevance.                    | US-14 |
-| FR-04 | TH-08    | Media Use and Integration in Courses       | EP-15   | Media Permissions and Access      | Define who can view, reuse, or download media content.                    | US-15 |
-| FR-04 | TH-08    | Media Use and Integration in Courses       | EP-16   | Media Embedding in Courses        | Enable reuse of uploaded media inside course content.                     | US-16, US-37 |
-| FR-04 | TH-08    | Media Use and Integration in Courses       | EP-20   | Media Preview and Playback        | Allow safe preview of media before downloading or embedding.              | US-20 |
-| FR-05 | TH-09    | Notification Configuration and Delivery    | EP-21   | Email Notification System         | Send email notifications for important system events.                     | US-21, US-39 |
-| FR-05 | TH-09    | Notification Configuration and Delivery    | EP-22   | In-app Notification Center        | Provide a centralized location for viewing all notifications.             | US-22, US-39 |
-| FR-06 | TH-10    | Analytics Dashboard and Reporting          | EP-23   | Course Analytics                  | Track and display metrics about course engagement and completion.         | US-23, US-40 |
-| FR-06 | TH-10    | Analytics Dashboard and Reporting          | EP-24   | User Activity Reports             | Generate reports on user activity and system usage.                       | US-24, US-31, US-36 |
+| FR-ID | TH-ID | Theme                               | EP-ID | Epic                              | FE-ID | Feature                     | US-ID | User Story (máx 1 US por linha)                                                              | AC-ID | Acceptance Criteria                                                                              |
+|-------|-------|-------------------------------------|-------|-----------------------------------|-------|-----------------------------|-------|----------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------|
+| FR-01 | TH-01 | User Authentication System          | EP-01 | User Authentication               | FE-01 | Login System                | US-01 | As a student, I want to authenticate my credentials to access my learning dashboard        | AC-01 | [ ] The system must validate email and password.                                                 |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-02 | [ ] The system must redirect to the student learning dashboard after successful login.           |
+| FR-01 | TH-01 | User Authentication System          | EP-01 | User Authentication               | FE-01 | Login System                | US-02 | As a content creator, I want to authenticate my credentials to access the content management dashboard | AC-03 | [ ] The system must validate institutional email and password.                                   |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-04 | [ ] The system must redirect to the content management dashboard after successful login.       |
+| FR-01 | TH-01 | User Authentication System          | EP-01 | User Authentication               | FE-01 | Login System                | US-03 | As an admin, I want to authenticate my credentials to access the administrative dashboard    | AC-05 | [ ] The system must validate admin credentials with enhanced security.                           |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-06 | [ ] The system must log all admin login attempts.                                                |
+| FR-01 | TH-01 | User Authentication System          | EP-01 | User Authentication               | FE-02 | Multi-factor Authentication | US-04 | As a student, I want to enable 2FA to increase my account security                           | AC-07 | [ ] The system must provide email and SMS 2FA options.                                           |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-08 | [ ] The system must allow disabling 2FA if needed.                                               |
+| FR-01 | TH-01 | User Authentication System          | EP-01 | User Authentication               | FE-02 | Multi-factor Authentication | US-05 | As an admin, I want to enforce 2FA for all admin accounts                                    | AC-09 | [ ] The system must require 2FA setup during admin account creation.                             |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-10 | [ ] The system must not allow bypassing 2FA for admin accounts.                                  |
+| FR-01 | TH-01 | User Authentication System          | EP-02 | User Registration                 | FE-07 | Registration Form           | US-06 | As a visitor, I want to register as a student to get credentials                             | AC-11 | [ ] The system must collect name, email, student ID, and password.                               |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-12 | [ ] The system must validate the student ID format.                                              |
+| FR-01 | TH-01 | User Authentication System          | EP-02 | User Registration                 | FE-07 | Registration Form           | US-07 | As a visitor, I want to register as a content creator to get credentials                     | AC-13 | [ ] The system must collect name, institutional email, department, and password.                 |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-14 | [ ] The system must validate the institutional email domain.                                     |
+| FR-01 | TH-01 | User Authentication System          | EP-02 | User Registration                 | FE-07 | Registration Form           | US-08 | As an admin, I want to register a new admin to grant administrative access                   | AC-15 | [ ] The system must require current admin credentials to create new admin accounts.              |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-16 | [ ] The system must send notification to all existing admins about new admin creation.           |
+| FR-01 | TH-01 | User Authentication System          | EP-02 | User Registration                 | FE-09 | Email Verification          | US-09 | As a visitor, I want to verify my email to complete my registration                          | AC-17 | [ ] The system must send a verification link to the provided email.                              |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-18 | [ ] The system must activate the account only after email verification.                          |
+| FR-01 | TH-01 | User Authentication System          | EP-02 | User Registration                 | FE-09 | Email Verification          | US-10 | As a system administrator, I want users to verify their emails to ensure valid contact information | AC-19 | [ ] The system must limit account functionality until email verification is completed.           |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-20 | [ ] The system must provide a mechanism to resend verification emails.                           |
+| FR-01 | TH-02 | Access Control and Security Policies| EP-03 | Password and Identity Recovery    | FE-13 | Password Reset              | US-11 | As a student, I want to reset my password when forgotten                                     | AC-21 | [ ] The system must verify student identity using student ID and email.                          |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-22 | [ ] The system must enforce password complexity requirements for new passwords.                  |
+| FR-01 | TH-02 | Access Control and Security Policies| EP-03 | Password and Identity Recovery    | FE-13 | Password Reset              | US-12 | As a content creator, I want to reset my password when forgotten                             | AC-23 | [ ] The system must verify identity using institutional email and department.                    |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-24 | [ ] The system must notify department heads about password reset requests.                       |
+| FR-02 | TH-03 | User Profile and Role Management    | EP-05 | User Profile Management           | FE-21 | Profile Editor              | US-13 | As a student, I want to update my profile information                                        | AC-25 | [ ] The system must allow editing name, contact info, and preferences.                           |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-26 | [ ] The system must prevent editing of official student ID.                                      |
+| FR-02 | TH-03 | User Profile and Role Management    | EP-05 | User Profile Management           | FE-21 | Profile Editor              | US-14 | As a content creator, I want to update my profile and expertise areas                        | AC-27 | [ ] The system must allow editing name, contact info, and areas of expertise.                  |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-28 | [ ] The system must display expertise areas on public profile.                                   |
+| FR-02 | TH-03 | User Profile and Role Management    | EP-05 | User Profile Management           | FE-23 | Profile Picture             | US-15 | As a student, I want to upload a profile picture to personalize my account                   | AC-29 | [ ] The system must support JPG and PNG formats up to 5MB.                                     |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-30 | [ ] The system must moderate uploaded images for appropriate content.                            |
+| FR-02 | TH-03 | User Profile and Role Management    | EP-06 | Role Assignment System            | FE-25 | Role Management             | US-16 | As an admin, I want to assign different roles to users                                       | AC-31 | [ ] The system must provide interface to change user roles.                                      |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-32 | [ ] The system must log all role changes with admin ID who made changes.                         |
+| FR-02 | TH-03 | User Profile and Role Management    | EP-06 | Role Assignment System            | FE-25 | Role Management             | US-17 | As a department head, I want to assign content creator roles to department members           | AC-33 | [ ] The system must restrict role assignment to department members only.                         |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-34 | [ ] The system must notify users when their role has changed.                                    |
+| FR-03 | TH-05 | Course Creation and Content Management| EP-09 | Course Creation and Management  | FE-27 | Course Builder              | US-18 | As a content creator, I want to create a new course with basic settings                      | AC-35 | [ ] The system must collect course title, description, objectives, and prerequisites.          |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-36 | [ ] The system must assign the creator as course owner with full edit rights.                    |
+| FR-03 | TH-05 | Course Creation and Content Management| EP-10 | Course Content Development      | FE-28 | Module Management           | US-19 | As a content creator, I want to organize course content into modules                         | AC-37 | [ ] The system must support creation of multiple course modules.                                 |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-38 | [ ] The system must allow reordering modules via drag-and-drop.                                |
+| FR-03 | TH-06 | Course Enrollment and Progress Tracking| EP-11 | Enrollment Management        | FE-30 | Course Enrollment           | US-20 | As a student, I want to enroll in available courses                                          | AC-39 | [ ] The system must show available courses based on prerequisites.                             |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-40 | [ ] The system must confirm enrollment and add course to student dashboard.                      |
+| FR-03 | TH-06 | Course Enrollment and Progress Tracking| EP-12 | Learning Progress Tracking   | FE-32 | Progress Dashboard          | US-21 | As a student, I want to view my progress in each course                                      | AC-41 | [ ] The system must display completion percentage for each enrolled course.                      |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-42 | [ ] The system must highlight next recommended actions for each course.                          |
+| FR-04 | TH-07 | Media Upload and Categorization     | EP-13 | Media Upload System             | FE-34 | File Uploader               | US-22 | As a content creator, I want to upload various media files for my courses                    | AC-43 | [ ] The system must support video, audio, images, and documents.                               |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-44 | [ ] The system must show upload progress and confirm completion.                                 |
+| FR-04 | TH-07 | Media Upload and Categorization     | EP-14 | Media Organization              | FE-36 | Media Tagging               | US-23 | As a content creator, I want to tag and categorize uploaded media                            | AC-45 | [ ] The system must provide predefined and custom tag options.                                   |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-46 | [ ] The system must allow filtering media by tags.                                               |
+| FR-04 | TH-08 | Media Use and Integration in Courses| EP-15 | Media Access Control            | FE-38 | Media Permissions           | US-24 | As a content creator, I want to control who can access my uploaded media                     | AC-47 | [ ] The system must provide options for public, course-only, or private access levels.         |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-48 | [ ] The system must prevent unauthorized downloads of restricted media.                          |
+| FR-04 | TH-08 | Media Use and Integration in Courses| EP-16 | Media Integration               | FE-40 | Media Embedding             | US-25 | As a content creator, I want to embed media into course content                              | AC-49 | [ ] The system must provide media browser with search and filter capabilities.                   |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-50 | [ ] The system must maintain proper formatting when media is embedded.                           |
+| FR-05 | TH-09 | Notification Configuration and Delivery| EP-17 | Notification System        | FE-42 | Email Notifications         | US-26 | As a student, I want to receive email notifications about course updates                     | AC-51 | [ ] The system must send notifications for new content, deadlines, and announcements.          |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-52 | [ ] The system must use email templates with proper branding.                                    |
+| FR-05 | TH-09 | Notification Configuration and Delivery| EP-18 | Notification Preferences   | FE-44 | Preference Settings         | US-27 | As a user, I want to configure which notifications I receive                                 | AC-53 | [ ] The system must provide granular control over notification types.                            |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-54 | [ ] The system must respect user preferences while enforcing critical notifications.             |
+| FR-06 | TH-10 | Analytics Dashboard and Reporting   | EP-19 | Usage Analytics                 | FE-46 | Analytics Dashboard         | US-28 | As a content creator, I want to see engagement metrics for my courses                        | AC-55 | [ ] The system must display views, completion rates, and average time spent.                     |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-56 | [ ] The system must provide visual charts and graphs of key metrics.                             |
+| FR-06 | TH-10 | Analytics Dashboard and Reporting   | EP-20 | Reporting System                | FE-48 | Report Generation           | US-29 | As an admin, I want to generate system usage reports                                         | AC-57 | [ ] The system must support generating reports by date range.                                    |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-58 | [ ] The system must allow exporting reports in PDF, Excel, and CSV formats.                      |
+| FR-06 | TH-10 | Analytics Dashboard and Reporting   | EP-20 | Reporting System                | FE-49 | Data Visualization          | US-30 | As a department head, I want to visualize department course performance                        | AC-59 | [ ] The system must provide comparative analysis between different courses.                      |
+|       |       |                                     |       |                                   |       |                             |       |                                                                                              | AC-60 | [ ] The system must identify trends over academic terms.                                         |
 
 ---
 
 ## Revision History
 
-| Date       | Version | Changes                                  | Authors                                            |
-|------------|---------|------------------------------------------|----------------------------------------------------|
-| 2025-04-10 | 0.1     | Document creation                        | [Lucas Antunes](https://github.com/LucasGSAntunes) |
-| 2025-04-15 | 0.2     | PBB update content                       | [Lucas Antunes](https://github.com/LucasGSAntunes) |
-| 2025-05-13 | 1.0     | Completed all sections and added US      | [Pedro Rodrigues](https://github.com/pedro-prp)    |
+| Date       | Version | Changes                                                                                                  | Authors                                            |
+|------------|---------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| 2025-04-10 | 0.1     | Document creation                                                                                        | [Lucas Antunes](https://github.com/LucasGSAntunes) |
+| 2025-04-15 | 0.2     | PBB update content                                                                                       | [Lucas Antunes](https://github.com/LucasGSAntunes) |
+| 2025-05-13 | 1.0     | Completed all sections and added US                                                                      | [Pedro Rodrigues](https://github.com/pedro-prp)    |                   |
 
 [← Back to Main Page](../../index.md)
