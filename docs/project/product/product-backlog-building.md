@@ -7,12 +7,14 @@
 > Defines the system's **core functionalities**.
 > What the system must do
 
-| FR-ID | Description                                             |
-|-------|---------------------------------------------------------|
-| FR-01 | The system must have an **User Authentication System**. |
-| FR-02 | The system must have a **User Managment System**.       |
-| FR-03 | The system must have a **Course Management System**.    |
-| FR-04 | The system must have a **Midia Management System**.     |
+| FR-ID | Description                                                |
+| ----- | ---------------------------------------------------------- |
+| FR-01 | The system must have an **User Authentication System**.    |
+| FR-02 | The system must have a **User Management System**.         |
+| FR-03 | The system must have a **Course Management System**.       |
+| FR-04 | The system must have a **Media Management System**.        |
+| FR-05 | The system must have a **Notification System**.            |
+| FR-06 | The system must have a **Reporting and Analytics System**. |
 
 ---
 
@@ -21,17 +23,20 @@
 > Specifies **quality attributes** that ensure the system meets expectations for **performance, security, usability, scalability, etc**...
 
 | NFR-ID | Description                                                                                                                              | SQuaRE Characteristic                        |
-|--------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | NFR-01 | The system must be accessible via modern browsers (compatible with Chrome, Firefox, Safari, and Edge).                                   | Compatibility – Coexistence                  |
 | NFR-02 | The system must ensure high availability, with at least 99% uptime.                                                                      | Reliability – Availability                   |
 | NFR-03 | The system must guarantee data security, with encrypted authentication and protection against common attacks (e.g., SQL Injection, XSS). | Security – Protection Against Attacks        |
-| NFR-04 | The system must have a response time of less than 2 seconds for 95% of requests.                                                         | Performance Efficiency – Response Time       |
+| NFR-04 | The system must have a response time of less than 2 seconds for 90% of requests.                                                         | Performance Efficiency – Response Time       |
 | NFR-05 | The system must be horizontally scalable, allowing capacity increases as demand grows.                                                   | Performance Efficiency – Behavior Under Load |
 | NFR-06 | The system must be developed with clean, modular, and documented code.                                                                   | Maintainability – Analyzability              |
 | NFR-07 | The system must comply with LGPD (General Data Protection Law).                                                                          | Compliance – Regulatory                      |
 | NFR-08 | The system must support responsive navigation, adapting to different screen sizes (mobile, tablet, desktop).                             | Usability – Accessibility                    |
 | NFR-09 | The system must provide adequate usability, following UX best practices (e.g., visual feedback, consistency, clear navigation).          | Usability – Operability                      |
 | NFR-10 | The system must allow data backup and restoration at defined intervals.                                                                  | Reliability – Recoverability                 |
+| NFR-11 | The system must support internationalization with multiple languages.                                                                    | Usability – Accessibility                    |
+| NFR-12 | The system must maintain an audit trail of all critical operations.                                                                      | Security – Accountability                    |
+| NFR-13 | The system must have automated testing coverage of at least 80% for critical components.                                                 | Maintainability – Testability                |
 
 ---
 
@@ -39,114 +44,347 @@
 
 > **Themes** categorize **major system areas**, grouping functionalities under broad topics.
 
-| FR-ID | TH-ID | Theme                                      | Description                                                                 |
-|-------|-------|--------------------------------------------|-----------------------------------------------------------------------------|
-| FR-01 | TH-01 | User Authentication and Session Management | Manage login, logout, and session persistence securely.                     |
-| FR-01 | TH-02 | Access Control and Security Policies       | Define and enforce user permissions, roles, and access restrictions.        |
-| FR-02 | TH-03 | User Profile and Role Management           | Handle user registration, profile editing, and role assignments.            |
-| FR-02 | TH-04 | User Search and Account Control            | Enable filtering, listing, and controlling user account statuses.           |
-| FR-03 | TH-05 | Course Creation and Content Management     | Allow creation and management of courses, modules, and educational content. |
-| FR-03 | TH-06 | Course Enrollment and Progress Tracking    | Handle enrollment processes and monitor user progress in courses.           |
-| FR-04 | TH-07 | Media Upload and Categorization            | Support uploading, organizing, and tagging various media types.             |
-| FR-04 | TH-08 | Media Use and Integration in Courses       | Enable embedding and linking media within course content.                   |
+| FR-ID | TH-ID | Theme         | Description                                               |
+| ----- | ----- | ------------- | --------------------------------------------------------- |
+| FR-01 | TH-01 | Autentication | Handle general functionalites related to security access. |
+| FR-02 | TH-02 | User          | Handle general functionalites related to users.           |
+| FR-03 | TH-03 | Course        | Handle general functionalites related to courses.         |
+| FR-04 | TH-04 | Media         | Handle general functionalites related to media.           |
+| FR-05 | TH-05 | Notification  | Handle general functionalites related to notifications.   |
+| FR-06 | TH-06 | Analytics     | Handle general functionalites related to data.            |
 
 ---
 
 ## **4. Epics**
 
-> **Epics** define **high-level features** that contribute to system development.
+> Each Epic is broken down into at least two capabilities, representing sub-functionalities.
 
-| FR-ID | Theme-ID | Epic-ID | Epic                              | Description                                                               |
-|-------|----------|---------|-----------------------------------|---------------------------------------------------------------------------|
-| FR-01 | TH-01    | EP-01   | User Login and Registration       | Develop secure login, logout, and registration mechanisms.                |
-| FR-01 | TH-01    | EP-02   | Session Lifecycle Management      | Handle token issuance, refresh, and session expiration.                   |
-| FR-01 | TH-02    | EP-03   | Password and Identity Recovery    | Implement recovery mechanisms like password reset and email confirmation. |
-| FR-01 | TH-02    | EP-04   | Multi-Factor Authentication (MFA) | Add additional layers of authentication for security.                     |
-| FR-02 | TH-03    | EP-05   | User Profile CRUD                 | Allow full editing and visualization of user data.                        |
-| FR-02 | TH-03    | EP-06   | Role Assignment System            | Define and assign roles such as Admin, Instructor, and Student.           |
-| FR-02 | TH-04    | EP-07   | Account Status Management         | Enable account activation, deactivation, and suspension.                  |
-| FR-02 | TH-04    | EP-08   | Advanced User Filtering           | Implement filtering by name, email, role, and status.                     |
-| FR-03 | TH-05    | EP-09   | Course CRUD                       | Enable creation, update, and removal of course structures.                |
-| FR-03 | TH-05    | EP-10   | Lesson and Module Design          | Allow modular content within each course.                                 |
-| FR-03 | TH-06    | EP-11   | Enrollment Control                | Allow enrollment, cancellation, and waiting list handling.                |
-| FR-03 | TH-06    | EP-12   | Progress Tracking                 | Provide visual indicators of user course progress.                        |
-| FR-04 | TH-07    | EP-13   | File Upload Engine                | Enable media upload in various formats (images, audio, video, PDFs).      |
-| FR-04 | TH-07    | EP-14   | Media Classification System       | Categorize media by type, topic, and course relevance.                    |
-| FR-04 | TH-08    | EP-15   | Media Permissions and Access      | Define who can view, reuse, or download media content.                    |
-| FR-04 | TH-08    | EP-16   | Media Embedding in Courses        | Enable reuse of uploaded media inside course content.                     |
-| FR-01 | TH-02    | EP-17   | Access Logs and Audit Trail       | Track all user access and security-related events.                        |
-| FR-03 | TH-06    | EP-18   | Certificate Issuance System       | Automatically generate certificates after course completion.              |
-| FR-02 | TH-03    | EP-19   | Profile Picture and Personal Info | Add support for profile pictures and extended metadata.                   |
-| FR-04 | TH-08    | EP-20   | Media Preview and Playback        | Allow safe preview of media before downloading or embedding.              |
+| TH-ID | EP-ID | Epic                         | Description                                                           |
+| ----- | ----- | ---------------------------- | --------------------------------------------------------------------- |
+| TH-01 | EP-01 | User Authentication          | Handle registration and login.                                        |
+| TH-01 | EP-02 | User Access Control          | Handle user permissions and roles.                                    |
+| TH-02 | EP-03 | User Management              | Handle user create, read, update, delete and role assignments.        |
+| TH-02 | EP-04 | User Search                  | Handle user list and filters.                                         |
+| TH-03 | EP-05 | Course Management            | Handle create, read, update and delete courses.                       |
+| TH-03 | EP-06 | Course Search                | Handle course list and filters.                                       |
+| TH-03 | EP-07 | Course Subscription          | Handle user subscription in courses.                                  |
+| TH-03 | EP-08 | Course Progress              | Handle monitor users progress in courses.                             |
+| TH-04 | EP-09 | Media Management             | Handle uploading, organizing, and tagging media.                      |
+| TH-04 | EP-10 | Media Integration in Courses | Handle embedding and linking media within course content.             |
+| TH-05 | EP-11 | Notification Management      | Handle create, read, update and delete types of notifications.        |
+| TH-05 | EP-12 | Notification Send            | Handle notifications user rotines                                     |
+| TH-06 | EP-13 | Dashboard Managment          | Handle create, read, update and delete types of dashboard indicators. |
+| TH-06 | EP-14 | Dashboard Report             | Handle search, filter and export dashboard indicators                 |
 
 ---
 
-## **5. Capabilities**
+## **5. Features**
 
-> **Capabilities** describe the **system's technical abilities** to support key functionalities.
+> Each Capability is further refined into at least two Features, describing specific functionalities.
 
-| #    | Capability | Description |
-|------|------------|-------------|
-| C-00 |            |             |
-
-(Additional capabilities …)
+| TH-ID | EP-ID | FE-ID | Feature                  | Description                                                                                   |
+| ----- | ----- | ----- | ------------------------ | --------------------------------------------------------------------------------------------- |
+| TH-01 | EP-01 | FE-01 | User Registration        | Allows new users to create an account by providing basic information (name, email, password). |
+| TH-01 | EP-01 | FE-02 | User Login               | Authenticates existing users via email and password, starting a session in the system.        |
+| TH-01 | EP-02 | FE-03 | User Roles Approval      | Manages the workflow for user role requests that require admin review and decision            |
+| TH-01 | EP-02 | FE-04 | User Roles Permissions   | Associates and manages specific permissions for each role defined in the system.              |
+| TH-02 | EP-03 | FE-05 | User Create              | Creates user records in the system (beyond the authentication flow).                          |
+| TH-02 | EP-03 | FE-06 | User Read                | Displays details of a specific user based on their identifier.                                |
+| TH-02 | EP-03 | FE-07 | User Update              | Allows editing of profile information and attributes of an existing user.                     |
+| TH-02 | EP-03 | FE-08 | User Delete              | Removes or deactivates a user from the system, ensuring historical consistency.               |
+| TH-02 | EP-04 | FE-09 | User List                | Retrieves and presents a paginated list of all registered users.                              |
+| TH-02 | EP-04 | FE-10 | User Filter              | Applies filters (name, email, role) to refine the user search.                                |
+| TH-03 | EP-05 | FE-11 | Course Create            | Enables administrators/instructors to add new courses to the catalog.                         |
+| TH-03 | EP-05 | FE-12 | Course Read              | Displays details of a course (title, description, duration, instructor).                      |
+| TH-03 | EP-05 | FE-13 | Course Update            | Allows editing of information for an already registered course.                               |
+| TH-03 | EP-05 | FE-14 | Course Delete            | Removes or deactivates a course from the catalog, preserving historical records.              |
+| TH-03 | EP-06 | FE-15 | Course List              | Lists all available courses with pagination and basic information.                            |
+| TH-03 | EP-06 | FE-16 | Course Filter            | Filters courses by criteria such as name, category, instructor, or level.                     |
+| TH-03 | EP-07 | FE-17 | User Subscription Create | Enrolls a user in a course, recording enrollment and access data.                             |
+| TH-03 | EP-07 | FE-18 | User Subscription Delete | Cancels a user’s enrollment in a course, freeing up a spot.                                   |
+| TH-03 | EP-07 | FE-19 | User Subscription List   | Lists all enrollments for a user or for a specific course.                                    |
+| TH-03 | EP-07 | FE-20 | User Subscription Filter | Applies filters to enrollments (by course, date, status) for easy lookup.                     |
+| TH-03 | EP-08 | FE-21 | User Progress Tracking   | Records user progress in course modules/lessons.                                              |
+| TH-03 | EP-08 | FE-22 | User Progress List       | Displays the user’s progress history across all courses.                                      |
+| TH-03 | EP-08 | FE-23 | User Progress Filter     | Filters progress records by course, date, or completion percentage.                           |
+| TH-04 | EP-09 | FE-24 | Media Create             | Uploads media files (videos, images, audio) to the server.                                    |
+| TH-04 | EP-09 | FE-25 | Media Read               | Retrieves and displays metadata and previews of existing media files.                         |
+| TH-04 | EP-09 | FE-26 | Media Update             | Updates metadata or replaces the media file with a new version.                               |
+| TH-04 | EP-09 | FE-27 | Media Delete             | Deletes media files, freeing up space and removing references.                                |
+| TH-04 | EP-10 | FE-28 | Media linked in course   | Associates a media file with a specific course or module.                                     |
+| TH-04 | EP-10 | FE-29 | Media unlinked in course | Disassociates media from a course while keeping the file in the general repository.           |
+| TH-05 | EP-11 | FE-30 | Notification Create      | Creates new notification records (e.g., alerts, reminders) in the system.                     |
+| TH-05 | EP-11 | FE-31 | Notification Read        | Displays pending and historical notifications for the user.                                   |
+| TH-05 | EP-11 | FE-32 | Notification Update      | Allows marking notifications as read or modifying content before sending.                     |
+| TH-05 | EP-11 | FE-33 | Notification Delete      | Removes notifications from history or cancels scheduled sends.                                |
+| TH-05 | EP-12 | FE-34 | Notifications List       | Provides a paginated view of notifications tailored to each user role.                        |
+| TH-05 | EP-12 | FE-35 | Notifications Filter     | Enables users to refine their notification lists by applying criteria.                        |
+| TH-06 | EP-13 | FE-36 | Dashboard Create         | Sets up a new dashboard of metrics with widgets chosen by the user.                           |
+| TH-06 | EP-13 | FE-37 | Dashboard Read           | Displays a predefined dashboard with aggregated data and visualizations.                      |
+| TH-06 | EP-13 | FE-38 | Dashboard Update         | Allows reconfiguring the layout and metrics of an existing dashboard.                         |
+| TH-06 | EP-13 | FE-39 | Dashboard Delete         | Deletes custom dashboards, reverting to default views.                                        |
+| TH-06 | EP-14 | FE-40 | Report Create            | Generates ad-hoc reports with user-defined filters and parameters.                            |
+| TH-06 | EP-14 | FE-41 | Report Read              | Displays history of generated reports and provides access to their versions.                  |
+| TH-06 | EP-14 | FE-42 | Report Update            | Allows adjusting parameters of saved reports and regenerating data.                           |
+| TH-06 | EP-14 | FE-43 | Report Delete            | Deletes old or unnecessary reports from the repository.                                       |
+| TH-06 | EP-14 | FE-44 | Report Export            | Exports reports to formats like PDF, Excel, or CSV for sharing.                               |
 
 ---
 
-## **6. Features**
+## **6. User Stories** 
 
-> **Features** define the **specific functionalities** required to implement each capability.
-
-| #    | Feature | Description |
-|------|---------|-------------|
-| F-00 |         |             |
-
-(Additional features …)
+| TH-ID | EP-ID | FE-ID | US-ID  | User Story                                                                                                                                    | Description                                                                                                                 |
+| ----- | ----- | ----- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| TH-01 | EP-01 | FE-01 | US-01  | As a Visitor, I want to register as a **Student** so that I can immediately access my account and start learning                              | Visitors provide basic info (name, email, password) and get an active Student account without further approval.             |
+| TH-01 | EP-01 | FE-01 | US-02  | As a Visitor, I want to request a **Content Creator** account so that I can submit educational content for review                             | Visitors fill out additional Creator fields; a pending application is sent to Admins for approval or rejection.             |
+| TH-01 | EP-01 | FE-02 | US-03  | As an Approved User (Student, Content Creator or Admin), I want to log in with my email and password so that I can access my role’s features  | Authenticates approved accounts; starts a session and redirects to the user’s dashboard.                                    |
+| TH-01 | EP-01 | FE-02 | US-04  | As a Content Creator with a pending approval, I want to log in to see the status of my application so that I know if I’ve been approved       | Allows pending creators to authenticate and view “Pending” or “Rejected” status without accessing other features.           |
+| TH-01 | EP-02 | FE-03 | US-05  | As an Admin, I want to view all pending user role approval requests so that I can see which users require review                              | Displays a list of pending role-change requests with requester info and desired role.                                       |
+| TH-01 | EP-02 | FE-03 | US-06  | As an Admin, I want to approve or reject user role requests so that only verified users gain elevated permissions                             | Provides controls to approve or reject each request and triggers notification to the requester.                             |
+| TH-02 | EP-02 | FE-04 | US-07  | As an Admin, I want to view all existing roles and their permissions so that I can audit access levels                                        | Displays each role alongside its assigned permissions.                                                                      |
+| TH-02 | EP-02 | FE-04 | US-08  | As an Admin, I want to modify permissions for a selected role so that I can adjust access rights                                              | Allows adding or removing permissions from any role.                                                                        |
+| TH-02 | EP-03 | FE-05 | US-09  | As an Admin, I want to create new users of any role (Student, Content Creator, Admin) so that I can onboard team members directly             | Admins can manually add Student, Content Creator or Admin accounts and initialize their profiles.                           |
+| TH-02 | EP-03 | FE-05 | US-10  | As a Content Creator, I want to create student pre-registrations so that I can bulk-import learners for review and activation                 | Content Creators can pre-register Students; those records remain pending until the Student confirms.                        |
+| TH-02 | EP-03 | FE-06 | US-11  | As an Admin, I want to view all non-sensitive details of any user so that I can manage accounts comprehensively                               | Displays all non-sensitive profile information for any user (Student, Content Creator, Admin).                              |
+| TH-02 | EP-03 | FE-06 | US-12  | As a Content Creator, I want to view basic details of Students and Content Creators so that I can understand contributors                     | Shows limited profile data (name, email, role, avatar) for Students and Content Creators.                                   |
+| TH-02 | EP-03 | FE-06 | US-13  | As a Student, I want to view basic details of other Students and Content Creators so that I can see who I’m learning from                     | Shows limited profile data (name, bio, role) for other Students and Content Creators.                                       |
+| TH-02 | EP-03 | FE-06 | US-14  | As any User, I want to view my own full profile details so that I can confirm and update all my personal information                          | Shows complete profile data (including contact info, preferences, and activity summary) for the viewer.                     |
+| TH-02 | EP-02 | FE-07 | US-15  | As an Admin, I want to update any user’s profile so that I can maintain accurate account information                                          | Allows Admin to edit profile fields for any user role                                                                       |
+| TH-02 | EP-02 | FE-07 | US-16  | As a User, I want to update my own profile so that I can keep my personal information current                                                 | Allows users to edit their own profile details                                                                              |
+| TH-02 | EP-03 | FE-08 | US-17  | As a User, I want to deactivate my own account so that I can stop using the system without losing my data                                     | Allows users to soft-delete (inactivate) their own account while preserving their records.                                  |
+| TH-02 | EP-03 | FE-08 | US-18  | As an Admin, I want to deactivate any user’s account so that I can manage inactive or problematic users                                       | Enables Admin to soft-delete (inactivate) any user account.                                                                 |
+| TH-02 | EP-03 | FE-08 | US-19  | As an Admin, I want to permanently delete any user’s account so that I can remove obsolete or test accounts                                   | Provides Admin with the ability to hard-delete user records and associated data.                                            |
+| TH-02 | EP-04 | FE-09 | US-20  | As an Admin, I want to see a list of all users so that I can manage and monitor every account in the system                                   | Displays a paginated list of all user accounts with key details (name, email, role).                                        |
+| TH-02 | EP-04 | FE-09 | US-21  | As a Content Creator, I want to see all students enrolled in my courses so that I can understand my audience                                  | Shows a paginated list of Students who have an active enrollment in any of my courses.                                      |
+| TH-02 | EP-04 | FE-09 | US-22  | As a Student, I want to see a leaderboard of other students so that I can compare my performance and stay motivated                           | Displays a ranked list of students based on points or progress metrics, fostering healthy competition.                      |
+| TH-02 | EP-04 | FE-10 | US-23  | As an Admin, I want to search and filter the user list by name, email, role, or status so that I can quickly find accounts                    | Enables filtering the full user directory with a free-text search and facet filters.                                        |
+| TH-02 | EP-04 | FE-10 | US-24  | As a Content Creator, I want to search and filter my course’s student list by name or enrollment status so that I can manage learners         | Allows filtering enrolled students by name or status within my courses.                                                     |
+| TH-02 | EP-04 | FE-10 | US-25  | As a Student, I want to search and filter the leaderboard by student name or score so that I can compare myself to peers                      | Provides search and sort functionality on the student ranking view for personalized comparison and exploration.             |
+| TH-03 | EP-05 | FE-11 | US-26  | As an Admin, I want to create new courses so that I can populate the platform with learning content                                           | Allows Admin to add course records with title, description, duration, and instructor.                                       |
+| TH-03 | EP-05 | FE-11 | US-27  | As a Content Creator, I want to create my own courses so that I can share my expertise with students                                          | Enables Content Creators to define course details and publish them to the catalog.                                          |
+| TH-03 | EP-05 | FE-12 | US-28  | As an Admin, I want to view course details so that I can oversee and manage all course content                                                | Displays course title, description, duration, instructor, modules, and all associated materials and settings.               |
+| TH-03 | EP-05 | FE-12 | US-29  | As a Content Creator, I want to view my course details so that I can verify and update my content                                             | Shows course metadata, module list, draft status, and editing options for my own courses.                                   |
+| TH-03 | EP-05 | FE-12 | US-30  | As a Student, I want to view course details so that I can understand what I’ll learn and access the materials                                 | Presents course overview, module syllabus, and links to enrolled content and resources.                                     |
+| TH-03 | EP-05 | FE-13 | US-31  | As an Admin, I want to update any course so that I can keep all content accurate and up to date                                               | Allows Admin to edit title, description, modules, and materials for any course.                                             |
+| TH-03 | EP-05 | FE-13 | US-32  | As a Content Creator, I want to update my own courses so that I can improve and maintain my content                                           | Enables Content Creators to edit their course’s details, modules, and associated materials.                                 |
+| TH-03 | EP-05 | FE-14 | US-33  | As a Content Creator, I want to deactivate my own course so that it becomes unavailable to students without deleting data                     | Soft-deletes the course, preserving its content and progress history for potential reactivation.                            |
+| TH-03 | EP-05 | FE-14 | US-34  | As an Admin, I want to deactivate any course so that I can manage course availability across the platform                                     | Allows Admin to soft-delete any course, hiding it from students while keeping records intact.                               |
+| TH-03 | EP-05 | FE-14 | US-35  | As an Admin, I want to permanently delete any course so that I can remove obsolete or test courses completely                                 | Hard-deletes the course and all associated materials, enrollments, and progress data from the system.                       |
+| TH-03 | EP-06 | FE-15 | US-36  | As any User, I want to view the list of all active courses so that I can discover available learning opportunities                            | Displays a paginated list of active courses with key details (title, instructor, duration).                                 |
+| TH-03 | EP-06 | FE-15 | US-37  | As a Content Creator, I want to view the list of my active and inactive courses so that I can manage my course catalog                        | Shows a list of courses I created, including both active and deactivated items, with status indicators.                     |
+| TH-03 | EP-06 | FE-15 | US-38  | As an Admin, I want to view the list of all courses so that I can oversee platform offerings                                                  | Presents a comprehensive catalog of all courses with filters for status and creator, including inactive ones.               |
+| TH-03 | EP-06 | FE-16 | US-39  | As an Admin, I want to search and filter all courses by name, category, instructor, status, or duration so that I can manage the full catalog | Enables Admin to apply multi-criteria filters and free-text search over every course (active and inactive).                 |
+| TH-03 | EP-06 | FE-16 | US-40  | As a Content Creator, I want to search and filter my courses by name, status, or date created so that I can organize my offerings             | Allows filtering and searching within my own course list, including both active and inactive items.                         |
+| TH-03 | EP-06 | FE-16 | US-41  | As a Student, I want to search and filter active courses by name, category, or instructor so that I can quickly find what interests me        | Provides free-text search and facet filters over active courses only, based on key attributes like category and instructor. |
+| TH-03 | EP-07 | FE-17 | US-42  | As an Admin, I want to enroll any user into any course so that I can manage enrollments across the platform                                   | Admins can create enrollment records for any user in any course.                                                            |
+| TH-03 | EP-07 | FE-17 | US-43  | As a Content Creator, I want to enroll students into my courses so that I can add learners directly                                           | Content Creators can register any Student in the courses they own.                                                          |
+| TH-03 | EP-07 | FE-17 | US-44  | As a Student, I want to enroll myself in courses so that I can access learning materials                                                      | Students can self-enroll in any active course without additional approval.                                                  |
+| TH-03 | EP-07 | FE-18 | US-45  | As an Admin, I want to cancel any user’s enrollment so that I can manage course registrations platform-wide                                   | Admins can remove any user’s enrollment record from any course.                                                             |
+| TH-03 | EP-07 | FE-18 | US-46  | As a Content Creator, I want to cancel a student’s enrollment in my course so that I can manage my course roster                              | Content Creators can remove enrollment records for Students in courses they own.                                            |
+| TH-03 | EP-07 | FE-18 | US-47  | As a Student, I want to cancel my own enrollment so that I can drop a course if I choose                                                      | Students can delete their own enrollment record from any course they’re registered in.                                      |
+| TH-03 | EP-07 | FE-19 | US-48  | As an Admin, I want to view all enrollments for any course so that I can monitor participation platform-wide                                  | Displays a complete list of enrollments when viewing the details of any course.                                             |
+| TH-03 | EP-07 | FE-19 | US-49  | As a Content Creator, I want to view enrollments for my courses so that I can see who is registered in each of my classes                     | Shows all student enrollments when viewing the details of courses I own.                                                    |
+| TH-03 | EP-07 | FE-19 | US-50  | As a Student, I want to view my course enrollments so that I can see which courses I’m registered in                                          | Lists all active enrollments for the logged-in student across all courses.                                                  |
+| TH-03 | EP-07 | FE-20 | US-51  | As an Admin, I want to filter enrollments by course, user, date or status so that I can quickly locate specific registration records          | Enables multi-criteria filtering on the complete enrollment list.                                                           |
+| TH-03 | EP-07 | FE-20 | US-52  | As a Content Creator, I want to filter enrollments in my courses by student name or enrollment status so that I can manage my roster          | Allows filtering enrollments only within the creator’s own courses.                                                         |
+| TH-03 | EP-07 | FE-20 | US-53  | As a Student, I want to filter my own enrollments by course name or status so that I can easily find and manage my course registrations       | Provides search and filter functionality on the student’s personal enrollment list.                                         |
+| TH-03 | EP-08 | FE-21 | US-54  | As an Admin, I want to view average student progress across any course so that I can assess overall engagement and performance                | Presents the mean completion percentage of enrolled students for a selected course.                                         |
+| TH-03 | EP-08 | FE-21 | US-55  | As a Content Creator, I want to view average student progress in my courses so that I can identify where learners may struggle                | Shows the average completion rate for each of my courses, highlighting modules with lower progress.                         |
+| TH-03 | EP-08 | FE-21 | US-56  | As a Student, I want to view my progress in all my enrolled courses so that I can track my learning journey                                   | Displays each course’s completion percentage and completed modules for the logged-in student.                               |
+| TH-03 | EP-08 | FE-22 | US-57  | As an Admin, I want to view detailed progress records of all students so that I can audit individual learning activities                      | Shows a list of progress entries (module, timestamp, status percentage) for any student in the system.                      |
+| TH-03 | EP-08 | FE-22 | US-58  | As a Content Creator, I want to view progress records for students in my courses so that I can monitor engagement in my content               | Displays progress entries for each student in the creator’s courses, including module-level details.                        |
+| TH-03 | EP-08 | FE-22 | US-59  | As a Student, I want to view my own detailed progress history so that I can review my learning activities over time                           | Lists all my module completion records with dates and percentage for each enrolled course.                                  |
+| TH-03 | EP-08 | FE-23 | US-60  | As an Admin, I want to filter progress records by course, date, or completion percentage so that I can locate specific learning data          | Enables multi-criteria filtering on all student progress entries across the platform.                                       |
+| TH-03 | EP-08 | FE-23 | US-61  | As a Content Creator, I want to filter progress records in my courses by student, module, or date so that I can focus on key insights         | Allows filtering detailed progress entries within my own courses using the same criteria as course filters.                 |
+| TH-03 | EP-08 | FE-23 | US-62  | As a Student, I want to filter my progress history by course, date, or completion percentage so that I can review specific milestones         | Provides search and facet filters on my own progress entries, mirroring the course filter options.                          |
+| TH-04 | EP-09 | FE-24 | US-63  | As a Student, I want to upload a profile image so that I can personalize my account                                                           | Allows Students to upload avatar images (JPEG, PNG) to their personal profile.                                              |
+| TH-04 | EP-09 | FE-24 | US-64  | As a Content Creator, I want to upload media to my courses so that I can enrich my learning content                                           | Enables Content Creators to upload images and videos to courses they own.                                                   |
+| TH-04 | EP-09 | FE-24 | US-65  | As an Admin, I want to upload media for any course so that I can manage platform-wide content                                                 | Allows Admins to upload images or videos to any course.                                                                     |
+| TH-04 | EP-09 | FE-25 | US-66  | As an Admin, I want to view details of any media in the system so that I can audit and manage all platform assets                             | Displays metadata and preview (filename, type, size, upload date) for all media.                                            |
+| TH-04 | EP-09 | FE-25 | US-67  | As a Content Creator, I want to view details of my own media so that I can verify and update assets for my courses                            | Shows metadata and preview for media files uploaded by the logged-in creator.                                               |
+| TH-04 | EP-09 | FE-25 | US-68  | As a Student, I want to view details of my profile media so that I can confirm my avatar and personal uploads                                 | Displays metadata and preview for the student’s own profile image.                                                          |
+| TH-04 | EP-09 | FE-26 | US-69  | As an Admin, I want to update any media’s metadata or replace its file so that I can maintain and correct platform assets                     | Enables Admin to edit metadata (filename, description) and upload a new file for any media item.                            |
+| TH-04 | EP-09 | FE-26 | US-70  | As a Content Creator, I want to update my own media’s metadata or replace its file so that course assets stay current                         | Allows creators to edit metadata and upload new versions of media they uploaded.                                            |
+| TH-04 | EP-09 | FE-26 | US-71  | As a Student, I want to update my profile image so that I can change my avatar when needed                                                    | Permits Students to replace their own profile image and update its metadata.                                                |
+| TH-04 | EP-09 | FE-27 | US-72  | As an Admin, I want to delete any media so that I can remove outdated or inappropriate assets                                                 | Enables Admin to permanently remove any media file from the system.                                                         |
+| TH-04 | EP-09 | FE-27 | US-73  | As a Content Creator, I want to delete my own course media so that I can clean up unused or incorrect assets in my courses                    | Allows creators to permanently delete media they uploaded to their courses.                                                 |
+| TH-04 | EP-09 | FE-27 | US-74  | As a Student, I want to delete my profile image so that I can remove or change my avatar whenever I choose                                    | Permits Students to permanently remove their own profile image.                                                             |
+| TH-04 | EP-10 | FE-28 | US-75  | As an Admin, I want to link any media item to any course so that I can organize and enrich course content                                     | Allows Admin to associate uploaded media files with a course during its creation or editing.                                |
+| TH-04 | EP-10 | FE-28 | US-76  | As a Content Creator, I want to link my media items to my courses so that I can provide relevant multimedia learning materials                | Enables Content Creators to attach their own media files to courses when creating or updating them.                         |
+| TH-04 | EP-10 | FE-29 | US-77  | As an Admin, I want to unlink any media item from any course so that I can remove outdated or irrelevant assets                               | Allows Admin to detach media from a course without deleting the file during course creation or editing.                     |
+| TH-04 | EP-10 | FE-29 | US-78  | As a Content Creator, I want to unlink my media items from my courses so that I can update or reorganize content                              | Enables Content Creators to remove media associations from their courses without deleting the media.                        |
+| TH-05 | EP-11 | FE-30 | US-79  | As an Admin, I want to create notifications for any user so that I can broadcast important messages platform-wide                             | Admins can compose and send notifications to individual users, roles, or all users via the notification system.             |
+| TH-05 | EP-11 | FE-30 | US-80  | As a Content Creator, I want to create notifications for my students so that I can inform them about course updates                           | Creators can send targeted alerts or reminders to students enrolled in their own courses.                                   |
+| TH-05 | EP-11 | FE-30 | US-81  | As a Student, I want to generate evaluation notifications so that I can request feedback or report issues to instructors                      | Students can submit evaluation or feedback notifications regarding course content or issues encountered.                    |
+| TH-05 | EP-11 | FE-31 | US-82  | As an Admin, I want to view details of any notification (sent or received) so that I can audit all platform communications                    | Displays full notification information (title, message, date, sender, recipients, related course).                          |
+| TH-05 | EP-11 | FE-31 | US-83  | As a Content Creator, I want to view details of notifications I have sent so that I can verify delivery and content accuracy                  | Shows metadata and content for notifications created by me, including send date and recipient list.                         |
+| TH-05 | EP-11 | FE-31 | US-84  | As a Student, I want to view details of notifications I have received so that I can stay informed about relevant updates                      | Displays notification title, message, date, sender, and any related course or action required.                              |
+| TH-05 | EP-11 | FE-32 | US-85  | As an Admin, I want to update any notification’s content or schedule so that messages remain accurate                                         | Enables Admin to edit title, message body, recipient list, and send timing for any notification.                            |
+| TH-05 | EP-11 | FE-32 | US-86  | As a Content Creator, I want to update notifications I’ve created so that I can correct or refine them                                        | Allows Creators to modify their own notifications’ details before or after sending.                                         |
+| TH-05 | EP-11 | FE-32 | US-87  | As a Student, I want to update my evaluation notifications so that I can refine feedback or report accuracy                                   | Permits Students to edit or resend the notifications they have generated for course evaluation.                             |
+| TH-05 | EP-11 | FE-33 | US-88  | As an Admin, I want to delete any notification so that obsolete or incorrect messages are removed from the system                             | Enables Admin to permanently remove any notification record and its delivery schedule.                                      |
+| TH-05 | EP-11 | FE-33 | US-89  | As a Content Creator, I want to delete notifications I’ve sent so that I can clean up outdated course communications                          | Allows Creators to remove notifications they authored from the system.                                                      |
+| TH-05 | EP-11 | FE-33 | US-90  | As a Student, I want to delete my evaluation notifications so that I can manage my sent feedback or reports                                   | Permits Students to remove the notifications they generated for course evaluations.                                         |
+| TH-05 | EP-11 | FE-34 | US-91  | As an Admin, I want to view a list of all notifications in the system so that I can monitor all communications                                | Displays a paginated list of every notification with key details (title, sender, date, status).                             |
+| TH-05 | EP-11 | FE-34 | US-92  | As a Content Creator, I want to view a list of notifications I’ve sent and received so that I can track my outreach                           | Shows notifications I authored and those addressed to me, with summary information.                                         |
+| TH-05 | EP-11 | FE-34 | US-93  | As a Student, I want to view a list of notifications I’ve received and sent so that I can stay informed and manage feedback                   | Lists incoming and outgoing notifications for my account with key fields (title, date, sender/recipient, status).           |
+| TH-05 | EP-12 | FE-35 | US-94  | As an Admin, I want to filter all notifications by date, status, sender, type, or related course so that I can quickly find specific messages | Enables Admin to apply multi-criteria filters across the entire notification list.                                          |
+| TH-05 | EP-12 | FE-35 | US-95  | As a Content Creator, I want to filter my sent and received notifications by date, status, or related course so that I can manage outreach    | Allows Creators to refine their own notification lists using key attributes like date range, read/unread, and course.       |
+| TH-05 | EP-12 | FE-35 | US-96  | As a Student, I want to filter my notifications by date or read/unread status so that I can focus on the most relevant updates                | Provides Students with simple filters for their notifications based on date range and read/unread state.                    |
+| TH-06 | EP-13 | FE-36 | US-97  | As an Admin, I want to create dashboards by selecting from any permitted data sources so that I can monitor platform-wide metrics             | Enables Admin to choose allowed data sources and widgets to build custom dashboards showing system-wide insights.           |
+| TH-06 | EP-13 | FE-36 | US-98  | As a Content Creator, I want to create dashboards by selecting from my available course data so that I can track engagement and performance   | Allows Creators to choose permitted datasets and widgets to generate personalized dashboards for their courses.             |
+| TH-06 | EP-13 | FE-37 | US-99  | As an Admin, I want to view any dashboard so that I can monitor all system metrics                                                            | Displays all dashboards with interactive widgets and applied filters for system-wide oversight.                             |
+| TH-06 | EP-13 | FE-37 | US-100 | As a Content Creator, I want to view my own dashboards so that I can review engagement and performance insights                               | Shows dashboards created by me, reflecting my chosen data sources and configurations.                                       |
+| TH-06 | EP-13 | FE-38 | US-101 | As an Admin, I want to update any dashboard’s widgets, layout, and data sources so that I can refine system insights                          | Enables Admin to edit widget configurations, layout arrangements, and data connections on any dashboard.                    |
+| TH-06 | EP-13 | FE-38 | US-102 | As a Content Creator, I want to update my dashboards’ widgets, layout, and data sources so that I can optimize my reports                     | Allows Creators to modify components, adjust visualizations, and change data sources on their dashboards.                   |
+| TH-06 | EP-13 | FE-39 | US-103 | As an Admin, I want to delete any dashboard so that I can remove outdated or irrelevant system reports                                        | Enables Admin to permanently remove any dashboard from the system.                                                          |
+| TH-06 | EP-13 | FE-39 | US-104 | As a Content Creator, I want to delete my own dashboards so that I can clean up and reorganize my reports                                     | Allows Creators to permanently remove dashboards they created.                                                              |
+| TH-06 | EP-14 | FE-40 | US-105 | As an Admin, I want to create reports by selecting any permitted data sources and parameters so that I can generate platform-wide analytics   | Enables Admin to choose data sources, date ranges, metrics, and filters to build custom reports across the system.          |
+| TH-06 | EP-14 | FE-40 | US-106 | As a Content Creator, I want to create reports using my available course data and parameters so that I can analyze learner performance        | All                                                                                                                         |
+| TH-06 | EP-14 | FE-41 | US-107 | As an Admin, I want to view any report so that I can monitor and audit analytics across the platform                                          | Displays full report details (title, parameters, metrics, charts, tables, generation date) for any report.                  |
+| TH-06 | EP-14 | FE-41 | US-108 | As a Content Creator, I want to view reports I’ve generated so that I can review learner performance and course insights                      | Shows report details and visuals for reports created by the Content Creator, including applied filters and date.            |
+| TH-06 | EP-14 | FE-42 | US-109 | As an Admin, I want to update any report’s parameters or layout so that analytics remain accurate and relevant                                | Enables Admin to modify report settings, filters, and visuals for any report in the system.                                 |
+| TH-06 | EP-14 | FE-42 | US-110 | As a Content Creator, I want to update my own reports’ parameters or layout so that I can refine course analytics                             | Allows Creators to adjust filters, date ranges, and visualization options on reports they generated.                        |
+| TH-06 | EP-14 | FE-43 | US-111 | As an Admin, I want to delete any report so that I can remove outdated or irrelevant analytics                                                | Enables Admin to permanently remove any report and its history from the system.                                             |
+| TH-06 | EP-14 | FE-43 | US-112 | As a Content Creator, I want to delete my own reports so that I can clean up my generated analytics                                           | Allows Creators to permanently delete reports they created, freeing up system storage.                                      |
+| TH-06 | EP-14 | FE-44 | US-113 | As an Admin, I want to export any report in formats like PDF or CSV so that I can share system-wide analytics                                 | Provides Admin with export functionality including all data and visualizations.                                             |
+| TH-06 | EP-14 | FE-44 | US-114 | As a Content Creator, I want to export my own reports in formats like PDF or CSV so that I can distribute course analytics                    | Allows Creators to export their generated reports with chosen formats and filters.                                          |
 
 ---
 
-## **7. User Stories**
+## **7. Acceptance Criteria - On-working**
 
-> **User stories** describe **how different users interact with the system**, providing real-world scenarios.
-
-| #     | Description |
-|-------|-------------|
-| US-00 |             |
-
-(Additional user stories …)
-
----
+___
 
 ## **8. Backlog**
 
-| FR-ID | Theme-ID | Theme                                      | Epic-ID | Epic                              | Description                                                               |
-|-------|----------|--------------------------------------------|---------|-----------------------------------|---------------------------------------------------------------------------|
-| FR-01 | TH-01    | User Authentication and Session Management | EP-01   | User Login and Registration       | Develop secure login, logout, and registration mechanisms.                |
-| FR-01 | TH-01    | User Authentication and Session Management | EP-02   | Session Lifecycle Management      | Handle token issuance, refresh, and session expiration.                   |
-| FR-01 | TH-02    | Access Control and Security Policies       | EP-03   | Password and Identity Recovery    | Implement recovery mechanisms like password reset and email confirmation. |
-| FR-01 | TH-02    | Access Control and Security Policies       | EP-04   | Multi-Factor Authentication (MFA) | Add additional layers of authentication for security.                     |
-| FR-01 | TH-02    | Access Control and Security Policies       | EP-17   | Access Logs and Audit Trail       | Track all user access and security-related events.                        |
-| FR-02 | TH-03    | User Profile and Role Management           | EP-05   | User Profile CRUD                 | Allow full editing and visualization of user data.                        |
-| FR-02 | TH-03    | User Profile and Role Management           | EP-06   | Role Assignment System            | Define and assign roles such as Admin, Instructor, and Student.           |
-| FR-02 | TH-03    | User Profile and Role Management           | EP-19   | Profile Picture and Personal Info | Add support for profile pictures and extended metadata.                   |
-| FR-02 | TH-04    | User Search and Account Control            | EP-07   | Account Status Management         | Enable account activation, deactivation, and suspension.                  |
-| FR-02 | TH-04    | User Search and Account Control            | EP-08   | Advanced User Filtering           | Implement filtering by name, email, role, and status.                     |
-| FR-03 | TH-05    | Course Creation and Content Management     | EP-09   | Course CRUD                       | Enable creation, update, and removal of course structures.                |
-| FR-03 | TH-05    | Course Creation and Content Management     | EP-10   | Lesson and Module Design          | Allow modular content within each course.                                 |
-| FR-03 | TH-06    | Course Enrollment and Progress Tracking    | EP-11   | Enrollment Control                | Allow enrollment, cancellation, and waiting list handling.                |
-| FR-03 | TH-06    | Course Enrollment and Progress Tracking    | EP-12   | Progress Tracking                 | Provide visual indicators of user course progress.                        |
-| FR-03 | TH-06    | Course Enrollment and Progress Tracking    | EP-18   | Certificate Issuance System       | Automatically generate certificates after course completion.              |
-| FR-04 | TH-07    | Media Upload and Categorization            | EP-13   | File Upload Engine                | Enable media upload in various formats (images, audio, video, PDFs).      |
-| FR-04 | TH-07    | Media Upload and Categorization            | EP-14   | Media Classification System       | Categorize media by type, topic, and course relevance.                    |
-| FR-04 | TH-08    | Media Use and Integration in Courses       | EP-15   | Media Permissions and Access      | Define who can view, reuse, or download media content.                    |
-| FR-04 | TH-08    | Media Use and Integration in Courses       | EP-16   | Media Embedding in Courses        | Enable reuse of uploaded media inside course content.                     |
-| FR-04 | TH-08    | Media Use and Integration in Courses       | EP-20   | Media Preview and Playback        | Allow safe preview of media before downloading or embedding.              |
+| TH-ID | Theme          | EP-ID | Epic Name                    | FE-ID | Feature                  | US-ID  | User Story                                                                                                                                    |
+| ----- | -------------- | ----- | ---------------------------- | ----- | ------------------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| TH-01 | Authentication | EP-01 | User Authentication          | FE-01 | User Registration        | US-01  | As a Visitor, I want to register as a **Student** so that I can immediately access my account and start learning                              |
+| TH-01 | Authentication | EP-01 | User Authentication          | FE-01 | User Registration        | US-02  | As a Visitor, I want to request a **Content Creator** account so that I can submit educational content for review                             |
+| TH-01 | Authentication | EP-01 | User Authentication          | FE-02 | User Login               | US-03  | As an Approved User (Student, Content Creator or Admin), I want to log in with my email and password so that I can access my role’s features  |
+| TH-01 | Authentication | EP-01 | User Authentication          | FE-02 | User Login               | US-04  | As a Content Creator with a pending approval, I want to log in to see the status of my application so that I know if I’ve been approved       |
+| TH-01 | Authentication | EP-02 | User Access Control          | FE-03 | User Roles Approval      | US-05  | As an Admin, I want to view all pending user role approval requests so that I can see which users require review                              |
+| TH-01 | Authentication | EP-02 | User Access Control          | FE-03 | User Roles Approval      | US-06  | As an Admin, I want to approve or reject user role requests so that only verified users gain elevated permissions                             |
+| TH-02 | User           | EP-02 | User Access Control          | FE-04 | User Roles Permissions   | US-07  | As an Admin, I want to view all existing roles and their permissions so that I can audit access levels                                        |
+| TH-02 | User           | EP-02 | User Access Control          | FE-04 | User Roles Permissions   | US-08  | As an Admin, I want to modify permissions for a selected role so that I can adjust access rights                                              |
+| TH-02 | User           | EP-03 | User Management              | FE-05 | User Create              | US-09  | As an Admin, I want to create new users of any role (Student, Content Creator, Admin) so that I can onboard team members directly             |
+| TH-02 | User           | EP-03 | User Management              | FE-05 | User Create              | US-10  | As a Content Creator, I want to create student pre-registrations so that I can bulk-import learners for review and activation                 |
+| TH-02 | User           | EP-03 | User Management              | FE-06 | User Read                | US-11  | As an Admin, I want to view all non-sensitive details of any user so that I can manage accounts comprehensively                               |
+| TH-02 | User           | EP-03 | User Management              | FE-06 | User Read                | US-12  | As a Content Creator, I want to view basic details of Students and Content Creators so that I can understand contributors                     |
+| TH-02 | User           | EP-03 | User Management              | FE-06 | User Read                | US-13  | As a Student, I want to view basic details of other Students and Content Creators so that I can see who I’m learning from                     |
+| TH-02 | User           | EP-03 | User Management              | FE-06 | User Read                | US-14  | As any User, I want to view my own full profile details so that I can confirm and update all my personal information                          |
+| TH-02 | User           | EP-02 | User Access Control          | FE-07 | User Update              | US-15  | As an Admin, I want to update any user’s profile so that I can maintain accurate account information                                          |
+| TH-02 | User           | EP-02 | User Access Control          | FE-07 | User Update              | US-16  | As a User, I want to update my own profile so that I can keep my personal information current                                                 |
+| TH-02 | User           | EP-03 | User Management              | FE-08 | User Delete              | US-17  | As a User, I want to deactivate my own account so that I can stop using the system without losing my data                                     |
+| TH-02 | User           | EP-03 | User Management              | FE-08 | User Delete              | US-18  | As an Admin, I want to deactivate any user’s account so that I can manage inactive or problematic users                                       |
+| TH-02 | User           | EP-03 | User Management              | FE-08 | User Delete              | US-19  | As an Admin, I want to permanently delete any user’s account so that I can remove obsolete or test accounts                                   |
+| TH-02 | User           | EP-04 | User List                    | FE-09 | User List                | US-20  | As an Admin, I want to see a list of all users so that I can manage and monitor every account in the system                                   |
+| TH-02 | User           | EP-04 | User List                    | FE-09 | User List                | US-21  | As a Content Creator, I want to see all students enrolled in my courses so that I can understand my audience                                  |
+| TH-02 | User           | EP-04 | User List                    | FE-09 | User List                | US-22  | As a Student, I want to see a leaderboard of other students so that I can compare my performance and stay motivated                           |
+| TH-02 | User           | EP-04 | User Filter                  | FE-10 | User Filter              | US-23  | As an Admin, I want to search and filter the user list by name, email, role, or status so that I can quickly find accounts                    |
+| TH-02 | User           | EP-04 | User Filter                  | FE-10 | User Filter              | US-24  | As a Content Creator, I want to search and filter my course’s student list by name or enrollment status so that I can manage learners         |
+| TH-02 | User           | EP-04 | User Filter                  | FE-10 | User Filter              | US-25  | As a Student, I want to search and filter the leaderboard by student name or score so that I can compare myself to peers                      |
+| TH-03 | Course         | EP-05 | Course Management            | FE-11 | Course Create            | US-26  | As an Admin, I want to create new courses so that I can populate the platform with learning content                                           |
+| TH-03 | Course         | EP-05 | Course Management            | FE-11 | Course Create            | US-27  | As a Content Creator, I want to create my own courses so that I can share my expertise with students                                          |
+| TH-03 | Course         | EP-05 | Course Management            | FE-12 | Course Read              | US-28  | As an Admin, I want to view course details so that I can oversee and manage all course content                                                |
+| TH-03 | Course         | EP-05 | Course Management            | FE-12 | Course Read              | US-29  | As a Content Creator, I want to view my course details so that I can verify and update my content                                             |
+| TH-03 | Course         | EP-05 | Course Management            | FE-12 | Course Read              | US-30  | As a Student, I want to view course details so that I can understand what I’ll learn and access the materials                                 |
+| TH-03 | Course         | EP-05 | Course Management            | FE-13 | Course Update            | US-31  | As an Admin, I want to update any course so that I can keep all content accurate and up to date                                               |
+| TH-03 | Course         | EP-05 | Course Management            | FE-13 | Course Update            | US-32  | As a Content Creator, I want to update my own courses so that I can improve and maintain my content                                           |
+| TH-03 | Course         | EP-05 | Course Management            | FE-14 | Course Delete            | US-33  | As a Content Creator, I want to deactivate my own course so that it becomes unavailable to students without deleting data                     |
+| TH-03 | Course         | EP-05 | Course Management            | FE-14 | Course Delete            | US-34  | As an Admin, I want to deactivate any course so that I can manage course availability across the platform                                     |
+| TH-03 | Course         | EP-05 | Course Management            | FE-14 | Course Delete            | US-35  | As an Admin, I want to permanently delete any course so that I can remove obsolete or test courses completely                                 |
+| TH-03 | Course         | EP-06 | Course Search                | FE-15 | Course List              | US-36  | As any User, I want to view the list of all active courses so that I can discover available learning opportunities                            |
+| TH-03 | Course         | EP-06 | Course Search                | FE-15 | Course List              | US-37  | As a Content Creator, I want to view the list of my active and inactive courses so that I can manage my course catalog                        |
+| TH-03 | Course         | EP-06 | Course Search                | FE-15 | Course List              | US-38  | As an Admin, I want to view the list of all courses so that I can oversee platform offerings                                                  |
+| TH-03 | Course         | EP-06 | Course Search                | FE-16 | Course Filter            | US-39  | As an Admin, I want to search and filter all courses by name, category, instructor, status, or duration so that I can manage the full catalog |
+| TH-03 | Course         | EP-06 | Course Search                | FE-16 | Course Filter            | US-40  | As a Content Creator, I want to search and filter my courses by name, status, or date created so that I can organize my offerings             |
+| TH-03 | Course         | EP-06 | Course Search                | FE-16 | Course Filter            | US-41  | As a Student, I want to search and filter active courses by name, category, or instructor so that I can quickly find what interests me        |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-17 | User Subscription Create | US-42  | As an Admin, I want to enroll any user into any course so that I can manage enrollments across the platform                                   |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-17 | User Subscription Create | US-43  | As a Content Creator, I want to enroll students into my courses so that I can add learners directly                                           |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-17 | User Subscription Create | US-44  | As a Student, I want to enroll myself in courses so that I can access learning materials                                                      |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-18 | User Subscription Delete | US-45  | As an Admin, I want to cancel any user’s enrollment so that I can manage course registrations platform-wide                                   |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-18 | User Subscription Delete | US-46  | As a Content Creator, I want to cancel a student’s enrollment in my course so that I can manage my course roster                              |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-18 | User Subscription Delete | US-47  | As a Student, I want to cancel my own enrollment so that I can drop a course if I choose                                                      |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-19 | User Subscription List   | US-48  | As an Admin, I want to view all enrollments for any course so that I can monitor participation platform-wide                                  |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-19 | User Subscription List   | US-49  | As a Content Creator, I want to view enrollments for my courses so that I can see who is registered in each of my classes                     |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-19 | User Subscription List   | US-50  | As a Student, I want to view my course enrollments so that I can see which courses I’m registered in                                          |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-20 | User Subscription Filter | US-51  | As an Admin, I want to filter enrollments by course, user, date or status so that I can quickly locate specific registration records          |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-20 | User Subscription Filter | US-52  | As a Content Creator, I want to filter enrollments in my courses by student name or enrollment status so that I can manage my roster          |
+| TH-03 | Course         | EP-07 | Course Subscription          | FE-20 | User Subscription Filter | US-53  | As a Student, I want to filter my own enrollments by course name or status so that I can easily find and manage my course registrations       |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-21 | User Progress Tracking   | US-54  | As an Admin, I want to view average student progress across any course so that I can assess overall engagement and performance                |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-21 | User Progress Tracking   | US-55  | As a Content Creator, I want to view average student progress in my courses so that I can identify where learners may struggle                |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-21 | User Progress Tracking   | US-56  | As a Student, I want to view my progress in all my enrolled courses so that I can track my learning journey                                   |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-22 | User Progress List       | US-57  | As an Admin, I want to view detailed progress records of all students so that I can audit individual learning activities                      |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-22 | User Progress List       | US-58  | As a Content Creator, I want to view progress records for students in my courses so that I can monitor engagement in my content               |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-22 | User Progress List       | US-59  | As a Student, I want to view my own detailed progress history so that I can review my learning activities over time                           |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-23 | User Progress Filter     | US-60  | As an Admin, I want to filter progress records by course, date, or completion percentage so that I can locate specific learning data          |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-23 | User Progress Filter     | US-61  | As a Content Creator, I want to filter progress records in my courses by student, module, or date so that I can focus on key insights         |
+| TH-03 | Course         | EP-08 | Course Progress              | FE-23 | User Progress Filter     | US-62  | As a Student, I want to filter my progress history by course, date, or completion percentage so that I can review specific milestones         |
+| TH-04 | Media          | EP-09 | Media Management             | FE-24 | Media Create             | US-63  | As a Student, I want to upload a profile image so that I can personalize my account                                                           |
+| TH-04 | Media          | EP-09 | Media Management             | FE-24 | Media Create             | US-64  | As a Content Creator, I want to upload media to my courses so that I can enrich my learning content                                           |
+| TH-04 | Media          | EP-09 | Media Management             | FE-24 | Media Create             | US-65  | As an Admin, I want to upload media for any course so that I can manage platform-wide content                                                 |
+| TH-04 | Media          | EP-09 | Media Management             | FE-25 | Media Read               | US-66  | As an Admin, I want to view details of any media in the system so that I can audit and manage all platform assets                             |
+| TH-04 | Media          | EP-09 | Media Management             | FE-25 | Media Read               | US-67  | As a Content Creator, I want to view details of my own media so that I can verify and update assets for my courses                            |
+| TH-04 | Media          | EP-09 | Media Management             | FE-25 | Media Read               | US-68  | As a Student, I want to view details of my profile media so that I can confirm my avatar and personal uploads                                 |
+| TH-04 | Media          | EP-09 | Media Management             | FE-26 | Media Update             | US-69  | As an Admin, I want to update any media’s metadata or replace its file so that I can maintain and correct platform assets                     |
+| TH-04 | Media          | EP-09 | Media Management             | FE-26 | Media Update             | US-70  | As a Content Creator, I want to update my own media’s metadata or replace its file so that course assets stay current                         |
+| TH-04 | Media          | EP-09 | Media Management             | FE-26 | Media Update             | US-71  | As a Student, I want to update my profile image so that I can change my avatar when needed                                                    |
+| TH-04 | Media          | EP-09 | Media Management             | FE-27 | Media Delete             | US-72  | As an Admin, I want to delete any media so that I can remove outdated or inappropriate assets                                                 |
+| TH-04 | Media          | EP-09 | Media Management             | FE-27 | Media Delete             | US-73  | As a Content Creator, I want to delete my own course media so that I can clean up unused or incorrect assets in my courses                    |
+| TH-04 | Media          | EP-09 | Media Management             | FE-27 | Media Delete             | US-74  | As a Student, I want to delete my profile image so that I can remove or change my avatar whenever I choose                                    |
+| TH-04 | Media          | EP-10 | Media Integration in Courses | FE-28 | Media linked in course   | US-75  | As an Admin, I want to link any media item to any course so that I can organize and enrich course content                                     |
+| TH-04 | Media          | EP-10 | Media Integration in Courses | FE-28 | Media linked in course   | US-76  | As a Content Creator, I want to link my media items to my courses so that I can provide relevant multimedia learning materials                |
+| TH-04 | Media          | EP-10 | Media Integration in Courses | FE-29 | Media unlinked in course | US-77  | As an Admin, I want to unlink any media item from any course so that I can remove outdated or irrelevant assets                               |
+| TH-04 | Media          | EP-10 | Media Integration in Courses | FE-29 | Media unlinked in course | US-78  | As a Content Creator, I want to unlink my media items from my courses so that I can update or reorganize content                              |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-30 | Notification Create      | US-79  | As an Admin, I want to create notifications for any user so that I can broadcast important messages platform-wide                             |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-30 | Notification Create      | US-80  | As a Content Creator, I want to create notifications for my students so that I can inform them about course updates                           |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-30 | Notification Create      | US-81  | As a Student, I want to generate evaluation notifications so that I can request feedback or report issues to instructors                      |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-31 | Notification Read        | US-82  | As an Admin, I want to view details of any notification (sent or received) so that I can audit all platform communications                    |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-31 | Notification Read        | US-83  | As a Content Creator, I want to view details of notifications I have sent so that I can verify delivery and content accuracy                  |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-31 | Notification Read        | US-84  | As a Student, I want to view details of notifications I have received so that I can stay informed about relevant updates                      |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-32 | Notification Update      | US-85  | As an Admin, I want to update any notification’s content or schedule so that messages remain accurate                                         |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-32 | Notification Update      | US-86  | As a Content Creator, I want to update notifications I’ve created so that I can correct or refine them                                        |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-32 | Notification Update      | US-87  | As a Student, I want to update my evaluation notifications so that I can refine feedback or report accuracy                                   |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-33 | Notification Delete      | US-88  | As an Admin, I want to delete any notification so that obsolete or incorrect messages are removed from the system                             |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-33 | Notification Delete      | US-89  | As a Content Creator, I want to delete notifications I’ve sent so that I can clean up outdated course communications                          |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-33 | Notification Delete      | US-90  | As a Student, I want to delete my evaluation notifications so that I can manage my sent feedback or reports                                   |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-34 | Notifications List       | US-91  | As an Admin, I want to view a list of all notifications in the system so that I can monitor all communications                                |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-34 | Notifications List       | US-92  | As a Content Creator, I want to view a list of notifications I’ve sent and received so that I can track my outreach                           |
+| TH-05 | Notification   | EP-11 | Notification Management      | FE-34 | Notifications List       | US-93  | As a Student, I want to view a list of notifications I’ve received and sent so that I can stay informed and manage feedback                   |
+| TH-05 | Notification   | EP-12 | Notification Send            | FE-35 | Notifications Filter     | US-94  | As an Admin, I want to filter all notifications by date, status, sender, type, or related course so that I can quickly find specific messages |
+| TH-05 | Notification   | EP-12 | Notification Send            | FE-35 | Notifications Filter     | US-95  | As a Content Creator, I want to filter my sent and received notifications by date, status, or related course so that I can manage outreach    |
+| TH-05 | Notification   | EP-12 | Notification Send            | FE-35 | Notifications Filter     | US-96  | As a Student, I want to filter my notifications by date or read/unread status so that I can focus on the most relevant updates                |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-36 | Dashboard Create         | US-97  | As an Admin, I want to create dashboards by selecting from any permitted data sources so that I can monitor platform-wide metrics             |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-36 | Dashboard Create         | US-98  | As a Content Creator, I want to create dashboards by selecting from my available course data so that I can track engagement and performance   |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-37 | Dashboard Read           | US-99  | As an Admin, I want to view any dashboard so that I can monitor all system metrics                                                            |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-37 | Dashboard Read           | US-100 | As a Content Creator, I want to view my own dashboards so that I can review engagement and performance insights                               |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-38 | Dashboard Update         | US-101 | As an Admin, I want to update any dashboard’s widgets, layout, and data sources so that I can refine system insights                          |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-38 | Dashboard Update         | US-102 | As a Content Creator, I want to update my dashboards’ widgets, layout, and data sources so that I can optimize my reports                     |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-39 | Dashboard Delete         | US-103 | As an Admin, I want to delete any dashboard so that I can remove outdated or irrelevant system reports                                        |
+| TH-06 | Analytics      | EP-13 | Dashboard Management         | FE-39 | Dashboard Delete         | US-104 | As a Content Creator, I want to delete my own dashboards so that I can clean up and reorganize my reports                                     |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-40 | Report Create            | US-105 | As an Admin, I want to create reports by selecting any permitted data sources and parameters so that I can generate platform-wide analytics   |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-40 | Report Create            | US-106 | As a Content Creator, I want to create reports using my available course data and parameters so that I can analyze learner performance        |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-41 | Report Read              | US-107 | As an Admin, I want to view any report so that I can monitor and audit analytics across the platform                                          |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-41 | Report Read              | US-108 | As a Content Creator, I want to view reports I’ve generated so that I can review learner performance and course insights                      |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-42 | Report Update            | US-109 | As an Admin, I want to update any report’s parameters or layout so that analytics remain accurate and relevant                                |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-42 | Report Update            | US-110 | As a Content Creator, I want to update my own reports’ parameters or layout so that I can refine course analytics                             |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-43 | Report Delete            | US-111 | As an Admin, I want to delete any report so that I can remove outdated or irrelevant analytics                                                |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-43 | Report Delete            | US-112 | As a Content Creator, I want to delete my own reports so that I can clean up my generated analytics                                           |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-44 | Report Export            | US-113 | As an Admin, I want to export any report in formats like PDF or CSV so that I can share system-wide analytics                                 |
+| TH-06 | Analytics      | EP-14 | Dashboard Report             | FE-44 | Report Export            | US-114 | As a Content Creator, I want to export my own reports in formats like PDF or CSV so that I can distribute course analytics                    |
+
+
+---
 
 ## Revision History
 
-| Date       | Version | Changes            | Authors                                            |
-|------------|---------|--------------------|----------------------------------------------------|
-| 2025-04-10 | 0.1     | Document creation  | [Lucas Antunes](https://github.com/LucasGSAntunes) |
-| 2025-04-15 | 0.2     | PBB update content | [Lucas Antunes](https://github.com/LucasGSAntunes) |
+| Date       | Version | Changes                             | Authors                                            |
+| ---------- | ------- | ----------------------------------- | -------------------------------------------------- |
+| 2025-04-10 | 0.1     | Document creation                   | [Lucas Antunes](https://github.com/LucasGSAntunes) |
+| 2025-04-15 | 0.2     | PBB update content                  | [Lucas Antunes](https://github.com/LucasGSAntunes) |
+| 2025-05-13 | 1.0     | Completed all sections and added US | [Pedro Rodrigues](https://github.com/pedro-prp)    |
+| 2025-05-29 | 1.1     | Refactor Backlog and create US      | [Lucas Antunes](https://github.com/LucasGSAntunes) |
 
 [← Back to Main Page](../../index.md)
