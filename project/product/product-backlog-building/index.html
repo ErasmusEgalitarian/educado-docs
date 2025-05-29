@@ -1736,27 +1736,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-capabilities" class="md-nav__link">
+  <a href="#5-features" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Capabilities
+      5. Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-features" class="md-nav__link">
+  <a href="#6-user-stories" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Features
+      6. User Stories
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-user-stories" class="md-nav__link">
+  <a href="#7-acceptance-criteria-on-working" class="md-nav__link">
     <span class="md-ellipsis">
-      7. User Stories
+      7. Acceptance Criteria - On-working
     </span>
   </a>
   
@@ -2414,7 +2414,7 @@ What the system must do</p>
 </tr>
 <tr>
 <td>FR-02</td>
-<td>The system must have a <strong>User Managment System</strong>.</td>
+<td>The system must have a <strong>User Management System</strong>.</td>
 </tr>
 <tr>
 <td>FR-03</td>
@@ -2422,7 +2422,15 @@ What the system must do</p>
 </tr>
 <tr>
 <td>FR-04</td>
-<td>The system must have a <strong>Midia Management System</strong>.</td>
+<td>The system must have a <strong>Media Management System</strong>.</td>
+</tr>
+<tr>
+<td>FR-05</td>
+<td>The system must have a <strong>Notification System</strong>.</td>
+</tr>
+<tr>
+<td>FR-06</td>
+<td>The system must have a <strong>Reporting and Analytics System</strong>.</td>
 </tr>
 </tbody>
 </table>
@@ -2457,7 +2465,7 @@ What the system must do</p>
 </tr>
 <tr>
 <td>NFR-04</td>
-<td>The system must have a response time of less than 2 seconds for 95% of requests.</td>
+<td>The system must have a response time of less than 2 seconds for 90% of requests.</td>
 <td>Performance Efficiency – Response Time</td>
 </tr>
 <tr>
@@ -2490,6 +2498,21 @@ What the system must do</p>
 <td>The system must allow data backup and restoration at defined intervals.</td>
 <td>Reliability – Recoverability</td>
 </tr>
+<tr>
+<td>NFR-11</td>
+<td>The system must support internationalization with multiple languages.</td>
+<td>Usability – Accessibility</td>
+</tr>
+<tr>
+<td>NFR-12</td>
+<td>The system must maintain an audit trail of all critical operations.</td>
+<td>Security – Accountability</td>
+</tr>
+<tr>
+<td>NFR-13</td>
+<td>The system must have automated testing coverage of at least 80% for critical components.</td>
+<td>Maintainability – Testability</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -2510,451 +2533,2557 @@ What the system must do</p>
 <tr>
 <td>FR-01</td>
 <td>TH-01</td>
-<td>User Authentication and Session Management</td>
-<td>Manage login, logout, and session persistence securely.</td>
+<td>Autentication</td>
+<td>Handle general functionalites related to security access.</td>
 </tr>
 <tr>
-<td>FR-01</td>
+<td>FR-02</td>
 <td>TH-02</td>
-<td>Access Control and Security Policies</td>
-<td>Define and enforce user permissions, roles, and access restrictions.</td>
+<td>User</td>
+<td>Handle general functionalites related to users.</td>
 </tr>
 <tr>
-<td>FR-02</td>
+<td>FR-03</td>
 <td>TH-03</td>
-<td>User Profile and Role Management</td>
-<td>Handle user registration, profile editing, and role assignments.</td>
+<td>Course</td>
+<td>Handle general functionalites related to courses.</td>
 </tr>
 <tr>
-<td>FR-02</td>
+<td>FR-04</td>
 <td>TH-04</td>
-<td>User Search and Account Control</td>
-<td>Enable filtering, listing, and controlling user account statuses.</td>
+<td>Media</td>
+<td>Handle general functionalites related to media.</td>
 </tr>
 <tr>
-<td>FR-03</td>
+<td>FR-05</td>
 <td>TH-05</td>
-<td>Course Creation and Content Management</td>
-<td>Allow creation and management of courses, modules, and educational content.</td>
+<td>Notification</td>
+<td>Handle general functionalites related to notifications.</td>
 </tr>
 <tr>
-<td>FR-03</td>
+<td>FR-06</td>
 <td>TH-06</td>
-<td>Course Enrollment and Progress Tracking</td>
-<td>Handle enrollment processes and monitor user progress in courses.</td>
-</tr>
-<tr>
-<td>FR-04</td>
-<td>TH-07</td>
-<td>Media Upload and Categorization</td>
-<td>Support uploading, organizing, and tagging various media types.</td>
-</tr>
-<tr>
-<td>FR-04</td>
-<td>TH-08</td>
-<td>Media Use and Integration in Courses</td>
-<td>Enable embedding and linking media within course content.</td>
+<td>Analytics</td>
+<td>Handle general functionalites related to data.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="4-epics"><strong>4. Epics</strong></h2>
 <blockquote>
-<p><strong>Epics</strong> define <strong>high-level features</strong> that contribute to system development.</p>
+<p>Each Epic is broken down into at least two capabilities, representing sub-functionalities.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>FR-ID</th>
-<th>Theme-ID</th>
-<th>Epic-ID</th>
+<th>TH-ID</th>
+<th>EP-ID</th>
 <th>Epic</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>FR-01</td>
 <td>TH-01</td>
 <td>EP-01</td>
-<td>User Login and Registration</td>
-<td>Develop secure login, logout, and registration mechanisms.</td>
+<td>User Authentication</td>
+<td>Handle registration and login.</td>
 </tr>
 <tr>
-<td>FR-01</td>
 <td>TH-01</td>
 <td>EP-02</td>
-<td>Session Lifecycle Management</td>
-<td>Handle token issuance, refresh, and session expiration.</td>
+<td>User Access Control</td>
+<td>Handle user permissions and roles.</td>
 </tr>
 <tr>
-<td>FR-01</td>
 <td>TH-02</td>
 <td>EP-03</td>
-<td>Password and Identity Recovery</td>
-<td>Implement recovery mechanisms like password reset and email confirmation.</td>
+<td>User Management</td>
+<td>Handle user create, read, update, delete and role assignments.</td>
 </tr>
 <tr>
-<td>FR-01</td>
 <td>TH-02</td>
 <td>EP-04</td>
-<td>Multi-Factor Authentication (MFA)</td>
-<td>Add additional layers of authentication for security.</td>
+<td>User Search</td>
+<td>Handle user list and filters.</td>
 </tr>
 <tr>
-<td>FR-02</td>
 <td>TH-03</td>
 <td>EP-05</td>
-<td>User Profile CRUD</td>
-<td>Allow full editing and visualization of user data.</td>
+<td>Course Management</td>
+<td>Handle create, read, update and delete courses.</td>
 </tr>
 <tr>
-<td>FR-02</td>
 <td>TH-03</td>
 <td>EP-06</td>
-<td>Role Assignment System</td>
-<td>Define and assign roles such as Admin, Instructor, and Student.</td>
+<td>Course Search</td>
+<td>Handle course list and filters.</td>
 </tr>
 <tr>
-<td>FR-02</td>
-<td>TH-04</td>
-<td>EP-07</td>
-<td>Account Status Management</td>
-<td>Enable account activation, deactivation, and suspension.</td>
-</tr>
-<tr>
-<td>FR-02</td>
-<td>TH-04</td>
-<td>EP-08</td>
-<td>Advanced User Filtering</td>
-<td>Implement filtering by name, email, role, and status.</td>
-</tr>
-<tr>
-<td>FR-03</td>
-<td>TH-05</td>
-<td>EP-09</td>
-<td>Course CRUD</td>
-<td>Enable creation, update, and removal of course structures.</td>
-</tr>
-<tr>
-<td>FR-03</td>
-<td>TH-05</td>
-<td>EP-10</td>
-<td>Lesson and Module Design</td>
-<td>Allow modular content within each course.</td>
-</tr>
-<tr>
-<td>FR-03</td>
-<td>TH-06</td>
-<td>EP-11</td>
-<td>Enrollment Control</td>
-<td>Allow enrollment, cancellation, and waiting list handling.</td>
-</tr>
-<tr>
-<td>FR-03</td>
-<td>TH-06</td>
-<td>EP-12</td>
-<td>Progress Tracking</td>
-<td>Provide visual indicators of user course progress.</td>
-</tr>
-<tr>
-<td>FR-04</td>
-<td>TH-07</td>
-<td>EP-13</td>
-<td>File Upload Engine</td>
-<td>Enable media upload in various formats (images, audio, video, PDFs).</td>
-</tr>
-<tr>
-<td>FR-04</td>
-<td>TH-07</td>
-<td>EP-14</td>
-<td>Media Classification System</td>
-<td>Categorize media by type, topic, and course relevance.</td>
-</tr>
-<tr>
-<td>FR-04</td>
-<td>TH-08</td>
-<td>EP-15</td>
-<td>Media Permissions and Access</td>
-<td>Define who can view, reuse, or download media content.</td>
-</tr>
-<tr>
-<td>FR-04</td>
-<td>TH-08</td>
-<td>EP-16</td>
-<td>Media Embedding in Courses</td>
-<td>Enable reuse of uploaded media inside course content.</td>
-</tr>
-<tr>
-<td>FR-01</td>
-<td>TH-02</td>
-<td>EP-17</td>
-<td>Access Logs and Audit Trail</td>
-<td>Track all user access and security-related events.</td>
-</tr>
-<tr>
-<td>FR-03</td>
-<td>TH-06</td>
-<td>EP-18</td>
-<td>Certificate Issuance System</td>
-<td>Automatically generate certificates after course completion.</td>
-</tr>
-<tr>
-<td>FR-02</td>
 <td>TH-03</td>
-<td>EP-19</td>
-<td>Profile Picture and Personal Info</td>
-<td>Add support for profile pictures and extended metadata.</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>Handle user subscription in courses.</td>
 </tr>
 <tr>
-<td>FR-04</td>
-<td>TH-08</td>
-<td>EP-20</td>
-<td>Media Preview and Playback</td>
-<td>Allow safe preview of media before downloading or embedding.</td>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>Handle monitor users progress in courses.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>Handle uploading, organizing, and tagging media.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-10</td>
+<td>Media Integration in Courses</td>
+<td>Handle embedding and linking media within course content.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>Handle create, read, update and delete types of notifications.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-12</td>
+<td>Notification Send</td>
+<td>Handle notifications user rotines</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>Dashboard Managment</td>
+<td>Handle create, read, update and delete types of dashboard indicators.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>Handle search, filter and export dashboard indicators</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="5-capabilities"><strong>5. Capabilities</strong></h2>
+<h2 id="5-features"><strong>5. Features</strong></h2>
 <blockquote>
-<p><strong>Capabilities</strong> describe the <strong>system's technical abilities</strong> to support key functionalities.</p>
+<p>Each Capability is further refined into at least two Features, describing specific functionalities.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>#</th>
-<th>Capability</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>C-00</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>(Additional capabilities …)</p>
-<hr />
-<h2 id="6-features"><strong>6. Features</strong></h2>
-<blockquote>
-<p><strong>Features</strong> define the <strong>specific functionalities</strong> required to implement each capability.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>#</th>
+<th>TH-ID</th>
+<th>EP-ID</th>
+<th>FE-ID</th>
 <th>Feature</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>F-00</td>
-<td></td>
-<td></td>
+<td>TH-01</td>
+<td>EP-01</td>
+<td>FE-01</td>
+<td>User Registration</td>
+<td>Allows new users to create an account by providing basic information (name, email, password).</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-01</td>
+<td>FE-02</td>
+<td>User Login</td>
+<td>Authenticates existing users via email and password, starting a session in the system.</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-02</td>
+<td>FE-03</td>
+<td>User Roles Approval</td>
+<td>Manages the workflow for user role requests that require admin review and decision</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-02</td>
+<td>FE-04</td>
+<td>User Roles Permissions</td>
+<td>Associates and manages specific permissions for each role defined in the system.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-05</td>
+<td>User Create</td>
+<td>Creates user records in the system (beyond the authentication flow).</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-06</td>
+<td>User Read</td>
+<td>Displays details of a specific user based on their identifier.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-07</td>
+<td>User Update</td>
+<td>Allows editing of profile information and attributes of an existing user.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-08</td>
+<td>User Delete</td>
+<td>Removes or deactivates a user from the system, ensuring historical consistency.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-09</td>
+<td>User List</td>
+<td>Retrieves and presents a paginated list of all registered users.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-10</td>
+<td>User Filter</td>
+<td>Applies filters (name, email, role) to refine the user search.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-11</td>
+<td>Course Create</td>
+<td>Enables administrators/instructors to add new courses to the catalog.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-12</td>
+<td>Course Read</td>
+<td>Displays details of a course (title, description, duration, instructor).</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-13</td>
+<td>Course Update</td>
+<td>Allows editing of information for an already registered course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-14</td>
+<td>Course Delete</td>
+<td>Removes or deactivates a course from the catalog, preserving historical records.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-15</td>
+<td>Course List</td>
+<td>Lists all available courses with pagination and basic information.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-16</td>
+<td>Course Filter</td>
+<td>Filters courses by criteria such as name, category, instructor, or level.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-17</td>
+<td>User Subscription Create</td>
+<td>Enrolls a user in a course, recording enrollment and access data.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-18</td>
+<td>User Subscription Delete</td>
+<td>Cancels a user’s enrollment in a course, freeing up a spot.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-19</td>
+<td>User Subscription List</td>
+<td>Lists all enrollments for a user or for a specific course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-20</td>
+<td>User Subscription Filter</td>
+<td>Applies filters to enrollments (by course, date, status) for easy lookup.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-21</td>
+<td>User Progress Tracking</td>
+<td>Records user progress in course modules/lessons.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-22</td>
+<td>User Progress List</td>
+<td>Displays the user’s progress history across all courses.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-23</td>
+<td>User Progress Filter</td>
+<td>Filters progress records by course, date, or completion percentage.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-24</td>
+<td>Media Create</td>
+<td>Uploads media files (videos, images, audio) to the server.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-25</td>
+<td>Media Read</td>
+<td>Retrieves and displays metadata and previews of existing media files.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-26</td>
+<td>Media Update</td>
+<td>Updates metadata or replaces the media file with a new version.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-27</td>
+<td>Media Delete</td>
+<td>Deletes media files, freeing up space and removing references.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-10</td>
+<td>FE-28</td>
+<td>Media linked in course</td>
+<td>Associates a media file with a specific course or module.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-10</td>
+<td>FE-29</td>
+<td>Media unlinked in course</td>
+<td>Disassociates media from a course while keeping the file in the general repository.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-30</td>
+<td>Notification Create</td>
+<td>Creates new notification records (e.g., alerts, reminders) in the system.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-31</td>
+<td>Notification Read</td>
+<td>Displays pending and historical notifications for the user.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-32</td>
+<td>Notification Update</td>
+<td>Allows marking notifications as read or modifying content before sending.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-33</td>
+<td>Notification Delete</td>
+<td>Removes notifications from history or cancels scheduled sends.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-12</td>
+<td>FE-34</td>
+<td>Notifications List</td>
+<td>Provides a paginated view of notifications tailored to each user role.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-12</td>
+<td>FE-35</td>
+<td>Notifications Filter</td>
+<td>Enables users to refine their notification lists by applying criteria.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-36</td>
+<td>Dashboard Create</td>
+<td>Sets up a new dashboard of metrics with widgets chosen by the user.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-37</td>
+<td>Dashboard Read</td>
+<td>Displays a predefined dashboard with aggregated data and visualizations.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-38</td>
+<td>Dashboard Update</td>
+<td>Allows reconfiguring the layout and metrics of an existing dashboard.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-39</td>
+<td>Dashboard Delete</td>
+<td>Deletes custom dashboards, reverting to default views.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-40</td>
+<td>Report Create</td>
+<td>Generates ad-hoc reports with user-defined filters and parameters.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-41</td>
+<td>Report Read</td>
+<td>Displays history of generated reports and provides access to their versions.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-42</td>
+<td>Report Update</td>
+<td>Allows adjusting parameters of saved reports and regenerating data.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-43</td>
+<td>Report Delete</td>
+<td>Deletes old or unnecessary reports from the repository.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-44</td>
+<td>Report Export</td>
+<td>Exports reports to formats like PDF, Excel, or CSV for sharing.</td>
 </tr>
 </tbody>
 </table>
-<p>(Additional features …)</p>
 <hr />
-<h2 id="7-user-stories"><strong>7. User Stories</strong></h2>
-<blockquote>
-<p><strong>User stories</strong> describe <strong>how different users interact with the system</strong>, providing real-world scenarios.</p>
-</blockquote>
+<h2 id="6-user-stories"><strong>6. User Stories</strong></h2>
 <table>
 <thead>
 <tr>
-<th>#</th>
+<th>TH-ID</th>
+<th>EP-ID</th>
+<th>FE-ID</th>
+<th>US-ID</th>
+<th>User Story</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>US-00</td>
-<td></td>
+<td>TH-01</td>
+<td>EP-01</td>
+<td>FE-01</td>
+<td>US-01</td>
+<td>As a Visitor, I want to register as a <strong>Student</strong> so that I can immediately access my account and start learning</td>
+<td>Visitors provide basic info (name, email, password) and get an active Student account without further approval.</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-01</td>
+<td>FE-01</td>
+<td>US-02</td>
+<td>As a Visitor, I want to request a <strong>Content Creator</strong> account so that I can submit educational content for review</td>
+<td>Visitors fill out additional Creator fields; a pending application is sent to Admins for approval or rejection.</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-01</td>
+<td>FE-02</td>
+<td>US-03</td>
+<td>As an Approved User (Student, Content Creator or Admin), I want to log in with my email and password so that I can access my role’s features</td>
+<td>Authenticates approved accounts; starts a session and redirects to the user’s dashboard.</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-01</td>
+<td>FE-02</td>
+<td>US-04</td>
+<td>As a Content Creator with a pending approval, I want to log in to see the status of my application so that I know if I’ve been approved</td>
+<td>Allows pending creators to authenticate and view “Pending” or “Rejected” status without accessing other features.</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-02</td>
+<td>FE-03</td>
+<td>US-05</td>
+<td>As an Admin, I want to view all pending user role approval requests so that I can see which users require review</td>
+<td>Displays a list of pending role-change requests with requester info and desired role.</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>EP-02</td>
+<td>FE-03</td>
+<td>US-06</td>
+<td>As an Admin, I want to approve or reject user role requests so that only verified users gain elevated permissions</td>
+<td>Provides controls to approve or reject each request and triggers notification to the requester.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-02</td>
+<td>FE-04</td>
+<td>US-07</td>
+<td>As an Admin, I want to view all existing roles and their permissions so that I can audit access levels</td>
+<td>Displays each role alongside its assigned permissions.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-02</td>
+<td>FE-04</td>
+<td>US-08</td>
+<td>As an Admin, I want to modify permissions for a selected role so that I can adjust access rights</td>
+<td>Allows adding or removing permissions from any role.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-05</td>
+<td>US-09</td>
+<td>As an Admin, I want to create new users of any role (Student, Content Creator, Admin) so that I can onboard team members directly</td>
+<td>Admins can manually add Student, Content Creator or Admin accounts and initialize their profiles.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-05</td>
+<td>US-10</td>
+<td>As a Content Creator, I want to create student pre-registrations so that I can bulk-import learners for review and activation</td>
+<td>Content Creators can pre-register Students; those records remain pending until the Student confirms.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-06</td>
+<td>US-11</td>
+<td>As an Admin, I want to view all non-sensitive details of any user so that I can manage accounts comprehensively</td>
+<td>Displays all non-sensitive profile information for any user (Student, Content Creator, Admin).</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-06</td>
+<td>US-12</td>
+<td>As a Content Creator, I want to view basic details of Students and Content Creators so that I can understand contributors</td>
+<td>Shows limited profile data (name, email, role, avatar) for Students and Content Creators.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-06</td>
+<td>US-13</td>
+<td>As a Student, I want to view basic details of other Students and Content Creators so that I can see who I’m learning from</td>
+<td>Shows limited profile data (name, bio, role) for other Students and Content Creators.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-06</td>
+<td>US-14</td>
+<td>As any User, I want to view my own full profile details so that I can confirm and update all my personal information</td>
+<td>Shows complete profile data (including contact info, preferences, and activity summary) for the viewer.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-02</td>
+<td>FE-07</td>
+<td>US-15</td>
+<td>As an Admin, I want to update any user’s profile so that I can maintain accurate account information</td>
+<td>Allows Admin to edit profile fields for any user role</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-02</td>
+<td>FE-07</td>
+<td>US-16</td>
+<td>As a User, I want to update my own profile so that I can keep my personal information current</td>
+<td>Allows users to edit their own profile details</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-08</td>
+<td>US-17</td>
+<td>As a User, I want to deactivate my own account so that I can stop using the system without losing my data</td>
+<td>Allows users to soft-delete (inactivate) their own account while preserving their records.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-08</td>
+<td>US-18</td>
+<td>As an Admin, I want to deactivate any user’s account so that I can manage inactive or problematic users</td>
+<td>Enables Admin to soft-delete (inactivate) any user account.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-03</td>
+<td>FE-08</td>
+<td>US-19</td>
+<td>As an Admin, I want to permanently delete any user’s account so that I can remove obsolete or test accounts</td>
+<td>Provides Admin with the ability to hard-delete user records and associated data.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-09</td>
+<td>US-20</td>
+<td>As an Admin, I want to see a list of all users so that I can manage and monitor every account in the system</td>
+<td>Displays a paginated list of all user accounts with key details (name, email, role).</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-09</td>
+<td>US-21</td>
+<td>As a Content Creator, I want to see all students enrolled in my courses so that I can understand my audience</td>
+<td>Shows a paginated list of Students who have an active enrollment in any of my courses.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-09</td>
+<td>US-22</td>
+<td>As a Student, I want to see a leaderboard of other students so that I can compare my performance and stay motivated</td>
+<td>Displays a ranked list of students based on points or progress metrics, fostering healthy competition.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-10</td>
+<td>US-23</td>
+<td>As an Admin, I want to search and filter the user list by name, email, role, or status so that I can quickly find accounts</td>
+<td>Enables filtering the full user directory with a free-text search and facet filters.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-10</td>
+<td>US-24</td>
+<td>As a Content Creator, I want to search and filter my course’s student list by name or enrollment status so that I can manage learners</td>
+<td>Allows filtering enrolled students by name or status within my courses.</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>EP-04</td>
+<td>FE-10</td>
+<td>US-25</td>
+<td>As a Student, I want to search and filter the leaderboard by student name or score so that I can compare myself to peers</td>
+<td>Provides search and sort functionality on the student ranking view for personalized comparison and exploration.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-11</td>
+<td>US-26</td>
+<td>As an Admin, I want to create new courses so that I can populate the platform with learning content</td>
+<td>Allows Admin to add course records with title, description, duration, and instructor.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-11</td>
+<td>US-27</td>
+<td>As a Content Creator, I want to create my own courses so that I can share my expertise with students</td>
+<td>Enables Content Creators to define course details and publish them to the catalog.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-12</td>
+<td>US-28</td>
+<td>As an Admin, I want to view course details so that I can oversee and manage all course content</td>
+<td>Displays course title, description, duration, instructor, modules, and all associated materials and settings.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-12</td>
+<td>US-29</td>
+<td>As a Content Creator, I want to view my course details so that I can verify and update my content</td>
+<td>Shows course metadata, module list, draft status, and editing options for my own courses.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-12</td>
+<td>US-30</td>
+<td>As a Student, I want to view course details so that I can understand what I’ll learn and access the materials</td>
+<td>Presents course overview, module syllabus, and links to enrolled content and resources.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-13</td>
+<td>US-31</td>
+<td>As an Admin, I want to update any course so that I can keep all content accurate and up to date</td>
+<td>Allows Admin to edit title, description, modules, and materials for any course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-13</td>
+<td>US-32</td>
+<td>As a Content Creator, I want to update my own courses so that I can improve and maintain my content</td>
+<td>Enables Content Creators to edit their course’s details, modules, and associated materials.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-14</td>
+<td>US-33</td>
+<td>As a Content Creator, I want to deactivate my own course so that it becomes unavailable to students without deleting data</td>
+<td>Soft-deletes the course, preserving its content and progress history for potential reactivation.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-14</td>
+<td>US-34</td>
+<td>As an Admin, I want to deactivate any course so that I can manage course availability across the platform</td>
+<td>Allows Admin to soft-delete any course, hiding it from students while keeping records intact.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-05</td>
+<td>FE-14</td>
+<td>US-35</td>
+<td>As an Admin, I want to permanently delete any course so that I can remove obsolete or test courses completely</td>
+<td>Hard-deletes the course and all associated materials, enrollments, and progress data from the system.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-15</td>
+<td>US-36</td>
+<td>As any User, I want to view the list of all active courses so that I can discover available learning opportunities</td>
+<td>Displays a paginated list of active courses with key details (title, instructor, duration).</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-15</td>
+<td>US-37</td>
+<td>As a Content Creator, I want to view the list of my active and inactive courses so that I can manage my course catalog</td>
+<td>Shows a list of courses I created, including both active and deactivated items, with status indicators.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-15</td>
+<td>US-38</td>
+<td>As an Admin, I want to view the list of all courses so that I can oversee platform offerings</td>
+<td>Presents a comprehensive catalog of all courses with filters for status and creator, including inactive ones.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-16</td>
+<td>US-39</td>
+<td>As an Admin, I want to search and filter all courses by name, category, instructor, status, or duration so that I can manage the full catalog</td>
+<td>Enables Admin to apply multi-criteria filters and free-text search over every course (active and inactive).</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-16</td>
+<td>US-40</td>
+<td>As a Content Creator, I want to search and filter my courses by name, status, or date created so that I can organize my offerings</td>
+<td>Allows filtering and searching within my own course list, including both active and inactive items.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-06</td>
+<td>FE-16</td>
+<td>US-41</td>
+<td>As a Student, I want to search and filter active courses by name, category, or instructor so that I can quickly find what interests me</td>
+<td>Provides free-text search and facet filters over active courses only, based on key attributes like category and instructor.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-17</td>
+<td>US-42</td>
+<td>As an Admin, I want to enroll any user into any course so that I can manage enrollments across the platform</td>
+<td>Admins can create enrollment records for any user in any course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-17</td>
+<td>US-43</td>
+<td>As a Content Creator, I want to enroll students into my courses so that I can add learners directly</td>
+<td>Content Creators can register any Student in the courses they own.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-17</td>
+<td>US-44</td>
+<td>As a Student, I want to enroll myself in courses so that I can access learning materials</td>
+<td>Students can self-enroll in any active course without additional approval.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-18</td>
+<td>US-45</td>
+<td>As an Admin, I want to cancel any user’s enrollment so that I can manage course registrations platform-wide</td>
+<td>Admins can remove any user’s enrollment record from any course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-18</td>
+<td>US-46</td>
+<td>As a Content Creator, I want to cancel a student’s enrollment in my course so that I can manage my course roster</td>
+<td>Content Creators can remove enrollment records for Students in courses they own.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-18</td>
+<td>US-47</td>
+<td>As a Student, I want to cancel my own enrollment so that I can drop a course if I choose</td>
+<td>Students can delete their own enrollment record from any course they’re registered in.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-19</td>
+<td>US-48</td>
+<td>As an Admin, I want to view all enrollments for any course so that I can monitor participation platform-wide</td>
+<td>Displays a complete list of enrollments when viewing the details of any course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-19</td>
+<td>US-49</td>
+<td>As a Content Creator, I want to view enrollments for my courses so that I can see who is registered in each of my classes</td>
+<td>Shows all student enrollments when viewing the details of courses I own.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-19</td>
+<td>US-50</td>
+<td>As a Student, I want to view my course enrollments so that I can see which courses I’m registered in</td>
+<td>Lists all active enrollments for the logged-in student across all courses.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-20</td>
+<td>US-51</td>
+<td>As an Admin, I want to filter enrollments by course, user, date or status so that I can quickly locate specific registration records</td>
+<td>Enables multi-criteria filtering on the complete enrollment list.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-20</td>
+<td>US-52</td>
+<td>As a Content Creator, I want to filter enrollments in my courses by student name or enrollment status so that I can manage my roster</td>
+<td>Allows filtering enrollments only within the creator’s own courses.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-07</td>
+<td>FE-20</td>
+<td>US-53</td>
+<td>As a Student, I want to filter my own enrollments by course name or status so that I can easily find and manage my course registrations</td>
+<td>Provides search and filter functionality on the student’s personal enrollment list.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-21</td>
+<td>US-54</td>
+<td>As an Admin, I want to view average student progress across any course so that I can assess overall engagement and performance</td>
+<td>Presents the mean completion percentage of enrolled students for a selected course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-21</td>
+<td>US-55</td>
+<td>As a Content Creator, I want to view average student progress in my courses so that I can identify where learners may struggle</td>
+<td>Shows the average completion rate for each of my courses, highlighting modules with lower progress.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-21</td>
+<td>US-56</td>
+<td>As a Student, I want to view my progress in all my enrolled courses so that I can track my learning journey</td>
+<td>Displays each course’s completion percentage and completed modules for the logged-in student.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-22</td>
+<td>US-57</td>
+<td>As an Admin, I want to view detailed progress records of all students so that I can audit individual learning activities</td>
+<td>Shows a list of progress entries (module, timestamp, status percentage) for any student in the system.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-22</td>
+<td>US-58</td>
+<td>As a Content Creator, I want to view progress records for students in my courses so that I can monitor engagement in my content</td>
+<td>Displays progress entries for each student in the creator’s courses, including module-level details.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-22</td>
+<td>US-59</td>
+<td>As a Student, I want to view my own detailed progress history so that I can review my learning activities over time</td>
+<td>Lists all my module completion records with dates and percentage for each enrolled course.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-23</td>
+<td>US-60</td>
+<td>As an Admin, I want to filter progress records by course, date, or completion percentage so that I can locate specific learning data</td>
+<td>Enables multi-criteria filtering on all student progress entries across the platform.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-23</td>
+<td>US-61</td>
+<td>As a Content Creator, I want to filter progress records in my courses by student, module, or date so that I can focus on key insights</td>
+<td>Allows filtering detailed progress entries within my own courses using the same criteria as course filters.</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>EP-08</td>
+<td>FE-23</td>
+<td>US-62</td>
+<td>As a Student, I want to filter my progress history by course, date, or completion percentage so that I can review specific milestones</td>
+<td>Provides search and facet filters on my own progress entries, mirroring the course filter options.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-24</td>
+<td>US-63</td>
+<td>As a Student, I want to upload a profile image so that I can personalize my account</td>
+<td>Allows Students to upload avatar images (JPEG, PNG) to their personal profile.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-24</td>
+<td>US-64</td>
+<td>As a Content Creator, I want to upload media to my courses so that I can enrich my learning content</td>
+<td>Enables Content Creators to upload images and videos to courses they own.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-24</td>
+<td>US-65</td>
+<td>As an Admin, I want to upload media for any course so that I can manage platform-wide content</td>
+<td>Allows Admins to upload images or videos to any course.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-25</td>
+<td>US-66</td>
+<td>As an Admin, I want to view details of any media in the system so that I can audit and manage all platform assets</td>
+<td>Displays metadata and preview (filename, type, size, upload date) for all media.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-25</td>
+<td>US-67</td>
+<td>As a Content Creator, I want to view details of my own media so that I can verify and update assets for my courses</td>
+<td>Shows metadata and preview for media files uploaded by the logged-in creator.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-25</td>
+<td>US-68</td>
+<td>As a Student, I want to view details of my profile media so that I can confirm my avatar and personal uploads</td>
+<td>Displays metadata and preview for the student’s own profile image.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-26</td>
+<td>US-69</td>
+<td>As an Admin, I want to update any media’s metadata or replace its file so that I can maintain and correct platform assets</td>
+<td>Enables Admin to edit metadata (filename, description) and upload a new file for any media item.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-26</td>
+<td>US-70</td>
+<td>As a Content Creator, I want to update my own media’s metadata or replace its file so that course assets stay current</td>
+<td>Allows creators to edit metadata and upload new versions of media they uploaded.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-26</td>
+<td>US-71</td>
+<td>As a Student, I want to update my profile image so that I can change my avatar when needed</td>
+<td>Permits Students to replace their own profile image and update its metadata.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-27</td>
+<td>US-72</td>
+<td>As an Admin, I want to delete any media so that I can remove outdated or inappropriate assets</td>
+<td>Enables Admin to permanently remove any media file from the system.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-27</td>
+<td>US-73</td>
+<td>As a Content Creator, I want to delete my own course media so that I can clean up unused or incorrect assets in my courses</td>
+<td>Allows creators to permanently delete media they uploaded to their courses.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-09</td>
+<td>FE-27</td>
+<td>US-74</td>
+<td>As a Student, I want to delete my profile image so that I can remove or change my avatar whenever I choose</td>
+<td>Permits Students to permanently remove their own profile image.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-10</td>
+<td>FE-28</td>
+<td>US-75</td>
+<td>As an Admin, I want to link any media item to any course so that I can organize and enrich course content</td>
+<td>Allows Admin to associate uploaded media files with a course during its creation or editing.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-10</td>
+<td>FE-28</td>
+<td>US-76</td>
+<td>As a Content Creator, I want to link my media items to my courses so that I can provide relevant multimedia learning materials</td>
+<td>Enables Content Creators to attach their own media files to courses when creating or updating them.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-10</td>
+<td>FE-29</td>
+<td>US-77</td>
+<td>As an Admin, I want to unlink any media item from any course so that I can remove outdated or irrelevant assets</td>
+<td>Allows Admin to detach media from a course without deleting the file during course creation or editing.</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>EP-10</td>
+<td>FE-29</td>
+<td>US-78</td>
+<td>As a Content Creator, I want to unlink my media items from my courses so that I can update or reorganize content</td>
+<td>Enables Content Creators to remove media associations from their courses without deleting the media.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-30</td>
+<td>US-79</td>
+<td>As an Admin, I want to create notifications for any user so that I can broadcast important messages platform-wide</td>
+<td>Admins can compose and send notifications to individual users, roles, or all users via the notification system.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-30</td>
+<td>US-80</td>
+<td>As a Content Creator, I want to create notifications for my students so that I can inform them about course updates</td>
+<td>Creators can send targeted alerts or reminders to students enrolled in their own courses.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-30</td>
+<td>US-81</td>
+<td>As a Student, I want to generate evaluation notifications so that I can request feedback or report issues to instructors</td>
+<td>Students can submit evaluation or feedback notifications regarding course content or issues encountered.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-31</td>
+<td>US-82</td>
+<td>As an Admin, I want to view details of any notification (sent or received) so that I can audit all platform communications</td>
+<td>Displays full notification information (title, message, date, sender, recipients, related course).</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-31</td>
+<td>US-83</td>
+<td>As a Content Creator, I want to view details of notifications I have sent so that I can verify delivery and content accuracy</td>
+<td>Shows metadata and content for notifications created by me, including send date and recipient list.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-31</td>
+<td>US-84</td>
+<td>As a Student, I want to view details of notifications I have received so that I can stay informed about relevant updates</td>
+<td>Displays notification title, message, date, sender, and any related course or action required.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-32</td>
+<td>US-85</td>
+<td>As an Admin, I want to update any notification’s content or schedule so that messages remain accurate</td>
+<td>Enables Admin to edit title, message body, recipient list, and send timing for any notification.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-32</td>
+<td>US-86</td>
+<td>As a Content Creator, I want to update notifications I’ve created so that I can correct or refine them</td>
+<td>Allows Creators to modify their own notifications’ details before or after sending.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-32</td>
+<td>US-87</td>
+<td>As a Student, I want to update my evaluation notifications so that I can refine feedback or report accuracy</td>
+<td>Permits Students to edit or resend the notifications they have generated for course evaluation.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-33</td>
+<td>US-88</td>
+<td>As an Admin, I want to delete any notification so that obsolete or incorrect messages are removed from the system</td>
+<td>Enables Admin to permanently remove any notification record and its delivery schedule.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-33</td>
+<td>US-89</td>
+<td>As a Content Creator, I want to delete notifications I’ve sent so that I can clean up outdated course communications</td>
+<td>Allows Creators to remove notifications they authored from the system.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-33</td>
+<td>US-90</td>
+<td>As a Student, I want to delete my evaluation notifications so that I can manage my sent feedback or reports</td>
+<td>Permits Students to remove the notifications they generated for course evaluations.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-34</td>
+<td>US-91</td>
+<td>As an Admin, I want to view a list of all notifications in the system so that I can monitor all communications</td>
+<td>Displays a paginated list of every notification with key details (title, sender, date, status).</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-34</td>
+<td>US-92</td>
+<td>As a Content Creator, I want to view a list of notifications I’ve sent and received so that I can track my outreach</td>
+<td>Shows notifications I authored and those addressed to me, with summary information.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-11</td>
+<td>FE-34</td>
+<td>US-93</td>
+<td>As a Student, I want to view a list of notifications I’ve received and sent so that I can stay informed and manage feedback</td>
+<td>Lists incoming and outgoing notifications for my account with key fields (title, date, sender/recipient, status).</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-12</td>
+<td>FE-35</td>
+<td>US-94</td>
+<td>As an Admin, I want to filter all notifications by date, status, sender, type, or related course so that I can quickly find specific messages</td>
+<td>Enables Admin to apply multi-criteria filters across the entire notification list.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-12</td>
+<td>FE-35</td>
+<td>US-95</td>
+<td>As a Content Creator, I want to filter my sent and received notifications by date, status, or related course so that I can manage outreach</td>
+<td>Allows Creators to refine their own notification lists using key attributes like date range, read/unread, and course.</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>EP-12</td>
+<td>FE-35</td>
+<td>US-96</td>
+<td>As a Student, I want to filter my notifications by date or read/unread status so that I can focus on the most relevant updates</td>
+<td>Provides Students with simple filters for their notifications based on date range and read/unread state.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-36</td>
+<td>US-97</td>
+<td>As an Admin, I want to create dashboards by selecting from any permitted data sources so that I can monitor platform-wide metrics</td>
+<td>Enables Admin to choose allowed data sources and widgets to build custom dashboards showing system-wide insights.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-36</td>
+<td>US-98</td>
+<td>As a Content Creator, I want to create dashboards by selecting from my available course data so that I can track engagement and performance</td>
+<td>Allows Creators to choose permitted datasets and widgets to generate personalized dashboards for their courses.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-37</td>
+<td>US-99</td>
+<td>As an Admin, I want to view any dashboard so that I can monitor all system metrics</td>
+<td>Displays all dashboards with interactive widgets and applied filters for system-wide oversight.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-37</td>
+<td>US-100</td>
+<td>As a Content Creator, I want to view my own dashboards so that I can review engagement and performance insights</td>
+<td>Shows dashboards created by me, reflecting my chosen data sources and configurations.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-38</td>
+<td>US-101</td>
+<td>As an Admin, I want to update any dashboard’s widgets, layout, and data sources so that I can refine system insights</td>
+<td>Enables Admin to edit widget configurations, layout arrangements, and data connections on any dashboard.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-38</td>
+<td>US-102</td>
+<td>As a Content Creator, I want to update my dashboards’ widgets, layout, and data sources so that I can optimize my reports</td>
+<td>Allows Creators to modify components, adjust visualizations, and change data sources on their dashboards.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-39</td>
+<td>US-103</td>
+<td>As an Admin, I want to delete any dashboard so that I can remove outdated or irrelevant system reports</td>
+<td>Enables Admin to permanently remove any dashboard from the system.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-13</td>
+<td>FE-39</td>
+<td>US-104</td>
+<td>As a Content Creator, I want to delete my own dashboards so that I can clean up and reorganize my reports</td>
+<td>Allows Creators to permanently remove dashboards they created.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-40</td>
+<td>US-105</td>
+<td>As an Admin, I want to create reports by selecting any permitted data sources and parameters so that I can generate platform-wide analytics</td>
+<td>Enables Admin to choose data sources, date ranges, metrics, and filters to build custom reports across the system.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-40</td>
+<td>US-106</td>
+<td>As a Content Creator, I want to create reports using my available course data and parameters so that I can analyze learner performance</td>
+<td>All</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-41</td>
+<td>US-107</td>
+<td>As an Admin, I want to view any report so that I can monitor and audit analytics across the platform</td>
+<td>Displays full report details (title, parameters, metrics, charts, tables, generation date) for any report.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-41</td>
+<td>US-108</td>
+<td>As a Content Creator, I want to view reports I’ve generated so that I can review learner performance and course insights</td>
+<td>Shows report details and visuals for reports created by the Content Creator, including applied filters and date.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-42</td>
+<td>US-109</td>
+<td>As an Admin, I want to update any report’s parameters or layout so that analytics remain accurate and relevant</td>
+<td>Enables Admin to modify report settings, filters, and visuals for any report in the system.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-42</td>
+<td>US-110</td>
+<td>As a Content Creator, I want to update my own reports’ parameters or layout so that I can refine course analytics</td>
+<td>Allows Creators to adjust filters, date ranges, and visualization options on reports they generated.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-43</td>
+<td>US-111</td>
+<td>As an Admin, I want to delete any report so that I can remove outdated or irrelevant analytics</td>
+<td>Enables Admin to permanently remove any report and its history from the system.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-43</td>
+<td>US-112</td>
+<td>As a Content Creator, I want to delete my own reports so that I can clean up my generated analytics</td>
+<td>Allows Creators to permanently delete reports they created, freeing up system storage.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-44</td>
+<td>US-113</td>
+<td>As an Admin, I want to export any report in formats like PDF or CSV so that I can share system-wide analytics</td>
+<td>Provides Admin with export functionality including all data and visualizations.</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>EP-14</td>
+<td>FE-44</td>
+<td>US-114</td>
+<td>As a Content Creator, I want to export my own reports in formats like PDF or CSV so that I can distribute course analytics</td>
+<td>Allows Creators to export their generated reports with chosen formats and filters.</td>
 </tr>
 </tbody>
 </table>
-<p>(Additional user stories …)</p>
+<hr />
+<h2 id="7-acceptance-criteria-on-working"><strong>7. Acceptance Criteria - On-working</strong></h2>
 <hr />
 <h2 id="8-backlog"><strong>8. Backlog</strong></h2>
 <table>
 <thead>
 <tr>
-<th>FR-ID</th>
-<th>Theme-ID</th>
+<th>TH-ID</th>
 <th>Theme</th>
-<th>Epic-ID</th>
-<th>Epic</th>
-<th>Description</th>
+<th>EP-ID</th>
+<th>Epic Name</th>
+<th>FE-ID</th>
+<th>Feature</th>
+<th>US-ID</th>
+<th>User Story</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>FR-01</td>
 <td>TH-01</td>
-<td>User Authentication and Session Management</td>
+<td>Authentication</td>
 <td>EP-01</td>
-<td>User Login and Registration</td>
-<td>Develop secure login, logout, and registration mechanisms.</td>
+<td>User Authentication</td>
+<td>FE-01</td>
+<td>User Registration</td>
+<td>US-01</td>
+<td>As a Visitor, I want to register as a <strong>Student</strong> so that I can immediately access my account and start learning</td>
 </tr>
 <tr>
-<td>FR-01</td>
 <td>TH-01</td>
-<td>User Authentication and Session Management</td>
+<td>Authentication</td>
+<td>EP-01</td>
+<td>User Authentication</td>
+<td>FE-01</td>
+<td>User Registration</td>
+<td>US-02</td>
+<td>As a Visitor, I want to request a <strong>Content Creator</strong> account so that I can submit educational content for review</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>Authentication</td>
+<td>EP-01</td>
+<td>User Authentication</td>
+<td>FE-02</td>
+<td>User Login</td>
+<td>US-03</td>
+<td>As an Approved User (Student, Content Creator or Admin), I want to log in with my email and password so that I can access my role’s features</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>Authentication</td>
+<td>EP-01</td>
+<td>User Authentication</td>
+<td>FE-02</td>
+<td>User Login</td>
+<td>US-04</td>
+<td>As a Content Creator with a pending approval, I want to log in to see the status of my application so that I know if I’ve been approved</td>
+</tr>
+<tr>
+<td>TH-01</td>
+<td>Authentication</td>
 <td>EP-02</td>
-<td>Session Lifecycle Management</td>
-<td>Handle token issuance, refresh, and session expiration.</td>
+<td>User Access Control</td>
+<td>FE-03</td>
+<td>User Roles Approval</td>
+<td>US-05</td>
+<td>As an Admin, I want to view all pending user role approval requests so that I can see which users require review</td>
 </tr>
 <tr>
-<td>FR-01</td>
+<td>TH-01</td>
+<td>Authentication</td>
+<td>EP-02</td>
+<td>User Access Control</td>
+<td>FE-03</td>
+<td>User Roles Approval</td>
+<td>US-06</td>
+<td>As an Admin, I want to approve or reject user role requests so that only verified users gain elevated permissions</td>
+</tr>
+<tr>
 <td>TH-02</td>
-<td>Access Control and Security Policies</td>
+<td>User</td>
+<td>EP-02</td>
+<td>User Access Control</td>
+<td>FE-04</td>
+<td>User Roles Permissions</td>
+<td>US-07</td>
+<td>As an Admin, I want to view all existing roles and their permissions so that I can audit access levels</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-02</td>
+<td>User Access Control</td>
+<td>FE-04</td>
+<td>User Roles Permissions</td>
+<td>US-08</td>
+<td>As an Admin, I want to modify permissions for a selected role so that I can adjust access rights</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
 <td>EP-03</td>
-<td>Password and Identity Recovery</td>
-<td>Implement recovery mechanisms like password reset and email confirmation.</td>
+<td>User Management</td>
+<td>FE-05</td>
+<td>User Create</td>
+<td>US-09</td>
+<td>As an Admin, I want to create new users of any role (Student, Content Creator, Admin) so that I can onboard team members directly</td>
 </tr>
 <tr>
-<td>FR-01</td>
 <td>TH-02</td>
-<td>Access Control and Security Policies</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-05</td>
+<td>User Create</td>
+<td>US-10</td>
+<td>As a Content Creator, I want to create student pre-registrations so that I can bulk-import learners for review and activation</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-06</td>
+<td>User Read</td>
+<td>US-11</td>
+<td>As an Admin, I want to view all non-sensitive details of any user so that I can manage accounts comprehensively</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-06</td>
+<td>User Read</td>
+<td>US-12</td>
+<td>As a Content Creator, I want to view basic details of Students and Content Creators so that I can understand contributors</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-06</td>
+<td>User Read</td>
+<td>US-13</td>
+<td>As a Student, I want to view basic details of other Students and Content Creators so that I can see who I’m learning from</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-06</td>
+<td>User Read</td>
+<td>US-14</td>
+<td>As any User, I want to view my own full profile details so that I can confirm and update all my personal information</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-02</td>
+<td>User Access Control</td>
+<td>FE-07</td>
+<td>User Update</td>
+<td>US-15</td>
+<td>As an Admin, I want to update any user’s profile so that I can maintain accurate account information</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-02</td>
+<td>User Access Control</td>
+<td>FE-07</td>
+<td>User Update</td>
+<td>US-16</td>
+<td>As a User, I want to update my own profile so that I can keep my personal information current</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-08</td>
+<td>User Delete</td>
+<td>US-17</td>
+<td>As a User, I want to deactivate my own account so that I can stop using the system without losing my data</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-08</td>
+<td>User Delete</td>
+<td>US-18</td>
+<td>As an Admin, I want to deactivate any user’s account so that I can manage inactive or problematic users</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-03</td>
+<td>User Management</td>
+<td>FE-08</td>
+<td>User Delete</td>
+<td>US-19</td>
+<td>As an Admin, I want to permanently delete any user’s account so that I can remove obsolete or test accounts</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
 <td>EP-04</td>
-<td>Multi-Factor Authentication (MFA)</td>
-<td>Add additional layers of authentication for security.</td>
+<td>User List</td>
+<td>FE-09</td>
+<td>User List</td>
+<td>US-20</td>
+<td>As an Admin, I want to see a list of all users so that I can manage and monitor every account in the system</td>
 </tr>
 <tr>
-<td>FR-01</td>
 <td>TH-02</td>
-<td>Access Control and Security Policies</td>
-<td>EP-17</td>
-<td>Access Logs and Audit Trail</td>
-<td>Track all user access and security-related events.</td>
+<td>User</td>
+<td>EP-04</td>
+<td>User List</td>
+<td>FE-09</td>
+<td>User List</td>
+<td>US-21</td>
+<td>As a Content Creator, I want to see all students enrolled in my courses so that I can understand my audience</td>
 </tr>
 <tr>
-<td>FR-02</td>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-04</td>
+<td>User List</td>
+<td>FE-09</td>
+<td>User List</td>
+<td>US-22</td>
+<td>As a Student, I want to see a leaderboard of other students so that I can compare my performance and stay motivated</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-04</td>
+<td>User Filter</td>
+<td>FE-10</td>
+<td>User Filter</td>
+<td>US-23</td>
+<td>As an Admin, I want to search and filter the user list by name, email, role, or status so that I can quickly find accounts</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-04</td>
+<td>User Filter</td>
+<td>FE-10</td>
+<td>User Filter</td>
+<td>US-24</td>
+<td>As a Content Creator, I want to search and filter my course’s student list by name or enrollment status so that I can manage learners</td>
+</tr>
+<tr>
+<td>TH-02</td>
+<td>User</td>
+<td>EP-04</td>
+<td>User Filter</td>
+<td>FE-10</td>
+<td>User Filter</td>
+<td>US-25</td>
+<td>As a Student, I want to search and filter the leaderboard by student name or score so that I can compare myself to peers</td>
+</tr>
+<tr>
 <td>TH-03</td>
-<td>User Profile and Role Management</td>
+<td>Course</td>
 <td>EP-05</td>
-<td>User Profile CRUD</td>
-<td>Allow full editing and visualization of user data.</td>
+<td>Course Management</td>
+<td>FE-11</td>
+<td>Course Create</td>
+<td>US-26</td>
+<td>As an Admin, I want to create new courses so that I can populate the platform with learning content</td>
 </tr>
 <tr>
-<td>FR-02</td>
 <td>TH-03</td>
-<td>User Profile and Role Management</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-11</td>
+<td>Course Create</td>
+<td>US-27</td>
+<td>As a Content Creator, I want to create my own courses so that I can share my expertise with students</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-12</td>
+<td>Course Read</td>
+<td>US-28</td>
+<td>As an Admin, I want to view course details so that I can oversee and manage all course content</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-12</td>
+<td>Course Read</td>
+<td>US-29</td>
+<td>As a Content Creator, I want to view my course details so that I can verify and update my content</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-12</td>
+<td>Course Read</td>
+<td>US-30</td>
+<td>As a Student, I want to view course details so that I can understand what I’ll learn and access the materials</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-13</td>
+<td>Course Update</td>
+<td>US-31</td>
+<td>As an Admin, I want to update any course so that I can keep all content accurate and up to date</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-13</td>
+<td>Course Update</td>
+<td>US-32</td>
+<td>As a Content Creator, I want to update my own courses so that I can improve and maintain my content</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-14</td>
+<td>Course Delete</td>
+<td>US-33</td>
+<td>As a Content Creator, I want to deactivate my own course so that it becomes unavailable to students without deleting data</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-14</td>
+<td>Course Delete</td>
+<td>US-34</td>
+<td>As an Admin, I want to deactivate any course so that I can manage course availability across the platform</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-05</td>
+<td>Course Management</td>
+<td>FE-14</td>
+<td>Course Delete</td>
+<td>US-35</td>
+<td>As an Admin, I want to permanently delete any course so that I can remove obsolete or test courses completely</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
 <td>EP-06</td>
-<td>Role Assignment System</td>
-<td>Define and assign roles such as Admin, Instructor, and Student.</td>
+<td>Course Search</td>
+<td>FE-15</td>
+<td>Course List</td>
+<td>US-36</td>
+<td>As any User, I want to view the list of all active courses so that I can discover available learning opportunities</td>
 </tr>
 <tr>
-<td>FR-02</td>
 <td>TH-03</td>
-<td>User Profile and Role Management</td>
-<td>EP-19</td>
-<td>Profile Picture and Personal Info</td>
-<td>Add support for profile pictures and extended metadata.</td>
+<td>Course</td>
+<td>EP-06</td>
+<td>Course Search</td>
+<td>FE-15</td>
+<td>Course List</td>
+<td>US-37</td>
+<td>As a Content Creator, I want to view the list of my active and inactive courses so that I can manage my course catalog</td>
 </tr>
 <tr>
-<td>FR-02</td>
-<td>TH-04</td>
-<td>User Search and Account Control</td>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-06</td>
+<td>Course Search</td>
+<td>FE-15</td>
+<td>Course List</td>
+<td>US-38</td>
+<td>As an Admin, I want to view the list of all courses so that I can oversee platform offerings</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-06</td>
+<td>Course Search</td>
+<td>FE-16</td>
+<td>Course Filter</td>
+<td>US-39</td>
+<td>As an Admin, I want to search and filter all courses by name, category, instructor, status, or duration so that I can manage the full catalog</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-06</td>
+<td>Course Search</td>
+<td>FE-16</td>
+<td>Course Filter</td>
+<td>US-40</td>
+<td>As a Content Creator, I want to search and filter my courses by name, status, or date created so that I can organize my offerings</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-06</td>
+<td>Course Search</td>
+<td>FE-16</td>
+<td>Course Filter</td>
+<td>US-41</td>
+<td>As a Student, I want to search and filter active courses by name, category, or instructor so that I can quickly find what interests me</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
 <td>EP-07</td>
-<td>Account Status Management</td>
-<td>Enable account activation, deactivation, and suspension.</td>
+<td>Course Subscription</td>
+<td>FE-17</td>
+<td>User Subscription Create</td>
+<td>US-42</td>
+<td>As an Admin, I want to enroll any user into any course so that I can manage enrollments across the platform</td>
 </tr>
 <tr>
-<td>FR-02</td>
-<td>TH-04</td>
-<td>User Search and Account Control</td>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-17</td>
+<td>User Subscription Create</td>
+<td>US-43</td>
+<td>As a Content Creator, I want to enroll students into my courses so that I can add learners directly</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-17</td>
+<td>User Subscription Create</td>
+<td>US-44</td>
+<td>As a Student, I want to enroll myself in courses so that I can access learning materials</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-18</td>
+<td>User Subscription Delete</td>
+<td>US-45</td>
+<td>As an Admin, I want to cancel any user’s enrollment so that I can manage course registrations platform-wide</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-18</td>
+<td>User Subscription Delete</td>
+<td>US-46</td>
+<td>As a Content Creator, I want to cancel a student’s enrollment in my course so that I can manage my course roster</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-18</td>
+<td>User Subscription Delete</td>
+<td>US-47</td>
+<td>As a Student, I want to cancel my own enrollment so that I can drop a course if I choose</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-19</td>
+<td>User Subscription List</td>
+<td>US-48</td>
+<td>As an Admin, I want to view all enrollments for any course so that I can monitor participation platform-wide</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-19</td>
+<td>User Subscription List</td>
+<td>US-49</td>
+<td>As a Content Creator, I want to view enrollments for my courses so that I can see who is registered in each of my classes</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-19</td>
+<td>User Subscription List</td>
+<td>US-50</td>
+<td>As a Student, I want to view my course enrollments so that I can see which courses I’m registered in</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-20</td>
+<td>User Subscription Filter</td>
+<td>US-51</td>
+<td>As an Admin, I want to filter enrollments by course, user, date or status so that I can quickly locate specific registration records</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-20</td>
+<td>User Subscription Filter</td>
+<td>US-52</td>
+<td>As a Content Creator, I want to filter enrollments in my courses by student name or enrollment status so that I can manage my roster</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-07</td>
+<td>Course Subscription</td>
+<td>FE-20</td>
+<td>User Subscription Filter</td>
+<td>US-53</td>
+<td>As a Student, I want to filter my own enrollments by course name or status so that I can easily find and manage my course registrations</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
 <td>EP-08</td>
-<td>Advanced User Filtering</td>
-<td>Implement filtering by name, email, role, and status.</td>
+<td>Course Progress</td>
+<td>FE-21</td>
+<td>User Progress Tracking</td>
+<td>US-54</td>
+<td>As an Admin, I want to view average student progress across any course so that I can assess overall engagement and performance</td>
 </tr>
 <tr>
-<td>FR-03</td>
-<td>TH-05</td>
-<td>Course Creation and Content Management</td>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-21</td>
+<td>User Progress Tracking</td>
+<td>US-55</td>
+<td>As a Content Creator, I want to view average student progress in my courses so that I can identify where learners may struggle</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-21</td>
+<td>User Progress Tracking</td>
+<td>US-56</td>
+<td>As a Student, I want to view my progress in all my enrolled courses so that I can track my learning journey</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-22</td>
+<td>User Progress List</td>
+<td>US-57</td>
+<td>As an Admin, I want to view detailed progress records of all students so that I can audit individual learning activities</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-22</td>
+<td>User Progress List</td>
+<td>US-58</td>
+<td>As a Content Creator, I want to view progress records for students in my courses so that I can monitor engagement in my content</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-22</td>
+<td>User Progress List</td>
+<td>US-59</td>
+<td>As a Student, I want to view my own detailed progress history so that I can review my learning activities over time</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-23</td>
+<td>User Progress Filter</td>
+<td>US-60</td>
+<td>As an Admin, I want to filter progress records by course, date, or completion percentage so that I can locate specific learning data</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-23</td>
+<td>User Progress Filter</td>
+<td>US-61</td>
+<td>As a Content Creator, I want to filter progress records in my courses by student, module, or date so that I can focus on key insights</td>
+</tr>
+<tr>
+<td>TH-03</td>
+<td>Course</td>
+<td>EP-08</td>
+<td>Course Progress</td>
+<td>FE-23</td>
+<td>User Progress Filter</td>
+<td>US-62</td>
+<td>As a Student, I want to filter my progress history by course, date, or completion percentage so that I can review specific milestones</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
 <td>EP-09</td>
-<td>Course CRUD</td>
-<td>Enable creation, update, and removal of course structures.</td>
+<td>Media Management</td>
+<td>FE-24</td>
+<td>Media Create</td>
+<td>US-63</td>
+<td>As a Student, I want to upload a profile image so that I can personalize my account</td>
 </tr>
 <tr>
-<td>FR-03</td>
-<td>TH-05</td>
-<td>Course Creation and Content Management</td>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-24</td>
+<td>Media Create</td>
+<td>US-64</td>
+<td>As a Content Creator, I want to upload media to my courses so that I can enrich my learning content</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-24</td>
+<td>Media Create</td>
+<td>US-65</td>
+<td>As an Admin, I want to upload media for any course so that I can manage platform-wide content</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-25</td>
+<td>Media Read</td>
+<td>US-66</td>
+<td>As an Admin, I want to view details of any media in the system so that I can audit and manage all platform assets</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-25</td>
+<td>Media Read</td>
+<td>US-67</td>
+<td>As a Content Creator, I want to view details of my own media so that I can verify and update assets for my courses</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-25</td>
+<td>Media Read</td>
+<td>US-68</td>
+<td>As a Student, I want to view details of my profile media so that I can confirm my avatar and personal uploads</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-26</td>
+<td>Media Update</td>
+<td>US-69</td>
+<td>As an Admin, I want to update any media’s metadata or replace its file so that I can maintain and correct platform assets</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-26</td>
+<td>Media Update</td>
+<td>US-70</td>
+<td>As a Content Creator, I want to update my own media’s metadata or replace its file so that course assets stay current</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-26</td>
+<td>Media Update</td>
+<td>US-71</td>
+<td>As a Student, I want to update my profile image so that I can change my avatar when needed</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-27</td>
+<td>Media Delete</td>
+<td>US-72</td>
+<td>As an Admin, I want to delete any media so that I can remove outdated or inappropriate assets</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-27</td>
+<td>Media Delete</td>
+<td>US-73</td>
+<td>As a Content Creator, I want to delete my own course media so that I can clean up unused or incorrect assets in my courses</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-09</td>
+<td>Media Management</td>
+<td>FE-27</td>
+<td>Media Delete</td>
+<td>US-74</td>
+<td>As a Student, I want to delete my profile image so that I can remove or change my avatar whenever I choose</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
 <td>EP-10</td>
-<td>Lesson and Module Design</td>
-<td>Allow modular content within each course.</td>
+<td>Media Integration in Courses</td>
+<td>FE-28</td>
+<td>Media linked in course</td>
+<td>US-75</td>
+<td>As an Admin, I want to link any media item to any course so that I can organize and enrich course content</td>
 </tr>
 <tr>
-<td>FR-03</td>
-<td>TH-06</td>
-<td>Course Enrollment and Progress Tracking</td>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-10</td>
+<td>Media Integration in Courses</td>
+<td>FE-28</td>
+<td>Media linked in course</td>
+<td>US-76</td>
+<td>As a Content Creator, I want to link my media items to my courses so that I can provide relevant multimedia learning materials</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-10</td>
+<td>Media Integration in Courses</td>
+<td>FE-29</td>
+<td>Media unlinked in course</td>
+<td>US-77</td>
+<td>As an Admin, I want to unlink any media item from any course so that I can remove outdated or irrelevant assets</td>
+</tr>
+<tr>
+<td>TH-04</td>
+<td>Media</td>
+<td>EP-10</td>
+<td>Media Integration in Courses</td>
+<td>FE-29</td>
+<td>Media unlinked in course</td>
+<td>US-78</td>
+<td>As a Content Creator, I want to unlink my media items from my courses so that I can update or reorganize content</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
 <td>EP-11</td>
-<td>Enrollment Control</td>
-<td>Allow enrollment, cancellation, and waiting list handling.</td>
+<td>Notification Management</td>
+<td>FE-30</td>
+<td>Notification Create</td>
+<td>US-79</td>
+<td>As an Admin, I want to create notifications for any user so that I can broadcast important messages platform-wide</td>
 </tr>
 <tr>
-<td>FR-03</td>
-<td>TH-06</td>
-<td>Course Enrollment and Progress Tracking</td>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-30</td>
+<td>Notification Create</td>
+<td>US-80</td>
+<td>As a Content Creator, I want to create notifications for my students so that I can inform them about course updates</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-30</td>
+<td>Notification Create</td>
+<td>US-81</td>
+<td>As a Student, I want to generate evaluation notifications so that I can request feedback or report issues to instructors</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-31</td>
+<td>Notification Read</td>
+<td>US-82</td>
+<td>As an Admin, I want to view details of any notification (sent or received) so that I can audit all platform communications</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-31</td>
+<td>Notification Read</td>
+<td>US-83</td>
+<td>As a Content Creator, I want to view details of notifications I have sent so that I can verify delivery and content accuracy</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-31</td>
+<td>Notification Read</td>
+<td>US-84</td>
+<td>As a Student, I want to view details of notifications I have received so that I can stay informed about relevant updates</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-32</td>
+<td>Notification Update</td>
+<td>US-85</td>
+<td>As an Admin, I want to update any notification’s content or schedule so that messages remain accurate</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-32</td>
+<td>Notification Update</td>
+<td>US-86</td>
+<td>As a Content Creator, I want to update notifications I’ve created so that I can correct or refine them</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-32</td>
+<td>Notification Update</td>
+<td>US-87</td>
+<td>As a Student, I want to update my evaluation notifications so that I can refine feedback or report accuracy</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-33</td>
+<td>Notification Delete</td>
+<td>US-88</td>
+<td>As an Admin, I want to delete any notification so that obsolete or incorrect messages are removed from the system</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-33</td>
+<td>Notification Delete</td>
+<td>US-89</td>
+<td>As a Content Creator, I want to delete notifications I’ve sent so that I can clean up outdated course communications</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-33</td>
+<td>Notification Delete</td>
+<td>US-90</td>
+<td>As a Student, I want to delete my evaluation notifications so that I can manage my sent feedback or reports</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-34</td>
+<td>Notifications List</td>
+<td>US-91</td>
+<td>As an Admin, I want to view a list of all notifications in the system so that I can monitor all communications</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-34</td>
+<td>Notifications List</td>
+<td>US-92</td>
+<td>As a Content Creator, I want to view a list of notifications I’ve sent and received so that I can track my outreach</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-11</td>
+<td>Notification Management</td>
+<td>FE-34</td>
+<td>Notifications List</td>
+<td>US-93</td>
+<td>As a Student, I want to view a list of notifications I’ve received and sent so that I can stay informed and manage feedback</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
 <td>EP-12</td>
-<td>Progress Tracking</td>
-<td>Provide visual indicators of user course progress.</td>
+<td>Notification Send</td>
+<td>FE-35</td>
+<td>Notifications Filter</td>
+<td>US-94</td>
+<td>As an Admin, I want to filter all notifications by date, status, sender, type, or related course so that I can quickly find specific messages</td>
 </tr>
 <tr>
-<td>FR-03</td>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-12</td>
+<td>Notification Send</td>
+<td>FE-35</td>
+<td>Notifications Filter</td>
+<td>US-95</td>
+<td>As a Content Creator, I want to filter my sent and received notifications by date, status, or related course so that I can manage outreach</td>
+</tr>
+<tr>
+<td>TH-05</td>
+<td>Notification</td>
+<td>EP-12</td>
+<td>Notification Send</td>
+<td>FE-35</td>
+<td>Notifications Filter</td>
+<td>US-96</td>
+<td>As a Student, I want to filter my notifications by date or read/unread status so that I can focus on the most relevant updates</td>
+</tr>
+<tr>
 <td>TH-06</td>
-<td>Course Enrollment and Progress Tracking</td>
-<td>EP-18</td>
-<td>Certificate Issuance System</td>
-<td>Automatically generate certificates after course completion.</td>
-</tr>
-<tr>
-<td>FR-04</td>
-<td>TH-07</td>
-<td>Media Upload and Categorization</td>
+<td>Analytics</td>
 <td>EP-13</td>
-<td>File Upload Engine</td>
-<td>Enable media upload in various formats (images, audio, video, PDFs).</td>
+<td>Dashboard Management</td>
+<td>FE-36</td>
+<td>Dashboard Create</td>
+<td>US-97</td>
+<td>As an Admin, I want to create dashboards by selecting from any permitted data sources so that I can monitor platform-wide metrics</td>
 </tr>
 <tr>
-<td>FR-04</td>
-<td>TH-07</td>
-<td>Media Upload and Categorization</td>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-13</td>
+<td>Dashboard Management</td>
+<td>FE-36</td>
+<td>Dashboard Create</td>
+<td>US-98</td>
+<td>As a Content Creator, I want to create dashboards by selecting from my available course data so that I can track engagement and performance</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-13</td>
+<td>Dashboard Management</td>
+<td>FE-37</td>
+<td>Dashboard Read</td>
+<td>US-99</td>
+<td>As an Admin, I want to view any dashboard so that I can monitor all system metrics</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-13</td>
+<td>Dashboard Management</td>
+<td>FE-37</td>
+<td>Dashboard Read</td>
+<td>US-100</td>
+<td>As a Content Creator, I want to view my own dashboards so that I can review engagement and performance insights</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-13</td>
+<td>Dashboard Management</td>
+<td>FE-38</td>
+<td>Dashboard Update</td>
+<td>US-101</td>
+<td>As an Admin, I want to update any dashboard’s widgets, layout, and data sources so that I can refine system insights</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-13</td>
+<td>Dashboard Management</td>
+<td>FE-38</td>
+<td>Dashboard Update</td>
+<td>US-102</td>
+<td>As a Content Creator, I want to update my dashboards’ widgets, layout, and data sources so that I can optimize my reports</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-13</td>
+<td>Dashboard Management</td>
+<td>FE-39</td>
+<td>Dashboard Delete</td>
+<td>US-103</td>
+<td>As an Admin, I want to delete any dashboard so that I can remove outdated or irrelevant system reports</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-13</td>
+<td>Dashboard Management</td>
+<td>FE-39</td>
+<td>Dashboard Delete</td>
+<td>US-104</td>
+<td>As a Content Creator, I want to delete my own dashboards so that I can clean up and reorganize my reports</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
 <td>EP-14</td>
-<td>Media Classification System</td>
-<td>Categorize media by type, topic, and course relevance.</td>
+<td>Dashboard Report</td>
+<td>FE-40</td>
+<td>Report Create</td>
+<td>US-105</td>
+<td>As an Admin, I want to create reports by selecting any permitted data sources and parameters so that I can generate platform-wide analytics</td>
 </tr>
 <tr>
-<td>FR-04</td>
-<td>TH-08</td>
-<td>Media Use and Integration in Courses</td>
-<td>EP-15</td>
-<td>Media Permissions and Access</td>
-<td>Define who can view, reuse, or download media content.</td>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-40</td>
+<td>Report Create</td>
+<td>US-106</td>
+<td>As a Content Creator, I want to create reports using my available course data and parameters so that I can analyze learner performance</td>
 </tr>
 <tr>
-<td>FR-04</td>
-<td>TH-08</td>
-<td>Media Use and Integration in Courses</td>
-<td>EP-16</td>
-<td>Media Embedding in Courses</td>
-<td>Enable reuse of uploaded media inside course content.</td>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-41</td>
+<td>Report Read</td>
+<td>US-107</td>
+<td>As an Admin, I want to view any report so that I can monitor and audit analytics across the platform</td>
 </tr>
 <tr>
-<td>FR-04</td>
-<td>TH-08</td>
-<td>Media Use and Integration in Courses</td>
-<td>EP-20</td>
-<td>Media Preview and Playback</td>
-<td>Allow safe preview of media before downloading or embedding.</td>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-41</td>
+<td>Report Read</td>
+<td>US-108</td>
+<td>As a Content Creator, I want to view reports I’ve generated so that I can review learner performance and course insights</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-42</td>
+<td>Report Update</td>
+<td>US-109</td>
+<td>As an Admin, I want to update any report’s parameters or layout so that analytics remain accurate and relevant</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-42</td>
+<td>Report Update</td>
+<td>US-110</td>
+<td>As a Content Creator, I want to update my own reports’ parameters or layout so that I can refine course analytics</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-43</td>
+<td>Report Delete</td>
+<td>US-111</td>
+<td>As an Admin, I want to delete any report so that I can remove outdated or irrelevant analytics</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-43</td>
+<td>Report Delete</td>
+<td>US-112</td>
+<td>As a Content Creator, I want to delete my own reports so that I can clean up my generated analytics</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-44</td>
+<td>Report Export</td>
+<td>US-113</td>
+<td>As an Admin, I want to export any report in formats like PDF or CSV so that I can share system-wide analytics</td>
+</tr>
+<tr>
+<td>TH-06</td>
+<td>Analytics</td>
+<td>EP-14</td>
+<td>Dashboard Report</td>
+<td>FE-44</td>
+<td>Report Export</td>
+<td>US-114</td>
+<td>As a Content Creator, I want to export my own reports in formats like PDF or CSV so that I can distribute course analytics</td>
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="revision-history">Revision History</h2>
 <table>
 <thead>
@@ -2976,6 +5105,18 @@ What the system must do</p>
 <td>2025-04-15</td>
 <td>0.2</td>
 <td>PBB update content</td>
+<td><a href="https://github.com/LucasGSAntunes">Lucas Antunes</a></td>
+</tr>
+<tr>
+<td>2025-05-13</td>
+<td>1.0</td>
+<td>Completed all sections and added US</td>
+<td><a href="https://github.com/pedro-prp">Pedro Rodrigues</a></td>
+</tr>
+<tr>
+<td>2025-05-29</td>
+<td>1.1</td>
+<td>Refactor Backlog and create US</td>
 <td><a href="https://github.com/LucasGSAntunes">Lucas Antunes</a></td>
 </tr>
 </tbody>
