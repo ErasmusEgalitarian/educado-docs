@@ -48,6 +48,7 @@ plugins:
 nav:
   - Home: index.md
   - Wiki: wiki_index.md
+  - Database: database/database_index.md
   - Project:
     - Overview: project/overview.md
     - Vision: project/vision.md
