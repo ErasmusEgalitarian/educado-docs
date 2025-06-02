@@ -128,13 +128,13 @@ Exemplo de colunas importantes nos arquivos Excel:
 
 Para facilitar sua navegação, sugerimos as seguintes buscas na wiki:
 
-- [Search "financial education"](https://erasmusegalitarian.github.io/educado-docs/wiki_index/#md-search__input=financial%20education)  
+- **Search "financial education"**  
   Explore documentos relacionados a educação financeira, incluindo plataformas digitais, cursos e relatórios.
 
-- [Search "cybersecurity"](https://erasmusegalitarian.github.io/educado-docs/wiki_index/#md-search__input=cybersecurity)  
+- **Search "cybersecurity"**  
   Encontre materiais sobre segurança em desenvolvimento de software, ataques cibernéticos e análise de vulnerabilidades.
 
-- [Search "waste pickers inclusion"](https://erasmusegalitarian.github.io/educado-docs/wiki_index/#md-search__input=waste%20pickers%20inclusion)  
+- **Search "waste pickers"**  
   Descubra conteúdos focados na inclusão social e educação para catadores de lixo por meio de tecnologias móveis.
 
 ---
