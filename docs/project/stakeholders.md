@@ -33,11 +33,4 @@ Effective stakeholder management is vital to the success of the project. The fol
 
 ---
 
-## Revision History
-
-| Date       | Version | Changes                                            | Authors                                       |
-| ---------- | ------- | -------------------------------------------------- | --------------------------------------------- |
-| 2025-04-10 | 0.1     | Document creation                                  | [Leandro Almeida](https://github.com/LeanArs) |
-| 2025-04-15 | 0.2     | Added Content QA information and minor adjustments | [Leandro Almeida](https://github.com/LeanArs) |
-
 [← Back to main page](../index.md)

@@ -1,59 +1,58 @@
-# **Objectives**
+# Objectives
 
-## **Short Term**
-
-**Objective**:  
-The short-term objective is to have a documented software and an efficient stabilization plan in place. This will involve ensuring the software’s critical aspects are well-documented and have a roadmap for resolving any immediate issues.
-
-## **Medium Term**
+## Short Term
 
 **Objective**:  
-The medium-term goal is to begin incrementing new features. This will focus on enhancing the software by adding new functionalities that will add value and improve the user experience.
+The short-term objective is to have the software fully documented and an effective stabilization plan implemented. This involves ensuring that the most critical aspects of the software are well-documented, with a clear roadmap for identifying and addressing immediate issues.
 
-## **Long Term**
+## Medium Term
 
 **Objective**:  
-The long-term goal is to establish a healthy development and production cycle. This includes setting up processes and practices that enable continuous, efficient, and high-quality software development and deployment.
+The medium-term goal is to begin incrementally adding new features. This stage focuses on enhancing the software by implementing functionalities that deliver added value and improve the overall user experience.
+
+## Long Term
+
+**Objective**:  
+The long-term goal is to establish a sustainable development and production cycle. This includes setting up robust processes and best practices to enable continuous, efficient, and high-quality software development, deployment, and maintenance.
 
 ---
 
-## **Teams Contribution to Short Term Objectives**
+## Teams' Contribution to Short Term Objectives
 
-### **PSP 2**
+### PSP 2
 
-- **MVP Canvas and Product Backlog**: Define the MVP and create a product backlog to establish essential functionalities and prioritize tasks for the initial development phase.  
-- **Field Data Collection Guide and Report**: Develop guides and reports for field data collection that will aid in identifying and stabilizing critical issues based on the collected information.  
-- **Content Creator Journey Mapping**: Map the content creator’s journey to improve and stabilize the user experience.
-- **2 New Courses**: Create two new training courses for content creators, which will help engage users and continue enhancing the software’s capabilities.  
-- **Subject Final Presentation**: Prepare the final project pitch to showcase the improvements and new features implemented during the development phase.
-- **Conecta Event Presentation**: Present the final project at the event, allowing interaction with stakeholders and gathering feedback to improve the development and production cycle.
-
----
-
-### **PSP 5**
-
-- **Field Data Collection Questions and Guide**: Create the necessary questions and guide for data collection to ensure that critical feedback is gathered to stabilize and refine the software.  
-- **MVP Canvas and Product Backlog**: Define the MVP and create the product backlog to prioritize features that align with the stabilization goals.  
-- **Course Impact Indicators**: Create dashboards and reports to analyze the initial impact of the courses, aiding in the system's stabilization and feedback integration.
-- **Usability Test Report**: Prepare a report on usability tests to highlight findings and help refine the software’s user experience and interface.  
-- **Subject Final Presentation**: Prepare a presentation summarizing the developments made and showcasing new functionalities added during the cycle.
-- **Conecta Event Presentation**: Present the project at the event, collecting feedback from users and stakeholders to further refine the development and production cycles.
+- **MVP Canvas and Product Backlog**: Define the MVP and create a product backlog, establishing essential functionalities and prioritizing initial development tasks.
+- **Field Data Collection Guide and Report**: Develop guides and reports for field data collection, supporting the identification and resolution of critical issues based on real-world feedback.
+- **Content Creator Journey Mapping**: Map the content creator journey to identify and stabilize key user experience pain points.
+- **2 New Courses**: Create two new training courses for content creators to boost user engagement and expand software capabilities.
+- **Subject Final Presentation**: Prepare a final presentation to showcase the improvements and new features delivered during the development phase.
+- **Conecta Event Presentation**: Present the project at the event, enabling direct interaction with stakeholders and gathering feedback for continuous improvement.
 
 ---
 
-### **Software**
+### PSP 5
 
-- **Documentation Update (Beta_v_1.0)**: Update the software documentation to ensure all stakeholders are informed of the software’s progress and functionality.  
-- **Field Data Collection Guide**: Develop a guide for data collection to help stabilize the system and improve its integration with user feedback.
-- **Field Data Collection Questions**: Create additional questions to collect data on the impact of newly implemented features.  
-- **Course Impact Indicators**: Analyze and report on key performance indicators from previous courses to guide the next phases of development.
-- **Egalitarian Event Presentation**: Present the final outcomes at the event, using the feedback to refine the development process and ensure a healthy cycle for future releases.
+- **Field Data Collection Questions and Guide**: Develop questions and a guide for effective field data collection, ensuring critical feedback is gathered for software stabilization and refinement.
+- **MVP Canvas and Product Backlog**: Define the MVP and product backlog, prioritizing features aligned with stabilization objectives.
+- **Course Impact Indicators**: Design dashboards and reports to analyze the impact of courses, aiding system stabilization and integrating feedback.
+- **Backlog Compliance Checklist**: Prepare a checklist to ensure all deliverables are compliant with the defined backlog, supporting transparency and development alignment.
+- **Subject Final Presentation**: Summarize progress and showcase newly added functionalities during the development cycle.
+- **Conecta Event Presentation**: Present the project at the event, collecting valuable feedback from users and stakeholders to further refine development and production cycles.
 
-## Revision History
+---
 
-| Date       | Version | Changes                   | Authors                                                                                                 |
-|------------|---------|---------------------------|---------------------------------------------------------------------------------------------------------|
-| 2025-04-10 | 0.1     | Document creation         | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                      |
-| 2025-04-15 | 0.2     | Objectives update content | [Lucas Antunes](https://github.com/LucasGSAntunes), [Vitor Trancoso](https://github.com/Vitor-Trancoso) |
+### Software
+
+- **Documentation Update (Beta_v_1.0)**: Create, structure, and continuously update the core project documentation, ensuring clarity on vision, scope, objectives, deliverables, and project evolution.
+- **Field Data Collection Guide**: Develop a field data collection guide to support system stabilization and integration of user feedback.
+- **Field Data Collection Questions**: Design additional questions to measure the impact of new features.
+- **Define and detail backlog, requirements, and functional scope**: Structure the Product Backlog, User Stories (US), and quality criteria, clearly establishing what will be developed in future phases.
+- **Map architecture, database schema, and workflows**: Record architectural decisions, design the database schema, and document how the main functionalities will connect in the system.
+- **Standardize and centralize information**: Consolidate references, links, and tools in a project Wiki, making information easily accessible to all team members.
+- **Prepare for future implementation and testing**: Refactor, reclassify, and enrich documentation so that future development phases (coding) are agile and based on reliable information.
+- **Ensure traceability and transparency**: Record authors, dates, and versions for all deliverables, enabling progress tracking and facilitating audits.
+- **Egalitarian Event Presentation**: Present final outcomes at the event, using feedback to refine development processes and ensure a healthy cycle for future releases.
+
+---
 
 [← Back to Main Page](../index.md)

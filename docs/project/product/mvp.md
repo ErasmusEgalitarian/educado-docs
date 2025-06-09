@@ -2,7 +2,7 @@
 
 [← Back to Main Page](../../index.md)
 
-The **Minimum Viable Product (MVP)** represents the first functional version of the system that delivers core value to users while requiring minimal development effort. This document outlines the scope, features, and success criteria for the MVP phase.
+The **Minimum Viable Product (MVP)** represents the first functional version of the Educado platform, delivering essential value to users with minimal development effort. This document defines the MVP's scope, included features, and criteria for success.
 
 ---
 
@@ -10,12 +10,12 @@ The **Minimum Viable Product (MVP)** represents the first functional version of 
 
 The MVP aims to:
 
-| Goal                                                      | Description                                                     |
-| --------------------------------------------------------- | --------------------------------------------------------------- |
-| Deliver essential functionalities with minimal complexity | Focus on core features that provide value to users.             |
-| Validate core hypotheses and user needs                   | Test the system with real users to ensure it meets their needs. |
-| Gather early feedback for iterative improvements          | Use feedback from users to guide future development.            |
-| Provide a working foundation for future enhancements      | Build a stable base to expand upon in future versions.          |
+| Goal                                   | Description                                                      |
+|---------------------------------------- |------------------------------------------------------------------|
+| Deliver essential learning features     | Enable users to register, enroll, and consume basic course content|
+| Validate user interest and core flows   | Test the platform with real users to confirm key hypotheses       |
+| Collect feedback for future iterations  | Gather insights to guide development priorities and improvements  |
+| Lay foundation for scaling and features | Build a robust, extensible base for future enhancements           |
 
 ---
 
@@ -25,41 +25,40 @@ The MVP aims to:
 
 The MVP will include the following key functionalities:
 
-| Feature ID | Feature Name            | Description                                 | Related Epic |
-| ---------- | ----------------------- | ------------------------------------------- | ------------ |
-| F-01       | Scale Integration       | Measure and record weight via hardware.     | EP-01        |
-| F-02       | API Data Sync           | Send weight data to the cloud in real-time. | EP-02        |
-| F-03       | User Authentication     | Secure login for different user roles.      | EP-05        |
-| F-04       | Weight History Tracking | Allow users to review past measurements.    | EP-03        |
-| F-05       | Mobile Interface        | Provide a basic UI for users to interact.   | EP-03        |
-| F-06       | Data Encryption         | Securely store and transmit collected data. | EP-05        |
+| Feature ID | Feature Name            | Description                                                           | Related Epic      |
+|------------|------------------------|-----------------------------------------------------------------------|-------------------|
+| F-01       | User Registration      | Allow users to register as Students or request Content Creator access | EP-01             |
+| F-02       | User Authentication    | Secure login for approved users (all roles)                           | EP-01             |
+| F-03       | User Profile           | View and update own user profile information                          | EP-03             |
+| F-04       | Course Catalog         | List available courses with details                                   | EP-05/EP-06       |
+| F-05       | Course Enrollment      | Allow users to enroll in courses                                      | EP-07             |
+| F-06       | Course Content         | Access to course modules, lessons, and exercises                      | EP-05/EP-06/EP-07 |
+| F-07       | Media Management       | Upload and associate media with courses                               | EP-09/EP-10       |
+| F-08       | Basic Notifications    | Notify users about enrollments and approvals                          | EP-11             |
 
 ### Excluded Features (For Future Releases)
 
-The following features are **not included** in the MVP but are planned for later iterations:
-
-| Feature                          | Reason for Exclusion                            |
-| -------------------------------- | ----------------------------------------------- |
-| Multi-center management          | To be added in a future version.                |
-| Advanced analytics and reporting | Will be implemented after core functionalities. |
-| Offline mode for data collection | Requires additional infrastructure.             |
-| User notifications and alerts    | Not critical for MVP functionality.             |
-| Customizable dashboard           | Future release after user feedback.             |
+| Feature                  | Reason for Exclusion                    |
+|--------------------------|-----------------------------------------|
+| Advanced Analytics       | Added after user engagement is validated|
+| Reporting Exports        | Planned for later releases              |
+| Custom Dashboards        | Deferred to future versions             |
+| Multi-language Support   | MVP will launch in a single language    |
+| Full Mobile Experience   | Responsive web only in MVP              |
 
 ---
 
 ## MVP Success Criteria
 
-The MVP will be considered **successful** if it meets the following criteria:
+The MVP will be considered **successful** if the following are met:
 
-| Criterion               | Description                                                         |
-| ----------------------- | ------------------------------------------------------------------- |
-| System Stability        | The core functionalities operate without critical bugs.             |
-| Basic Usability         | Users can easily interact with the system.                          |
-| Data Accuracy           | Weight measurements are precise and reliably stored.                |
-| Authentication Security | User accounts are protected with authentication mechanisms.         |
-| Real-Time Sync          | Weight data is transmitted to the cloud without significant delays. |
-| User Adoption           | At least [X]% of test users successfully complete key workflows.    |
+| Criterion                | Description                                                      |
+|--------------------------|------------------------------------------------------------------|
+| Platform Stability       | Core features work without critical bugs                         |
+| Usability                | Users can register, log in, enroll, and consume course content   |
+| Security                 | Data is protected and authentication is enforced                 |
+| Feedback Collection      | Active user feedback is gathered through the platform            |
+| User Engagement          | At least [X]% of initial users complete onboarding and 1 lesson  |
 
 ---
 
@@ -67,31 +66,23 @@ The MVP will be considered **successful** if it meets the following criteria:
 
 Once the MVP is deployed, the next steps will include:
 
-| Step                                   | Description                                               |
-| -------------------------------------- | --------------------------------------------------------- |
-| Gathering user feedback                | Collect insights from users for feature prioritization.   |
-| Fixing bugs and improving usability    | Address issues and improve the user experience.           |
-| Expanding features based on user needs | Add features based on feedback and market demand.         |
-| Planning Version 1.0                   | Use MVP insights to guide the development of Version 1.0. |
+| Step                              | Description                                        |
+|------------------------------------|----------------------------------------------------|
+| Collecting user feedback           | Analyze insights for priority setting              |
+| Fixing bugs and refining UX        | Address usability and stability issues             |
+| Expanding features iteratively     | Implement features based on usage and demand       |
+| Preparing for broader launch       | Plan full-scale marketing and onboarding           |
 
 ---
 
 ## Conclusion
 
-The MVP serves as the foundation for product validation and further enhancements. By focusing on essential features, it allows for **early testing, iteration, and user feedback collection** before full-scale development.
+The MVP serves as a foundation for validating the Educado platform with real users, providing early value, and guiding the next stages of development through actionable feedback and iteration.
 
 ---
 
-For updates on the MVP progress, refer to the [Project Roadmap](../management/roadmap.md).
+For roadmap updates, refer to the [Project Roadmap](../management/roadmap.md).
 
-## Revision History
-
-| Date       | Version | Changes                           | Authors |
-| ---------- | ------- | --------------------------------- | ------- |
-| 02/04/2024 | 0.1     | Document creation                 |         |
-| 06/04/2024 | 0.2     | Topics 1.1, 1.2, 1.3, and 3       |         |
-| 16/04/2024 | 0.3     | Documentation on Git Pages        |         |
-| 09/09/2024 | 0.4     | Updated technologies and app type |         |
-| 09/09/2024 | 0.5     | Technology adjustments            |         |
+---
 
 [← Back to Main Page](../../index.md)

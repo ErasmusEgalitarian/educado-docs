@@ -20,10 +20,4 @@ This document describes the  **Project Life Cycle** , from conception to final d
 
 ---
 
-## Revision History
-
-| Date                                | Version | Changes                           | Authors |
-| ----------------------------------- | ------- | --------------------------------- | ------- |
-| 02/04/2024                          | 0.1     | Document creation                 | Lucas Antunes |
-
 [← Back to Main Page](../../index.md)

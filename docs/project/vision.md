@@ -41,11 +41,6 @@ This project is designed to align with the United Nations Sustainable Developmen
 - **SDG 10: Reduced Inequalities**: **Educado** promotes social inclusion by involving waste pickers in the creation of educational content and providing them with the means to enhance their professional qualifications.
 - **SDG 13: Climate Action**: The project supports climate action by promoting waste reduction, material recovery, and reducing the environmental impact of waste through better sorting and recycling efforts.
 
-## Revision History
-
-| Date       | Version | Changes                   | Authors                                                                                           |
-|------------|---------|---------------------------|---------------------------------------------------------------------------------------------------|
-| 2025-04-10 | 0.1     | Document creation         | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                |
-| 2025-04-15 | 0.2     | Objectives update content | [Lucas Antunes](https://github.com/LucasGSAntunes), [Thiago Tonin](https://github.com/audittmega) |
+---
 
 [← Back to the Main Page](../index.md)

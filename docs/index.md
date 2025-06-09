@@ -63,10 +63,18 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 |-----------------------------|--------------------|
 | [References](references.md) | External resources |
 
+
 ## Revision History
 
-| Date       | Version | Changes           | Authors                                                                                          |
-| ---------- | ------- | ----------------- | ------------------------------------------------------------------------------------------------ |
-| 2025-03-28 | 0.1     | Document creation | [Cainã Freitas](https://github.com/freitasc), [Lucas Antunes](https://github.com/LucasGSAntunes) |
-| 2025-04-18 | 0.2     | Update home page  | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)   |
-| 2025-05-14 | 0.3     | Add wiki ref      | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)                                               |
+| Date       | Version | Changes                                                                                                                                              | Authors                                                                                                                                                                                               |
+| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-28 | 0.1     | Document creation                                                                                                                                    | [Cainã Freitas](https://github.com/freitasc), [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                      |
+| 2025-04-15 | 0.2     | Product Overview update content                                                                                                                      | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
+| 2025-04-18 | 0.3     | Update home page                                                                                                                                     | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                        |
+| 2025-05-13 | 1.0     | Completed all sections and added US , Added Content QA information and minor adjustments, Project Overview update content, Objectives update content | [Vitor Trancoso](https://github.com/Vitor-Trancoso), [Victor Andreozzi](https://github.com/andreozzi), [Leandro Almeida](https://github.com/LeanArs), [Pedro Rodrigues](https://github.com/pedro-prp) |
+| 2025-05-14 | 1.1     | Add wiki ref                                                                                                                                         | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                        |
+| 2025-05-29 | 1.2     | Refactor Backlog and create US                                                                                                                       | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
+| 2025-06-02 | 1.3     | Add new PDF classification tool                                                                                                                      | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
+| 2025-06-09 | 1.4     | [Update] - Product Overview, MVP definition, Database Schema, Wiki, Project/Overview, Project/Objectives, Deliverables, Tools, Api Schema            | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
+
+

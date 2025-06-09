@@ -17,10 +17,18 @@ Ultimately, this initiative is designed to reduce downtime, increase operational
 #### Objectives
 
 **Short Term:**  
-Develop a scalable and efficient real-time monitoring system capable of tracking server health across a wide range of metrics (e.g., CPU, memory, disk usage, network traffic). Ensure the system is well-documented and has a stabilization plan in place to address immediate issues.
+Develop a plan to have a scalable Ready to Use Software Product(RUSP). RUSP are packages sold to the acquirer who had no influence on its features and other qualities. Ensure the system is well-documented and has a stabilization plan in place to address immediate issues aiming:
+- Requirements for product description
+- Requirements for user documentation
+- Quality requirements for software
 
 **Medium Term:**  
 Increment new features by implementing machine learning algorithms to analyze historical and real-time server data, detecting anomalies and predicting potential hardware failures. Enhance the system’s functionalities to improve user experience and operational efficiency.
+
+Develop a software production proccess with Denmark and Brazilian software team to implement new issues aiming:
+- Requirements for test documentation
+- Instructions for conformity evaluation
+- Realease product alpha
 
 **Long Term:**  
 Establish a healthy development and production cycle by designing an alerting system that notifies administrators of detected issues through various channels, including email, SMS, and integration with messaging platforms like Slack. Create an intuitive dashboard to provide administrators with real-time insights into server status, trends, and health indicators, enabling continuous, efficient, and high-quality software development and deployment.
@@ -96,11 +104,6 @@ Upon completion, the monitoring platform will offer the following benefits to IT
 | **Cost savings**                | Reduce the need for manual monitoring and improve resource utilization.         |
 | **Improved system performance** | Enable data-driven optimization and capacity planning.                          |
 
-## Revision History
-
-| Date       | Version | Changes                         | Authors                                                                                              |
-|------------|---------|---------------------------------|------------------------------------------------------------------------------------------------------|
-| 2025-04-10 | 0.1     | Document creation               | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                   |
-| 2025-04-15 | 0.2     | Project Overview update content | [Lucas Antunes](https://github.com/LucasGSAntunes), [Victor Andreozzi](https://github.com/andreozzi) |
+---
 
 [← Back to Main Page](../index.md)

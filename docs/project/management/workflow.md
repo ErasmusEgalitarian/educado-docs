@@ -14,10 +14,4 @@ This document outlines the Project Workflow, describing the process from task di
 
 ---
 
-## Revision History
-
-| Date       | Version | Changes                           | Authors |
-| ---------- | ------- | --------------------------------- | ------- |
-| 03/28/2024 | 0.1     | Document creation                 |  [Lucas Antunes](https://github.com/LucasGSAntunes)        |
-
 [← Back to Main Page](../../index.md)
