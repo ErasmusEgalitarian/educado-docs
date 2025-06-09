@@ -20,7 +20,7 @@
     
     
       
-        <title>Database Schema - Educado</title>
+        <title>Diagrama Relacional do Banco de Dados - Plataforma de Cursos - Educado</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#database-schema" class="md-skip">
+        <a href="#diagrama-relacional-do-banco-de-dados-plataforma-de-cursos" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Database Schema
+              Diagrama Relacional do Banco de Dados - Plataforma de Cursos
             
           </span>
         </div>
@@ -1260,322 +1260,884 @@
   
 
 
-<h1 id="database-schema"><strong>Database Schema</strong></h1>
+<h1 id="diagrama-relacional-do-banco-de-dados-plataforma-de-cursos">Diagrama Relacional do Banco de Dados - Plataforma de Cursos</h1>
 <p><a href="../../../../">← Back to Main Page</a></p>
-<h2 id="1-tables"><strong>1. Tables</strong></h2>
-<h3 id="11-users"><strong>1.1. Users</strong></h3>
-<p>Table that stores information about system users, such as doctors and administrators.</p>
+<h2 id="legenda">Legenda</h2>
+<ul>
+<li>(PK) = Primary Key</li>
+<li>(FK) = Foreign Key</li>
+<li>(UK) = Unique Key</li>
+<li><code>deleted_at</code> = Soft delete (data de exclusão lógica)</li>
+<li><code>version</code> = Número da versão do registro (auditoria/histórico)</li>
+<li><code>created_at</code> / <code>updated_at</code> = Datas de criação e modificação</li>
+<li><code>_history</code> = Sufixo para tabelas de histórico de alteração</li>
+</ul>
+<hr />
+<h2 id="entidades-principais">Entidades Principais</h2>
+<h3 id="users">users</h3>
 <table>
 <thead>
 <tr>
-<th>Column</th>
-<th>Type</th>
-<th>Description</th>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
 <td>UUID</td>
-<td>Unique identifier for the user (Primary Key)</td>
+<td>PK</td>
+<td>Identificador do usuário</td>
 </tr>
 <tr>
 <td>name</td>
 <td>VARCHAR(255)</td>
-<td>User's name</td>
+<td>NOT NULL</td>
+<td>Nome</td>
 </tr>
 <tr>
 <td>email</td>
 <td>VARCHAR(255)</td>
-<td>Unique email for the user (Unique Key)</td>
+<td>NOT NULL, UK</td>
+<td>E-mail</td>
 </tr>
 <tr>
-<td>password</td>
+<td>password_hash</td>
 <td>VARCHAR(255)</td>
-<td>User's encrypted password</td>
+<td>NOT NULL</td>
+<td>Senha (hash)</td>
 </tr>
 <tr>
 <td>role</td>
-<td>ENUM</td>
-<td>User's role (e.g.,<code>doctor</code>,<code>administrator</code>)</td>
+<td>VARCHAR(32)</td>
+<td>NOT NULL</td>
+<td>Enum: 'admin', 'creator', 'student'</td>
+</tr>
+<tr>
+<td>status</td>
+<td>VARCHAR(32)</td>
+<td>NOT NULL</td>
+<td>Enum: 'active', 'pending', 'rejected', 'inactive'</td>
+</tr>
+<tr>
+<td>avatar_url</td>
+<td>VARCHAR(255)</td>
+<td></td>
+<td>URL da imagem de perfil</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>TIMESTAMP</td>
-<td>Record creation date</td>
+<td>DEFAULT now()</td>
+<td></td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>TIMESTAMP</td>
-<td>Last record update date</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
 </tr>
 </tbody>
 </table>
-<h3 id="12-documents"><strong>1.2. Documents</strong></h3>
-<p>Table that stores information about documents registered in the system.</p>
+<h4 id="historico-users_history-espelha-a-estrutura-incluindo-quem-alterou">Histórico: users_history (espelha a estrutura, incluindo quem alterou)</h4>
+<hr />
+<h3 id="roles">roles</h3>
 <table>
 <thead>
 <tr>
-<th>Column</th>
-<th>Type</th>
-<th>Description</th>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
 <td>UUID</td>
-<td>Unique identifier for the document (Primary Key)</td>
+<td>PK</td>
+<td>Identificador do papel</td>
+</tr>
+<tr>
+<td>name</td>
+<td>VARCHAR(32)</td>
+<td>UK</td>
+<td>Nome do papel</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td></td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-roles_history">Histórico: roles_history</h4>
+<hr />
+<h3 id="permissions">permissions</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador da permissão</td>
+</tr>
+<tr>
+<td>name</td>
+<td>VARCHAR(64)</td>
+<td>UK</td>
+<td>Nome da permissão</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td></td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-permissions_history">Histórico: permissions_history</h4>
+<hr />
+<h3 id="roles_permissions">roles_permissions</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>role_id</td>
+<td>UUID</td>
+<td>PK, FK -&gt; roles(id)</td>
+<td>Papel</td>
+</tr>
+<tr>
+<td>permission_id</td>
+<td>UUID</td>
+<td>PK, FK -&gt; permissions(id)</td>
+<td>Permissão</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-roles_permissions_history">Histórico: roles_permissions_history</h4>
+<hr />
+<h3 id="courses">courses</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador do curso</td>
 </tr>
 <tr>
 <td>title</td>
 <td>VARCHAR(255)</td>
-<td>Document title</td>
+<td>NOT NULL</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td></td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>creator_id</td>
+<td>UUID</td>
+<td>FK -&gt; users(id)</td>
+<td>Criador do curso</td>
+</tr>
+<tr>
+<td>status</td>
+<td>VARCHAR(32)</td>
+<td>NOT NULL</td>
+<td>Enum: 'active', 'inactive', 'deleted'</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-courses_history">Histórico: courses_history</h4>
+<hr />
+<h3 id="modules">modules</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador do módulo</td>
+</tr>
+<tr>
+<td>course_id</td>
+<td>UUID</td>
+<td>FK -&gt; courses(id)</td>
+<td>Curso</td>
+</tr>
+<tr>
+<td>title</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td></td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>order</td>
+<td>INT</td>
+<td></td>
+<td>Ordem do módulo</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-modules_history">Histórico: modules_history</h4>
+<hr />
+<h3 id="lessons">lessons</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador da aula</td>
+</tr>
+<tr>
+<td>module_id</td>
+<td>UUID</td>
+<td>FK -&gt; modules(id)</td>
+<td>Módulo</td>
+</tr>
+<tr>
+<td>title</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Título</td>
 </tr>
 <tr>
 <td>content</td>
 <td>TEXT</td>
-<td>Document content</td>
+<td></td>
+<td>Conteúdo</td>
 </tr>
 <tr>
-<td>created_by</td>
-<td>UUID</td>
-<td>User ID who created the document (Foreign Key referencing <code>Users.id</code>)</td>
+<td>order</td>
+<td>INT</td>
+<td></td>
+<td>Ordem da aula</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>TIMESTAMP</td>
-<td>Document creation date</td>
+<td>DEFAULT now()</td>
+<td></td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>TIMESTAMP</td>
-<td>Last document update date</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
 </tr>
 </tbody>
 </table>
-<h3 id="13-topics"><strong>1.3. Topics</strong></h3>
-<p>Table that stores topics related to documents.</p>
+<h4 id="historico-lessons_history">Histórico: lessons_history</h4>
+<hr />
+<h3 id="exercises">exercises</h3>
 <table>
 <thead>
 <tr>
-<th>Column</th>
-<th>Type</th>
-<th>Description</th>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
 <td>UUID</td>
-<td>Unique identifier for the topic (Primary Key)</td>
+<td>PK</td>
+<td>Identificador do exercício</td>
 </tr>
 <tr>
-<td>name</td>
+<td>lesson_id</td>
+<td>UUID</td>
+<td>FK -&gt; lessons(id)</td>
+<td>Aula</td>
+</tr>
+<tr>
+<td>title</td>
 <td>VARCHAR(255)</td>
-<td>Topic name</td>
+<td>NOT NULL</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td></td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>order</td>
+<td>INT</td>
+<td></td>
+<td>Ordem</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>TIMESTAMP</td>
-<td>Topic creation date</td>
+<td>DEFAULT now()</td>
+<td></td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>TIMESTAMP</td>
-<td>Last topic update date</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
 </tr>
 </tbody>
 </table>
-<h3 id="14-document_topics-relational"><strong>1.4. Document_Topics (Relational)</strong></h3>
-<p>Intermediate table that associates documents and topics, allowing a document to have multiple topics.</p>
+<h4 id="historico-exercises_history">Histórico: exercises_history</h4>
+<hr />
+<h3 id="enrollments">enrollments</h3>
 <table>
 <thead>
 <tr>
-<th>Column</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>document_id</td>
-<td>UUID</td>
-<td>Document ID (Foreign Key referencing <code>Documents.id</code>)</td>
-</tr>
-<tr>
-<td>topic_id</td>
-<td>UUID</td>
-<td>Topic ID (Foreign Key referencing <code>Topics.id</code>)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="15-subscription"><strong>1.5. Subscription</strong></h3>
-<p>Table that stores information about doctors' subscriptions.</p>
-<table>
-<thead>
-<tr>
-<th>Column</th>
-<th>Type</th>
-<th>Description</th>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
 <td>UUID</td>
-<td>Unique identifier for the subscription (Primary Key)</td>
+<td>PK</td>
+<td>Identificador da matrícula</td>
 </tr>
 <tr>
-<td>doctor_id</td>
+<td>user_id</td>
 <td>UUID</td>
-<td>Doctor ID (Foreign Key referencing <code>Users.id</code>)</td>
+<td>FK -&gt; users(id)</td>
+<td>Aluno matriculado</td>
 </tr>
 <tr>
-<td>start_date</td>
-<td>TIMESTAMP</td>
-<td>Subscription start date</td>
-</tr>
-<tr>
-<td>end_date</td>
-<td>TIMESTAMP</td>
-<td>Subscription end date</td>
+<td>course_id</td>
+<td>UUID</td>
+<td>FK -&gt; courses(id)</td>
+<td>Curso</td>
 </tr>
 <tr>
 <td>status</td>
-<td>ENUM</td>
-<td>Subscription status (e.g.,<code>active</code>,<code>inactive</code>)</td>
+<td>VARCHAR(32)</td>
+<td>NOT NULL</td>
+<td>Enum: 'active', 'cancelled'</td>
 </tr>
 <tr>
-<td>created_at</td>
+<td>enrolled_at</td>
 <td>TIMESTAMP</td>
-<td>Subscription creation date</td>
+<td>DEFAULT now()</td>
+<td>Data da matrícula</td>
 </tr>
 <tr>
-<td>updated_at</td>
+<td>deleted_at</td>
 <td>TIMESTAMP</td>
-<td>Last subscription update date</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-relationships"><strong>2. Relationships</strong></h2>
-<ol>
-<li><strong>Users ↔ Documents:</strong></li>
-<li>A <strong>user</strong> (doctor or administrator) can create multiple  <strong>documents</strong> , but each document is created by a single user.</li>
-<li><strong>One-to-many</strong> relationship between <code>Users</code> and <code>Documents</code>.</li>
-<li><strong>Documents ↔ Topics:</strong></li>
-<li>A <strong>document</strong> can be associated with multiple  <strong>topics</strong> , and a <strong>topic</strong> can be associated with multiple  <strong>documents</strong> .</li>
-<li><strong>Many-to-many</strong> relationship between <code>Documents</code> and <code>Topics</code>, resolved by the intermediate table <code>Document_Topics</code>.</li>
-<li><strong>Users ↔ Subscription:</strong></li>
-<li>A <strong>user</strong> (doctor) can have a single  <strong>subscription</strong> , but a subscription is linked to only one  <strong>user</strong> .</li>
-<li><strong>One-to-one</strong> relationship between <code>Users</code> and <code>Subscription</code> (for doctors).</li>
-</ol>
-<h2 id="3-example-entity-relationship-diagram-erd"><strong>3. Example Entity-Relationship Diagram (ERD)</strong></h2>
-<pre><code>  Users
-  +-------------------------+
-  | id (PK)                 |
-  | name                    |
-  | email                   |
-  | password                |
-  | role                    |
-  | created_at              |
-  | updated_at              |
-  +-------------------------+
-         |
-         | 1
-         | 
-         | N
-   +-------------------------+
-   | Documents               |
-   |-------------------------|
-   | id (PK)                 |
-   | title                   |
-   | content                 |
-   | created_by (FK)         |
-   | created_at              |
-   | updated_at              |
-   +-------------------------+
-         |
-         | N
-         |
-   +-------------------------+
-   | Document_Topics         |
-   |-------------------------|
-   | document_id (FK)        |
-   | topic_id (FK)           |
-   +-------------------------+
-         |
-         | N
-         |
-   +-------------------------+
-   | Topics                  |
-   |-------------------------|
-   | id (PK)                 |
-   | name                    |
-   | created_at              |
-   | updated_at              |
-   +-------------------------+
-
-   +-------------------------+
-   | Subscription            |
-   |-------------------------|
-   | id (PK)                 |
-   | doctor_id (FK)          |
-   | start_date              |
-   | end_date                |
-   | status                  |
-   | created_at              |
-   | updated_at              |
-   +-------------------------+
-</code></pre>
-<h2 id="4-field-explanations"><strong>4. Field Explanations</strong></h2>
-<ul>
-<li><strong>PK (Primary Key)</strong> : Primary key, used to uniquely identify a record.</li>
-<li><strong>FK (Foreign Key)</strong> : Foreign key, used to establish a relationship with another table.</li>
-</ul>
-<h1 id="revision-history">Revision History</h1>
+<h4 id="historico-enrollments_history">Histórico: enrollments_history</h4>
+<hr />
+<h3 id="progress">progress</h3>
 <table>
 <thead>
 <tr>
-<th>Date</th>
-<th>Version</th>
-<th>Changes</th>
-<th>Authors</th>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>02/04/2024</td>
-<td>0.1</td>
-<td>Document creation</td>
-<td></td>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador do progresso</td>
 </tr>
 <tr>
-<td>06/04/2024</td>
-<td>0.2</td>
-<td>Topics 1.1, 1.2, 1.3, and 3</td>
-<td></td>
+<td>user_id</td>
+<td>UUID</td>
+<td>FK -&gt; users(id)</td>
+<td>Usuário</td>
 </tr>
 <tr>
-<td>16/04/2024</td>
-<td>0.3</td>
-<td>Documentation on Git Pages</td>
-<td></td>
+<td>course_id</td>
+<td>UUID</td>
+<td>FK -&gt; courses(id)</td>
+<td>Curso</td>
 </tr>
 <tr>
-<td>09/09/2024</td>
-<td>0.4</td>
-<td>Updated technologies and app type</td>
-<td></td>
+<td>module_id</td>
+<td>UUID</td>
+<td>FK -&gt; modules(id)</td>
+<td>Módulo</td>
 </tr>
 <tr>
-<td>09/09/2024</td>
-<td>0.5</td>
-<td>Technology adjustments</td>
+<td>lesson_id</td>
+<td>UUID</td>
+<td>FK -&gt; lessons(id)</td>
+<td>Aula</td>
+</tr>
+<tr>
+<td>progress_pct</td>
+<td>NUMERIC(5,2)</td>
 <td></td>
+<td>Percentual de conclusão</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td>Última atualização</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
 </tr>
 </tbody>
 </table>
+<h4 id="historico-progress_history">Histórico: progress_history</h4>
+<hr />
+<h3 id="media">media</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador da mídia</td>
+</tr>
+<tr>
+<td>owner_id</td>
+<td>UUID</td>
+<td>FK -&gt; users(id)</td>
+<td>Dono da mídia</td>
+</tr>
+<tr>
+<td>url</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Caminho/URL do arquivo</td>
+</tr>
+<tr>
+<td>type</td>
+<td>VARCHAR(32)</td>
+<td></td>
+<td>Tipo (imagem, vídeo, áudio)</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td></td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-media_history">Histórico: media_history</h4>
+<hr />
+<h3 id="course_media">course_media</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador</td>
+</tr>
+<tr>
+<td>course_id</td>
+<td>UUID</td>
+<td>FK -&gt; courses(id)</td>
+<td>Curso</td>
+</tr>
+<tr>
+<td>media_id</td>
+<td>UUID</td>
+<td>FK -&gt; media(id)</td>
+<td>Mídia</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-course_media_history">Histórico: course_media_history</h4>
+<hr />
+<h3 id="notifications">notifications</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Restrições</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK</td>
+<td>Identificador da notificação</td>
+</tr>
+<tr>
+<td>sender_id</td>
+<td>UUID</td>
+<td>FK -&gt; users(id)</td>
+<td>Remetente</td>
+</tr>
+<tr>
+<td>recipient_id</td>
+<td>UUID</td>
+<td>FK -&gt; users(id)</td>
+<td>Destinatário</td>
+</tr>
+<tr>
+<td>title</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>message</td>
+<td>TEXT</td>
+<td>NOT NULL</td>
+<td>Mensagem</td>
+</tr>
+<tr>
+<td>status</td>
+<td>VARCHAR(32)</td>
+<td>NOT NULL</td>
+<td>Enum: 'sent', 'read'</td>
+</tr>
+<tr>
+<td>sent_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Data envio</td>
+</tr>
+<tr>
+<td>read_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Data leitura</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Soft delete</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>DEFAULT now()</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>INT</td>
+<td>DEFAULT 1</td>
+<td>Controle de versão</td>
+</tr>
+</tbody>
+</table>
+<h4 id="historico-notifications_history">Histórico: notifications_history</h4>
+<hr />
+<h2 id="observacoes-gerais">Observações Gerais</h2>
+<ul>
+<li><strong>Cada tabela possui sua tabela de histórico</strong>, espelhando campos e incluindo usuário/responsável pela alteração.</li>
+<li><strong>Soft delete</strong>: Todos os SELECTs relevantes devem filtrar por <code>deleted_at IS NULL</code>.</li>
+<li><strong>Controle de permissão</strong>: Use a estrutura de roles/permissions para RBAC, mesmo com uso restrito (admin/creator/student).</li>
+<li><strong>Relacionamentos</strong>: Todos os FKs estão explícitos.</li>
+<li><strong>Versão</strong>: O campo <code>version</code> deve ser incrementado a cada alteração, auxiliando o versionamento e a auditoria.</li>
+<li><strong>Auditoria</strong>: As tabelas de histórico devem registrar o usuário responsável pela mudança (ex: campo <code>changed_by</code>).</li>
+</ul>
+<hr />
+<h2 id="diagrama-entidade-relacionamento-erd-sugestao-visual">Diagrama Entidade-Relacionamento (ERD) - [Sugestão visual]</h2>
+<p>Para a versão visual, recomenda-se utilizar ferramentas como <strong>dbdiagram.io</strong> ou <strong>draw.io</strong> com as tabelas acima.</p>
+<hr />
+<p>Se precisar do <strong>DDL em SQL</strong>, modelo visual ou ajustes finos de relacionamento, me avise antes de seguir. Se algum campo, relação ou comportamento ficou de fora, só apontar.</p>
+<hr />
 <p><a href="../../../../">← Back to Main Page</a></p>
 
 

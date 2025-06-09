@@ -20,7 +20,7 @@
     
     
       
-        <title>Api - Educado</title>
+        <title>API Documentation: Educado Platform - Educado</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-documentation-content-and-user-management-system" class="md-skip">
+        <a href="#api-documentation-educado-platform" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Api
+              API Documentation: Educado Platform
             
           </span>
         </div>
@@ -1260,23 +1260,18 @@
   
 
 
-  <h1>Api</h1>
-
-<h3 id="api-documentation-content-and-user-management-system">API Documentation: Content and User Management System</h3>
+<h1 id="api-documentation-educado-platform">API Documentation: Educado Platform</h1>
 <p><a href="../../../../">← Back to Main Page</a></p>
-<p>This documentation provides a comprehensive overview of the API for managing users, content, and subscriptions within the system.</p>
+<p>This documentation provides a comprehensive overview of the API for managing users, courses, content, enrollment, media, notifications, and progress within the Educado platform.</p>
 <hr />
 <h2 id="base-url">Base URL</h2>
 <p>The base URL for all API requests is:</p>
-<pre><code>https://api.example.com
-</code></pre>
+<p><a href="https://api.educado.com">https://api.educado.com</a></p>
 <hr />
 <h2 id="authentication">Authentication</h2>
-<p>All requests that require authentication must include a <strong>Bearer token</strong> in the <code>Authorization</code> header. The token is obtained after a successful login.</p>
+<p>All requests requiring authentication must include a <strong>Bearer token</strong> in the <code>Authorization</code> header. The token is obtained after a successful login.</p>
 <p><strong>Example:</strong></p>
-<pre><code class="language-plaintext">Authorization: Bearer &lt;your-jwt-token&gt;
-</code></pre>
-<hr />
+<h2 id="authorization-bearer">Authorization: Bearer <your-jwt-token></h2>
 <h2 id="endpoints">Endpoints</h2>
 <h3 id="1-user-management">1. <strong>User Management</strong></h3>
 <table>
@@ -1291,7 +1286,7 @@
 <tr>
 <td><code>/api/register</code></td>
 <td><code>POST</code></td>
-<td>Registers a new user (doctor/admin).</td>
+<td>Registers a new user (student/creator).</td>
 </tr>
 <tr>
 <td><code>/api/login</code></td>
@@ -1305,13 +1300,18 @@
 </tr>
 <tr>
 <td><code>/api/users/{id}</code></td>
+<td><code>GET</code></td>
+<td>Retrieves details of a user.</td>
+</tr>
+<tr>
+<td><code>/api/users/{id}</code></td>
 <td><code>PUT</code></td>
 <td>Edits a user profile.</td>
 </tr>
 <tr>
 <td><code>/api/users/{id}</code></td>
 <td><code>DELETE</code></td>
-<td>Deletes a user.</td>
+<td>Deactivates a user (soft delete).</td>
 </tr>
 </tbody>
 </table>
@@ -1319,144 +1319,68 @@
 <ul>
 <li><strong>URL:</strong> <code>/api/register</code></li>
 <li><strong>Method:</strong> <code>POST</code></li>
-<li><strong>Description:</strong> Registers a new user (doctor or administrator).</li>
 <li><strong>Request Body:</strong></li>
 </ul>
 <p><code>json
   {
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "password": "password123",
-    "role": "doctor"
+    "name": "Alice",
+    "email": "alice@example.com",
+    "password": "Password123",
+    "role": "student" or "creator"
   }</code>
 * <strong>Responses:</strong></p>
 <ul>
-<li><strong>200 OK</strong> : Successfully registered user.</li>
+<li><strong>201 Created</strong></li>
+<li><strong>400 Bad Request</strong></li>
 </ul>
-<p><code>json
-  {
-    "message": "User registered successfully",
-    "user": {
-      "_id": "60c72b2f9b1d8f7f1e9e4f72",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "role": "doctor"
-    }
-  }</code></p>
-<ul>
-<li><strong>400 Bad Request</strong> : Invalid input data.</li>
-</ul>
-<p><code>json
-  {
-    "error": "Invalid input data"
-  }</code></p>
 <h4 id="12-user-login">1.2 User Login</h4>
 <ul>
 <li><strong>URL:</strong> <code>/api/login</code></li>
 <li><strong>Method:</strong> <code>POST</code></li>
-<li><strong>Description:</strong> Logs in a user and returns a JWT token.</li>
 <li><strong>Request Body:</strong></li>
 </ul>
 <p><code>json
   {
-    "email": "john.doe@example.com",
-    "password": "password123"
+    "email": "alice@example.com",
+    "password": "Password123"
   }</code>
 * <strong>Responses:</strong></p>
 <ul>
-<li><strong>200 OK</strong> : Login successful, JWT token returned.</li>
+<li><strong>200 OK</strong>: <code>{ "token": "&lt;jwt-token&gt;" }</code></li>
+<li><strong>401 Unauthorized</strong></li>
 </ul>
-<p><code>json
-  {
-    "message": "Login successful",
-    "token": "your-jwt-token"
-  }</code></p>
-<ul>
-<li><strong>401 Unauthorized</strong> : Incorrect credentials.</li>
-</ul>
-<p><code>json
-  {
-    "error": "Invalid credentials"
-  }</code></p>
 <h4 id="13-get-user-list-admin-only">1.3 Get User List (Admin only)</h4>
 <ul>
 <li><strong>URL:</strong> <code>/api/users</code></li>
 <li><strong>Method:</strong> <code>GET</code></li>
-<li><strong>Description:</strong> Lists all users (Admin access required).</li>
-<li><strong>Response:</strong>
-  <code>json
-  [
-    {
-      "_id": "60c72b2f9b1d8f7f1e9e4f72",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "role": "doctor"
-    },
-    {
-      "_id": "60c72b2f9b1d8f7f1e9e4f73",
-      "name": "Jane Smith",
-      "email": "jane.smith@example.com",
-      "role": "administrator"
-    }
-  ]</code></li>
+<li><strong>Response:</strong> <code>[{ "_id": "...", "name": "...", "email": "...", "role": "student" }]</code></li>
 </ul>
-<h4 id="14-edit-user-profile">1.4 Edit User Profile</h4>
+<h4 id="14-get-user-details">1.4 Get User Details</h4>
+<ul>
+<li><strong>URL:</strong> <code>/api/users/{id}</code></li>
+<li><strong>Method:</strong> <code>GET</code></li>
+<li><strong>Response:</strong> <code>{ "_id": "...", "name": "...", "email": "...", "role": "...", ... }</code></li>
+</ul>
+<h4 id="15-edit-user-profile">1.5 Edit User Profile</h4>
 <ul>
 <li><strong>URL:</strong> <code>/api/users/{id}</code></li>
 <li><strong>Method:</strong> <code>PUT</code></li>
-<li><strong>Description:</strong> Edits a user profile.</li>
 <li><strong>Request Body:</strong></li>
 </ul>
 <p><code>json
   {
-    "name": "John Doe Updated",
-    "email": "john.doe.updated@example.com"
+    "name": "Alice Updated",
+    "email": "alice.updated@example.com"
   }</code>
-* <strong>Response:</strong></p>
-<ul>
-<li><strong>200 OK</strong> : User updated successfully.</li>
-</ul>
-<p><code>json
-  {
-    "message": "User updated successfully",
-    "user": {
-      "_id": "60c72b2f9b1d8f7f1e9e4f72",
-      "name": "John Doe Updated",
-      "email": "john.doe.updated@example.com",
-      "role": "doctor"
-    }
-  }</code></p>
-<ul>
-<li><strong>400 Bad Request</strong> : Invalid data provided.</li>
-</ul>
-<p><code>json
-  {
-    "error": "Invalid input data"
-  }</code></p>
-<h4 id="15-delete-user">1.5 Delete User</h4>
+* <strong>Response:</strong> <code>{ "message": "User updated successfully", "user": { ... } }</code></p>
+<h4 id="16-deactivate-user">1.6 Deactivate User</h4>
 <ul>
 <li><strong>URL:</strong> <code>/api/users/{id}</code></li>
 <li><strong>Method:</strong> <code>DELETE</code></li>
-<li><strong>Description:</strong> Deletes a user.</li>
-<li>
-<p><strong>Response:</strong></p>
-</li>
-<li>
-<p><strong>200 OK</strong> : User deleted successfully.</p>
-</li>
+<li><strong>Response:</strong> <code>{ "message": "User deactivated successfully" }</code></li>
 </ul>
-<p><code>json
-  {
-    "message": "User deleted successfully"
-  }</code></p>
-<ul>
-<li><strong>404 Not Found</strong> : User not found.</li>
-</ul>
-<p><code>json
-  {
-    "error": "User not found"
-  }</code></p>
-<h3 id="2-content-management">2. <strong>Content Management</strong></h3>
+<hr />
+<h3 id="2-course-management">2. <strong>Course Management</strong></h3>
 <table>
 <thead>
 <tr>
@@ -1467,132 +1391,279 @@
 </thead>
 <tbody>
 <tr>
-<td><code>/api/documents</code></td>
+<td><code>/api/courses</code></td>
 <td><code>POST</code></td>
-<td>Creates a new document.</td>
+<td>Creates a new course (creator/admin).</td>
 </tr>
 <tr>
-<td><code>/api/documents</code></td>
+<td><code>/api/courses</code></td>
 <td><code>GET</code></td>
-<td>Lists all documents.</td>
+<td>Lists all courses.</td>
 </tr>
 <tr>
-<td><code>/api/documents/{id}</code></td>
+<td><code>/api/courses/{id}</code></td>
+<td><code>GET</code></td>
+<td>Gets course details.</td>
+</tr>
+<tr>
+<td><code>/api/courses/{id}</code></td>
 <td><code>PUT</code></td>
-<td>Edits a document.</td>
+<td>Updates a course.</td>
 </tr>
 <tr>
-<td><code>/api/documents/{id}</code></td>
+<td><code>/api/courses/{id}</code></td>
 <td><code>DELETE</code></td>
-<td>Deletes a document.</td>
+<td>Deactivates a course (soft delete).</td>
 </tr>
 </tbody>
 </table>
-<h4 id="21-create-document">2.1 Create Document</h4>
+<h4 id="21-create-course">2.1 Create Course</h4>
 <ul>
-<li><strong>URL:</strong> <code>/api/documents</code></li>
+<li><strong>URL:</strong> <code>/api/courses</code></li>
 <li><strong>Method:</strong> <code>POST</code></li>
-<li><strong>Description:</strong> Creates a new document.</li>
 <li><strong>Request Body:</strong></li>
 </ul>
 <p><code>json
   {
-    "title": "Medical Guidelines for COVID-19",
-    "content": "Detailed content about COVID-19 prevention.",
-    "topics": ["60c72b2f9b1d8f7f1e9e4f75"]
+    "title": "Waste Sorting Basics",
+    "description": "Learn how to separate waste.",
+    "creator_id": "uuid-of-creator"
   }</code>
-* <strong>Responses:</strong></p>
+* <strong>Response:</strong> <code>{ "message": "Course created successfully", "course": { ... } }</code></p>
+<h4 id="22-list-courses">2.2 List Courses</h4>
 <ul>
-<li><strong>201 Created</strong> : Document created successfully.</li>
-</ul>
-<p><code>json
-  {
-    "message": "Document created successfully",
-    "document": {
-      "_id": "60c72b2f9b1d8f7f1e9e4f76",
-      "title": "Medical Guidelines for COVID-19",
-      "content": "Detailed content about COVID-19 prevention.",
-      "topics": ["60c72b2f9b1d8f7f1e9e4f75"]
-    }
-  }</code></p>
-<ul>
-<li><strong>400 Bad Request</strong> : Invalid input data.</li>
-</ul>
-<p><code>json
-  {
-    "error": "Invalid input data"
-  }</code></p>
-<h4 id="22-get-documents-list">2.2 Get Documents List</h4>
-<ul>
-<li><strong>URL:</strong> <code>/api/documents</code></li>
+<li><strong>URL:</strong> <code>/api/courses</code></li>
 <li><strong>Method:</strong> <code>GET</code></li>
-<li><strong>Description:</strong> Lists all documents.</li>
-<li><strong>Response:</strong>
-  <code>json
-  [
-    {
-      "_id": "60c72b2f9b1d8f7f1e9e4f76",
-      "title": "Medical Guidelines for COVID-19",
-      "content": "Detailed content about COVID-19 prevention.",
-      "topics": ["60c72b2f9b1d8f7f1e9e4f75"]
-    }
-  ]</code></li>
+<li><strong>Response:</strong> <code>[ { "_id": "...", "title": "...", ... } ]</code></li>
 </ul>
-<h4 id="23-edit-document">2.3 Edit Document</h4>
+<h4 id="23-course-details">2.3 Course Details</h4>
 <ul>
-<li><strong>URL:</strong> <code>/api/documents/{id}</code></li>
+<li><strong>URL:</strong> <code>/api/courses/{id}</code></li>
+<li><strong>Method:</strong> <code>GET</code></li>
+<li><strong>Response:</strong> <code>{ "_id": "...", "title": "...", ... }</code></li>
+</ul>
+<h4 id="24-update-course">2.4 Update Course</h4>
+<ul>
+<li><strong>URL:</strong> <code>/api/courses/{id}</code></li>
 <li><strong>Method:</strong> <code>PUT</code></li>
-<li><strong>Description:</strong> Edits an existing document.</li>
 <li><strong>Request Body:</strong></li>
 </ul>
 <p><code>json
   {
-    "title": "Updated Medical Guidelines for COVID-19",
-    "content": "Updated content about COVID-19 prevention."
+    "title": "Updated Course Title",
+    "description": "New description."
   }</code>
-* <strong>Response:</strong></p>
+* <strong>Response:</strong> <code>{ "message": "Course updated successfully", "course": { ... } }</code></p>
+<h4 id="25-deactivate-course">2.5 Deactivate Course</h4>
 <ul>
-<li><strong>200 OK</strong> : Document updated successfully.</li>
-</ul>
-<p><code>json
-  {
-    "message": "Document updated successfully",
-    "document": {
-      "_id": "60c72b2f9b1d8f7f1e9e4f76",
-      "title": "Updated Medical Guidelines for COVID-19",
-      "content": "Updated content about COVID-19 prevention."
-    }
-  }</code></p>
-<ul>
-<li><strong>400 Bad Request</strong> : Invalid data provided.</li>
-</ul>
-<p><code>json
-  {
-    "error": "Invalid input data"
-  }</code></p>
-<h4 id="24-delete-document">2.4 Delete Document</h4>
-<ul>
-<li><strong>URL:</strong> <code>/api/documents/{id}</code></li>
+<li><strong>URL:</strong> <code>/api/courses/{id}</code></li>
 <li><strong>Method:</strong> <code>DELETE</code></li>
-<li><strong>Description:</strong> Deletes a document.</li>
-<li>
-<p><strong>Response:</strong></p>
-</li>
-<li>
-<p><strong>200 OK</strong> : Document deleted successfully.</p>
-</li>
+<li><strong>Response:</strong> <code>{ "message": "Course deactivated successfully" }</code></li>
 </ul>
-<p><code>json
-  {
-    "message": "Document deleted successfully"
-  }</code></p>
+<hr />
+<h3 id="3-module-lesson-and-exercise-management">3. <strong>Module, Lesson, and Exercise Management</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/courses/{courseId}/modules</code></td>
+<td><code>POST</code></td>
+<td>Creates a module in a course.</td>
+</tr>
+<tr>
+<td><code>/api/modules/{id}</code></td>
+<td><code>PUT</code></td>
+<td>Updates a module.</td>
+</tr>
+<tr>
+<td><code>/api/modules/{id}</code></td>
+<td><code>DELETE</code></td>
+<td>Deactivates a module.</td>
+</tr>
+<tr>
+<td><code>/api/modules/{moduleId}/lessons</code></td>
+<td><code>POST</code></td>
+<td>Creates a lesson in a module.</td>
+</tr>
+<tr>
+<td><code>/api/lessons/{id}</code></td>
+<td><code>PUT</code></td>
+<td>Updates a lesson.</td>
+</tr>
+<tr>
+<td><code>/api/lessons/{id}</code></td>
+<td><code>DELETE</code></td>
+<td>Deactivates a lesson.</td>
+</tr>
+<tr>
+<td><code>/api/lessons/{lessonId}/exercises</code></td>
+<td><code>POST</code></td>
+<td>Creates an exercise in a lesson.</td>
+</tr>
+<tr>
+<td><code>/api/exercises/{id}</code></td>
+<td><code>PUT</code></td>
+<td>Updates an exercise.</td>
+</tr>
+<tr>
+<td><code>/api/exercises/{id}</code></td>
+<td><code>DELETE</code></td>
+<td>Deactivates an exercise.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="4-enrollment">4. <strong>Enrollment</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/courses/{courseId}/enroll</code></td>
+<td><code>POST</code></td>
+<td>Enrolls the authenticated user in a course.</td>
+</tr>
+<tr>
+<td><code>/api/enrollments</code></td>
+<td><code>GET</code></td>
+<td>Lists enrollments for authenticated user.</td>
+</tr>
+<tr>
+<td><code>/api/enrollments/{id}</code></td>
+<td><code>DELETE</code></td>
+<td>Cancels an enrollment (soft delete).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="5-progress-tracking">5. <strong>Progress Tracking</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/progress</code></td>
+<td><code>GET</code></td>
+<td>Lists progress records for the authenticated user.</td>
+</tr>
+<tr>
+<td><code>/api/progress</code></td>
+<td><code>POST</code></td>
+<td>Updates or creates a progress record.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="6-media-management">6. <strong>Media Management</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/media</code></td>
+<td><code>POST</code></td>
+<td>Uploads media (image, video, audio).</td>
+</tr>
+<tr>
+<td><code>/api/media</code></td>
+<td><code>GET</code></td>
+<td>Lists all media for the user.</td>
+</tr>
+<tr>
+<td><code>/api/media/{id}</code></td>
+<td><code>GET</code></td>
+<td>Gets media details.</td>
+</tr>
+<tr>
+<td><code>/api/media/{id}</code></td>
+<td><code>PUT</code></td>
+<td>Updates media metadata.</td>
+</tr>
+<tr>
+<td><code>/api/media/{id}</code></td>
+<td><code>DELETE</code></td>
+<td>Deletes (deactivates) media.</td>
+</tr>
+<tr>
+<td><code>/api/courses/{id}/media</code></td>
+<td><code>POST</code></td>
+<td>Associates media to a course.</td>
+</tr>
+<tr>
+<td><code>/api/courses/{id}/media</code></td>
+<td><code>DELETE</code></td>
+<td>Removes media from a course.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="7-notifications">7. <strong>Notifications</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/notifications</code></td>
+<td><code>POST</code></td>
+<td>Creates a notification.</td>
+</tr>
+<tr>
+<td><code>/api/notifications</code></td>
+<td><code>GET</code></td>
+<td>Lists notifications for the user.</td>
+</tr>
+<tr>
+<td><code>/api/notifications/{id}</code></td>
+<td><code>PUT</code></td>
+<td>Updates a notification.</td>
+</tr>
+<tr>
+<td><code>/api/notifications/{id}</code></td>
+<td><code>DELETE</code></td>
+<td>Deletes a notification.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="response-codes">Response Codes</h2>
 <ul>
-<li><strong>404 Not Found</strong> : Document not found.</li>
+<li><code>200 OK</code> – Request succeeded.</li>
+<li><code>201 Created</code> – Resource created successfully.</li>
+<li><code>400 Bad Request</code> – Invalid input.</li>
+<li><code>401 Unauthorized</code> – Authentication required or failed.</li>
+<li><code>403 Forbidden</code> – Insufficient permissions.</li>
+<li><code>404 Not Found</code> – Resource not found.</li>
+<li><code>409 Conflict</code> – Resource conflict (e.g., duplicate email).</li>
+<li><code>500 Internal Server Error</code> – Unhandled error.</li>
 </ul>
-<p><code>json
-  {
-    "error": "Document not found"
-  }</code></p>
+<hr />
+<p>For further details on request/response formats, refer to the <strong>OpenAPI/Swagger</strong> specification.</p>
 <p><a href="../../../../">← Back to Main Page</a></p>
 
 

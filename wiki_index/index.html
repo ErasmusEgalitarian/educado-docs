@@ -486,76 +486,76 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-visao-geral" class="md-nav__link">
+  <a href="#1-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Visão Geral
+      1. Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-motivacao" class="md-nav__link">
+  <a href="#2-motivation" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Motivação
+      2. Motivation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-principais-caracteristicas" class="md-nav__link">
+  <a href="#3-main-features" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Principais Características
+      3. Main Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-arquitetura-conceitual" class="md-nav__link">
+  <a href="#4-conceptual-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Arquitetura Conceitual
+      4. Conceptual Architecture
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-como-usar-a-ferramenta-concept" class="md-nav__link">
+  <a href="#5-how-to-use-the-tool-concept" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Como Usar a Ferramenta (Concept)
+      5. How to Use the Tool (Concept)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-estrutura-dos-arquivos-de-entrada-e-saida" class="md-nav__link">
+  <a href="#6-structure-of-input-and-output-files" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Estrutura dos Arquivos de Entrada e Saída
+      6. Structure of Input and Output Files
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-consideracoes-tecnicas-e-limitacoes" class="md-nav__link">
+  <a href="#7-technical-considerations-and-limitations" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Considerações Técnicas e Limitações
+      7. Technical Considerations and Limitations
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-resultados" class="md-nav__link">
+  <a href="#8-results" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Resultados
+      8. Results
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="8. Resultados">
+    <nav class="md-nav" aria-label="8. Results">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -573,18 +573,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-contato-e-suporte" class="md-nav__link">
+  <a href="#9-contact-and-support" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Contato e Suporte
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#revision-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Revision History
+      9. Contact and Support
     </span>
   </a>
   
@@ -1414,214 +1405,177 @@
 
 <h1 id="wiki-conceptual-overview-of-the-hierarchical-classification-tool">WIKI - Conceptual Overview of the Hierarchical Classification Tool</h1>
 <hr />
-<h2 id="1-visao-geral">1. Visão Geral</h2>
-<p>Este projeto é um conceito inovador para classificação hierárquica de requisitos textuais complexos usando técnicas de processamento de linguagem natural (NLP) e aprendizado de máquina. A ferramenta propõe uma estrutura multinível de análise, combinando clustering em níveis primário, secundário e terciário, apoiada por um assistente inteligente baseado em modelos de linguagem (LLM) para refinamento iterativo e enriquecimento dos resultados.</p>
-<p>O projeto surgiu da necessidade do <strong>Educado</strong>, uma plataforma dedicada a prover conteúdo educativo para catadores e cooperativas, que enfrenta o desafio do <strong>grande volume de documentação e requisitos técnicos e sociais</strong>, tornando manual a organização e interpretação dos documentos algo custoso e sujeito a erros.</p>
-<p>A solução busca facilitar a organização e interpretação desses grandes volumes de documentos e requisitos, potencializando a análise por meio da automação e inteligência artificial, promovendo decisões mais rápidas e confiáveis no desenvolvimento e gestão da plataforma.</p>
+<h2 id="1-overview">1. Overview</h2>
+<p>This project is an innovative concept for the hierarchical classification of complex textual requirements using Natural Language Processing (NLP) and machine learning techniques. The tool proposes a multi-level analysis structure, combining clustering at primary, secondary, and tertiary levels, supported by an intelligent assistant based on language models (LLMs) for iterative refinement and enriched results.</p>
+<p>The project arose from the needs of <strong>Educado</strong>, a platform dedicated to providing educational content for waste pickers and cooperatives, which faces the challenge of a <strong>large volume of technical and social documentation and requirements</strong>—making manual organization and interpretation costly and error-prone.</p>
+<p>The solution aims to facilitate the organization and interpretation of these large volumes of documents and requirements, enhancing analysis through automation and artificial intelligence, and enabling faster and more reliable decision-making in the development and management of the platform.</p>
 <hr />
-<h2 id="2-motivacao">2. Motivação</h2>
-<p>A classificação de requisitos textuais em projetos complexos enfrenta desafios significativos devido à natureza heterogênea, ambígua e volumosa dos dados. Métodos tradicionais, como classificação manual ou técnicas simples de agrupamento, tornam-se insuficientes diante de grandes volumes e múltiplos níveis de hierarquia.</p>
-<p>Neste contexto, a aplicação de técnicas de NLP avançadas e clustering multinível permite uma organização mais granular e intuitiva dos requisitos, facilitando a compreensão, priorização e tomada de decisão.</p>
-<p>Além disso, a integração de modelos de linguagem (LLMs) como assistentes inteligentes para sugerir refinamentos, ajustar stopwords e gerar labels automáticas eleva a qualidade e eficiência do processo, reduzindo esforço manual e aumentando a precisão.</p>
-<p>Esta motivação está diretamente ligada às necessidades do projeto Educado, que requer um sistema capaz de lidar com grandes volumes e complexidades textuais para suportar sua missão educacional e social.</p>
+<h2 id="2-motivation">2. Motivation</h2>
+<p>The classification of textual requirements in complex projects faces significant challenges due to the heterogeneous, ambiguous, and voluminous nature of the data. Traditional methods, such as manual classification or simple grouping techniques, become insufficient when dealing with large volumes and multiple levels of hierarchy.</p>
+<p>In this context, the application of advanced NLP techniques and multi-level clustering allows for more granular and intuitive organization of requirements, facilitating understanding, prioritization, and decision-making.</p>
+<p>Moreover, the integration of language models (LLMs) as intelligent assistants to suggest refinements, adjust stopwords, and generate automatic labels increases the quality and efficiency of the process, reducing manual effort and increasing accuracy.</p>
+<p>This motivation is directly linked to the needs of the Educado project, which requires a system capable of handling large volumes and textual complexities to support its educational and social mission.</p>
 <hr />
-<h2 id="3-principais-caracteristicas">3. Principais Características</h2>
+<h2 id="3-main-features">3. Main Features</h2>
 <ul>
 <li>
-<p><strong>Classificação Multinível:</strong> Organização dos requisitos em níveis hierárquicos primário, secundário e terciário, proporcionando granularidade na análise.</p>
+<p><strong>Multi-level Classification:</strong> Organizes requirements into primary, secondary, and tertiary hierarchical levels, providing analysis granularity.</p>
 </li>
 <li>
-<p><strong>Assistente Inteligente para Stopwords:</strong> Uso de modelos de linguagem para refinar iterativamente a lista de palavras irrelevantes (stopwords), melhorando a qualidade da tokenização.</p>
+<p><strong>Intelligent Stopwords Assistant:</strong> Uses language models to iteratively refine the list of irrelevant words (stopwords), improving tokenization quality.</p>
 </li>
 <li>
-<p><strong>Geração Automática de Labels:</strong> Criação de rótulos significativos para clusters por meio de LLMs, facilitando a interpretação dos grupos.</p>
+<p><strong>Automatic Label Generation:</strong> Creates meaningful labels for clusters through LLMs, facilitating group interpretation.</p>
 </li>
 <li>
-<p><strong>Auditoria de Clusters:</strong> Detecção e sugestão de merge ou split de clusters para otimizar a classificação, com suporte de inteligência artificial.</p>
+<p><strong>Cluster Auditing:</strong> Detects and suggests merging or splitting clusters to optimize classification, with AI support.</p>
 </li>
 <li>
-<p><strong>Geração de Resumos (Abstracts):</strong> Produção automática de resumos para os clusters, sintetizando os temas principais para fácil compreensão.</p>
+<p><strong>Abstract Generation:</strong> Automatically produces summaries for clusters, synthesizing main themes for easy understanding.</p>
 </li>
 <li>
-<p><strong>Relatórios de Performance:</strong> Ferramentas para avaliação da qualidade da classificação e visualização dos resultados.</p>
+<p><strong>Performance Reports:</strong> Tools for evaluating classification quality and visualizing results.</p>
 </li>
 </ul>
 <hr />
-<h2 id="4-arquitetura-conceitual">4. Arquitetura Conceitual</h2>
-<p>A arquitetura do sistema segue os princípios da Clean Architecture, garantindo modularidade, testabilidade e facilidade de manutenção. Ela é dividida em quatro camadas principais:</p>
+<h2 id="4-conceptual-architecture">4. Conceptual Architecture</h2>
+<p>The system architecture follows Clean Architecture principles, ensuring modularity, testability, and ease of maintenance. It is divided into four main layers:</p>
 <ul>
 <li>
-<p><strong>Domínio:</strong> Entidades e interfaces que definem as regras de negócio e contratos para os serviços, incluindo as portas para carregamento de dados, limpeza, tokenização, clustering e interação com LLM.</p>
+<p><strong>Domain:</strong> Entities and interfaces that define business rules and service contracts, including ports for data loading, cleaning, tokenization, clustering, and LLM interaction.</p>
 </li>
 <li>
-<p><strong>Aplicação (Use Cases):</strong> Orquestração dos fluxos principais, como classificação, refinamento de stopwords, geração de labels, auditoria e geração de hierarquias.</p>
+<p><strong>Application (Use Cases):</strong> Orchestration of main flows, such as classification, stopwords refinement, label generation, auditing, and hierarchy generation.</p>
 </li>
 <li>
-<p><strong>Infraestrutura:</strong> Implementações concretas das portas, como repositórios para arquivos Excel e PDF, serviços de limpeza de dados, tokenização, clustering KMeans, serviços LLM integrados e geração de relatórios.</p>
+<p><strong>Infrastructure:</strong> Concrete implementations of the ports, such as repositories for Excel and PDF files, data cleaning services, tokenization, KMeans clustering, integrated LLM services, and report generation.</p>
 </li>
 <li>
-<p><strong>Interface:</strong> Camada de apresentação, atualmente via CLI, que oferece menus interativos para executar as funcionalidades e receber parâmetros do usuário.</p>
+<p><strong>Interface:</strong> Presentation layer, currently via CLI, offering interactive menus to execute functionalities and receive user parameters.</p>
 </li>
 </ul>
-<p>O sistema integra-se com APIs externas, principalmente a OpenAI, para utilização dos modelos de linguagem que auxiliam na geração de labels, auditoria e refinamento inteligente.</p>
-<p>Essa arquitetura permite a fácil substituição e extensão de componentes, garantindo escalabilidade para futuras melhorias e adaptações.</p>
+<p>The system integrates with external APIs, mainly OpenAI, for language model usage that supports label generation, auditing, and intelligent refinement.</p>
+<p>This architecture allows for easy replacement and extension of components, ensuring scalability for future improvements and adaptations.</p>
 <hr />
-<h2 id="5-como-usar-a-ferramenta-concept">5. Como Usar a Ferramenta (Concept)</h2>
-<p>Por ser um conceito em desenvolvimento, o uso da ferramenta atualmente ocorre via interface de linha de comando (CLI) com menus interativos que permitem:</p>
+<h2 id="5-how-to-use-the-tool-concept">5. How to Use the Tool (Concept)</h2>
+<p>As a concept under development, the tool is currently used via a command-line interface (CLI) with interactive menus that allow:</p>
 <ul>
-<li><strong>Classificar documentos</strong> (Excel, PDF ou pastas) em múltiplos níveis hierárquicos.  </li>
-<li><strong>Gerenciar stopwords</strong> dinamicamente, com auxílio do assistente LLM para refinamento iterativo.  </li>
-<li><strong>Gerar labels para clusters</strong> automaticamente usando modelos de linguagem.  </li>
-<li><strong>Auditar clusters</strong> com sugestões para merge ou split, promovendo melhor organização.  </li>
-<li><strong>Gerar resumos (abstracts)</strong> para facilitar a compreensão dos clusters.  </li>
-<li><strong>Visualizar relatórios de performance</strong> para análise da qualidade da classificação.</li>
+<li><strong>Classifying documents</strong> (Excel, PDF, or folders) at multiple hierarchical levels.</li>
+<li><strong>Managing stopwords</strong> dynamically, with LLM assistant support for iterative refinement.</li>
+<li><strong>Generating cluster labels</strong> automatically using language models.</li>
+<li><strong>Auditing clusters</strong> with merge or split suggestions, promoting better organization.</li>
+<li><strong>Generating abstracts</strong> to facilitate cluster comprehension.</li>
+<li><strong>Viewing performance reports</strong> for classification quality analysis.</li>
 </ul>
-<p>O usuário é guiado por menus que solicitam caminhos para arquivos, parâmetros de clusterização e opções de refinamento, facilitando o fluxo sem necessidade de conhecimento técnico aprofundado.</p>
+<p>The user is guided by menus requesting file paths, clustering parameters, and refinement options, streamlining the flow without requiring deep technical knowledge.</p>
 <hr />
-<h2 id="6-estrutura-dos-arquivos-de-entrada-e-saida">6. Estrutura dos Arquivos de Entrada e Saída</h2>
-<p><strong>Arquivos de Entrada:</strong></p>
+<h2 id="6-structure-of-input-and-output-files">6. Structure of Input and Output Files</h2>
+<p><strong>Input Files:</strong></p>
 <ul>
-<li>Documentos Excel (.xlsx) com planilhas contendo os requisitos textuais.  </li>
-<li>Documentos PDF (.pdf) para extração textual.  </li>
-<li>Diretórios contendo múltiplos arquivos Excel ou PDF para processamento em lote.</li>
+<li>Excel documents (.xlsx) with spreadsheets containing textual requirements.</li>
+<li>PDF documents (.pdf) for text extraction.</li>
+<li>Directories containing multiple Excel or PDF files for batch processing.</li>
 </ul>
-<p><strong>Arquivos Intermediários:</strong></p>
+<p><strong>Intermediate Files:</strong></p>
 <ul>
-<li><code>freq_words.txt</code>: lista de palavras frequentes extraídas após limpeza e tokenização, usada para auxiliar refinamento de stopwords.  </li>
-<li><code>all_clustered.xlsx</code>: arquivo com resultados da clusterização contendo IDs, textos tokenizados e números dos clusters.  </li>
-<li><code>labels.json</code>: JSON com labels gerados para os clusters por LLM.  </li>
-<li><code>id_source_mapping.csv</code>: mapeia IDs para nomes originais dos documentos.</li>
+<li><code>freq_words.txt</code>: List of frequent words extracted after cleaning and tokenization, used to assist stopword refinement.</li>
+<li><code>all_clustered.xlsx</code>: File with clustering results containing IDs, tokenized texts, and cluster numbers.</li>
+<li><code>labels.json</code>: JSON with labels generated for clusters by the LLM.</li>
+<li><code>id_source_mapping.csv</code>: Maps IDs to the original document names.</li>
 </ul>
-<p><strong>Arquivos de Saída:</strong></p>
+<p><strong>Output Files:</strong></p>
 <ul>
-<li><code>merged_clusters.xlsx</code>: consolida hierarquias com labels em vários níveis e nomes dos documentos.  </li>
-<li><code>abstracts.xlsx</code>: resumos automáticos para clusters, facilitando análise temática.</li>
+<li><code>merged_clusters.xlsx</code>: Consolidates hierarchies with labels at various levels and document names.</li>
+<li><code>abstracts.xlsx</code>: Automatic summaries for clusters, facilitating thematic analysis.</li>
 </ul>
-<p>Exemplo de colunas importantes nos arquivos Excel:</p>
+<p>Example of key columns in Excel files:</p>
 <table>
 <thead>
 <tr>
-<th>Coluna</th>
-<th>Descrição</th>
+<th>Column</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ID</td>
-<td>Identificador único da linha/documento</td>
+<td>Unique identifier of the row/document</td>
 </tr>
 <tr>
 <td>processed_text</td>
-<td>Texto limpo e tokenizado</td>
+<td>Cleaned and tokenized text</td>
 </tr>
 <tr>
 <td>joined_tokens</td>
-<td>Tokens concatenados para vetorização</td>
+<td>Concatenated tokens for vectorization</td>
 </tr>
 <tr>
 <td>cluster</td>
-<td>Índice do cluster atribuído</td>
+<td>Assigned cluster index</td>
 </tr>
 <tr>
 <td>Primary_label</td>
-<td>Label gerado para cluster primário</td>
+<td>Label generated for primary cluster</td>
 </tr>
 <tr>
 <td>Secondary_label</td>
-<td>Label gerado para cluster secundário</td>
+<td>Label generated for secondary cluster</td>
 </tr>
 <tr>
 <td>Tertiary_label</td>
-<td>Label gerado para cluster terciário</td>
+<td>Label generated for tertiary cluster</td>
 </tr>
 <tr>
 <td>DocumentName</td>
-<td>Nome original do arquivo/documento</td>
+<td>Original file/document name</td>
 </tr>
 <tr>
 <td>Abstract</td>
-<td>Resumo gerado automaticamente pelo LLM</td>
+<td>Summary automatically generated by the LLM</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="7-consideracoes-tecnicas-e-limitacoes">7. Considerações Técnicas e Limitações</h2>
+<h2 id="7-technical-considerations-and-limitations">7. Technical Considerations and Limitations</h2>
 <ul>
-<li>A utilização de modelos de linguagem (LLMs) implica em custos associados às requisições API, que devem ser considerados no planejamento.  </li>
-<li>A qualidade dos resultados depende da qualidade dos dados de entrada; documentos mal formatados podem prejudicar a classificação.  </li>
-<li>Processos de refinamento iterativo podem demandar tempo computacional significativo para grandes volumes.  </li>
-<li>O sistema está em fase conceitual e requer validação contínua para assegurar robustez e escalabilidade.  </li>
-<li>A complexidade da hierarquia pode impactar a interpretação humana, exigindo cuidado na análise dos resultados.  </li>
-<li>Futuras melhorias podem incluir interfaces gráficas, automação do pipeline, suporte a outros idiomas e <strong>servidores de teste dedicados para a API</strong> visando maior segurança e controle do uso.</li>
+<li>The use of language models (LLMs) entails costs associated with API requests, which must be considered in planning.</li>
+<li>The quality of the results depends on the quality of the input data; poorly formatted documents can hinder classification.</li>
+<li>Iterative refinement processes may require significant computational time for large volumes.</li>
+<li>The system is at a conceptual stage and requires continuous validation to ensure robustness and scalability.</li>
+<li>The complexity of the hierarchy may impact human interpretation, requiring care in analyzing results.</li>
+<li>Future improvements may include graphical interfaces, pipeline automation, support for other languages, and <strong>dedicated API test servers</strong> for greater security and usage control.</li>
 </ul>
 <hr />
-<h2 id="8-resultados">8. Resultados</h2>
+<h2 id="8-results">8. Results</h2>
 <ul>
 <li><strong>Database:</strong> <a href="https://erasmusegalitarian.github.io/educado-docs/database/database_index/">Database</a></li>
 </ul>
 <h3 id="suggested-searches">Suggested Searches</h3>
-<p>Para facilitar sua navegação, sugerimos as seguintes buscas na wiki:</p>
+<p>To facilitate your navigation, we suggest the following searches in the wiki:</p>
 <ul>
 <li>
-<p><strong>Search "financial education"</strong><br />
-  Explore documentos relacionados a educação financeira, incluindo plataformas digitais, cursos e relatórios.</p>
+<p><strong>Search "financial education"</strong>
+  Explore documents related to financial education, including digital platforms, courses, and reports.</p>
 </li>
 <li>
-<p><strong>Search "cybersecurity"</strong><br />
-  Encontre materiais sobre segurança em desenvolvimento de software, ataques cibernéticos e análise de vulnerabilidades.</p>
+<p><strong>Search "cybersecurity"</strong>
+  Find materials on secure software development, cyberattacks, and vulnerability analysis.</p>
 </li>
 <li>
-<p><strong>Search "waste pickers"</strong><br />
-  Descubra conteúdos focados na inclusão social e educação para catadores de lixo por meio de tecnologias móveis.</p>
+<p><strong>Search "waste pickers"</strong>
+  Discover content focused on social inclusion and education for waste pickers through mobile technologies.</p>
 </li>
 </ul>
 <hr />
-<h2 id="9-contato-e-suporte">9. Contato e Suporte</h2>
-<p>Este projeto está em desenvolvimento e aberto a colaborações e sugestões. Para entrar em contato, contribuir com código ou relatar problemas, utilize os seguintes canais:</p>
+<h2 id="9-contact-and-support">9. Contact and Support</h2>
+<p>This project is under development and open to collaborations and suggestions. To get in touch, contribute code, or report issues, use the following channels:</p>
 <ul>
-<li><strong>Repositório GitHub:</strong> <a href="https://github.com/LucasGSAntunes/requirements_educado_2024">https://github.com/LucasGSAntunes/requirements_educado_2024</a>  </li>
-<li><strong>E-mail:</strong> lgabrielantunes@gmail.com  </li>
-<li><strong>Comunidade e Discussões:</strong> Entre em contato para mais informações.</li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/LucasGSAntunes/requirements_educado_2024">https://github.com/LucasGSAntunes/requirements_educado_2024</a></li>
+<li><strong>E-mail:</strong> <a href="mailto:lgabrielantunes@gmail.com">lgabrielantunes@gmail.com</a></li>
+<li><strong>Community and Discussions:</strong> Contact us for more information.</li>
 </ul>
-<p>Sua participação é muito bem-vinda para aprimorar esta ferramenta e torná-la uma solução robusta para classificação hierárquica baseada em NLP e IA.</p>
+<p>Your participation is very welcome to improve this tool and make it a robust solution for hierarchical classification based on NLP and AI.</p>
 <hr />
-<h2 id="revision-history">Revision History</h2>
-<table>
-<thead>
-<tr>
-<th>Date</th>
-<th>Version</th>
-<th>Changes</th>
-<th>Authors</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2025-03-28</td>
-<td>0.1</td>
-<td>Document creation</td>
-<td><a href="https://github.com/freitasc">Cainã Freitas</a>, <a href="https://github.com/LucasGSAntunes">Lucas Antunes</a></td>
-</tr>
-<tr>
-<td>2025-04-18</td>
-<td>0.2</td>
-<td>Update home page</td>
-<td><a href="https://github.com/matix0">Mateus Vieira</a>, <a href="https://github.com/LucasGSAntunes">Lucas Antunes</a></td>
-</tr>
-<tr>
-<td>2025-05-14</td>
-<td>0.3</td>
-<td>Add wiki ref</td>
-<td><a href="https://github.com/matix0">Mateus Vieira</a>, <a href="https://github.com/LucasGSAntunes">Lucas Antunes</a></td>
-</tr>
-<tr>
-<td>2025-06-02</td>
-<td>0.4</td>
-<td>Add new PDF classification tool</td>
-<td><a href="https://github.com/LucasGSAntunes">Lucas Antunes</a></td>
-</tr>
-</tbody>
-</table>
 <p><a href="../">← Back to Main Page</a></p>
 
 
