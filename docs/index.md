@@ -39,13 +39,14 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 
 ### 💻 Technical Documentation
 
-| Document                                                             | Description                          |
-|----------------------------------------------------------------------|--------------------------------------|
-| [API Specification](project/development/technical/api.md)            | API definitions and guidelines       |
-| [System Architecture](project/development/technical/architecture.md) | High-level system design             |
-| [Database Schema](project/development/technical/database-schema.md)  | Database models and relationships    |
-| [Development Lifecycle](project/development/lifecycle.md)            | Stages of the development process    |
-| [Tools & Dependencies](project/development/tools.md)                 | List of required tools and libraries |
+| Document                                                                          | Description                          |
+| --------------------------------------------------------------------------------- | ------------------------------------ |
+| [Accessibility Evaluation Report](project/development/technical/accessibility.md) | Accessibility evaluation report      |
+| [API Specification](project/development/technical/api.md)                         | API definitions and guidelines       |
+| [System Architecture](project/development/technical/architecture.md)              | High-level system design             |
+| [Database Schema](project/development/technical/database-schema.md)               | Database models and relationships    |
+| [Development Lifecycle](project/development/lifecycle.md)                         | Stages of the development process    |
+| [Tools & Dependencies](project/development/tools.md)                              | List of required tools and libraries |
 
 ### ⚙️ Setup & Configuration
 
