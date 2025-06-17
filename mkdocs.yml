@@ -66,14 +66,14 @@ nav:
       - Meeting 0: project/management/meetings/meeting_0.md
       - Meeting 1: project/management/meetings/meeting_1.md
     - Lessons Learned: project/management/lessons-learned.md
-    - Development Process:
-        - Software Development Lifecycle: project/development/lifecycle.md
-        - Technical Documentation:
-          - Accessibility Evaluation Report - Educado: project/development/technical/accessibility.md
-          - API Documentation: project/development/technical/api.md
-          - System Architecture: project/development/technical/architecture.md
-          - Database Schema: project/development/technical/database-schema.md
-          - Tools & Dependencies: project/development/tools.md
+  - Development Process:
+      - Software Development Lifecycle: project/development/lifecycle.md
+      - Technical Documentation:
+        - Accessibility Evaluation Report - Educado: project/development/technical/accessibility.md
+        - API Documentation: project/development/technical/api.md
+        - System Architecture: project/development/technical/architecture.md
+        - Database Schema: project/development/technical/database-schema.md
+        - Tools & Dependencies: project/development/tools.md
   - Setup & Configuration:
       - MkDocs:
           - MkDocs Configuration: setup/mkdocs-configuration.md
