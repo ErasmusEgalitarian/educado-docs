@@ -2,6 +2,90 @@
 
 [← Back to Main Page](../../../index.md)
 
+## Modelo Entidade-Relacionamento (MER)
+
+O Modelo Entidade-Relacionamento (MER) representa a estrutura lógica do banco de dados do projeto, destacando as principais entidades, seus atributos e os relacionamentos entre elas. Ele serve como base para o desenvolvimento do banco de dados relacional, facilitando o entendimento.
+
+Cada entidade representa um conjunto de dados importantes para o sistema, como usuários, produtos ou pedidos. Os atributos descrevem as características dessas entidades, como nome, data de criação ou status. Já os relacionamentos mostram como essas entidades se conectam entre si, por exemplo, um usuário pode fazer vários pedidos, ou um produto pode pertencer a uma categoria.
+
+---
+
+### Entidades
+
+- `USER`
+- `ROLE`
+- `COURSE`
+- `MODULE`
+- `LESSON`
+- `EXERCISE`
+- `ENROLLMENT`
+- `MEDIA`
+- `NOTIFICATION`
+
+---
+
+### Atributos
+
+#### USER
+
+`(user_email*, name, password, role_name, status, avatar_url, deleted_at, created_at, updated_at)`
+
+#### ROLE
+
+`(role_name*, description, deleted_at, created_at, updated_at)`
+
+#### COURSE
+
+`(id*, course_title, description, creator_email, status, cover_url, level, category, deleted_at, created_at, updated_at)`
+
+#### MODULE
+
+`(id*, course_id, module_title, description, display_order, deleted_at, created_at, updated_at)`
+
+#### LESSON
+
+`(module_title*, lesson_title*, course_title, {content}, description, display_order, deleted_at, created_at, updated_at)`
+
+#### EXERCISE
+
+`(id*, exercise_title, question, {choices}, answer, content, description, display_order, deleted_at, created_at, updated_at)`
+
+#### ENROLLMENT
+
+`(user_email*, course_title*, status, {completed_exercises}, {completed_lessons}, stars, comment, enrolled_at, deleted_at)`
+
+#### MEDIA
+
+`(media_url*, owner_email, type, description, deleted_at, created_at, updated_at)`
+
+#### NOTIFICATION
+
+`(notification_id*, sender_email, recipient_email, type, title, message, status, sent_at, read_at, deleted_at, created_at, updated_at)`
+
+---
+
+### Relacionamentos
+
+- Um **COURSE** é criado por um **USER**.  
+  → Um **USER** pode criar vários **COURSES**.
+
+- Um **MODULE** pertence a um **COURSE**.  
+  → Um **COURSE** pode conter vários **MODULES**.
+
+- Uma **LESSON** pertence a um **MODULE**.  
+  → Um **MODULE** pode conter várias **LESSONS**.
+
+- Um **EXERCISE** pertence a uma **LESSON**.  
+  → Uma **LESSON** pode ter vários **EXERCISES**.
+
+- Um **ENROLLMENT** pertence a um **USER**.  
+  → Um **USER** pode ter vários **ENROLLMENTS**.
+
+- Um **ENROLLMENT** pertence a um **COURSE**.  
+  → Um **COURSE** pode ter vários **ENROLLMENTS**.
+
+---
+
 ## Legenda
 
 - (PK) = Primary Key
