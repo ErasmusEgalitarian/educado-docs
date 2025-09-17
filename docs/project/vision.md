@@ -4,42 +4,42 @@
 
 ## Vision Statement
 
-**Educado** envisions a future where recycling and environmental responsibility are seamlessly integrated into daily life through education, technology, and community engagement. Our mission is to revolutionize waste management in the Federal District by promoting proper waste separation and hygiene, increasing the value and volume of recyclable materials, and fostering a culture of sustainability.
+**Educado** envisions a future where waste pickers are not only recognized for their essential environmental role but also empowered through education, technology, and social inclusion.
 
-Through a mobile application co-created by waste pickers and students from the University of Brasília (UnB), **Educado** will deliver engaging, educational content that empowers users to adopt responsible recycling behaviors. The platform will also introduce gamification, enabling UnB students to earn academic credits by contributing to recycling efforts, thereby reinforcing sustainable practices through tangible incentives.
+Our mission is to provide **personal and educational growth opportunities for waste pickers**, enabling them to strengthen their knowledge, improve their working conditions, and access new pathways of professional and personal development.
 
-Our smart collection containers, EcoPoints, will enable efficient and traceable waste collection. These EcoPoints will be strategically deployed and integrated with the app, allowing users to locate the nearest drop-off locations, track their contributions, and view their environmental impact.
+Through a **mobile-first platform**, co-created with waste pickers and students from the University of Brasília (UnB), **Educado** delivers accessible and engaging content designed to:
 
-By combining education, technology, social inclusion, and environmental action, **Educado** aims to strengthen the circular economy, support cooperative income, and elevate public awareness about sustainability.
+* Improve skills and awareness of recycling and waste management.
+* Offer structured learning experiences with gamification (points, badges, leaderboards, certificates).
+* Provide recognition and incentives that reinforce personal progress and community value.
 
-This project is designed to align with the United Nations Sustainable Development Goals (SDGs), particularly those focused on responsible consumption, climate action, and social inclusion.
+By placing waste pickers at the core, while engaging students and educators as collaborators, **Educado** aims to foster dignity, inclusion, and continuous learning — strengthening both the circular economy and social equality in the Federal District.
+
+---
 
 ## Key Elements
 
-| Element                  | Description                                                                                        |
-|--------------------------|----------------------------------------------------------------------------------------------------|
-| Environmental Education  | Educational content co-created with waste pickers to improve awareness on proper waste separation. |
-| Gamification             | Users, especially students, are rewarded for recycling through a credit-based system.              |
-| Accessibility            | A user-friendly app and Instagram presence to reach a broad audience in the Federal District.      |
-| Social Inclusion         | Waste pickers are active participants in content creation and project development.                 |
-| Technological Innovation | Integration of CMS tools, geolocation features for EcoPoints, and secure, intelligent containers.  |
+| Element                  | Description                                                                                                           |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| Waste Picker Empowerment | Focused on personal and educational growth for waste pickers, giving them tools for self-development and recognition. |
+| Educational Content      | Co-created with waste pickers and students to ensure relevance, accessibility, and impact.                            |
+| Gamification             | Mechanics like points, badges, leaderboards, and certificates reward engagement and learning achievements.            |
+| Accessibility            | Mobile app tailored for waste pickers, web tools for content creators, and presence on social media.                  |
+| Social Inclusion         | Waste pickers actively co-create content and benefit from improved qualifications and visibility.                     |
+| Technological Support    | Modular content blocks, CMS integration, gamification engine, and secure management of user progress and recognition. |
+
+---
 
 ## Long-term Goals
 
-| Goal                             | Description                                                                                                                                                                    |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Increase recycling rates         | Achieve a 50,000 recyclable items collection goal within the first year, contributing to **SDG 12: Responsible Consumption and Production**.                                   |
-| Promote sustainable behavior     | Empower the population through education and incentives, encouraging responsible waste management practices.                                                                   |
-| Support cooperatives             | Improve income through better waste qualification and collection logistics, providing waste pickers with tools and contributing to **SDG 8: Decent Work and Economic Growth**. |
-| Democratize environmental action | Make sustainability easy, practical, and engaging for all social sectors, in line with **SDG 10: Reduced Inequalities**.                                                       |
-| Strengthen the circular economy  | Boost material recovery through better hygiene, sorting, and participation, contributing to **SDG 13: Climate Action** and **SDG 12**.                                         |
-
-## Relevant UN Sustainable Development Goals (SDGs)
-
-- **SDG 12: Responsible Consumption and Production**: The project promotes sustainable waste management by focusing on proper recycling practices, increasing recycling rates, and improving product life cycles through better sorting and reuse.
-- **SDG 8: Decent Work and Economic Growth**: By providing waste pickers with tools and education to increase their productivity and income, **Educado** contributes to the economic empowerment of informal workers.
-- **SDG 10: Reduced Inequalities**: **Educado** promotes social inclusion by involving waste pickers in the creation of educational content and providing them with the means to enhance their professional qualifications.
-- **SDG 13: Climate Action**: The project supports climate action by promoting waste reduction, material recovery, and reducing the environmental impact of waste through better sorting and recycling efforts.
+| Goal                         | Description                                                                                                                        |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Promote personal development | Support waste pickers with accessible tools for learning, growth, and recognition.                                                 |
+| Strengthen social inclusion  | Ensure active participation of waste pickers in the design and creation of content, aligned with **SDG 10: Reduced Inequalities**. |
+| Increase recycling awareness | Improve public knowledge on recycling practices, contributing to **SDG 12: Responsible Consumption and Production**.               |
+| Support cooperative growth   | Enhance income and logistics for waste picker cooperatives, aligned with **SDG 8: Decent Work and Economic Growth**.               |
+| Foster sustainable behavior  | Encourage sustainable practices across society through gamification and education, supporting **SDG 13: Climate Action**.          |
 
 ---
 
