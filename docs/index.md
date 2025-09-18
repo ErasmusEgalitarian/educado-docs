@@ -8,7 +8,7 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 
 - [Educado Wiki](wiki_index.md)
 - [Roadmap](management/roadmap.md)
-- [Backlog](backlog/product-backlog-building.md)
+- [Backlog](backlog/index.md)
 - [Deliverables](management/deliverables.md)
 
 ---
@@ -27,14 +27,14 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 
 ### 📦 Product Documentation
 
-| Document                                                       | Description                                  |
-|----------------------------------------------------------------|----------------------------------------------|
-| [Product Overview](product/overview.md)                | High-level description of the product        |
-| [MVP Features](product/mvp.md)                         | Core features for the Minimum Viable Product |
-| [Product Backlog](backlog/product-backlog-building.md) | Backlog building process                     |
-| [Project Vision](project/vision.md)                            | Strategic vision for the project             |
-| [Project Objectives](project/objectives.md)                    | Goals and objectives                         |
-| [Stakeholders](project/stakeholders.md)                        | Key project stakeholders                     |
+| Document                                    | Description                                  |
+| ------------------------------------------- | -------------------------------------------- |
+| [Product Overview](product/overview.md)     | High-level description of the product        |
+| [MVP Features](product/mvp.md)              | Core features for the Minimum Viable Product |
+| [Product Backlog](backlog/index.md)         | Backlog building process                     |
+| [Project Vision](project/vision.md)         | Strategic vision for the project             |
+| [Project Objectives](project/objectives.md) | Goals and objectives                         |
+| [Stakeholders](project/stakeholders.md)     | Key project stakeholders                     |
 
 ### 💻 Technical Documentation
 

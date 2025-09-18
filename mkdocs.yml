@@ -95,6 +95,8 @@ nav:
   - Product:
     - Overview: product/overview.md
     - MVPs: product/mvp.md
+    - Research:
+        - Strapi Evaluation: product/research/strapi-evaluation.md
   - Management:
     - Roadmap: management/roadmap.md
     - Workflow: management/workflow.md

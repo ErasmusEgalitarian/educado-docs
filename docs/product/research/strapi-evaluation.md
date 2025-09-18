@@ -25,7 +25,7 @@ Strapi includes numerous features critical to our project goals, which we would 
 *   **Media Library:** A comprehensive solution for asset management.
     *   **Full CRUD API:** All assets can be programmatically uploaded, modified, and deleted.
     *   **Web UI for Management:** The admin panel includes a visual media library for easy manual management. This allows administrators to browse, edit metadata (alt text, captions), and organize assets without needing developer intervention, simplifying long-term maintenance.
-    ![media-library](media-library.png)
+    ![media-library](../../assets/strapi/media-library.png)
     *   **Format Support:** Natively handles images, video, audio, and other files.
     *   **Optimization:** Provides automatic asset optimization, including compression and the generation of responsive formats (small, medium, large), which is crucial for performance on low-end devices.
     *   **Provider Support:** Supports local storage for development and can connect to cloud providers like AWS S3 for production.
@@ -40,7 +40,7 @@ The Content-Type Builder is a powerful visual interface within the admin panel f
 *   **Visual Schema Design:** It allows developers to create complex data structures with relations, components, and various field types (Text, Number, Media, JSON, etc.) without writing SQL or manual migration scripts. Strapi handles all database management automatically.
 *   **Component-Based Architecture:** I was able to create reusable "Components" (like `quiz_option`) and nest them within larger structures. I also leveraged "Dynamic Zones" to create flexible layouts where content creators can mix different types of content (e.g., `Lessons` and `Quizzes`) within a `Section`. This perfectly matches the Figma prototype's requirements. It also allows for flexible future enhancements.
 
-![content-type-builder](content-type-builder.png)
+![content-type-builder](../../assets/strapi/content-type-builder.png)
 *As seen above, a `Course Section` is modeled with a title, a relation to a `Course`, and a Dynamic Zone (`content_items`) that can contain a mix of Lessons or Quizzes.*
 
 ### 3.3. Developer Experience
@@ -61,8 +61,8 @@ export const fetchCourse = async (courseId: string): Promise<CourseResponse> => 
 };
 ```
 
-![swagger](swagger.png)
-![swagger2](swagger2.png)
+![swagger](../../assets/strapi/swagger.png)
+![swagger2](../../assets/strapi/swagger2.png)
 
 #### 3.3.2. Powerful & Flexible Data Querying
 Strapi's query engine allows frontend developers to tailor API responses to their exact needs without requiring custom backend endpoints.
@@ -76,7 +76,7 @@ Strapi's query engine allows frontend developers to tailor API responses to thei
 
 While the goal is to build a custom frontend for content creators, Strapi's built-in Content Manager provides immense value for developers and administrators. It serves as a "raw" data browser, allowing for quick data entry for testing, debugging, and administrative oversight. Access is controlled by a granular roles and permissions system.
 
-![content-manager](content-manager.png)
+![content-manager](../../assets/strapi/content-manager.png)
 
 ## 4. Architectural Analysis
 
@@ -84,7 +84,7 @@ Integrating Strapi introduces a service-oriented architecture. The infrastructur
 
 *   **Overall System:** The ecosystem will consist of the Mobile App and a new Website frontend, supported by the existing NodeJS backend and the new Strapi backend.
 
-![architecture](architecture.svg)
+![architecture](../../assets/strapi/architecture.svg)
 
 
 ### Solution 1: Centralized Proxy via NodeJS
@@ -124,25 +124,3 @@ In this model, each frontend communicates directly with the service it needs. Th
 | ✅ **Flexible Data Modeling:** The Content-Type Builder is powerful and intuitive. | ❌ **Custom Frontend Required:** The native admin UI is not sufficient for our end-user (content creator) goals. |
 | ✅ **Docker-Based Deployment:** Integrates easily with our existing infrastructure. | |
 | ✅ **Open Source & Active Community:** Strong community support and no licensing fees. | |
-
----
-
-## 6. Completed Evaluation Checklist
-
-### Research
-- [x] **Review Strapi documentation (REST/GraphQL APIs, roles, permissions):** Completed.
-- [x] **Verify if APIs support full CRUD for courses:** Completed.
-- [x] **Check flexibility for modeling course structure:** Completed.
-
-### Evaluation for Custom Frontend
-- [x] **Confirm content management via API:** Completed.
-- [x] **Validate authentication/authorization flows for custom frontends:** Completed. The architectural analysis confirms viable and secure patterns.
-- [x] **Identify possible limitations or restrictions:** Completed. No significant blockers found.
-
-### Alternative (if Strapi cannot be backend-only)
-- [x] **Assess if Strapi’s native UI can cover all Figma requirements:** Confirmed that the native UI is insufficient for the desired end-user experience, solidifying the headless approach.
-
-### Analysis & Documentation
-- [x] **Summarize findings: can Strapi be backend for course management?:** Yes.
-- [x] **Provide recommendation (adopt / not adopt):** Adopt.
-- [x] **Update “Platform Evaluation” doc with results:** This document serves as the update.
