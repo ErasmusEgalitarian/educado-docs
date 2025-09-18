@@ -7,9 +7,9 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 ## 🔗 Quick Links
 
 - [Educado Wiki](wiki_index.md)
-- [Roadmap](project/management/roadmap.md)
-- [Backlog](project/product/product-backlog-building.md)
-- [Deliverables](project/management/deliverables.md)
+- [Roadmap](management/roadmap.md)
+- [Backlog](backlog/product-backlog-building.md)
+- [Deliverables](management/deliverables.md)
 
 ---
 
@@ -17,22 +17,21 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 
 ### 🛠️ Project Management
 
-| Document                                                 | Description                                   |
-|----------------------------------------------------------|-----------------------------------------------|
-| [Roadmap](project/management/roadmap.md)                 | Timeline and project phases                   |
-| [Workflow](project/management/workflow.md)               | Processes and development flow                |
-| [Meetings](project/management/meetings/meeting_0.md)     | Meeting notes and summaries                   |
-| [Deliverables](project/management/deliverables.md)       | Expected outcomes and deadlines               |
-| [Issue Tracking](project/management/issue-tracking.md)   | Bug tracking and issue management             |
-| [Lessons Learned](project/management/lessons-learned.md) | Post-mortems and continuous improvement notes |
+| Document                                         | Description                                   |
+| ------------------------------------------------ | --------------------------------------------- |
+| [Roadmap](management/roadmap.md)                 | Timeline and project phases                   |
+| [Workflow](management/workflow.md)               | Processes and development flow                |
+| [Deliverables](management/deliverables.md)       | Expected outcomes and deadlines               |
+| [Issue Tracking](management/issue-tracking.md)   | Bug tracking and issue management             |
+| [Lessons Learned](management/lessons-learned.md) | Post-mortems and continuous improvement notes |
 
 ### 📦 Product Documentation
 
 | Document                                                       | Description                                  |
 |----------------------------------------------------------------|----------------------------------------------|
-| [Product Overview](project/product/overview.md)                | High-level description of the product        |
-| [MVP Features](project/product/mvp.md)                         | Core features for the Minimum Viable Product |
-| [Product Backlog](project/product/product-backlog-building.md) | Backlog building process                     |
+| [Product Overview](product/overview.md)                | High-level description of the product        |
+| [MVP Features](product/mvp.md)                         | Core features for the Minimum Viable Product |
+| [Product Backlog](backlog/product-backlog-building.md) | Backlog building process                     |
 | [Project Vision](project/vision.md)                            | Strategic vision for the project             |
 | [Project Objectives](project/objectives.md)                    | Goals and objectives                         |
 | [Stakeholders](project/stakeholders.md)                        | Key project stakeholders                     |
@@ -41,12 +40,12 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 
 | Document                                                                          | Description                          |
 | --------------------------------------------------------------------------------- | ------------------------------------ |
-| [Accessibility Evaluation Report](project/development/technical/accessibility.md) | Accessibility evaluation report      |
-| [API Specification](project/development/technical/api.md)                         | API definitions and guidelines       |
-| [System Architecture](project/development/technical/architecture.md)              | High-level system design             |
-| [Database Schema](project/development/technical/database-schema.md)               | Database models and relationships    |
-| [Development Lifecycle](project/development/lifecycle.md)                         | Stages of the development process    |
-| [Tools & Dependencies](project/development/tools.md)                              | List of required tools and libraries |
+| [Accessibility Evaluation Report](development/technical/accessibility.md) | Accessibility evaluation report      |
+| [API Specification](development/technical/api.md)                         | API definitions and guidelines       |
+| [System Architecture](development/technical/architecture.md)              | High-level system design             |
+| [Database Schema](development/technical/database-schema.md)               | Database models and relationships    |
+| [Development Lifecycle](development/lifecycle.md)                         | Stages of the development process    |
+| [Tools & Dependencies](development/tools.md)                              | List of required tools and libraries |
 
 ### ⚙️ Setup & Configuration
 
@@ -77,5 +76,6 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 | 2025-05-29 | 1.2     | Refactor Backlog and create US                                                                                                                       | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
 | 2025-06-02 | 1.3     | Add new PDF classification tool                                                                                                                      | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
 | 2025-06-09 | 1.4     | [Update] - Product Overview, MVP definition, Database Schema, Wiki, Project/Overview, Project/Objectives, Deliverables, Tools, Api Schema            | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
+| 2025-09-18 | 2.0     | [Release] - Refactoring sections: Project, Backlog                                                                                                   | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
 
 
