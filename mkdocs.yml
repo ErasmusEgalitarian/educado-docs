@@ -54,26 +54,65 @@ nav:
     - Vision: project/vision.md
     - Objectives: project/objectives.md
     - Stakeholders: project/stakeholders.md
-    - Product Overview: project/product/overview.md
-    - Product Backlog: project/product/product-backlog-building.md
-    - MVPs: project/product/mvp.md
+  - Backlog:
+    - Hierarchical View: backlog/index.md
+    - Epic:
+      - EP-01 – User Authentication & Authorization:
+        - FE-01 - Student Registration & Login: backlog/ep_01/fe_01.md
+        - FE-02 - Creator Registration & Login: backlog/ep_01/fe_02.md
+        - FE-03 - Manage Creator Requests (Admin): backlog/ep_01/fe_03.md
+      - EP-02 – Course Management:
+        - FE-04 - Course Creation & Management: backlog/ep_02/fe_04.md
+        - FE-05 - Course Enrollment & Progress Tracking: backlog/ep_02/fe_05.md
+      - EP-03 – Course Section Content Blocks:
+        - FE-06 - Add Content Blocks: backlog/ep_03/fe_06.md
+        - FE-07 - Manage Content Blocks: backlog/ep_03/fe_07.md
+      - EP-04 - Media Management:
+        - FE-08 - Upload Media Files: backlog/ep_04/fe_08.md
+        - FE-09 - Use Media in Lessons: backlog/ep_04/fe_09.md
+      - EP-05 - Tutorials & First Login Flow:
+        - FE-10 - Guided Tutorial for First Login: backlog/ep_05/fe_10.md
+        - FE-11 - Optional Onboarding Enhancements: backlog/ep_05/fe_11.md
+      - EP-06 - Course Discovery & Enrollment:
+        - FE-12 - Course Catalog & Search: backlog/ep_06/fe_12.md
+        - FE-13 - Enrollment Management: backlog/ep_06/fe_13.md
+      - EP-07 – Learning Experience & Lessons:
+        - FE-14 - Lesson Access & Consumption: backlog/ep_07/fe_14.md
+        - FE-15 - Progress Tracking & Completion: backlog/ep_07/fe_15.md
+      - EP-08 - Gamification & Engagement:
+        - FE-16 - Leaderboards & Rankings: backlog/ep_08/fe_16.md
+        - FE-17 - Badges & Achievements: backlog/ep_08/fe_17.md
+      - EP-09 - Certificates & Recognition:
+        - FE-18 - Course Completion & Certificate Generation: backlog/ep_09/fe_18.md
+        - FE-19 - Certificate Management: backlog/ep_09/fe_19.md
+      - EP-10 - User Profiles & Personalization:
+        - FE-20 – Student Profile Management: backlog/ep_10/fe_20.md
+        - FE-21 – Creator & Admin Profile Management: backlog/ep_10/fe_21.md
+      - EP-11 - Administration & Governance:
+        - FE-22 – Course Governance (Admin): backlog/ep_11/fe_22.md
+        - FE-23 – User Management (Admin): backlog/ep_11/fe_23.md
+      
+  - Product:
+    - Overview: product/overview.md
+    - MVPs: product/mvp.md
+    - Research:
+        - Strapi Evaluation: product/research/strapi-evaluation.md
+        - Upgrade Expo to SDK 54: product/research/upgrade-expo54.md
+        - SMS Integration: product/research/sms-provider.md
   - Management:
-    - Roadmap: project/management/roadmap.md
-    - Workflow: project/management/workflow.md
-    - Issue Tracking & Task Management: project/management/issue-tracking.md
-    - Project Deliverables: project/management/deliverables.md
-    - Meeting Minutes:
-      - Meeting 0: project/management/meetings/meeting_0.md
-      - Meeting 1: project/management/meetings/meeting_1.md
-    - Lessons Learned: project/management/lessons-learned.md
+    - Roadmap: management/roadmap.md
+    - Workflow: management/workflow.md
+    - Issue Tracking & Task Management: management/issue-tracking.md
+    - Project Deliverables: management/deliverables.md
+    - Lessons Learned: management/lessons-learned.md
   - Development Process:
-      - Software Development Lifecycle: project/development/lifecycle.md
+      - Software Development Lifecycle: development/lifecycle.md
       - Technical Documentation:
-        - Accessibility Evaluation Report - Educado: project/development/technical/accessibility.md
-        - API Documentation: project/development/technical/api.md
-        - System Architecture: project/development/technical/architecture.md
-        - Database Schema: project/development/technical/database-schema.md
-        - Tools & Dependencies: project/development/tools.md
+        - Accessibility Evaluation Report - Educado: development/technical/accessibility.md
+        - API Documentation: development/technical/api.md
+        - System Architecture: development/technical/architecture.md
+        - Database Schema: development/technical/database-schema.md
+        - Tools & Dependencies: development/tools.md
   - Setup & Configuration:
       - MkDocs:
           - MkDocs Configuration: setup/mkdocs-configuration.md
