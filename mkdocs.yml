@@ -98,6 +98,7 @@ nav:
     - Research:
         - Strapi Evaluation: product/research/strapi-evaluation.md
         - Upgrade Expo to SDK 54: product/research/upgrade-expo54.md
+        - SMS Integration: product/research/sms-provider.md
   - Management:
     - Roadmap: management/roadmap.md
     - Workflow: management/workflow.md
