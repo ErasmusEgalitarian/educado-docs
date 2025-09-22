@@ -1,4 +1,4 @@
-# Diagrama Relacional do Banco de Dados - Plataforma de Cursos
+# Database Schema Diagram - Course Platform
 
 [← Back to Main Page](../../index.md)
 
