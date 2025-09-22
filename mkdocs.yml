@@ -26,8 +26,8 @@ theme:
         icon: material/weather-night
         name: Dark mode
     - scheme: slate
-      primary: Navy
-      accent: SkyBlue
+      primary: navy
+      accent: skyblue
       toggle:
         icon: material/weather-sunny
         name: Light mode
