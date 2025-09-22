@@ -1,6 +1,7 @@
 # Educado Documentation Hub
 
-Welcome to the **Educado** documentation! Here, you will find all the essential information about the project, from an overview to technical and configuration details.
+Welcome to the **Educado** documentation! Here, you will find all the essential information about the project, from an
+overview to technical and configuration details.
 
 ---
 
@@ -63,11 +64,10 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 |-----------------------------|--------------------|
 | [References](references.md) | External resources |
 
-
 ## Revision History
 
 | Date       | Version | Changes                                                                                                                                              | Authors                                                                                                                                                                                               |
-| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2025-03-28 | 0.1     | Document creation                                                                                                                                    | [Cainã Freitas](https://github.com/freitasc), [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                      |
 | 2025-04-15 | 0.2     | Product Overview update content                                                                                                                      | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
 | 2025-04-18 | 0.3     | Update home page                                                                                                                                     | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                        |
@@ -77,5 +77,4 @@ Welcome to the **Educado** documentation! Here, you will find all the essential 
 | 2025-06-02 | 1.3     | Add new PDF classification tool                                                                                                                      | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
 | 2025-06-09 | 1.4     | [Update] - Product Overview, MVP definition, Database Schema, Wiki, Project/Overview, Project/Objectives, Deliverables, Tools, Api Schema            | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
 | 2025-09-18 | 2.0     | [Release] - Refactoring sections: Project, Backlog                                                                                                   | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                    |
-
-
+| 2025-09-22 | 2.1     | [Update] - New: strapi research, mobile upgrade-expo54                                                                                                                    | [Oliver Schøler](https://github.com/ollioddi)                                                                                                                                                         |

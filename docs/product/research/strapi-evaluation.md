@@ -116,11 +116,11 @@ In this model, each frontend communicates directly with the service it needs. Th
 
 ## 5. Pros and Cons Summary
 
-| Pros | Cons |
-| :--- | :--- |
-| ✅ **Accelerated Development:** Leverages a fully functional backend designed for content management. | ❌ **New Dependency:** Adds a new, large system to learn, manage, and maintain. |
-| ✅ **Rich Feature Set:** Includes media library, draft/publish, roles, i18n, etc., out-of-the-box. | ❌ **Additional Database:** Requires a relational database (Postgres) in addition to our existing MongoDB. |
-| ✅ **Excellent Developer Tooling:** OpenAPI/Swagger support and type-safe client generation streamline integration. | ❌ **Potential Overkill:** The platform has more features than we may immediately need. |
-| ✅ **Flexible Data Modeling:** The Content-Type Builder is powerful and intuitive. | ❌ **Custom Frontend Required:** The native admin UI is not sufficient for our end-user (content creator) goals. |
-| ✅ **Docker-Based Deployment:** Integrates easily with our existing infrastructure. | |
-| ✅ **Open Source & Active Community:** Strong community support and no licensing fees. | |
+| Pros                                                                                                                | Cons                                                                                                             |
+| :------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------- |
+| ✅ **Accelerated Development:** Leverages a fully functional backend designed for content management.               | ❌ **New Dependency:** Adds a new, large system to learn, manage, and maintain.                                  |
+| ✅ **Rich Feature Set:** Includes media library, draft/publish, roles, i18n, etc., out-of-the-box.                  | ❌ **Additional Database:** Requires a relational database (Postgres) in addition to our existing MongoDB.       |
+| ✅ **Excellent Developer Tooling:** OpenAPI/Swagger support and type-safe client generation streamline integration. | ❌ **Potential Overkill:** The platform has more features than we may immediately need.                          |
+| ✅ **Flexible Data Modeling:** The Content-Type Builder is powerful and intuitive.                                  | ❌ **Custom Frontend Required:** The native admin UI is not sufficient for our end-user (content creator) goals. |
+| ✅ **Docker-Based Deployment:** Integrates easily with our existing infrastructure.                                 |                                                                                                                  |
+| ✅ **Open Source & Active Community:** Strong community support and no licensing fees.                              |                                                                                                                  |
