@@ -12,8 +12,8 @@ The system's primary goal is to enable the management of users and content for d
 
 ### **Technologies Used**
 
-| Technology               | Description                                                |
-| ------------------------ | ---------------------------------------------------------- |
+| Technology         | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
 | **Backend**        | Node.js with Express                                       |
 | **Database**       | MongoDB (for storing user and content data)                |
 | **Authentication** | JWT (JSON Web Tokens) for authentication and authorization |
@@ -26,8 +26,8 @@ The system's primary goal is to enable the management of users and content for d
 
 Responsible for creating, editing, deleting, and authenticating users (doctors and administrators). Key features include:
 
-| Feature                                   | Description                                                                                     |
-| ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Feature                             | Description                                                                                     |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------- |
 | **User Registration (F01)**         | Creating accounts for doctors and administrators.                                               |
 | **Login (F05)**                     | Authenticating users with credentials and generating a JWT token.                               |
 | **Profile Editing (F04)**           | Allowing users to edit their profile, such as resetting passwords or updating personal details. |
@@ -38,8 +38,8 @@ Responsible for creating, editing, deleting, and authenticating users (doctors a
 
 Involves creating and managing documents, topics, and materials accessed by users.
 
-| Feature                                       | Description                                                     |
-| --------------------------------------------- | --------------------------------------------------------------- |
+| Feature                                 | Description                                                     |
+| --------------------------------------- | --------------------------------------------------------------- |
 | **Document Creation and Listing (F06)** | Administrators can create new documents and view existing ones. |
 | **Document Editing and Deletion (F07)** | Functionality to update or remove outdated documents.           |
 | **Topics (F06)**                        | Allows for creating and listing topics related to documents.    |
@@ -48,8 +48,8 @@ Involves creating and managing documents, topics, and materials accessed by user
 
 Responsible for managing doctors' subscriptions and sending notifications.
 
-| Feature                                 | Description                                                                 |
-| --------------------------------------- | --------------------------------------------------------------------------- |
+| Feature                           | Description                                                                 |
+| --------------------------------- | --------------------------------------------------------------------------- |
 | **Subscription Management (F12)** | Allows doctors to access their financial area to manage their subscription. |
 
 ### 4. **Authentication and Authorization**
@@ -60,8 +60,8 @@ Authentication will be handled using JWT. Upon logging in, a user will receive a
 
 The architecture follows the MVC (Model-View-Controller) pattern:
 
-| Layer                | Description                                                                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Layer          | Description                                                                                                                          |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | **Model**      | Represents the data structure. User and document models are stored in the MongoDB database.                                          |
 | **View**       | The user interface, built with Vue.js, displays information and interacts with the user to capture data.                             |
 | **Controller** | Manages business logic and interacts with the models. Example: The user controller manages registration, login, and profile editing. |
@@ -84,8 +84,8 @@ The data flow follows a RESTful structure. The frontend application built with V
 
 Security is a priority to ensure that only authenticated and authorized users can access sensitive data.
 
-| Security Feature         | Description                                                                                                                                   |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Security Feature   | Description                                                                                                                                   |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Encryption**     | Passwords will be securely stored using the bcrypt hashing algorithm.                                                                         |
 | **JWT Tokens**     | Authentication will be managed with JWT tokens, which will have an expiration time, requiring users to log in again after a certain period.   |
 | **Access Control** | The system will allow different levels of access, with only administrators able to perform user and document creation, editing, and deletion. |
