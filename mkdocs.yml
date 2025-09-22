@@ -20,8 +20,8 @@ theme:
     - navigation.tabs.sticky
   palette:
     - scheme: default
-      primary: Blue
-      accent: LightBlue
+      primary: blue
+      accent: lightblue
       toggle:
         icon: material/weather-night
         name: Dark mode
