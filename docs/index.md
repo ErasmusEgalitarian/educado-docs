@@ -48,16 +48,6 @@ overview to technical and configuration details.
 | [Development Lifecycle](development/lifecycle.md)                         | Stages of the development process    |
 | [Tools & Dependencies](development/tools.md)                              | List of required tools and libraries |
 
-### ⚙️ Setup & Configuration
-
-| Document                                                 | Description                             |
-|----------------------------------------------------------|-----------------------------------------|
-| [MkDocs Configuration](setup/mkdocs-configuration.md)    | MkDocs project settings                 |
-| [MkDocs Setup](setup/mkdocs-setup.md)                    | Instructions to set up MkDocs locally   |
-| [Python Virtual Environment](setup/python-venv-setup.md) | Setting up a Python virtual environment |
-| [Publishing Guide](setup/publishing-guide.md)            | How to publish project documentation    |
-| [README](setup/readme.md)                                | Project overview and installation       |
-
 ### 🔗 References
 
 | Document                    | Description        |
