@@ -91,14 +91,13 @@ nav:
       - EP-11 - Administration & Governance:
         - FE-22 – Course Governance (Admin): backlog/ep_11/fe_22.md
         - FE-23 – User Management (Admin): backlog/ep_11/fe_23.md
-
   - Product:
     - Overview: product/overview.md
     - MVPs: product/mvp.md
     - Research:
-        - Strapi Evaluation: product/research/strapi-evaluation.md
-        - Upgrade Expo to SDK 54: product/research/upgrade-expo54.md
-        - SMS Integration: product/research/sms-provider.md
+      - Strapi Evaluation: product/research/strapi-evaluation.md
+      - Upgrade Expo to SDK 54: product/research/upgrade-expo54.md
+      - SMS Integration: product/research/sms-provider.md
   - Management:
     - Roadmap: management/roadmap.md
     - Workflow: management/workflow.md
@@ -106,26 +105,24 @@ nav:
     - Project Deliverables: management/deliverables.md
     - Lessons Learned: management/lessons-learned.md
   - Development Process:
-      - Software Development Lifecycle: development/lifecycle.md
-      - Technical Documentation:
-        - Accessibility Evaluation Report - Educado: development/technical/accessibility.md
-        - API Documentation: development/technical/api.md
-        - System Architecture: development/technical/architecture.md
-        - Database Schema: development/technical/database-schema.md
-        - Tools & Dependencies: development/tools.md
+    - Software Development Lifecycle: development/lifecycle.md
+    - Technical Documentation:
+      - Accessibility Evaluation Report - Educado: development/technical/accessibility.md
+      - API Documentation: development/technical/api.md
+      - System Architecture: development/technical/architecture.md
+      - Database Schema: development/technical/database-schema.md
+      - Tools & Dependencies: development/tools.md
   - Developer Handbook:
-      - Mobile:
-          - Getting Started: handbook/mobile/getting-started.md
-          - Workflow: handbook/mobile/workflow.md
-          - Standards and Best Practices: handbook/mobile/standards.md
-          - FAQ: handbook/mobile/faq.md
-      - Back End:
-          - Getting Started: handbook/back-end/getting-started.md
-      - Documentation:
-          - Getting Started: handbook/docs/getting-started.md
+    - Mobile:
+      - Getting Started: handbook/mobile/getting-started.md
+      - Workflow: handbook/mobile/workflow.md
+      - Standards and Best Practices: handbook/mobile/standards.md
+      - FAQ: handbook/mobile/faq.md
+    - Back End:
+      - Getting Started: handbook/back-end/getting-started.md
+    - Documentation:
+      - Getting Started: handbook/docs/getting-started.md
   - References: references.md
-
-
 extra:
   analytics:
     provider: google
@@ -133,7 +130,6 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/ErasmusEgalitarian/educado-docs
-
 strict: true
 use_directory_urls: true
 markdown_extensions:
