@@ -19,7 +19,7 @@ overview to technical and configuration details.
 ### 🛠️ Project Management
 
 | Document                                         | Description                                   |
-| ------------------------------------------------ | --------------------------------------------- |
+|--------------------------------------------------|-----------------------------------------------|
 | [Roadmap](management/roadmap.md)                 | Timeline and project phases                   |
 | [Workflow](management/workflow.md)               | Processes and development flow                |
 | [Deliverables](management/deliverables.md)       | Expected outcomes and deadlines               |
@@ -29,7 +29,7 @@ overview to technical and configuration details.
 ### 📦 Product Documentation
 
 | Document                                    | Description                                  |
-| ------------------------------------------- | -------------------------------------------- |
+|---------------------------------------------|----------------------------------------------|
 | [Product Overview](product/overview.md)     | High-level description of the product        |
 | [MVP Features](product/mvp.md)              | Core features for the Minimum Viable Product |
 | [Product Backlog](backlog/index.md)         | Backlog building process                     |
@@ -40,7 +40,7 @@ overview to technical and configuration details.
 ### 💻 Technical Documentation
 
 | Document                                                                  | Description                          |
-| ------------------------------------------------------------------------- | ------------------------------------ |
+|---------------------------------------------------------------------------|--------------------------------------|
 | [Accessibility Evaluation Report](development/technical/accessibility.md) | Accessibility evaluation report      |
 | [API Specification](development/technical/api.md)                         | API definitions and guidelines       |
 | [System Architecture](development/technical/architecture.md)              | High-level system design             |
@@ -48,15 +48,13 @@ overview to technical and configuration details.
 | [Development Lifecycle](development/lifecycle.md)                         | Stages of the development process    |
 | [Tools & Dependencies](development/tools.md)                              | List of required tools and libraries |
 
-### ⚙️ Setup & Configuration
+### ⚙️ Developer Handbook
 
-| Document                                                 | Description                             |
-|----------------------------------------------------------|-----------------------------------------|
-| [MkDocs Configuration](setup/mkdocs-configuration.md)    | MkDocs project settings                 |
-| [MkDocs Setup](setup/mkdocs-setup.md)                    | Instructions to set up MkDocs locally   |
-| [Python Virtual Environment](setup/python-venv-setup.md) | Setting up a Python virtual environment |
-| [Publishing Guide](setup/publishing-guide.md)            | How to publish project documentation    |
-| [README](setup/readme.md)                                | Project overview and installation       |
+| Document                                          | Description                                     |
+|---------------------------------------------------|-------------------------------------------------|
+| [Mobile](handbook/mobile/getting-started.md)      | How to set up the mobile app for development    |
+| [Back End](handbook/back-end/getting-started.md)  | How to set up the back end for development      |
+| [Documentation](handbook/docs/getting-started.md) | How to set up the documentation for development |
 
 ### 🔗 References
 
@@ -67,7 +65,7 @@ overview to technical and configuration details.
 ## Revision History
 
 | Date       | Version | Changes                                                                                                                                              | Authors                                                                                                                                                                                                                                                        |
-| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2025-03-28 | 0.1     | Document creation                                                                                                                                    | [Cainã Freitas](https://github.com/freitasc), [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                               |
 | 2025-04-15 | 0.2     | Product Overview update content                                                                                                                      | [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                                                                             |
 | 2025-04-18 | 0.3     | Update home page                                                                                                                                     | [Mateus Vieira](https://github.com/matix0), [Lucas Antunes](https://github.com/LucasGSAntunes)                                                                                                                                                                 |

@@ -91,7 +91,7 @@ nav:
       - EP-11 - Administration & Governance:
         - FE-22 – Course Governance (Admin): backlog/ep_11/fe_22.md
         - FE-23 – User Management (Admin): backlog/ep_11/fe_23.md
-      
+
   - Product:
     - Overview: product/overview.md
     - MVPs: product/mvp.md
@@ -113,14 +113,16 @@ nav:
         - System Architecture: development/technical/architecture.md
         - Database Schema: development/technical/database-schema.md
         - Tools & Dependencies: development/tools.md
-  - Setup & Configuration:
-      - MkDocs:
-          - MkDocs Configuration: setup/mkdocs-configuration.md
-          - MkDocs Setup: setup/mkdocs-setup.md
-      - Environment Setup:
-          - Python Virtual Environment: setup/python-venv-setup.md
-          - Publishing Guide: setup/publishing-guide.md
-      - README: setup/readme.md
+  - Developer Handbook:
+      - Mobile:
+          - Getting Started: handbook/mobile/getting-started.md
+          - Workflow: handbook/mobile/workflow.md
+          - Standards and Best Practices: handbook/mobile/standards.md
+          - FAQ: handbook/mobile/faq.md
+      - Back End:
+          - Getting Started: handbook/back-end/getting-started.md
+      - Documentation:
+          - Getting Started: handbook/docs/getting-started.md
   - References: references.md
 
 
@@ -134,3 +136,10 @@ extra:
 
 strict: true
 use_directory_urls: true
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: "#"
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
