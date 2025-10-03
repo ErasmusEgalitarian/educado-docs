@@ -1,39 +1,17 @@
-## Set up a Python virtual environment
+## Prerequisites
+
+Download and install uv by following the [official guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+## Run the documentation locally
 
 ```sh
-python -m venv venv
-```
-
-## Activate the virtual environment
-
-On Windows:
-
-```powershell
-venv\Scripts\activate
-```
-
-On macOS/Linux:
-
-```sh
-source venv/bin/activate
-```
-
-## Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## Preview the documentation locally
-
-```sh
-mkdocs serve
+uv run mkdocs serve
 ```
 
 ## Publish the documentation to GitHub Pages
 
-```
-mkdocs gh-deploy
+```sh
+uv run mkdocs gh-deployss
 ```
 
 ## Documentation Structure

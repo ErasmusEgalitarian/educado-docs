@@ -44,6 +44,7 @@ nvm reads the `.nvmrc` file in the project root to determine the Node.js version
 
 ```shell
 nvm install
+nvm use
 nvm current # Verify version
 ```
 
@@ -51,7 +52,8 @@ nvm current # Verify version
 
 ```powershell
 $ver = Get-Content .nvmrc
-nvm install $ver
+nvm install $ver # This command will output a command that you have to run in the next step
+nvm use [VERSION] # Run the command that was outputted by the previous command
 nvm current # Verify version
 ```
 
@@ -82,7 +84,8 @@ Upon opening Android Studio for the first time, go through the installation proc
 Android Virtual Device (AVD) when prompted.
 
 Additionally, you will need to install the Android SDK Build Tools and Android SDK Platform Tools.
-See [this guide](https://docs.expo.dev/workflow/android-studio-emulator/) for more information.
+See [this guide](https://docs.expo.dev/workflow/android-studio-emulator/) for more information. It is crucial that you
+install all the Android SDK components shown in the guide.
 
 !!! note "Windows"
 
@@ -96,11 +99,32 @@ See [this guide](https://docs.expo.dev/workflow/android-studio-emulator/) for mo
     setx PATH "$env:PATH;$Sdk\platform-tools;$Sdk\emulator"
     ```
 
+Under `Settings | Languages & Frameworks | Android SDK | SDK Platforms`, you also need to mark the Android 14 components
+matching the Android 15 components shown in the guide. In total, you should have the following components installed:
+
+- `Android 15.0 ("VanillaIceCream")`
+    - `Android SDK Platform 35`
+    - `Sources for Android 35`
+    - `Google APIs Intel x86_64 Atom System Image` or `Google APIs ARM 64 v8a System Image` (depends on your
+      architecture)
+    - `Google Play Intel x86_64 Atom System Image` or `Google Play ARM 64 v8a System Image` (depends on your
+      architecture)
+    - `Pre-Release 16 KB Page Size Google Play Intel x86_64 Atom System Image` or
+      `Pre-Release 16 KB Page Size Google Play ARM 64 v8a System Image` (depends on your
+      architecture)
+- `Android 14.0 ("UpsideDownCake")`
+    - `Android SDK Platform 34`
+    - `Sources for Android 34`
+    - `Google APIs Intel x86_64 Atom System Image` or `Google APIs ARM 64 v8a System Image` (depends on your
+      architecture)
+    - `Google Play Intel x86_64 Atom System Image` or `Google Play ARM 64 v8a System Image` (depends on your
+      architecture)
+
 Open the `Device Manager` tool window, then click on `Add a new device` and select `Create Virtual Device`.
 
 ![Visually show where to click](../../assets/mobile/create-device.png){: style="height:250px"}
 
-Then select `Medium Phone` and click `Next`. Name it `Medium Phone API 34`, select `API 34 "UpsideDownCake"`, select the
+Then select `Pixel 6a` and click `Next`. Name it `Pixel 6a API 34`, select `API 34 "UpsideDownCake"`, select the
 Google Play image and click `Finish`.
 
 ![Device configuration](../../assets/mobile/device-config.png){: style="height:500px"}
@@ -118,11 +142,20 @@ using your credentials. Run `npx expo whoami` to verify that you are logged in.
 
 Run `npx expo start`. When the QR code appears:
 
-- Press `a` to open the default emulator.
-- Press `shift + a` to choose from all available emulators. Choose the emulator you have created
-  (`Medium Phone API 34`).
+1. Press `s` to switch to Expo Go.
+2. Press `shift + a` to choose from all available emulators. Choose the emulator you have created (`Pixel 6a API 34`).
 
-A window should now pop up with the emulator.
+- Or press `a` to open the default emulator.
+
+A window should now pop up with the emulator. The first time you run the app, it will take a while to download Expo Go
+to the emulator.
+
+!!! warning "Windows"
+
+    If you have trouble running the app, get some connection or Metro issues, open a new PowerShell tab and run
+    `adb reverse --list`. If the output is empty, or shows connection errors, run `adb reverse tcp:8081 tcp:8081`. The
+    output of the latter command should now show that the port is being forwarded. Go back to the emulator and try to
+    refresh the app.
 
 !!! tip
 
