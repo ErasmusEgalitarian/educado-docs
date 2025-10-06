@@ -49,6 +49,12 @@ Frequently check the
 
 ### Opening a PR
 
+!!! note
+
+    Please don't open PRs unless your work is ready for review. PRs are meant as a way to request a review from other
+    developers. PRs also trigger the CI workflow, and if your code isn't ready and the workflow fails, the 2000 monthly
+    workflow minutes get used up.
+
 Always select `dev` as the target branch. Request reviews manually from **two** reviewers: One from your team and one
 from another team that is also working on the mobile app.
 

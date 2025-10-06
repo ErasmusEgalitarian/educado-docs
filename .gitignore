@@ -1,16 +1,13 @@
-venv/
-
+# Python-generated files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
 
-.env
-.env.local
-.env.development
-.env.production
+# Virtual environments
+.venv
 
-.DS_Store
-Thumbs.db
-
-site/
+# Added by the developers
+.idea/

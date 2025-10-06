@@ -116,6 +116,7 @@ nav:
       - Mobile:
           - Getting Started: handbook/mobile/getting-started.md
           - Workflow: handbook/mobile/workflow.md
+          - Typing: handbook/mobile/typing.md
           - Standards and Best Practices: handbook/mobile/standards.md
           - FAQ: handbook/mobile/faq.md
       - Back End:
