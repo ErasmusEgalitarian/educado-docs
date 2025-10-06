@@ -25,15 +25,36 @@
 ### Linux/macOS
 
 - [nvm](https://github.com/nvm-sh/nvm)
-
-### Windows
-
-- [nvm-windows](https://github.com/coreybutler/nvm-windows)
+- [SDKMAN!](https://sdkman.io/)
 
 !!! note
 
     After installing nvm, remember to check if the snippet was added to your shell profile (`.bashrc`, `.zshrc`, etc.) 
     and restart your terminal.
+
+### Windows
+
+- [nvm-windows](https://github.com/coreybutler/nvm-windows)
+- [Chocolatey](https://chocolatey.org/)
+
+## Install Java
+
+### macOS/Linux
+
+SDKMAN! reads the `.sdkmanrc` file in the project root to determine the Java version to install. In the project root
+(`educado-mobile`), run:
+
+```shell
+sdk env install
+```
+
+### Windows
+
+In Windows Terminal (PowerShell), run:
+
+```powershell
+choco install -y microsoft-openjdk17
+```
 
 ## Install Node.js
 
@@ -72,11 +93,17 @@ npm install
 
 ## Environment variables
 
-Copy the contents of `.env.local.sample` into a new file called `.env.local` and add the variable values to this new
-file. You will find the values in `# mobile` on Discord or use the hostname of your locally running back-end instance.
-Never add `.env.local` to VCS (it's ignored anyway). Never use `.env` as it's meant for shared production values that
-should be added to VCS, e.g., feature flags. See the [Expo docs](https://docs.expo.dev/guides/environment-variables/)
-for more information.
+Copy the contents of `.env.local.sample` into a new file called `.env.local`, place it in the root of the local
+`educado-mobile` project, and add the variable values to this new file. You will find the values in `# mobile` on
+Discord or use the hostname of your locally running back-end instance. Never add `.env.local` to VCS (it's ignored
+anyway). Never use `.env` as it's meant for shared production values that should be added to VCS, e.g., feature flags.
+See the [Expo docs](https://docs.expo.dev/guides/environment-variables/) for more information.
+
+!!! danger
+
+    Keep in mind that the values in the `.env.local` file shared on Discord are pointing to the **deployed** staging
+    environment. This means that you are working with a live version of the app and potentially editing data that will
+    affect other developers.
 
 ## Emulator setup
 
@@ -84,13 +111,16 @@ Upon opening Android Studio for the first time, go through the installation proc
 Android Virtual Device (AVD) when prompted.
 
 Additionally, you will need to install the Android SDK Build Tools and Android SDK Platform Tools.
-See [this guide](https://docs.expo.dev/workflow/android-studio-emulator/) for more information. It is crucial that you
-install all the Android SDK components shown in the guide.
+
+Follow
+[this guide](https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated&mode=development-build&buildEnv=local)
+(Android emulator, development build). It is crucial that you install all the Android SDK components shown in the guide.
 
 !!! note "Windows"
 
-    Steps 8 and 10 of the [guide above](https://docs.expo.dev/workflow/android-studio-emulator/#set-up-android-studio)
-    can actually be simplified and done in PowerShell. As administrator, run:
+    Steps 8 and 10 of the
+    [guide above](https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated&mode=development-build&buildEnv=local)
+    can actually be simplified and done in Windows Terminal (PowerShell). As administrator, run:
 
     ```powershell
     $Sdk = "$env:LOCALAPPDATA\Android\Sdk"
@@ -99,8 +129,9 @@ install all the Android SDK components shown in the guide.
     setx PATH "$env:PATH;$Sdk\platform-tools;$Sdk\emulator"
     ```
 
-Under `Settings | Languages & Frameworks | Android SDK | SDK Platforms`, you also need to mark the Android 14 components
-matching the Android 15 components shown in the guide. In total, you should have the following components installed:
+In Android Studio, under `Settings | Languages & Frameworks | Android SDK | SDK Platforms`, you also need to mark the
+Android 14 components matching the Android 15 components shown in the guide. In total, you should have the following
+components installed on top of the preinstalled components:
 
 - `Android 15.0 ("VanillaIceCream")`
     - `Android SDK Platform 35`
@@ -124,8 +155,8 @@ Open the `Device Manager` tool window, then click on `Add a new device` and sele
 
 ![Visually show where to click](../../assets/mobile/create-device.png){: style="height:250px"}
 
-Then select `Pixel 6a` and click `Next`. Name it `Pixel 6a API 34`, select `API 34 "UpsideDownCake"`, select the
-Google Play image and click `Finish`.
+Then select `Pixel 6a` and click `Next`. Name it `Pixel 6a API 34`, select `API 34 "UpsideDownCake"`, select the Google
+APIs image, and click `Finish`.
 
 ![Device configuration](../../assets/mobile/device-config.png){: style="height:500px"}
 
@@ -134,35 +165,54 @@ now close the emulator and exit out of Android Studio.
 
 ## Expo account
 
-Go to [expo.dev](https://expo.dev/signup) and create an account. Send your username to Martin Kedmenec (Discord:
-`@kedgmenec`) to be added to the Educado Expo organization. Then, in the project root, run `npx expo login` and log in
-using your credentials. Run `npx expo whoami` to verify that you are logged in.
+Go to [expo.dev](https://expo.dev/signup) and create an account. Send the email you used to create your account to
+Martin Kedmenec (Discord: `@kedgmenec`) to be added to the Educado Expo organization. Then, in the project root, run
+`npx expo login` and log in using your credentials. Run `npx expo whoami` to verify that you are logged in.
 
 ## Running the emulator
 
-Run `npx expo start`. When the QR code appears:
+### Development build
 
-1. Press `s` to switch to Expo Go.
-2. Press `shift + a` to choose from all available emulators. Choose the emulator you have created (`Pixel 6a API 34`).
+#### First run
 
-- Or press `a` to open the default emulator.
+Run `npx expo run:android`. A window should now pop up with the emulator. The first time you run the app, it will take a
+while to compile the code and install it on the emulator.
 
-A window should now pop up with the emulator. The first time you run the app, it will take a while to download Expo Go
-to the emulator.
+When the app is ready, you should see the app running on the emulator. An `android/` directory should have been created
+in the project root. This directory contains the Android build files.
+
+!!! note
+
+    You only need to run `npx expo run:android` once or in the following cases:
+
+    - `package.json` or `package-lock.json` have been changed
+    - Assets and configurations like the app icons, splash screen, manifest, or permissions have changed
+    - The Expo version, Android SDK, or emulator configuration have changed
+
+#### Subsequent development sessions
+
+Run `npx expo start`. When the QR code appears, press `a` to open the default emulator or press `shift + a` to choose
+from all available emulators. Choose the emulator you have created (`Pixel 6a API 34`).
 
 !!! warning "Windows"
 
-    If you have trouble running the app, get some connection or Metro issues, open a new PowerShell tab and run
-    `adb reverse --list`. If the output is empty, or shows connection errors, run `adb reverse tcp:8081 tcp:8081`. The
-    output of the latter command should now show that the port is being forwarded. Go back to the emulator and try to
-    refresh the app.
+    If you have trouble running the app, get some connection or Metro issues, open a new Windows Terminal (PowerShell)
+    tab and run `adb reverse --list`. If the output is empty, or shows connection errors, run
+    `adb reverse tcp:8081 tcp:8081`. The output of the latter command should now show that the port is being forwarded.
+    Go back to the emulator and try to refresh the app.
 
 !!! tip
 
-    If you have trouble getting Expo to bundle or refresh the app, try reloading the app by pressing `r` in the emulator
-    server menu.
+    If you have trouble getting Expo to bundle or refresh the app, try reloading the app by pressing `r` in the server
+    menu.
 
     You can also try to run the server with `npx expo start -c` which will clear the cache before starting the emulator.
+
+### Expo Go
+
+Expo Go is the legacy method of running the app on Android. It is not recommended for development. You can read more
+about the pros and cons of Expo Go and how it compares to development builds in the
+[Expo docs](https://docs.expo.dev/develop/development-builds/introduction/).
 
 ## IDE setup
 

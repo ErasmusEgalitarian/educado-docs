@@ -4,17 +4,22 @@ Download and install uv by following the [official guide](https://docs.astral.sh
 
 ## Run the documentation locally
 
-```sh
+```shell
 uv run mkdocs serve
 ```
 
 ## Publish the documentation to GitHub Pages
 
-```sh
-uv run mkdocs gh-deployss
+```shell
+uv run mkdocs gh-deploy
+```
+
+## Update all dependencies
+
+```shell
+uv sync -U
 ```
 
 ## Documentation Structure
 
-* **`docs/`** : Contains the Markdown files for the documentation.
-* **`venv/`** : Python virtual environment (ignored by `.gitignore`).
+- **`docs/`** : Contains the Markdown files for the documentation.
