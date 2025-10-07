@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../workflow/">
+        <link rel="prev" href="../typing/">
       
       
         <link rel="next" href="../faq/">
@@ -2793,6 +2793,8 @@
       
         
       
+        
+      
     
     
     
@@ -2868,6 +2870,29 @@
   
   <span class="md-ellipsis">
     Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typing
     
   </span>
   
@@ -3021,9 +3046,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#only-use-named-exports" class="md-nav__link">
+  <a href="#use-named-exports-except-in-the-app-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Only use named exports
+      Use named exports, except in the app/ directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-inline-exports-except-in-the-app-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use inline exports, except in the app/ directory
     </span>
   </a>
   
@@ -3087,6 +3121,15 @@
   <a href="#only-use-the-expo-cli-to-install-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       Only use the Expo CLI to install dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#never-run-npm-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Never run npm update
     </span>
   </a>
   
@@ -3395,21 +3438,25 @@
 
 <h2 id="use-pascalcase-for-component-names-files-and-directories">Use <code>PascalCase</code> for component names, files, and directories<a class="headerlink" href="#use-pascalcase-for-component-names-files-and-directories" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: This is the Expo standard.</p>
-<p>Example: Component <code>MyClassyList</code> is in <code>components/Courses/MyClassyList.tsx</code>.</p>
+<p><strong>Example</strong>: Component <code>MyClassyList</code> is in <code>components/Courses/MyClassyList.tsx</code>.</p>
 <h2 id="use-kebab-case-for-regular-typescript-files-and-directories">Use <code>kebab-case</code> for regular TypeScript files and directories<a class="headerlink" href="#use-kebab-case-for-regular-typescript-files-and-directories" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: This is the TypeScript standard.</p>
-<p>Example: <code>services/certificate-service.ts</code>.</p>
+<p><strong>Example</strong>: <code>services/certificate-service.ts</code>.</p>
 <h2 id="use-the-expo-notation-in-the-app-directory">Use the Expo notation in the <code>app/</code> directory<a class="headerlink" href="#use-the-expo-notation-in-the-app-directory" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: This is the Expo standard. Read more <a href="https://docs.expo.dev/router/basics/notation/">here</a>.</p>
-<p>Example: <code>app/_layout.tsx</code>.</p>
+<p><strong>Example</strong>: <code>app/_layout.tsx</code>.</p>
 <h2 id="name-tests-filename-testtstsx">Name tests <code>FILENAME-test.{ts,tsx}</code><a class="headerlink" href="#name-tests-filename-testtstsx" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: This is the Expo standard.</p>
-<p>Example: <code>LeaveButton-test.tsx</code></p>
+<p><strong>Example</strong>: <code>LeaveButton-test.tsx</code></p>
 <h2 id="match-component-file-names-to-component-names">Match component file names to component names<a class="headerlink" href="#match-component-file-names-to-component-names" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: Components are easier to find.</p>
-<p>Example: Component <code>CompleteCourseScreen</code> is in <code>CompleteCourseScreen.tsx</code></p>
+<p><strong>Example</strong>: Component <code>CompleteCourseScreen</code> is in <code>CompleteCourseScreen.tsx</code></p>
 <h2 id="use-arrow-functions">Use arrow functions<a class="headerlink" href="#use-arrow-functions" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: This is the modern JavaScript/TypeScript approach to function declaration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This rule is enforced by ESLint.</p>
+</div>
 <h2 id="use-tsdoc-for-function-documentation">Use <a href="https://tsdoc.org/">TSDoc</a> for function documentation<a class="headerlink" href="#use-tsdoc-for-function-documentation" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: Proper function documentation is very helpful and TSDoc can be read by IDEs. You will be able to read the
 function documentation at the call site in the IDE. See the example below.</p>
@@ -3420,25 +3467,60 @@ JSX code (e.g., code like <code>&lt;Component /&gt;</code>), it doesn't need to 
 <h2 id="never-do-import-react-from-react">Never do <code>import React from "react";</code><a class="headerlink" href="#never-do-import-react-from-react" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: The new JSX transform (React 17+) doesn't require importing React in scope. React doesn't need to be in
 scope. Importing React is usually unused noise; omit it to keep files clean.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This rule is enforced by ESLint.</p>
+</div>
 <h2 id="use-absolute-imports">Use absolute imports<a class="headerlink" href="#use-absolute-imports" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: Absolute imports are more readable and easier to refactor.</p>
-<p>Example: <code>import { getUserInfo } from "@/services/storage-service";</code> instead of
-<code>import { getUserInfo } from "../../../services/storage-service";</code>.</p>
-<h2 id="only-use-named-exports">Only use named exports<a class="headerlink" href="#only-use-named-exports" title="Permanent link">#</a></h2>
+<p><strong>Example</strong>:</p>
+<p>❌ <code>import { getUserInfo } from "../../../services/storage-service";</code></p>
+<p>✅ <code>import { getUserInfo } from "@/services/storage-service";</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This rule is enforced by ESLint.</p>
+</div>
+<h2 id="use-named-exports-except-in-the-app-directory">Use named exports, except in the <code>app/</code> directory<a class="headerlink" href="#use-named-exports-except-in-the-app-directory" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: Named imports require the imported symbol to have the same name as the exported symbol. This eases
 finding components and files.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">MyComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Component body goes here</span>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">MyComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">};</span>
+</code></pre></div>
+<p><strong>Exception</strong>:</p>
+<p>Expo Router needs default exports in the <code>app/</code> directory. For that reason, default exports are allowed in the <code>app/</code>
+directory and should be placed at the bottom of the file.</p>
+<div class="highlight"><span class="filename">app/(tabs)/course/index.tsx</span><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">Course</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
 <span class="p">};</span>
 
-<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="nx">MyComponent</span><span class="p">};</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Course</span><span class="p">;</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Currently, there are many default exports in the codebase. We should migrate them to named exports as soon as
-possible.</p>
+<p>This rule is not enforced by ESLint yet, as it would require a lot of refactoring. Files where components are
+imported would have to be refactored e.g., from <code>import ExerciseScreen from "@/screens/Excercises/ExerciseScreen";</code> 
+to <code>import { ExerciseScreen } from "@/screens/Excercises/ExerciseScreen";</code>. This rule will be enforced in the
+future. Default exports should be refactored to named exports incrementally.</p>
 </div>
+<h2 id="use-inline-exports-except-in-the-app-directory">Use inline exports, except in the <code>app/</code> directory<a class="headerlink" href="#use-inline-exports-except-in-the-app-directory" title="Permanent link">#</a></h2>
+<p><strong>Rationale</strong>: Inline exports prevent merge conflicts at the bottom of the file. Also, it's harder to forget to export
+when the export is on the same line as the declaration.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">SomeStuff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="nx">SomeStuffProps</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Exception</strong>:</p>
+<p>Expo Router needs default exports in the <code>app/</code> directory. For that reason, default exports are allowed in the <code>app/</code>
+directory and should be placed at the bottom of the file.</p>
+<div class="highlight"><span class="filename">app/(tabs)/course/index.tsx</span><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">Course</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Course</span><span class="p">;</span>
+</code></pre></div>
 <h2 id="use-descriptive-full-names">Use descriptive, full names<a class="headerlink" href="#use-descriptive-full-names" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: <code>NavigationBar</code> is more readable than <code>NavBar</code>. <code>WelcomeScreenAcceptButton</code> is more descriptive than
 <code>GreenButton</code>.</p>
@@ -3457,40 +3539,81 @@ upgrade. Read more under <a href="../getting-started/">Getting Started</a>.</p>
 <h2 id="use-nvm-or-docker-for-local-development">Use nvm or Docker for local development<a class="headerlink" href="#use-nvm-or-docker-for-local-development" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: See previous point.</p>
 <h2 id="never-use-proptypes-use-the-typescript-type-system">Never use PropTypes, use the TypeScript type system<a class="headerlink" href="#never-use-proptypes-use-the-typescript-type-system" title="Permanent link">#</a></h2>
-<p><strong>Rationale</strong>: The <code>prop-types</code> package is an ancient, deprecated way of typing props. Always use TypeScript interfaces.</p>
+<p><strong>Rationale</strong>: The <code>prop-types</code> package is an ancient, deprecated way of typing props. Always use TypeScript interfaces.
+See the <a href="../typing/">Typing section</a> for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This rule is enforced by ESLint.</p>
+</div>
 <h2 id="use-localization">Use localization<a class="headerlink" href="#use-localization" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: Never hardcode values, especially not locale-specific string. Make them dynamic, so developers can switch
 language. This doesn't mean that the end users will be able to switch languages. We will lock the deployed app to
 Brazilian Portuguese. Read more in the <a href="https://docs.expo.dev/guides/localization/">Expo docs</a>.</p>
+<p><strong>Example</strong>:</p>
+<p>Always add a translation string to the two translation files in <code>i18n/locales/</code>.</p>
+<div class="highlight"><span class="filename">i18n/locales/en-US.json</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;welcome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;greeting&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;We love Educado&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">i18n/locales/pt-BR.json</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;welcome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;greeting&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nós amamos o Educado&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You can then access the dynamic translation string in a component like this:</p>
+<div class="highlight"><span class="filename">components/.../MyTextComponent.tsx</span><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">t</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/i18n&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">MyTextComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Text</span><span class="p">&gt;{</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;welcome.greeting&quot;</span><span class="p">)}&lt;/</span><span class="nt">Text</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="only-use-the-expo-cli-to-install-dependencies">Only use the Expo CLI to install dependencies<a class="headerlink" href="#only-use-the-expo-cli-to-install-dependencies" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: Expo is very picky about dependencies and has its own package management interface <code>npx expo install</code>.
 Always prefer it to direct <code>npm</code> calls whenever possible. Read more in the
 <a href="https://docs.expo.dev/more/expo-cli/#install">Expo docs</a>.</p>
+<h2 id="never-run-npm-update">Never run <code>npm update</code><a class="headerlink" href="#never-run-npm-update" title="Permanent link">#</a></h2>
+<p><strong>Rationale</strong>: <code>npm update</code> is not fully compatible with Expo, as Expo needs precise versions of packages. Packages
+should only be updated using <code>npx expo install --check</code>, or manually (individual packages), but even that is cumbersome.
+If you believe that an update is necessary, consult the mobile tech lead.</p>
 <h2 id="never-import-the-tailwind-config-into-a-component">Never import the Tailwind config into a component<a class="headerlink" href="#never-import-the-tailwind-config-into-a-component" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: The bundle size explodes when the Tailwind config is imported into a component. Import color tokens
-directly or create custom Tailwind classes.</p>
-<p><strong>Bad</strong>:</p>
+directly or create custom Tailwind classes. If you edit and import colors, change the color values in
+<code>tailwind.config.js</code> and in <code>theme/colors.ts</code>. The values in the latter file should be kept in sync with the values in
+the former file. Nativewind will read the values from <code>tailwind.config.js</code>, while components will reference the values
+from <code>theme/colors.ts</code>.</p>
+<p><strong>Example</strong>:</p>
+<p>❌</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">tailwindConfig</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../../tailwind.config.js&quot;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">tailwindColors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tailwindConfig</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">colors</span><span class="p">;</span>
 </code></pre></div>
-<p><strong>Worse</strong>:</p>
+<p>❌</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tailwindConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../../../tailwind.config.js&quot;</span><span class="p">);</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">projectColors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tailwindConfig</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">colors</span><span class="p">;</span>
 </code></pre></div>
-<p><strong>Good</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">colors</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/theme/tokens&quot;</span><span class="p">;</span>
+<p>✅</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">colors</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/theme/colors&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">BackgroundLinearGradient</span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">BackgroundLinearGradient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">LinearGradient</span>
 <span class="w">            </span><span class="na">colors</span><span class="o">=</span><span class="p">{[</span><span class="nx">colors</span><span class="p">.</span><span class="nx">bgPrimary</span><span class="p">,</span><span class="w"> </span><span class="nx">colors</span><span class="p">.</span><span class="nx">projectWhite</span><span class="p">]}</span>
-<span class="err">//</span><span class="w"> </span><span class="na">...</span>
+<span class="w">        </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Refactor <code>tailwind.config.js</code> imports to a tokens import when you see it.</p>
+<p>As we progress with the upgrade, the color values from <code>theme/colors.ts</code> will be imported into <code>tailwind.config.ts</code>,
+but that is not possible yet. That's why the two <code>colors</code> objects need to be kept in sync for now.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This rule is enforced by ESLint. Refactor <code>tailwind.config.js</code> imports to a tokens import when you see it.</p>
 </div>
 <h2 id="read-the-official-documentation">Read the official documentation<a class="headerlink" href="#read-the-official-documentation" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: The official
@@ -3500,13 +3623,13 @@ directly or create custom Tailwind classes.</p>
 <p><strong>Rationale</strong>: GitHub reads keywords in commit messages and closes issues when a PR is merged that contains commit
 messages that use those keywords. Furthermore, adding the issue ID to the commit message links the commit to the issue.
 Finally, your commit message should finish the sentence: <code>If applied, this commit will [your commit message goes here]</code>.</p>
-<p>Example: <code>Fix #34. Add the new welcome banner</code>. This commit message will link this commit to issue #34 and close this
-issue when the commit is merged.</p>
+<p><strong>Example</strong>: <code>Fix #34. Add the new welcome banner</code>. This commit message will link this commit to issue #34 and close
+this issue when the commit is merged.</p>
 <h2 id="communicate-communicate-communicate">Communicate, communicate, communicate<a class="headerlink" href="#communicate-communicate-communicate" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: We need to work efficiently and with a high cadence. Surprises are not as good as knowledge. Be kind to
 each other.</p>
-<p>Example: Follow what's going on GitHub, check PRs, ask questions, ask questions on Discord and follow <code># mobile</code>, read
-the docs and update them if necessary.</p>
+<p><strong>Example</strong>: Follow what's going on GitHub, check PRs, ask questions, ask questions on Discord and follow <code># mobile</code>,
+read the docs and update them if necessary.</p>
 <h2 id="only-commit-what-you-actually-worked-on">Only commit what you actually worked on<a class="headerlink" href="#only-commit-what-you-actually-worked-on" title="Permanent link">#</a></h2>
 <p><strong>Rationale</strong>: Random changes shouldn't be included in VCS. Don't blindly use <code>git add .</code>. Use <code>git status</code> to check
 which files Git detects as modified. Only <code>git add</code> what you actually want to add.</p>

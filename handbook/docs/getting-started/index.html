@@ -2791,6 +2791,8 @@
       
         
       
+        
+      
     
     
     
@@ -2868,6 +2870,29 @@
   
   <span class="md-ellipsis">
     Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobile/typing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typing
     
   </span>
   
@@ -3147,6 +3172,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#update-all-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update all dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation-structure" class="md-nav__link">
     <span class="md-ellipsis">
       Documentation Structure
@@ -3228,12 +3262,14 @@
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>mkdocs<span class="w"> </span>serve
 </code></pre></div>
 <h2 id="publish-the-documentation-to-github-pages">Publish the documentation to GitHub Pages<a class="headerlink" href="#publish-the-documentation-to-github-pages" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>mkdocs<span class="w"> </span>gh-deployss
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>mkdocs<span class="w"> </span>gh-deploy
+</code></pre></div>
+<h2 id="update-all-dependencies">Update all dependencies<a class="headerlink" href="#update-all-dependencies" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>sync<span class="w"> </span>-U
 </code></pre></div>
 <h2 id="documentation-structure">Documentation Structure<a class="headerlink" href="#documentation-structure" title="Permanent link">#</a></h2>
 <ul>
 <li><strong><code>docs/</code></strong> : Contains the Markdown files for the documentation.</li>
-<li><strong><code>venv/</code></strong> : Python virtual environment (ignored by <code>.gitignore</code>).</li>
 </ul>
 
 

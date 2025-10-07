@@ -2793,6 +2793,8 @@
       
         
       
+        
+      
     
     
     
@@ -2927,13 +2929,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-nodejs" class="md-nav__link">
+  <a href="#install-java" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Node.js
+      Install Java
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Install Node.js">
+    <nav class="md-nav" aria-label="Install Java">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2947,6 +2949,39 @@
         
           <li class="md-nav__item">
   <a href="#windows_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Node.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macoslinux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      macOS/Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_2" class="md-nav__link">
     <span class="md-ellipsis">
       Windows
     </span>
@@ -3001,6 +3036,54 @@
       Running the emulator
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Running the emulator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development build
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      First run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsequent-development-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsequent development sessions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expo-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expo Go
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3068,6 +3151,29 @@
   
   <span class="md-ellipsis">
     Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typing
     
   </span>
   
@@ -3378,25 +3484,37 @@
 <h3 id="linuxmacos">Linux/macOS<a class="headerlink" href="#linuxmacos" title="Permanent link">#</a></h3>
 <ul>
 <li><a href="https://github.com/nvm-sh/nvm">nvm</a></li>
-</ul>
-<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h3>
-<ul>
-<li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></li>
+<li><a href="https://sdkman.io/">SDKMAN!</a></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>After installing nvm, remember to check if the snippet was added to your shell profile (<code>.bashrc</code>, <code>.zshrc</code>, etc.) 
 and restart your terminal.</p>
 </div>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></li>
+<li><a href="https://chocolatey.org/">Chocolatey</a></li>
+</ul>
+<h2 id="install-java">Install Java<a class="headerlink" href="#install-java" title="Permanent link">#</a></h2>
+<h3 id="macoslinux">macOS/Linux<a class="headerlink" href="#macoslinux" title="Permanent link">#</a></h3>
+<p>SDKMAN! reads the <code>.sdkmanrc</code> file in the project root to determine the Java version to install. In the project root
+(<code>educado-mobile</code>), run:</p>
+<div class="highlight"><pre><span></span><code>sdk<span class="w"> </span>env<span class="w"> </span>install
+</code></pre></div>
+<h3 id="windows_1">Windows<a class="headerlink" href="#windows_1" title="Permanent link">#</a></h3>
+<p>In Windows Terminal (PowerShell), run:</p>
+<div class="highlight"><pre><span></span><code><span class="n">choco</span> <span class="n">install</span> <span class="n">-y</span> <span class="n">microsoft-openjdk17</span>
+</code></pre></div>
 <h2 id="install-nodejs">Install Node.js<a class="headerlink" href="#install-nodejs" title="Permanent link">#</a></h2>
 <p>nvm reads the <code>.nvmrc</code> file in the project root to determine the Node.js version to install. In the project root
 (<code>educado-mobile</code>), run:</p>
-<h3 id="macoslinux">macOS/Linux<a class="headerlink" href="#macoslinux" title="Permanent link">#</a></h3>
+<h3 id="macoslinux_1">macOS/Linux<a class="headerlink" href="#macoslinux_1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>nvm<span class="w"> </span>install
 nvm<span class="w"> </span>use
 nvm<span class="w"> </span>current<span class="w"> </span><span class="c1"># Verify version</span>
 </code></pre></div>
-<h3 id="windows_1">Windows<a class="headerlink" href="#windows_1" title="Permanent link">#</a></h3>
+<h3 id="windows_2">Windows<a class="headerlink" href="#windows_2" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nv">$ver</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="p">.</span><span class="n">nvmrc</span>
 <span class="n">nvm</span> <span class="n">install</span> <span class="nv">$ver</span> <span class="c"># This command will output a command that you have to run in the next step</span>
 <span class="n">nvm</span> <span class="n">use</span> <span class="no">[VERSION]</span> <span class="c"># Run the command that was outputted by the previous command</span>
@@ -3412,29 +3530,38 @@ nvm<span class="w"> </span>current<span class="w"> </span><span class="c1"># Ver
 PRs, as a change in the <code>package.json</code> and/or <code>package-lock.json</code> files requires you to run this command again.</p>
 </div>
 <h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">#</a></h2>
-<p>Copy the contents of <code>.env.local.sample</code> into a new file called <code>.env.local</code> and add the variable values to this new
-file. You will find the values in <code># mobile</code> on Discord or use the hostname of your locally running back-end instance.
-Never add <code>.env.local</code> to VCS (it's ignored anyway). Never use <code>.env</code> as it's meant for shared production values that
-should be added to VCS, e.g., feature flags. See the <a href="https://docs.expo.dev/guides/environment-variables/">Expo docs</a>
-for more information.</p>
+<p>Copy the contents of <code>.env.local.sample</code> into a new file called <code>.env.local</code>, place it in the root of the local
+<code>educado-mobile</code> project, and add the variable values to this new file. You will find the values in <code># mobile</code> on
+Discord or use the hostname of your locally running back-end instance. Never add <code>.env.local</code> to VCS (it's ignored
+anyway). Never use <code>.env</code> as it's meant for shared production values that should be added to VCS, e.g., feature flags.
+See the <a href="https://docs.expo.dev/guides/environment-variables/">Expo docs</a> for more information.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Keep in mind that the values in the <code>.env.local</code> file shared on Discord are pointing to the <strong>deployed</strong> staging
+environment. This means that you are working with a live version of the app and potentially editing data that will
+affect other developers.</p>
+</div>
 <h2 id="emulator-setup">Emulator setup<a class="headerlink" href="#emulator-setup" title="Permanent link">#</a></h2>
 <p>Upon opening Android Studio for the first time, go through the installation process and install the Android SDK and
 Android Virtual Device (AVD) when prompted.</p>
-<p>Additionally, you will need to install the Android SDK Build Tools and Android SDK Platform Tools.
-See <a href="https://docs.expo.dev/workflow/android-studio-emulator/">this guide</a> for more information. It is crucial that you
-install all the Android SDK components shown in the guide.</p>
+<p>Additionally, you will need to install the Android SDK Build Tools and Android SDK Platform Tools.</p>
+<p>Follow
+<a href="https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&amp;device=simulated&amp;mode=development-build&amp;buildEnv=local">this guide</a>
+(Android emulator, development build). It is crucial that you install all the Android SDK components shown in the guide.</p>
 <div class="admonition note">
 <p class="admonition-title">Windows</p>
-<p>Steps 8 and 10 of the <a href="https://docs.expo.dev/workflow/android-studio-emulator/#set-up-android-studio">guide above</a>
-can actually be simplified and done in PowerShell. As administrator, run:</p>
+<p>Steps 8 and 10 of the
+<a href="https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&amp;device=simulated&amp;mode=development-build&amp;buildEnv=local">guide above</a>
+can actually be simplified and done in Windows Terminal (PowerShell). As administrator, run:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$Sdk</span> <span class="p">=</span> <span class="s2">&quot;$env:LOCALAPPDATA\Android\Sdk&quot;</span>
 <span class="n">setx</span> <span class="n">ANDROID_HOME</span> <span class="nv">$Sdk</span>
 <span class="n">setx</span> <span class="n">ANDROID_SDK_ROOT</span> <span class="nv">$Sdk</span>
 <span class="n">setx</span> <span class="n">PATH</span> <span class="s2">&quot;$env:PATH;$Sdk\platform-tools;$Sdk\emulator&quot;</span>
 </code></pre></div>
 </div>
-<p>Under <code>Settings | Languages &amp; Frameworks | Android SDK | SDK Platforms</code>, you also need to mark the Android 14 components
-matching the Android 15 components shown in the guide. In total, you should have the following components installed:</p>
+<p>In Android Studio, under <code>Settings | Languages &amp; Frameworks | Android SDK | SDK Platforms</code>, you also need to mark the
+Android 14 components matching the Android 15 components shown in the guide. In total, you should have the following
+components installed on top of the preinstalled components:</p>
 <ul>
 <li><code>Android 15.0 ("VanillaIceCream")</code><ul>
 <li><code>Android SDK Platform 35</code></li>
@@ -3460,41 +3587,51 @@ matching the Android 15 components shown in the guide. In total, you should have
 </ul>
 <p>Open the <code>Device Manager</code> tool window, then click on <code>Add a new device</code> and select <code>Create Virtual Device</code>.</p>
 <p><img alt="Visually show where to click" src="../../../assets/mobile/create-device.png" style="height:250px" /></p>
-<p>Then select <code>Pixel 6a</code> and click <code>Next</code>. Name it <code>Pixel 6a API 34</code>, select <code>API 34 "UpsideDownCake"</code>, select the
-Google Play image and click <code>Finish</code>.</p>
+<p>Then select <code>Pixel 6a</code> and click <code>Next</code>. Name it <code>Pixel 6a API 34</code>, select <code>API 34 "UpsideDownCake"</code>, select the Google
+APIs image, and click <code>Finish</code>.</p>
 <p><img alt="Device configuration" src="../../../assets/mobile/device-config.png" style="height:500px" /></p>
 <p>The emulator should now show up in the Device Manager. Click the play button to start it to make sure it works. You can
 now close the emulator and exit out of Android Studio.</p>
 <h2 id="expo-account">Expo account<a class="headerlink" href="#expo-account" title="Permanent link">#</a></h2>
-<p>Go to <a href="https://expo.dev/signup">expo.dev</a> and create an account. Send your username to Martin Kedmenec (Discord:
-<code>@kedgmenec</code>) to be added to the Educado Expo organization. Then, in the project root, run <code>npx expo login</code> and log in
-using your credentials. Run <code>npx expo whoami</code> to verify that you are logged in.</p>
+<p>Go to <a href="https://expo.dev/signup">expo.dev</a> and create an account. Send the email you used to create your account to
+Martin Kedmenec (Discord: <code>@kedgmenec</code>) to be added to the Educado Expo organization. Then, in the project root, run
+<code>npx expo login</code> and log in using your credentials. Run <code>npx expo whoami</code> to verify that you are logged in.</p>
 <h2 id="running-the-emulator">Running the emulator<a class="headerlink" href="#running-the-emulator" title="Permanent link">#</a></h2>
-<p>Run <code>npx expo start</code>. When the QR code appears:</p>
-<ol>
-<li>Press <code>s</code> to switch to Expo Go.</li>
-<li>
-<p>Press <code>shift + a</code> to choose from all available emulators. Choose the emulator you have created (<code>Pixel 6a API 34</code>).</p>
-</li>
-<li>
-<p>Or press <code>a</code> to open the default emulator.</p>
-</li>
-</ol>
-<p>A window should now pop up with the emulator. The first time you run the app, it will take a while to download Expo Go
-to the emulator.</p>
+<h3 id="development-build">Development build<a class="headerlink" href="#development-build" title="Permanent link">#</a></h3>
+<h4 id="first-run">First run<a class="headerlink" href="#first-run" title="Permanent link">#</a></h4>
+<p>Run <code>npx expo run:android</code>. A window should now pop up with the emulator. The first time you run the app, it will take a
+while to compile the code and install it on the emulator.</p>
+<p>When the app is ready, you should see the app running on the emulator. An <code>android/</code> directory should have been created
+in the project root. This directory contains the Android build files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You only need to run <code>npx expo run:android</code> once or in the following cases:</p>
+<ul>
+<li><code>package.json</code> or <code>package-lock.json</code> have been changed</li>
+<li>Assets and configurations like the app icons, splash screen, manifest, or permissions have changed</li>
+<li>The Expo version, Android SDK, or emulator configuration have changed</li>
+</ul>
+</div>
+<h4 id="subsequent-development-sessions">Subsequent development sessions<a class="headerlink" href="#subsequent-development-sessions" title="Permanent link">#</a></h4>
+<p>Run <code>npx expo start</code>. When the QR code appears, press <code>a</code> to open the default emulator or press <code>shift + a</code> to choose
+from all available emulators. Choose the emulator you have created (<code>Pixel 6a API 34</code>).</p>
 <div class="admonition warning">
 <p class="admonition-title">Windows</p>
-<p>If you have trouble running the app, get some connection or Metro issues, open a new PowerShell tab and run
-<code>adb reverse --list</code>. If the output is empty, or shows connection errors, run <code>adb reverse tcp:8081 tcp:8081</code>. The
-output of the latter command should now show that the port is being forwarded. Go back to the emulator and try to
-refresh the app.</p>
+<p>If you have trouble running the app, get some connection or Metro issues, open a new Windows Terminal (PowerShell)
+tab and run <code>adb reverse --list</code>. If the output is empty, or shows connection errors, run
+<code>adb reverse tcp:8081 tcp:8081</code>. The output of the latter command should now show that the port is being forwarded.
+Go back to the emulator and try to refresh the app.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you have trouble getting Expo to bundle or refresh the app, try reloading the app by pressing <code>r</code> in the emulator
-server menu.</p>
+<p>If you have trouble getting Expo to bundle or refresh the app, try reloading the app by pressing <code>r</code> in the server
+menu.</p>
 <p>You can also try to run the server with <code>npx expo start -c</code> which will clear the cache before starting the emulator.</p>
 </div>
+<h3 id="expo-go">Expo Go<a class="headerlink" href="#expo-go" title="Permanent link">#</a></h3>
+<p>Expo Go is the legacy method of running the app on Android. It is not recommended for development. You can read more
+about the pros and cons of Expo Go and how it compares to development builds in the
+<a href="https://docs.expo.dev/develop/development-builds/introduction/">Expo docs</a>.</p>
 <h2 id="ide-setup">IDE setup<a class="headerlink" href="#ide-setup" title="Permanent link">#</a></h2>
 <h3 id="android-studio">Android Studio<a class="headerlink" href="#android-studio" title="Permanent link">#</a></h3>
 <p>You won't really need Android Studio for development because this is a TypeScript-first project, but you will need it
