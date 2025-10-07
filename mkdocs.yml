@@ -38,7 +38,7 @@ site_description: Software Documentation of the Educado Project
 
 site_author: Lucas Antunes
 
-repo_url: https://github.com/Educado-App/docs
+repo_url: https://github.com/ErasmusEgalitarian/educado-docs
 
 plugins:
   - search:

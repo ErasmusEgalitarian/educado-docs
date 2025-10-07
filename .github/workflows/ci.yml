@@ -1,0 +1,47 @@
+name: CI
+on: pull_request
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Check If CHANGELOG.md Changed
+        uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            files:
+              - pyproject.toml
+              - CHANGELOG.md
+      - name: Check CHANGELOG.md
+        if: steps.changes.outputs.files != 'true'
+        run: |
+          echo "::error file=CHANGELOG.md::The changelog must be updated in every PR"
+
+          exit 1
+      - name: Set Up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install Python
+        run: uv python install
+      - name: Install Dependencies
+        run: uv sync --frozen --all-extras
+      - name: Run isort
+        run: uv run isort --diff .
+      - name: Run Black
+        run: uv run black --diff .
+      - name: ruff
+        run: uv run ruff check
+      - name: mypy
+        run: uv run mypy
+      - name: Pylint
+        run: uv run pylint parse_changelog.py
+      - name: Flake8
+        run: uv run flake8 .
+      - name: Parse CHANGELOG.md
+        run: uv run parse_changelog.py
+      - name: Build
+        run: uv run mkdocs build --strict
