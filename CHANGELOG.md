@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0] - 2025-10-07
+
+### Added
+
+- Documentation Developer Handbook workflow guide
+- Mobile Developer Handbook standards
+    - Don't use `any`
+    - Don't use `useCallback` or `useMemo`
+
+### Changed
+
+- Both `CHANGELOG.md` and `pyproject.toml` need to be updated in every PR
+- Python interpreter configuration
+- Mobile Developer Handbook
+    - Screenshots moved to `assets/handbook/`
+    - GitHub workflow screenshots and CI explanation updated
+
+### Removed
+
+- Separators in `README.md`
+
 ## [2.3.0] - 2025-10-07
 
 ### Added
@@ -77,6 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Content QA information and minor adjustments
 - Project Overview update content
 - Objectives update content
+- `site_url` and `repo_name` in `mkdocs.yml`
 
 ## [0.3.0] - 2025-04-18
 

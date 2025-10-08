@@ -7,18 +7,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Check If CHANGELOG.md Changed
+      - name: Check If Versions Changed
         uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: |
-            files:
-              - pyproject.toml
+            changelog:
               - CHANGELOG.md
-      - name: Check CHANGELOG.md
-        if: steps.changes.outputs.files != 'true'
+            pyproject:
+              - pyproject.toml
+      - name: Require both CHANGELOG.md and pyproject.toml changed
+        if: ${{ steps.changes.outputs.changelog != 'true' || steps.changes.outputs.pyproject != 'true' }}
         run: |
-          echo "::error file=CHANGELOG.md::The changelog must be updated in every PR"
+          if [ "${{ steps.changes.outputs.changelog }}" != "true" ]; then
+            echo "::error file=CHANGELOG.md::The changelog must be updated in every PR"
+          fi
+
+          if [ "${{ steps.changes.outputs.pyproject }}" != "true" ]; then
+            echo "::error file=pyproject.toml::The pyproject.toml file must be updated in every PR"
+          fi
 
           exit 1
       - name: Set Up uv
@@ -33,15 +40,15 @@ jobs:
         run: uv run isort --diff .
       - name: Run Black
         run: uv run black --diff .
-      - name: ruff
+      - name: Run ruff
         run: uv run ruff check
-      - name: mypy
+      - name: Run mypy
         run: uv run mypy
-      - name: Pylint
-        run: uv run pylint parse_changelog.py
-      - name: Flake8
+      - name: Run Pylint
+        run: uv run pylint parse_files.py
+      - name: Run Flake8
         run: uv run flake8 .
-      - name: Parse CHANGELOG.md
-        run: uv run parse_changelog.py
+      - name: Parse CHANGELOG.md and pyproject.toml
+        run: uv run parse_files.py
       - name: Build
         run: uv run mkdocs build --strict

@@ -153,12 +153,12 @@ components installed on top of the preinstalled components:
 
 Open the `Device Manager` tool window, then click on `Add a new device` and select `Create Virtual Device`.
 
-![Visually show where to click](../../assets/mobile/create-device.png){: style="height:250px"}
+![Visually show where to click](../../assets/handbook/mobile/create-device.png){: style="height:250px"}
 
 Then select `Pixel 6a` and click `Next`. Name it `Pixel 6a API 34`, select `API 34 "UpsideDownCake"`, select the Google
 APIs image, and click `Finish`.
 
-![Device configuration](../../assets/mobile/device-config.png){: style="height:500px"}
+![Device configuration](../../assets/handbook/mobile/device-config.png){: style="height:500px"}
 
 The emulator should now show up in the Device Manager. Click the play button to start it to make sure it works. You can
 now close the emulator and exit out of Android Studio.
@@ -227,13 +227,13 @@ WebStorm will automatically read the shared project configuration from the `.ide
 configuration files like e.g., `.editorconfig`. But there are some additional settings that you need to configure. You
 can configure the settings as shown on the images below.
 
-![WebStorm settings Node.js](../../assets/mobile/webstorm-settings-node-js.png){: style="height:500px"}
+![WebStorm settings Node.js](../../assets/handbook/mobile/webstorm-settings-node-js.png){: style="height:500px"}
 
-![WebStorm settings TypeScript](../../assets/mobile/webstorm-settings-typescript.png){: style="height:500px"}
+![WebStorm settings TypeScript](../../assets/handbook/mobile/webstorm-settings-typescript.png){: style="height:500px"}
 
-![WebStorm settings Prettier](../../assets/mobile/webstorm-settings-prettier.png){: style="height:500px"}
+![WebStorm settings Prettier](../../assets/handbook/mobile/webstorm-settings-prettier.png){: style="height:500px"}
 
-![WebStorm settings ESLint](../../assets/mobile/webstorm-settings-eslint.png){: style="height:500px"}
+![WebStorm settings ESLint](../../assets/handbook/mobile/webstorm-settings-eslint.png){: style="height:500px"}
 
 ### Visual Studio Code
 

@@ -1,8 +1,9 @@
-"""Parse CHANGELOG.md, generate RELEASE_NOTES.md and version."""
+"""Parse CHANGELOG.md and pyproject.toml, generate RELEASE_NOTES.md and version."""
 
 import os
 import re
 import sys
+import tomllib
 from pathlib import Path
 
 with Path("CHANGELOG.md").open("r", encoding="utf-8") as changelog:
@@ -16,7 +17,7 @@ with Path("CHANGELOG.md").open("r", encoding="utf-8") as changelog:
 
         sys.exit(1)
 
-    top_version = match.group(1)
+    changelog_version = match.group(1)
 
     start = match.end()
     top_section = re.search(r"^## \[", content[start:], re.MULTILINE)
@@ -30,13 +31,33 @@ with Path("CHANGELOG.md").open("r", encoding="utf-8") as changelog:
 
         sys.exit(1)
 
-    print(f"Version: {top_version}")
     print("::group::Release Notes")
     print(body.strip() + "\n")
     print("::endgroup::")
 
-with Path("RELEASE_NOTES.md").open("w", encoding="utf-8") as changelog:
-    changelog.write(body.strip() + "\n")
+with Path("pyproject.toml").open("rb") as pyproject:
+    data = tomllib.load(pyproject)
+
+project_version = (data.get("project") or {}).get("version")
+
+if not project_version:
+    print("::error file=pyproject.toml::Missing [project].version")
+
+    sys.exit(1)
+
+print(f"Changelog version: {changelog_version}")
+print(f"Project version: {project_version}")
+
+if project_version != changelog_version:
+    print(
+        f"::error::Version mismatch: CHANGELOG.md has {changelog_version}, "
+        f"but pyproject.toml has {project_version}"
+    )
+
+    sys.exit(1)
+
+with Path("RELEASE_NOTES.md").open("w", encoding="utf-8") as release_notes:
+    release_notes.write(body.strip() + "\n")
 
 github_output_path = os.environ.get("GITHUB_OUTPUT")
 
@@ -45,5 +66,5 @@ if not github_output_path:
 
     sys.exit(1)
 
-with Path(github_output_path).open("a", encoding="utf-8") as f:
-    f.write(f"version={top_version}")
+with Path(github_output_path).open("a", encoding="utf-8") as github_output:
+    github_output.write(f"version={project_version}")
