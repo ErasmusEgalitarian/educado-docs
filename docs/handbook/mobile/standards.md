@@ -41,7 +41,7 @@
 **Rationale**: Proper function documentation is very helpful and TSDoc can be read by IDEs. You will be able to read the
 function documentation at the call site in the IDE. See the example below.
 
-![TSDoc example](../../assets/mobile/tsdoc-tooltip.png){: style="height:300px"}
+![TSDoc example](../../assets/handbook/mobile/tsdoc-tooltip.png){: style="height:300px"}
 
 ## Use `.tsx` for components, `.ts` for other files
 
@@ -66,6 +66,30 @@ scope. Importing React is usually unused noise; omit it to keep files clean.
 ❌ `import { getUserInfo } from "../../../services/storage-service";`
 
 ✅ `import { getUserInfo } from "@/services/storage-service";`
+
+!!! note
+
+    This rule is enforced by ESLint.
+
+## Don't use `any`
+
+**Rationale**: Using `any` is the same as turning off type checking and using JavaScript. If the "no-type" is allowed,
+why even bother with the TypeScript type system?
+
+See the official
+[TypeScript docs](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#any) for more
+information.
+
+!!! note
+
+    This rule is enforced by ESLint.
+
+## Don't use `useCallback` or `useMemo`
+
+**Rationale**: These hooks are not necessary when React 19+ is used. The new React Compiler will automatically memoize
+values, making `useCallback` and `useMemo` redundant.
+
+See the official [React Compiler docs](https://react.dev/learn/react-compiler/introduction) for more information.
 
 !!! note
 

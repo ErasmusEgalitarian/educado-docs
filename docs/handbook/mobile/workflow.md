@@ -3,7 +3,7 @@
 Create a branch from `dev`. It is advised to use the `Create a branch` button in the GitHub Issue UI as it will name the
 branch according to the issue you are working on.
 
-![GitHub create a branch](../../assets/mobile/create-branch.png){: style="height:300px"}
+![GitHub create a branch](../../assets/handbook/create-branch.png){: style="height:300px"}
 
 ## Linear history
 
@@ -63,27 +63,32 @@ into multiple PRs.
 
 ### CI
 
-If the GitHub workflow fails, navigate to `Checks > CI > CI` from the PR page to check which step failed. Open the
-failed step; you'll see output like this:
+If the GitHub workflow fails, navigate to `Checks > CI > CI` from the PR page to check which step failed. If the
+`Report` step failed, open the `Summary` page and scroll down to the step summary; you'll see output like this:
 
-![PR CI fail](../../assets/mobile/pr-ci-fail.png){: style="height:350px"}
+![PR CI fail](../../assets/handbook/mobile/pr-ci-fail.png){: style="height:450px"}
 
-If the `Report` step failed, it is because the workflow detected ESLint and/or tsc problems in the files y**ou have
-worked on**. Run `npm run lint` and `npm run tsc:check` locally, and search for the files you worked on in the command
-outputs to figure out which problems you missed, or use the built-in WebStorm `Problems` tool window.
+If the `Report` step failed, it is because the workflow detected ESLint and/or tsc problems in the files **you have
+worked on**. On the `Summary` page, click on the links in the `File` column to open the line in the file where the
+problem was detected on GitHub. Run `npm run lint` and `npm run tsc:check` locally, and search for the files you worked
+on in the command outputs to figure out which problems you missed, or use the built-in WebStorm `Problems` tool window.
 
-![WebStorm Problems tool window](../../assets/mobile/webstorm-problems.png)
+![WebStorm Problems tool window](../../assets/handbook/mobile/webstorm-problems.png)
 
 Resolve the problems and push the changes to your branch. The GitHub workflow should now pass.
+
+![PR CI success](../../assets/handbook/mobile/pr-ci-success.png){: style="height:450px"}
 
 ### Merging
 
 Once your PR passes CI and gets two approvals, you can merge it. Do this by adding your PR to the Merge Queue by
 clicking the `Merge when ready` button in the PR UI.
 
-![Merge when ready](../../assets/mobile/merge-when-ready.png){: style="height:130px"}
+![Merge when ready](../../assets/handbook/mobile/merge-when-ready.png){: style="height:130px"}
 
 !!! warning
 
     We allow **rebase** and **squash** merges. Use **rebase** when your branch history is clean and short. Use 
     **squash** when you have a lot of commits that you want to squash into one.
+
+After merging, you can safely delete your branch if you are closing your issue and resume work on a new branch.

@@ -1,11 +1,11 @@
 [project]
 name = "educado-docs"
-version = "2.3.0"
+version = "2.4.0"
 description = "Official documentation for the Educado project"
 readme = "README.md"
 authors = [
-    { name = "Martin Kedmenec" },
-    { name = "Lucas" }
+    { name = "Martin Kedmenec <70742985+audio-engineer@users.noreply.github.com>" },
+    { name = "LucasGSAntunes <190091681@aluno.unb.br>" }
 ]
 requires-python = ">=3.13"
 dependencies = [
