@@ -1,3 +1,7 @@
+## About this Guide
+
+The setup in this guide has been successfully tested on Windows, Linux and MacOS.
+
 ## Prerequisites
 
 ### Common
@@ -208,11 +212,11 @@ from all available emulators. Choose the emulator you have created (`Pixel 6a AP
 
     You can also try to run the server with `npx expo start -c` which will clear the cache before starting the emulator.
 
-### Expo Go
+!!! danger
 
-Expo Go is the legacy method of running the app on Android. It is not recommended for development. You can read more
-about the pros and cons of Expo Go and how it compares to development builds in the
-[Expo docs](https://docs.expo.dev/develop/development-builds/introduction/).
+    Expo Go is the legacy method of running the app on Android. It is not recommended for development. You can read more
+    about the pros and cons of Expo Go and how it compares to development builds in the
+    [Expo docs](https://docs.expo.dev/develop/development-builds/introduction/).
 
 ## IDE setup
 
