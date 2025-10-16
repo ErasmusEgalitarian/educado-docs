@@ -10,7 +10,7 @@ overview to technical and configuration details.
 - [Educado Wiki](wiki_index.md)
 - [Roadmap](management/roadmap.md)
 - [Backlog](backlog/index.md)
-- [Deliverables](management/deliverables.md)
+- [Deliverables](deliverables/deliverables_index.md)
 
 ---
 
@@ -18,13 +18,13 @@ overview to technical and configuration details.
 
 ### 🛠️ Project Management
 
-| Document                                         | Description                                   |
-|--------------------------------------------------|-----------------------------------------------|
-| [Roadmap](management/roadmap.md)                 | Timeline and project phases                   |
-| [Workflow](management/workflow.md)               | Processes and development flow                |
-| [Deliverables](management/deliverables.md)       | Expected outcomes and deadlines               |
-| [Issue Tracking](management/issue-tracking.md)   | Bug tracking and issue management             |
-| [Lessons Learned](management/lessons-learned.md) | Post-mortems and continuous improvement notes |
+| Document                                           | Description                                   |
+| -------------------------------------------------- | --------------------------------------------- |
+| [Roadmap](management/roadmap.md)                   | Timeline and project phases                   |
+| [Workflow](management/workflow.md)                 | Processes and development flow                |
+| [Deliverables](deliverables/deliverables_index.md) | Expected outcomes and deadlines               |
+| [Issue Tracking](management/issue-tracking.md)     | Bug tracking and issue management             |
+| [Lessons Learned](management/lessons-learned.md)   | Post-mortems and continuous improvement notes |
 
 ### 📦 Product Documentation
 
