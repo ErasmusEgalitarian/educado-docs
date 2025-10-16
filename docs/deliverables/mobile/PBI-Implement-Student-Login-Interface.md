@@ -6,7 +6,7 @@ Users need this page to be able to access their current courses and progress.
 
 <img src="docs/assets/2025/Software/deliverables/US-0003/login_new.png">
 
-![Example image](docs/assets/2025/Software/deliverables/US-0003/login_new.png)
+![Example image](educado-docs\docs\assets\2025\Software\deliverables\US-0003\login_new.png)
 
 ## User Story  
 As a Student, I want to see clear options for Email Login, so that I can quickly start using the app or create a secure account.
