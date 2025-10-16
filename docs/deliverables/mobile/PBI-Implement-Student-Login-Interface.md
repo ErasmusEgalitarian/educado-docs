@@ -4,7 +4,7 @@
 A new interface for logging into the mobile application using email and password. 
 Users need this page to be able to access their current courses and progress. 
 
-<img src="https://github.com/ErasmusEgalitarian/educado-docs/tree/main/docs/assets/2025/Software/deliverables/US-0003/login_new.png">
+<img src="docs/assets/2025/Software/deliverables/US-0003/login_new.png">
 
 
 ## User Story  
