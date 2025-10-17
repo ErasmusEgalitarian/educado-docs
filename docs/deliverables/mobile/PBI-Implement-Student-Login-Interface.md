@@ -4,7 +4,8 @@
 A new interface for logging into the mobile application using email and password. 
 Users need this page to be able to access their current courses and progress. 
 
-![Example image](../../assets/2025/Software/deliverables/US-0003/login_new.png)
+<img src="../../assets/2025/Software/deliverables/US-0003/login_new.png" alt="Example image" width="50%" height="50%">
+
 
 ## User Story  
 As a Student, I want to see clear options for Email Login, so that I can quickly start using the app or create a secure account.
