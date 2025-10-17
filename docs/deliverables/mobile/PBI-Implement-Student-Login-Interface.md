@@ -4,11 +4,7 @@
 A new interface for logging into the mobile application using email and password. 
 Users need this page to be able to access their current courses and progress. 
 
-<div 
-display: flex;
-justify-content: center;
-align-items: center;
->
+<div style="display: flex; justify-content: center; align-items: center;">
 
 | Login Before | Login After |
 |------------|-----------|
