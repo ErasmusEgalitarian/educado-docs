@@ -4,10 +4,7 @@
 A new interface for logging into the mobile application using email and password. 
 Users need this page to be able to access their current courses and progress. 
 
-
-| Login Page | Dashboard |
-|------------|-----------|
-| ![Login](../../assets/2025/Software/deliverables/US-0003/login_new.png) | ![Dashboard Test](../../assets/2025/Software/deliverables/US-0003/login_new.png) |
+---
 
 ## User Story  
 As a Student, I want to see clear options for Email Login, so that I can quickly start using the app or create a secure account.
@@ -30,6 +27,16 @@ As a Student, I want to see clear options for Email Login, so that I can quickly
 
 ## Impact  
 The product now more closely aligns with the new designs for the user experience while using the GUI.
+
+| Login Page Before | Login Page After |
+|------------|-----------|
+| ![Login Before](../../assets/2025/Software/deliverables/US-0003/Login_Before.png) | INSERT AFTER IMAGAE|
+
+
+| Password Interface Before | Password Interface After |
+|------------|-----------|
+| ![Password Before](../../assets/2025/Software/deliverables/US-0003/Password_Combined_Before.png) | INSERT AFTER IMAGE|
+
 
 ---
 
