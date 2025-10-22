@@ -15,11 +15,6 @@ As a Student, I want to create an account with my name, email and password, so t
 - The GUI was updated to align with Figma-designs. 
 - Field 'last name' was removed from the registration form. 
 
-- Inved components
-    - ```components/General/Forms/FormFieldAlert.tsx```
-    - ```components/General/validation.ts```
-    - ```components/Login/LoginForm.tsx```
-    - ```screens/Login/LoginScreen.tsx```
 ---
 
 ## Impact  
@@ -28,13 +23,14 @@ Removing last name from the register form makes creating a new user simpler.
 
 | Register Before | Register After |
 |------------|-----------|
-| ![Register Before](../../assets/2025/Software/deliverables/US-0065/Register_Before.png) |  Insert after here |
+| ![Register Before](../../assets/2025/Software/deliverables/US-0065/Register_Before.png) |  ![Register After](../../assets/2025/Software/deliverables/US-0065/register_after.png) |
 
 ---
 
 ## Related Files / Modules  
-- ```screens/Login/LoginScreen.tsx```
-
+- ```components/General/Forms/FormFieldAlert.tsx```
+- ```components/Login/RegisterForm.tsx```
+- ```screens/Registration/RegistrationScreen.tsx```
 ---
 
 ## Next Steps  
