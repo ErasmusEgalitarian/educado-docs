@@ -109,6 +109,7 @@ nav:
           - FE_TEMPLATE: deliverables/backend/FE_TEMPLATE.md
       - Mobile:
           - FE_TEMPLATE: deliverables/mobile/FE_TEMPLATE.md
+          - US-0021: deliverables/mobile/US-026-View-Course-Catalog-Student.md
       - Web:
           - FE_TEMPLATE: deliverables/web/FE_TEMPLATE.md
   - Development Process:
