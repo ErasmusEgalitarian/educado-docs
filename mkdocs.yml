@@ -103,13 +103,13 @@ nav:
       - Workflow: management/workflow.md
       - Issue Tracking & Task Management: management/issue-tracking.md
       - Lessons Learned: management/lessons-learned.md
-  - Project Deliverables: 
+  - Project Deliverables:
       - Overview: deliverables/deliverables_index.md
       - Backend:
           - FE_TEMPLATE: deliverables/backend/FE_TEMPLATE.md
       - Mobile:
           - FE_TEMPLATE: deliverables/mobile/FE_TEMPLATE.md
-          - US-0021: deliverables/mobile/us-0021.md
+          - US-0021: deliverables/mobile/US-0021.md
       - Web:
           - FE_TEMPLATE: deliverables/web/FE_TEMPLATE.md
   - Development Process:
