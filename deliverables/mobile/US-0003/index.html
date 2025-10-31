@@ -12,13 +12,13 @@
         <meta name="author" content="Lucas Antunes">
       
       
-        <link rel="canonical" href="https://erasmusegalitarian.github.io/educado-docs/deliverables/mobile/FE_TEMPLATE/">
+        <link rel="canonical" href="https://erasmusegalitarian.github.io/educado-docs/deliverables/mobile/US-0003/">
       
       
-        <link rel="prev" href="../../backend/FE_TEMPLATE/">
+        <link rel="prev" href="../FE_TEMPLATE/">
       
       
-        <link rel="next" href="../US-0003/">
+        <link rel="next" href="../US-0065/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>FE_TEMPLATE - Educado Documentation</title>
+        <title>US-0003 - Educado Documentation</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#feature-title" class="md-skip">
+        <a href="#us-0003-student-login" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FE_TEMPLATE
+              US-0003
             
           </span>
         </div>
@@ -2678,6 +2678,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FE_TEMPLATE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2695,7 +2718,7 @@
   
   
   <span class="md-ellipsis">
-    FE_TEMPLATE
+    US-0003
     
   </span>
   
@@ -2708,7 +2731,7 @@
   
   
   <span class="md-ellipsis">
-    FE_TEMPLATE
+    US-0003
     
   </span>
   
@@ -2788,29 +2811,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../US-0003/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    US-0003
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -3664,34 +3664,72 @@
   
 
 
-<h1 id="feature-title">[Feature Title]<a class="headerlink" href="#feature-title" title="Permanent link">#</a></h1>
+<h1 id="us-0003-student-login"><a href="https://github.com/ErasmusEgalitarian/educado-mobile/issues/444">US-0003 Student Login</a><a class="headerlink" href="#us-0003-student-login" title="Permanent link">#</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<p>Brief summary of what was delivered and why it matters.</p>
+<p>A new interface for logging into the mobile application using email and password. 
+Users need this page to be able to access their current courses and progress. </p>
 <hr />
 <h2 id="user-story">User Story<a class="headerlink" href="#user-story" title="Permanent link">#</a></h2>
-<p>Short description of the user need this delivery addresses.</p>
+<p>As a Student, I want to see clear options for Email Login, so that I can quickly start using the app or create a secure account.</p>
 <hr />
 <h2 id="what-was-implemented">What Was Implemented<a class="headerlink" href="#what-was-implemented" title="Permanent link">#</a></h2>
 <ul>
-<li>[Describe the main changes or features developed.]  </li>
-<li>[List components, endpoints, or workflows involved.]  </li>
-<li>[Mention integrations or dependencies if any.]</li>
+<li>The login screen was changed from using mobile phone number to instead use user email address to access the application. This involved changes to the mobile frontend so the application aligns with the GUI-figma. </li>
+<li>Additionally, users can change their password using twofactor authenticaiton by accessing a secondary drawer.</li>
+<li>Minor visual changes was also made to the welcome screen in order to align more with the Figma design.</li>
 </ul>
 <hr />
 <h2 id="impact">Impact<a class="headerlink" href="#impact" title="Permanent link">#</a></h2>
-<p>Explain how this delivery improves the product, user experience, or technical structure.</p>
+<p>The product now more closely aligns with the new designs for the user experience while using the GUI.</p>
+<table>
+<thead>
+<tr>
+<th>Login Page Before</th>
+<th>Login Page After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Login Before" src="../../../assets/2025/Software/deliverables/US-0003/Login_Before.png" /></td>
+<td><img alt="Login after" src="../../../assets/2025/Software/deliverables/US-0003/login_after.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Password Interface Before</th>
+<th>Password Interface After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Password Before" src="../../../assets/2025/Software/deliverables/US-0003/Password_Combined_Before.png" /></td>
+<td><img alt="Password Before" src="../../../assets/2025/Software/deliverables/US-0003/Password_Combined_Before.png" /></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="related-files-modules">Related Files / Modules<a class="headerlink" href="#related-files-modules" title="Permanent link">#</a></h2>
 <ul>
-<li>[File or module name]  </li>
-<li>[File or module name]</li>
+<li><code>components/General/EducadoModal.tsx</code></li>
+<li><code>components/General/Forms/FormButton.tsx</code></li>
+<li><code>components/General/Forms/FormTextField.tsx</code></li>
+<li><code>components/General/Forms/PasswordEye.tsx</code></li>
+<li><code>components/Login/EnterNewPasswordScreen.tsx</code></li>
+<li><code>components/General/validation.ts</code></li>
+<li><code>components/Login/LoginForm.tsx</code></li>
+<li><code>components/Login/ResetPassword.tsx</code></li>
+<li><code>screens/Login/LoginScreen.tsx</code></li>
+<li><code>screens/Welcome/WelcomeScreen.tsx</code></li>
+<li><code>theme/color.tokens.json</code></li>
 </ul>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
-<p>(Optional) Indicate possible improvements, pending items, or related upcoming work.</p>
+<p>Integration with the new database is pending. </p>
 <hr />
-<p><strong>Team:</strong> [Web | Mobile | Backend]<br />
-<strong>Date:</strong> [MM/DD/YYYY]</p>
+<p><strong>Team:</strong> [Group 8]<br />
+<strong>Date:</strong> [16/10/2025]</p>
 
 
 

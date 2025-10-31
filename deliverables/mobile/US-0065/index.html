@@ -12,13 +12,13 @@
         <meta name="author" content="Lucas Antunes">
       
       
-        <link rel="canonical" href="https://erasmusegalitarian.github.io/educado-docs/deliverables/mobile/FE_TEMPLATE/">
+        <link rel="canonical" href="https://erasmusegalitarian.github.io/educado-docs/deliverables/mobile/US-0065/">
       
       
-        <link rel="prev" href="../../backend/FE_TEMPLATE/">
+        <link rel="prev" href="../US-0003/">
       
       
-        <link rel="next" href="../US-0003/">
+        <link rel="next" href="../../web/FE_TEMPLATE/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>FE_TEMPLATE - Educado Documentation</title>
+        <title>US-0065 - Educado Documentation</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#feature-title" class="md-skip">
+        <a href="#us-0065-student-registration" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FE_TEMPLATE
+              US-0065
             
           </span>
         </div>
@@ -2678,6 +2678,52 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FE_TEMPLATE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../US-0003/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    US-0003
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2695,7 +2741,7 @@
   
   
   <span class="md-ellipsis">
-    FE_TEMPLATE
+    US-0065
     
   </span>
   
@@ -2708,7 +2754,7 @@
   
   
   <span class="md-ellipsis">
-    FE_TEMPLATE
+    US-0065
     
   </span>
   
@@ -2788,52 +2834,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../US-0003/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    US-0003
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../US-0065/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    US-0065
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -3664,34 +3664,49 @@
   
 
 
-<h1 id="feature-title">[Feature Title]<a class="headerlink" href="#feature-title" title="Permanent link">#</a></h1>
+<h1 id="us-0065-student-registration"><a href="https://github.com/ErasmusEgalitarian/educado-mobile/issues/442">US-0065 Student Registration</a><a class="headerlink" href="#us-0065-student-registration" title="Permanent link">#</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<p>Brief summary of what was delivered and why it matters.</p>
+<p>An update to the interface used for creating new users in the mobile application. Users provide their name, email, and password to register.</p>
 <hr />
 <h2 id="user-story">User Story<a class="headerlink" href="#user-story" title="Permanent link">#</a></h2>
-<p>Short description of the user need this delivery addresses.</p>
+<p>As a Student, I want to create an account with my name, email and password, so that I can securely access the app and personalize my profile.</p>
 <hr />
 <h2 id="what-was-implemented">What Was Implemented<a class="headerlink" href="#what-was-implemented" title="Permanent link">#</a></h2>
 <ul>
-<li>[Describe the main changes or features developed.]  </li>
-<li>[List components, endpoints, or workflows involved.]  </li>
-<li>[Mention integrations or dependencies if any.]</li>
+<li>The GUI was updated to align with Figma-designs. </li>
+<li>Field 'last name' was removed from the registration form. </li>
 </ul>
 <hr />
 <h2 id="impact">Impact<a class="headerlink" href="#impact" title="Permanent link">#</a></h2>
-<p>Explain how this delivery improves the product, user experience, or technical structure.</p>
+<p>The product now more closely aligns with the new designs for the user experience while using the GUI. 
+Removing last name from the register form makes creating a new user simpler.</p>
+<table>
+<thead>
+<tr>
+<th>Register Before</th>
+<th>Register After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Register Before" src="../../../assets/2025/Software/deliverables/US-0065/Register_Before.png" /></td>
+<td><img alt="Register After" src="../../../assets/2025/Software/deliverables/US-0065/register_after.png" /></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="related-files-modules">Related Files / Modules<a class="headerlink" href="#related-files-modules" title="Permanent link">#</a></h2>
 <ul>
-<li>[File or module name]  </li>
-<li>[File or module name]</li>
+<li><code>components/General/Forms/FormFieldAlert.tsx</code></li>
+<li><code>components/Login/RegisterForm.tsx</code></li>
+<li><code>screens/Registration/RegistrationScreen.tsx</code></li>
 </ul>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
-<p>(Optional) Indicate possible improvements, pending items, or related upcoming work.</p>
+<p>Integration with new backend is pending as of 16/10/2025. See PBIs [US-0001 - Student Login] and [US-0066 - Student Registration]</p>
 <hr />
-<p><strong>Team:</strong> [Web | Mobile | Backend]<br />
-<strong>Date:</strong> [MM/DD/YYYY]</p>
+<p><strong>Team:</strong> [Group 8]<br />
+<strong>Date:</strong> [16/10/2025]</p>
 
 
 
