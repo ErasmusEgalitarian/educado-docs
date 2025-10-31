@@ -109,6 +109,8 @@ nav:
           - FE_TEMPLATE: deliverables/backend/FE_TEMPLATE.md
       - Mobile:
           - FE_TEMPLATE: deliverables/mobile/FE_TEMPLATE.md
+          - US-0003: deliverables/mobile/US-0003.md
+          - US-0065: deliverables/mobile/US-0065.md
       - Web:
           - FE_TEMPLATE: deliverables/web/FE_TEMPLATE.md
   - Development Process:

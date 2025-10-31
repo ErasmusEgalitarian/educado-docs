@@ -1,6 +1,6 @@
 [project]
 name = "educado-docs"
-version = "2.5.0"
+version = "2.5.1"
 description = "Official documentation for the Educado project"
 readme = "README.md"
 authors = [
