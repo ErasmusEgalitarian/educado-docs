@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added documentation for View Course Catalog
+- Added Conventional Commits section, in workflow, with guidelines and examples
 ## [2.5.1] - 2025-10-16
 
 ### Added
