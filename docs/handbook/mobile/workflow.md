@@ -47,19 +47,77 @@ Frequently check the
 
 ## Pull requests
 
+### Conventional Commits
+
+We use Conventional Commits so release tooling (changelogs and automated version bumps) can work reliably. Before opening a PR, make sure the commits on your branch follow the Conventional Commits format — see https://www.conventionalcommits.org/ for details.
+
+Why this matters
+- Conventional commit messages (e.g. `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`) are parsed by release tools to generate changelogs and to determine version bumps. Cleaning up your commits produces nicer changelogs and reduces release errors.
+
+Recommended commit message examples
+- feat: add login screen
+- fix: correctly refresh token on expiry
+- feat!: update node version to version 20
+
+Formatting reminder
+- A conventional commit typically looks like:
+
+    <type>(optional scope?): short description
+
+    optional body
+
+    optional BREAKING CHANGE: description of the breaking change
+
+Steps to prepare your commits
+
+1. Fetch and start an interactive rebase against the target branch:
+
+```bash
+git fetch origin
+git rebase -i origin/<branch>
+```
+
+2. Clean the todo list in your editor
+- In the editor that opens, change `pick` to one of the actions:
+    - `pick` — keep the commit
+    - `reword` (`r`) — keep the commit but edit its message
+    - `squash` (`s`) — combine this commit into the previous one and merge messages
+    - `fixup` (`f`) — combine this commit into the previous one and discard this message
+
+3. Edit messages to follow Conventional Commits
+- For every `reword`/`squash` stop, rewrite the message so it matches the format and is concise.
+
+4. Resolve conflicts (if they occur)
+- If a conflict happens while rebasing:
+    - Fix the conflicting files
+    - Stage the fixes: `git add <files>` (or `git add .`)
+    - Continue the rebase: `git rebase --continue`
+    - To abort: `git rebase --abort`
+
+5. Force-push your cleaned branch to update the PR
+
+```bash
+# Prefer --force-with-lease over --force
+git push --force-with-lease
+```
+
+
 ### Opening a PR
 
 !!! note
 
     Please don't open PRs unless your work is ready for review. PRs are meant as a way to request a review from other
     developers. PRs also trigger the CI workflow, and if your code isn't ready and the workflow fails, the 2000 monthly
-    workflow minutes get used up.
+    workflow minutes get used up. 
 
 Always select `dev` as the target branch. Request reviews manually from **two** reviewers: One from your team and one
 from another team that is also working on the mobile app.
 
 Create small PRs that are straightforward to review and merge. If you have a lot of changes, it is better to split them
 into multiple PRs.
+
+
+    
 
 ### CI
 
@@ -90,5 +148,9 @@ clicking the `Merge when ready` button in the PR UI.
 
     We allow **rebase** and **squash** merges. Use **rebase** when your branch history is clean and short. Use 
     **squash** when you have a lot of commits that you want to squash into one.
+    
 
 After merging, you can safely delete your branch if you are closing your issue and resume work on a new branch.
+
+!!! warning
+    The PR created by the github bot is a release PR, if merged it creates a new release build from the default branch and should therefore only be merged when the default branch is stable enough for a release. The branch the PR is from should not be deleted.
