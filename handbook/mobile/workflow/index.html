@@ -3379,6 +3379,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#conventional-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conventional Commits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#opening-a-pr" class="md-nav__link">
     <span class="md-ellipsis">
       Opening a PR
@@ -3771,12 +3780,71 @@ npm<span class="w"> </span>run<span class="w"> </span>format:check
 <h3 id="qa">QA<a class="headerlink" href="#qa" title="Permanent link">#</a></h3>
 <p><strong>Always</strong> run the app locally using the emulator to check for any defects before opening a PR.</p>
 <h2 id="pull-requests">Pull requests<a class="headerlink" href="#pull-requests" title="Permanent link">#</a></h2>
+<h3 id="conventional-commits">Conventional Commits<a class="headerlink" href="#conventional-commits" title="Permanent link">#</a></h3>
+<p>We use Conventional Commits so release tooling (changelogs and automated version bumps) can work reliably. Before opening a PR, make sure the commits on your branch follow the Conventional Commits format — see https://www.conventionalcommits.org/ for details.</p>
+<p>Why this matters
+- Conventional commit messages (e.g. <code>feat:</code>, <code>fix:</code>, <code>chore:</code>, <code>docs:</code>, <code>refactor:</code>) are parsed by release tools to generate changelogs and to determine version bumps. Cleaning up your commits produces nicer changelogs and reduces release errors.</p>
+<p>Recommended commit message examples
+- feat: add login screen
+- fix: correctly refresh token on expiry
+- feat!: update node version to version 20</p>
+<p>Formatting reminder
+- A conventional commit typically looks like:</p>
+<pre><code>&lt;type&gt;(optional scope?): short description
+
+optional body
+
+optional BREAKING CHANGE: description of the breaking change
+</code></pre>
+<p>Steps to prepare your commits</p>
+<ol>
+<li>Fetch and start an interactive rebase against the target branch:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>origin
+git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>origin/&lt;branch&gt;
+</code></pre></div>
+<ol>
+<li>Clean the todo list in your editor</li>
+<li>
+<p>In the editor that opens, change <code>pick</code> to one of the actions:</p>
+<ul>
+<li><code>pick</code> — keep the commit</li>
+<li><code>reword</code> (<code>r</code>) — keep the commit but edit its message</li>
+<li><code>squash</code> (<code>s</code>) — combine this commit into the previous one and merge messages</li>
+<li><code>fixup</code> (<code>f</code>) — combine this commit into the previous one and discard this message</li>
+</ul>
+</li>
+<li>
+<p>Edit messages to follow Conventional Commits</p>
+</li>
+<li>
+<p>For every <code>reword</code>/<code>squash</code> stop, rewrite the message so it matches the format and is concise.</p>
+</li>
+<li>
+<p>Resolve conflicts (if they occur)</p>
+</li>
+<li>
+<p>If a conflict happens while rebasing:</p>
+<ul>
+<li>Fix the conflicting files</li>
+<li>Stage the fixes: <code>git add &lt;files&gt;</code> (or <code>git add .</code>)</li>
+<li>Continue the rebase: <code>git rebase --continue</code></li>
+<li>To abort: <code>git rebase --abort</code></li>
+</ul>
+</li>
+<li>
+<p>Force-push your cleaned branch to update the PR</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Prefer --force-with-lease over --force</span>
+git<span class="w"> </span>push<span class="w"> </span>--force-with-lease
+</code></pre></div>
 <h3 id="opening-a-pr">Opening a PR<a class="headerlink" href="#opening-a-pr" title="Permanent link">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Please don't open PRs unless your work is ready for review. PRs are meant as a way to request a review from other
 developers. PRs also trigger the CI workflow, and if your code isn't ready and the workflow fails, the 2000 monthly
-workflow minutes get used up.</p>
+workflow minutes get used up. </p>
 </div>
 <p>Always select <code>dev</code> as the target branch. Request reviews manually from <strong>two</strong> reviewers: One from your team and one
 from another team that is also working on the mobile app.</p>
@@ -3803,6 +3871,10 @@ clicking the <code>Merge when ready</code> button in the PR UI.</p>
 <strong>squash</strong> when you have a lot of commits that you want to squash into one.</p>
 </div>
 <p>After merging, you can safely delete your branch if you are closing your issue and resume work on a new branch.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The PR created by the github bot is a release PR, if merged it creates a new release build from the default branch and should therefore only be merged when the default branch is stable enough for a release. The branch the PR is from should not be deleted.</p>
+</div>
 
 
 
