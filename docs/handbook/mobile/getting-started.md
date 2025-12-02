@@ -155,7 +155,7 @@ Open the `Device Manager` tool window, then click on `Add a new device` and sele
 
 ![Visually show where to click](../../assets/handbook/mobile/create-device.png){: style="height:250px"}
 
-Then select `Pixel 6a` and click `Next`. Name it `Pixel 6a API 34`, select `API 34 "UpsideDownCake"`, select the Google
+Then select `Pixel 6a` and click `Next`. Name it `Pixel 6a API 34`, select `API 35 "VanillaIceCream"`, select the Google
 APIs image, and click `Finish`.
 
 ![Device configuration](../../assets/handbook/mobile/device-config.png){: style="height:500px"}
@@ -192,7 +192,7 @@ in the project root. This directory contains the Android build files.
 #### Subsequent development sessions
 
 Run `npx expo start`. When the QR code appears, press `a` to open the default emulator or press `shift + a` to choose
-from all available emulators. Choose the emulator you have created (`Pixel 6a API 34`).
+from all available emulators. Choose the emulator you have created (`Pixel 6a API 35`).
 
 !!! warning "Windows"
 
