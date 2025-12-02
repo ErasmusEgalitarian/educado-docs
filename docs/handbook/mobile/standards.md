@@ -171,9 +171,8 @@ export default Course;
 
 **Rationale**: The end users use Android devices, and we should develop on and target this platform. Using the Android
 emulator gives us the opportunity to emulate real Android hardware and scenarios. Also, all developers should develop on
-the same platform. The platform should match the Expo and system requirements. Currently, we use Expo 50, Node.js 18 and
-Android SDK 34, but we will upgrade to Expo 54, Node.js 24 and Android SDK 35 after we finish the first phase of the
-upgrade. Read more under [Getting Started](./getting-started.md).
+the same platform. The platform should match the Expo and system requirements. Currently, we use Expo 54, Node.js 20 and
+Android SDK 35, the upgrade to Node.js 24 is still in progress.
 
 ## Use nvm or Docker for local development
 
