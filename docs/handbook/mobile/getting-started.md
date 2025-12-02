@@ -166,7 +166,7 @@ now close the emulator and exit out of Android Studio.
 ## Expo account
 
 Go to [expo.dev](https://expo.dev/signup) and create an account. Send the email you used to create your account to
-Martin Kedmenec (Discord: `@kedgmenec`) to be added to the Educado Expo organization. Then, in the project root, run
+Cecilie Vebner (Discord: `ceciv`) to be added to the Educado Expo organization. Then, in the project root, run
 `npx expo login` and log in using your credentials. Run `npx expo whoami` to verify that you are logged in.
 
 ## Running the emulator
@@ -213,6 +213,70 @@ from all available emulators. Choose the emulator you have created (`Pixel 6a AP
 Expo Go is the legacy method of running the app on Android. It is not recommended for development. You can read more
 about the pros and cons of Expo Go and how it compares to development builds in the
 [Expo docs](https://docs.expo.dev/develop/development-builds/introduction/).
+
+## EAS Build
+
+!!! note 
+    
+    This is only confirmed working for Linux and MacOS
+
+### Set up EAS
+
+First, ensure that you have followed the steps in (ref Expo account) to join the new Educado Expo organisation. 
+Then run the following commands:
+    
+    npm install -g eas-cli
+
+    eas login
+
+    eas whoami 
+
+### Building the project
+
+!!! note 
+
+    If creating a development build, first run `npx expo install expo-dev-client ` which is used for local testing and debugging. 
+    This command is not necessary for production builds.
+    
+
+#### Development build:
+    
+    eas build --platform android --profile dev --local
+
+#### Production build:
+
+    eas build --platform android --profile production --local
+
+!!! note 
+
+    You can also build on EAS servers by removing `--local`, this usually takes much longer due to queueing
+    CI minutes are limited to 60 minutes as well.
+
+!!! tip 
+
+    If your build fails run: `eas build:configure` before trying to build again.
+
+
+
+## Updating the Educado app
+
+Ensure there is an android directory, if not run `npx expo run:android`
+
+#### 1) Delete the existing Educado app. 
+This can be done manually on the emulator. Tap on the app and hold in, then drag it to the top right of the screen where it says uninstall
+
+#### 2) Create .apk file for development build
+If you have not set up EAS, follow the step for EAS Build. 
+Else, run the following command: `eas build --platform android --profile dev --local`
+This should build an .apk file.
+
+#### 3) Install the new Educado app
+You can install the updated version of the app, by manually dragging the builded .apk file into the phone emulator.  
+
+#### 4) Run the app
+Start the app as usual with `npx expo start`
+
+The app should now be installed with the updated app icon and Educado logo. You can then discard the your changes (discarding the .apk file) as this will now be the version installed on your emulator.
 
 ## IDE setup
 
