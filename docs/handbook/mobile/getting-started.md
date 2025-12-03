@@ -166,7 +166,7 @@ now close the emulator and exit out of Android Studio.
 ## Expo account
 
 Go to [expo.dev](https://expo.dev/signup) and create an account. Send the email you used to create your account to
-Martin Kedmenec (Discord: `@kedgmenec`) to be added to the Educado Expo organization. Then, in the project root, run
+Cecilie Vebner (Discord: `ceciv`) to be added to the Educado Expo organization. Then, in the project root, run
 `npx expo login` and log in using your credentials. Run `npx expo whoami` to verify that you are logged in.
 
 ## Running the emulator
@@ -214,12 +214,88 @@ Expo Go is the legacy method of running the app on Android. It is not recommende
 about the pros and cons of Expo Go and how it compares to development builds in the
 [Expo docs](https://docs.expo.dev/develop/development-builds/introduction/).
 
+
 ## IDE setup
 
 ### Android Studio
 
 You won't really need Android Studio for development because this is a TypeScript-first project, but you will need it
 for managing the Android SDK.
+
+## EAS Build
+
+EAS Build is an Expo tool for generating app binaries (.apk, .aab, .ipa) for Expo and React Native projects to be deployed in
+the Apple App Store or Google Play Store.
+
+We use EAS Build to deploy the Educado app on the Google Play Store by building an .aab production file.
+
+### Set up EAS
+
+First, ensure that you have followed the steps in [this section](https://erasmusegalitarian.github.io/educado-docs/handbook/mobile/getting-started/#expo-account) to join the new Educado Expo organisation.
+Then run the following commands:
+
+    npm install -g eas-cli
+
+    eas login
+
+    eas whoami 
+
+### Building the project
+
+In the `eas.json` file, we have defined the different builds: preview, production, dev.
+
+
+#### Development build:
+The development build is used for active development and debugging. It generates an .apk file that can be tested on the emulator.
+It connects the app via Metro bundler.
+
+When creating a development build, first run `npx expo install expo-dev-client ` which is used for local testing and debugging. 
+This command is not necessary for production builds.
+
+    eas build --platform android --profile dev --local
+
+#### Production build:
+The production build is used for generating the .aab that will be published to the Google Play Store.
+
+    eas build --platform android --profile production --local
+
+
+!!! warning "Windows"
+
+    This has only been confirmed to work for Linux and MacOS.
+    Building locally is not supported by Windows. 
+
+It is also possible to build in the cloud on EAS servers by removing `--local`. However, this has limitations such as:
+*  Maximum of 30 builds per month
+*  Maximum build duration of 2 hours
+*  Maximum of 60 minutes of CI checks per month
+
+!!! tip
+
+    If your build fails run: `eas build:configure` before trying to build again.
+
+
+
+## Updating the Educado app
+
+Ensure there is an android directory, if not run `npx expo run:android`
+
+#### 1) Delete the existing Educado app.
+This can be done manually on the emulator. Tap on the app and hold it in, then drag it to the top right of the screen where it says uninstall.
+
+#### 2) Create .apk file for development build
+If you have not set up EAS, follow the steps for EAS Build.
+Else, run the following command: `eas build --platform android --profile dev --local`
+This should build an .apk file.
+
+#### 3) Install the new Educado app
+You can install the updated version of the app by manually dragging the built .apk file into the phone emulator.
+
+#### 4) Run the app
+Start the app as usual with `npx expo start`
+
+The app should now be installed with the updated app icon and Educado logo. You can then discard your changes (discarding the .apk file) as this will now be the default version installed on your emulator.
+
 
 ### WebStorm
 
