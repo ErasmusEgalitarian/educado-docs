@@ -3505,6 +3505,114 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eas-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAS Build
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EAS Build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-eas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up EAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the project
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-build_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development build:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production build:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-educado-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating the Educado app
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating the Educado app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-delete-the-existing-educado-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Delete the existing Educado app.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-apk-file-for-development-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Create .apk file for development build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-install-the-new-educado-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Install the new Educado app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-run-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Run the app
+    </span>
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#webstorm" class="md-nav__link">
     <span class="md-ellipsis">
@@ -4018,7 +4126,7 @@ APIs image, and click <code>Finish</code>.</p>
 now close the emulator and exit out of Android Studio.</p>
 <h2 id="expo-account">Expo account<a class="headerlink" href="#expo-account" title="Permanent link">#</a></h2>
 <p>Go to <a href="https://expo.dev/signup">expo.dev</a> and create an account. Send the email you used to create your account to
-Martin Kedmenec (Discord: <code>@kedgmenec</code>) to be added to the Educado Expo organization. Then, in the project root, run
+Cecilie Vebner (Discord: <code>ceciv</code>) to be added to the Educado Expo organization. Then, in the project root, run
 <code>npx expo login</code> and log in using your credentials. Run <code>npx expo whoami</code> to verify that you are logged in.</p>
 <h2 id="running-the-emulator">Running the emulator<a class="headerlink" href="#running-the-emulator" title="Permanent link">#</a></h2>
 <h3 id="development-build">Development build<a class="headerlink" href="#development-build" title="Permanent link">#</a></h3>
@@ -4060,6 +4168,58 @@ about the pros and cons of Expo Go and how it compares to development builds in 
 <h3 id="android-studio">Android Studio<a class="headerlink" href="#android-studio" title="Permanent link">#</a></h3>
 <p>You won't really need Android Studio for development because this is a TypeScript-first project, but you will need it
 for managing the Android SDK.</p>
+<h2 id="eas-build">EAS Build<a class="headerlink" href="#eas-build" title="Permanent link">#</a></h2>
+<p>EAS Build is an Expo tool for generating app binaries (.apk, .aab, .ipa) for Expo and React Native projects to be deployed in
+the Apple App Store or Google Play Store.</p>
+<p>We use EAS Build to deploy the Educado app on the Google Play Store by building an .aab production file.</p>
+<h3 id="set-up-eas">Set up EAS<a class="headerlink" href="#set-up-eas" title="Permanent link">#</a></h3>
+<p>First, ensure that you have followed the steps in <a href="https://erasmusegalitarian.github.io/educado-docs/handbook/mobile/getting-started/#expo-account">this section</a> to join the new Educado Expo organisation.
+Then run the following commands:</p>
+<pre><code>npm install -g eas-cli
+
+eas login
+
+eas whoami
+</code></pre>
+<h3 id="building-the-project">Building the project<a class="headerlink" href="#building-the-project" title="Permanent link">#</a></h3>
+<p>In the <code>eas.json</code> file, we have defined the different builds: preview, production, dev.</p>
+<h4 id="development-build_1">Development build:<a class="headerlink" href="#development-build_1" title="Permanent link">#</a></h4>
+<p>The development build is used for active development and debugging. It generates an .apk file that can be tested on the emulator.
+It connects the app via Metro bundler.</p>
+<p>When creating a development build, first run <code>npx expo install expo-dev-client</code> which is used for local testing and debugging. 
+This command is not necessary for production builds.</p>
+<pre><code>eas build --platform android --profile dev --local
+</code></pre>
+<h4 id="production-build">Production build:<a class="headerlink" href="#production-build" title="Permanent link">#</a></h4>
+<p>The production build is used for generating the .aab that will be published to the Google Play Store.</p>
+<pre><code>eas build --platform android --profile production --local
+</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Windows</p>
+<p>This has only been confirmed to work for Linux and MacOS.
+Building locally is not supported by Windows. </p>
+</div>
+<p>It is also possible to build in the cloud on EAS servers by removing <code>--local</code>. However, this has limitations such as:
+*  Maximum of 30 builds per month
+*  Maximum build duration of 2 hours
+*  Maximum of 60 minutes of CI checks per month</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your build fails run: <code>eas build:configure</code> before trying to build again.</p>
+</div>
+<h2 id="updating-the-educado-app">Updating the Educado app<a class="headerlink" href="#updating-the-educado-app" title="Permanent link">#</a></h2>
+<p>Ensure there is an android directory, if not run <code>npx expo run:android</code></p>
+<h4 id="1-delete-the-existing-educado-app">1) Delete the existing Educado app.<a class="headerlink" href="#1-delete-the-existing-educado-app" title="Permanent link">#</a></h4>
+<p>This can be done manually on the emulator. Tap on the app and hold it in, then drag it to the top right of the screen where it says uninstall.</p>
+<h4 id="2-create-apk-file-for-development-build">2) Create .apk file for development build<a class="headerlink" href="#2-create-apk-file-for-development-build" title="Permanent link">#</a></h4>
+<p>If you have not set up EAS, follow the steps for EAS Build.
+Else, run the following command: <code>eas build --platform android --profile dev --local</code>
+This should build an .apk file.</p>
+<h4 id="3-install-the-new-educado-app">3) Install the new Educado app<a class="headerlink" href="#3-install-the-new-educado-app" title="Permanent link">#</a></h4>
+<p>You can install the updated version of the app by manually dragging the built .apk file into the phone emulator.</p>
+<h4 id="4-run-the-app">4) Run the app<a class="headerlink" href="#4-run-the-app" title="Permanent link">#</a></h4>
+<p>Start the app as usual with <code>npx expo start</code></p>
+<p>The app should now be installed with the updated app icon and Educado logo. You can then discard your changes (discarding the .apk file) as this will now be the default version installed on your emulator.</p>
 <h3 id="webstorm">WebStorm<a class="headerlink" href="#webstorm" title="Permanent link">#</a></h3>
 <p>WebStorm will automatically read the shared project configuration from the <code>.idea/</code> directory and a couple of other
 configuration files like e.g., <code>.editorconfig</code>. But there are some additional settings that you need to configure. You
