@@ -244,15 +244,13 @@ Then run the following commands:
 
 In the `eas.json` file, we have defined the different builds: preview, production, dev.
 
-!!! note
-
-    If creating a development build, first run `npx expo install expo-dev-client ` which is used for local testing and debugging. 
-    This command is not necessary for production builds.
-
 
 #### Development build:
 The development build is used for active development and debugging. It generates an .apk file that can be tested on the emulator.
 It connects the app via Metro bundler.
+
+When creating a development build, first run `npx expo install expo-dev-client ` which is used for local testing and debugging. 
+This command is not necessary for production builds.
 
     eas build --platform android --profile dev --local
 
