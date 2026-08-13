@@ -33,8 +33,8 @@ assignees: ''
 - **Platform:** [e.g., Web, Mobile]  
 - **OS:** [e.g., Windows, macOS, Linux]  
 - **Browser:** [e.g., Chrome, Firefox]  
-- **Backend:** [e.g., FastAPI, NestJS, Express]  
-- **Database:** [e.g., MongoDB]  
+- **Backend:** [Express. Note the version or the commit if relevant.]  
+- **Database:** [PostgreSQL. Note the version if relevant.]  
 
 **Screenshots (if applicable):**  
 [Attach screenshots or logs here.]  

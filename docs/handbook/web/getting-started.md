@@ -111,8 +111,34 @@ src/
     types/                shared types
 ```
 
-Each feature directory follows the same shape: `api/` for HTTP calls, `pages/` for screens,
-`components/` for reusable pieces and `styles/` for CSS.
+Feature directories share a vocabulary, not a fixed shape. The conventional meaning is `api/` for HTTP calls,
+`pages/` for screens, `components/` for reusable pieces and `styles/` for CSS, but only `pages/` and `styles/`
+exist in every feature. The rest are there when the feature needs them:
+
+| Feature       | `api/` | `components/` | `pages/` | `styles/` | Extra                   |
+| ------------- | :------: | :-------------: | :--------: | :---------: | ----------------------- |
+| `admin`     | yes    | no            | yes      | yes       |                         |
+| `auth`      | yes    | yes           | yes      | yes       |                         |
+| `courses`   | yes    | no            | yes      | yes       | `editor/`, `model/` |
+| `dashboard` | no     | no            | yes      | yes       |                         |
+| `media`     | yes    | yes           | yes      | yes       | `services/`           |
+| `public`    | no     | yes           | yes      | yes       |                         |
+| `student`   | yes    | yes           | yes      | yes       |                         |
+
+The departures are deliberate:
+
+- `courses` is the biggest feature and splits differently: `editor/` holds the course editor and `model/` the
+  domain types (`course.types.ts`) it works on. It has no `components/`.
+- `media` adds `services/upload-manager.ts`, which orchestrates the chunked upload flow on top of
+  `api/media.api.ts`. That is logic that fits neither a thin API module nor a page.
+- `dashboard` is a single static page with its stylesheet and nothing else, so it has no `api/` and no
+  `components/`.
+- `public` has no `api/` of its own: the one page that needs data imports the shared client directly
+  (`import { api } from '@/shared/api/http'`).
+- Most features expose an `index.ts` barrel; `admin` and `dashboard` do not.
+
+When adding a feature, reuse the vocabulary above and create only the directories you actually need. Do not add
+empty `api/` or `components/` folders for the sake of symmetry.
 
 The `@` alias resolves to `src/`, configured both in `vite.config.ts` and `tsconfig.json`.
 

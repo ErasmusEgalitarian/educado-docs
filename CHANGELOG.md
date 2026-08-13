@@ -9,8 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Deployment & Infrastructure page documenting the Coolify topology, domains, build strategies and the complete
-  environment variable table
+- Deployment & Infrastructure page documenting the Cloudflare Tunnel and Coolify topology, domains, build
+  strategies, the environment variables read by the API, and the operational traps around `NODE_ENV`,
+  `S3_ENDPOINTS`, `CERTIFICATE_VERIFICATION_URL` and the Cloudflare 100 MB request body limit
 - Web Developer Handbook with a Getting Started guide for `educado-web`
 - Back End Getting Started guide, previously an empty stub, covering local infrastructure, environment setup, the
   email worker, tests and troubleshooting
@@ -25,11 +26,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   MinIO, Resend, Expo/EAS, Swagger, Jest)
 - Product Overview technical specifications corrected: Express 5 instead of NestJS, Vite instead of Vue.js, and
   self hosted Coolify deployment instead of generic public cloud
+- Tools & Dependencies no longer presents `axios` as the web HTTP client: the web app calls the in house `fetch`
+  wrapper in `src/shared/api/http.ts`, and `axios` is flagged as a declared but unused dependency. `flatpickr`
+  added, since it is actually used
+- System Architecture no longer claims `requireRole` standardises authorization: it guards the `/student` surface
+  only, while admin access is enforced per handler through `ensureAdminRole(role)`
+- API Documentation gained the multipart video part upload and the two student progress routes
+- Back End Getting Started no longer implies tests live only under `src/application`, and warns that `npm run dev`
+  uses inline env assignment, which fails in Windows `cmd` and PowerShell
+- Deployment: `PORT` marked optional, matching its `5000` default in `src/index.ts`, and `Coolify 4.3.1` marked as
+  a version observed on 2026-08-13
+- Web Getting Started now describes the real anatomy of each feature directory instead of a uniform shape that no
+  feature follows
+- Bug report issue template now names the actual stack (Express, PostgreSQL) instead of unrelated examples
+- Strapi evaluation: the "additional database" trade off no longer refers to MongoDB, and the architecture diagram
+  carries a notice that it is historical
 
 ### Removed
 
 - Content from an unrelated project in the System Architecture page (MongoDB, Vue.js, doctor and administrator
   domain models)
+
+  Scope note: this covers the System Architecture page only. MongoDB still appears elsewhere by design, in
+  `docs/assets/strapi/architecture.svg`, which is a historical artifact of the Strapi evaluation and is kept as
+  drawn, with a warning on the page that renders it.
 
 ## [2.6.2] - 2025-12-02
 ### Added

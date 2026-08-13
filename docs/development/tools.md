@@ -38,11 +38,18 @@ The tools below are the ones actually used by the Educado project. For the runti
 | Tool          | Description                                                                                       | Link                                             |
 | ------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
 | **Vite**      | Build tool and dev server for the web application. The web app is plain TypeScript, no framework. | [Vite](https://vite.dev/)                        |
-| **axios**     | HTTP client used by the web application.                                                          | [axios](https://axios-http.com/)                 |
+| **`fetch` wrapper** | The web application has no HTTP client library. All calls go through a small in house wrapper over the native `fetch`, in `src/shared/api/http.ts`, which prefixes the base URL, attaches the bearer token, parses JSON and throws a typed `ApiError`. | [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) |
+| **flatpickr** | Date picker used in the web auth flow, in `src/features/auth/components/AuthProfileStep.ts` and `src/features/auth/pages/EditProfilePage.ts`, with the month select plugin and the pt-BR locale. | [flatpickr](https://flatpickr.js.org/)   |
 | **nginx**     | Serves the built web assets in production and handles the SPA fallback.                           | [nginx](https://nginx.org/)                      |
 | **Expo (SDK 56)** | Toolchain for the React Native mobile app, Android first.                                     | [Expo](https://expo.dev/)                        |
 | **React Native** | UI framework for the mobile app.                                                               | [React Native](https://reactnative.dev/)         |
 | **EAS Build** | Builds the mobile binaries (.apk / .aab) for distribution.                                        | [EAS Build](https://docs.expo.dev/build/introduction/) |
+
+!!! note "axios is declared but not used"
+
+    `axios` still appears in the `dependencies` of `educado-web/package.json`, but there is not a single import of
+    it in `src/`. It is a leftover and should not be used for new code: the `fetch` wrapper above already handles
+    the base URL, authentication and error shape consistently.
 
 ## Infrastructure and delivery
 

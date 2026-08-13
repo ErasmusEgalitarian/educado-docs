@@ -119,6 +119,27 @@ npm run dev
 The script forces `NODE_ENV=development` and runs `src/index.ts` through nodemon, so it reloads on save. On a
 successful start you should see the PostgreSQL connection message followed by `Server is running on port: 5001`.
 
+!!! warning "Windows: `npm run dev` does not work in cmd or PowerShell"
+
+    The script is written as an inline environment assignment:
+
+    ```json
+    "dev": "NODE_ENV=development nodemon src/index.ts"
+    ```
+
+    That syntax is POSIX shell only. Windows `cmd` reports `'NODE_ENV' is not recognized as an internal or external
+    command`, and PowerShell fails in its own way, because neither treats `VAR=value command` as an assignment.
+
+    Work around it by running the project from **WSL** or **Git Bash**, which is the recommended setup, or by
+    setting the variable separately for the session and calling nodemon directly:
+
+    ```powershell
+    $env:NODE_ENV = "development"; npx nodemon src/index.ts
+    ```
+
+    Do not "fix" this by dropping `NODE_ENV`: without it the API falls back to the non production branch anyway, but
+    other scripts and the deployed environment rely on the value being explicit.
+
 Then open the interactive contract at [http://localhost:5001/docs/](http://localhost:5001/docs/). Swagger is the
 canonical description of every request and response shape.
 
@@ -166,8 +187,19 @@ npm run test:watch    # watch mode
 npm run test:coverage # coverage report
 ```
 
-Tests live in `__tests__` directories next to the use cases they cover, under `src/application`, and HTTP level
-tests use `supertest`.
+Tests live in `__tests__` directories next to the code they cover. Most of them sit under `src/application`, one
+per use case module (`courses`, `enrollment`, `gamification`, `registration`, `reviews`, `student-progress`,
+`verification` and so on, plus `application/email/templates`), but they are not limited to that layer:
+
+| Location                                  | Covers                                          |
+| ----------------------------------------- | ----------------------------------------------- |
+| `src/application/*/__tests__`           | Use cases, one directory per module.            |
+| `src/infrastructure/security/__tests__` | Hashing and token primitives.                   |
+| `src/infrastructure/storage/s3/__tests__` | The S3 client, including endpoint resolution and retry behaviour. |
+| `src/interface/http/middlewares/__tests__` | HTTP middlewares such as `requireRole`.      |
+
+HTTP level tests use `supertest`. When you touch code outside `src/application`, look for the sibling `__tests__`
+directory there rather than assuming the coverage lives with the use cases.
 
 ## Linting
 
@@ -224,7 +256,51 @@ volume was wiped).
 
 ### `500 MISSING_ACCESS_TOKEN_SECRET` on authenticated routes
 
-`ACCESS_TOKEN_SECRET` is missing or empty in `.env`. Set it and restart the API.
+This error only happens with `NODE_ENV=production`. If you are seeing it locally, the real problem is that
+`NODE_ENV` is set to `production` by mistake, not that the secret is missing.
+
+`src/config/jwt.ts:13-21` resolves the signing secret in three steps:
+
+```ts
+const configuredSecret =
+  process.env.ACCESS_TOKEN_SECRET ?? process.env.JWT_SECRET
+
+if (configuredSecret && configuredSecret.trim() !== '') {
+  return configuredSecret
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  // warns once, then:
+  return 'dev-insecure-secret-change-me'
+}
+
+throw new AppError(500, { code: 'MISSING_ACCESS_TOKEN_SECRET' })
+```
+
+So:
+
+- **Production** (`NODE_ENV=production`): a missing or blank secret throws `500 MISSING_ACCESS_TOKEN_SECRET` on
+  every route that signs or verifies a token. Set `ACCESS_TOKEN_SECRET` (or its alias `JWT_SECRET`) and restart.
+- **Anywhere else**, including local development: nothing is thrown. The API logs a single warning,
+  `[auth] ACCESS_TOKEN_SECRET/JWT_SECRET não configurado; usando segredo temporário de desenvolvimento.`, and falls
+  back to the hardcoded value `'dev-insecure-secret-change-me'`. Authentication keeps working.
+
+!!! danger "The development fallback is easy to miss"
+
+    The warning is emitted **once per process**, guarded by a module level flag, so it scrolls past on the very first
+    authenticated request and never appears again. Nothing else signals the fallback.
+
+    Consequences worth knowing:
+
+    - Every developer running without the variable shares the same publicly known signing key, so a token minted on
+      one machine is valid on any other one running in the same state.
+    - The secret is in the repository. Any environment that is not exactly `NODE_ENV=production` and is reachable
+      by someone else is effectively unauthenticated.
+    - An environment intended to be production but misconfigured (`staging`, empty, unset) will not fail loudly here:
+      it will quietly issue tokens signed with the hardcoded key. Note that `NODE_ENV` also drives the database
+      selection, so that misconfiguration usually shows up as a crash loop first.
+
+    Set `ACCESS_TOKEN_SECRET` in your local `.env` anyway. Generate one with `openssl rand -base64 48`.
 
 ### CORS errors from the web or mobile client
 

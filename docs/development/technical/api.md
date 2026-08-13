@@ -177,6 +177,8 @@ These are the routers mounted in `educado-api/src/index.ts`.
 | `/student/enrollments/:courseId`        | DELETE | Cancel an enrollment.                    |
 | `/student/progress/courses`             | GET    | Progress across courses.                 |
 | `/student/progress/courses/:courseId`   | GET    | Progress in one course.                  |
+| `/student/progress/courses/:courseId/sections/:sectionId` | POST | Record progress on one section. |
+| `/student/progress/courses/:courseId/complete` | PUT | Mark the course as complete for the authenticated student. |
 | `/student/activities/:activityId/answer` | POST  | Submit an activity answer.               |
 | `/student/gamification/summary`         | GET    | Points, streak and level summary.        |
 | `/student/gamification/badges`          | GET    | Badges earned.                           |
@@ -206,14 +208,26 @@ These are the routers mounted in `educado-api/src/index.ts`.
 | `/media/images/:id`          | GET    | Image metadata and access.                    |
 | `/media/images/:id/metadata` | POST / PUT | Update image metadata.                    |
 | `/media/images/:id`          | DELETE | Delete an image.                              |
-| `/media/videos`              | POST   | Upload a video.                               |
+| `/media/videos`              | POST   | Upload a video in a single request. Legacy, kept for backward compatibility. |
 | `/media/videos/init`         | POST   | Start a multipart video upload.               |
+| `/media/videos/:id/parts/:partNumber` | POST | Upload one part of a multipart upload. Field name `chunk`, `partNumber` starts at 1. |
 | `/media/videos/:id/complete` | POST   | Complete a multipart upload.                  |
 | `/media/videos/:id/abort`    | POST   | Abort a multipart upload.                     |
 | `/media/videos/:id`          | GET    | Video metadata and access.                    |
 | `/media/videos/:id/metadata` | POST / PUT | Update video metadata.                    |
 | `/media/videos/:id`          | DELETE | Delete a video.                               |
 | `/media/:id/stream`          | GET    | Stream an asset, token accepted in the query. |
+
+!!! note "Video upload is a three call sequence"
+
+    `POST /media/videos/init` only opens the multipart upload; it moves no bytes. The actual content is sent by
+    `POST /media/videos/:id/parts/:partNumber`, once per chunk, as `multipart/form-data` with the file under the
+    field name `chunk`. `POST /media/videos/:id/complete` then assembles the parts, and
+    `POST /media/videos/:id/abort` discards them.
+
+    Parts are capped at 60 MB server side, sized for a 50 MB client chunk plus framing overhead. Prefer this flow
+    over the single request `POST /media/videos`, which is bounded by the 100 MB body limit imposed by Cloudflare in
+    front of the API. See [Deployment & Infrastructure](deployment.md).
 
 ## Response Codes
 

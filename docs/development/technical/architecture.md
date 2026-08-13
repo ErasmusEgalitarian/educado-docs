@@ -40,7 +40,7 @@ Public environments:
 | ----------------------- | ------------------------------------------------------------- |
 | **Runtime**             | Node.js 20 (`engines.node >= 20`)                           |
 | **HTTP framework**      | Express 5                                                     |
-| **Language**            | TypeScript 5.9 across API, web and mobile                     |
+| **Language**            | TypeScript, pinned per project: `5.9.3` in the API, `^5.9.3` in the web app, `~6.0.3` in the mobile app |
 | **Database**            | PostgreSQL 16 accessed through Sequelize 6                    |
 | **Cache and queue**     | Redis 7.2 with BullMQ 5 (email queue)                         |
 | **Object storage**      | MinIO, S3 compatible, driven by the AWS SDK v3 client         |
@@ -54,6 +54,10 @@ Public environments:
 
     The web application is plain TypeScript with a small hand written router (`src/app/router.ts`). There is no Vue,
     React or Angular in `educado-web`. React Native is used only in the mobile app.
+
+    The three projects are not on the same TypeScript major: the mobile app moved to 6.x with Expo SDK 56, while the
+    API and the web app are still on 5.9. Do not assume a type level feature available in one is available in the
+    others.
 
 ## Component Architecture
 
@@ -138,8 +142,20 @@ Schema changes are applied by `sequelize.sync()` in `src/config/database.ts`. Ou
 - Login endpoints return a signed JWT. Clients send it as `Authorization: Bearer <token>`.
 - `requireAuth` (`src/interface/http/middlewares/auth-jwt.ts`) verifies the token with `ACCESS_TOKEN_SECRET` and
   puts `{ userId, role }` into `res.locals.auth`.
-- Roles are `ADMIN`, `STUDENT` and `USER` (the last one covers content creators). Route level enforcement uses
-  `requireRole(...roles)`, which answers `403 FORBIDDEN` when the role is not allowed.
+- Roles are `ADMIN`, `STUDENT` and `USER` (the last one covers content creators).
+- Authorization is **not** uniform across the API. There are two mechanisms in use:
+    - `requireRole(...roles)` (`src/interface/http/middlewares/require-role.ts`), a middleware that answers
+      `403 FORBIDDEN` when the role is not allowed. It is applied in exactly seven places, all of them
+      `router.use(requireRole('STUDENT'))` at the top of a `src/routes/student/*` router: `activities`,
+      `certificates`, `enrollments`, `gamification`, `profile`, `progress` and `reviews`. In other words it guards
+      the `/student` surface as a whole and nothing else.
+    - `ensureAdminRole(role)` (`src/application/registration/registration-service.ts:582`), a plain function called
+      **inside each handler**, after the role is read from `res.locals.auth`. This is how administrative access is
+      enforced: eight call sites in `src/routes/admin/registrations.ts` and five in
+      `src/routes/institutions/institutions-crud.ts`.
+- The practical consequence: adding a handler to an admin router grants no protection by itself. The check is
+  per handler, so a new route without an explicit `ensureAdminRole(role)` call is reachable by any authenticated
+  user. Reading the router preamble is not enough to know whether a route is guarded.
 - Errors are returned as machine readable codes, for example `{ "code": "UNAUTHORIZED" }`.
 - Creator accounts are not active on sign up: they create a registration that an administrator approves or rejects
   under `/admin/registrations`.
