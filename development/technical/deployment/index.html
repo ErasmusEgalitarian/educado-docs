@@ -12,13 +12,13 @@
         <meta name="author" content="Lucas Antunes">
       
       
-        <link rel="canonical" href="https://erasmusegalitarian.github.io/educado-docs/development/technical/database-schema/">
+        <link rel="canonical" href="https://erasmusegalitarian.github.io/educado-docs/development/technical/deployment/">
       
       
-        <link rel="prev" href="../architecture/">
+        <link rel="prev" href="../database-schema/">
       
       
-        <link rel="next" href="../deployment/">
+        <link rel="next" href="../../tools/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Database Schema - Educado Documentation</title>
+        <title>Deployment & Infrastructure - Educado Documentation</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#database-schema-diagram-course-platform" class="md-skip">
+        <a href="#deployment-infrastructure" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Database Schema
+              Deployment & Infrastructure
             
           </span>
         </div>
@@ -3066,6 +3066,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../database-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -3083,7 +3106,7 @@
   
   
   <span class="md-ellipsis">
-    Database Schema
+    Deployment & Infrastructure
     
   </span>
   
@@ -3096,7 +3119,7 @@
   
   
   <span class="md-ellipsis">
-    Database Schema
+    Deployment & Infrastructure
     
   </span>
   
@@ -3119,333 +3142,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#legenda" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
-      Legenda
+      Topology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entidades-principais" class="md-nav__link">
+  <a href="#domains" class="md-nav__link">
     <span class="md-ellipsis">
-      Entidades Principais
+      Domains
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Entidades Principais">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployed-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployed components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployed components">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#users" class="md-nav__link">
+  <a href="#web-build-argument" class="md-nav__link">
     <span class="md-ellipsis">
-      users
+      Web build argument
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="users">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-users_history-espelha-a-estrutura-incluindo-quem-alterou" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: users_history (espelha a estrutura, incluindo quem alterou)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roles" class="md-nav__link">
-    <span class="md-ellipsis">
-      roles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="roles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-roles_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: roles_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#permissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      permissions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="permissions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-permissions_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: permissions_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roles_permissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      roles_permissions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="roles_permissions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-roles_permissions_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: roles_permissions_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#courses" class="md-nav__link">
-    <span class="md-ellipsis">
-      courses
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="courses">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-courses_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: courses_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      modules
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="modules">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-modules_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: modules_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lessons" class="md-nav__link">
-    <span class="md-ellipsis">
-      lessons
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="lessons">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-lessons_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: lessons_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercises" class="md-nav__link">
-    <span class="md-ellipsis">
-      exercises
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="exercises">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-exercises_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: exercises_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enrollments" class="md-nav__link">
-    <span class="md-ellipsis">
-      enrollments
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="enrollments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-enrollments_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: enrollments_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#progress" class="md-nav__link">
-    <span class="md-ellipsis">
-      progress
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="progress">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-progress_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: progress_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#media" class="md-nav__link">
-    <span class="md-ellipsis">
-      media
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="media">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-media_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: media_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#course_media" class="md-nav__link">
-    <span class="md-ellipsis">
-      course_media
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="course_media">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-course_media_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: course_media_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notifications" class="md-nav__link">
-    <span class="md-ellipsis">
-      notifications
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="notifications">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#historico-notifications_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Histórico: notifications_history
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3455,18 +3184,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#observacoes-gerais" class="md-nav__link">
+  <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      Observações Gerais
+      Environment variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-and-email-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      API and email worker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational-traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operational traps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagrama-entidade-relacionamento-erd-sugestao-visual" class="md-nav__link">
+  <a href="#deploy-checklist" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagrama Entidade-Relacionamento (ERD) - [Sugestão visual]
+      Deploy checklist
     </span>
   </a>
   
@@ -3476,29 +3238,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deployment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deployment & Infrastructure
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -4090,884 +3829,366 @@
   
 
 
-<h1 id="database-schema-diagram-course-platform">Database Schema Diagram - Course Platform<a class="headerlink" href="#database-schema-diagram-course-platform" title="Permanent link">#</a></h1>
+<h1 id="deployment-infrastructure">Deployment &amp; Infrastructure<a class="headerlink" href="#deployment-infrastructure" title="Permanent link">#</a></h1>
 <p><a href="../../../">← Back to Main Page</a></p>
-<h2 id="legenda">Legenda<a class="headerlink" href="#legenda" title="Permanent link">#</a></h2>
-<ul>
-<li>(PK) = Primary Key</li>
-<li>(FK) = Foreign Key</li>
-<li>(UK) = Unique Key</li>
-<li><code>deleted_at</code> = Soft delete (data de exclusão lógica)</li>
-<li><code>version</code> = Número da versão do registro (auditoria/histórico)</li>
-<li><code>created_at</code> / <code>updated_at</code> = Datas de criação e modificação</li>
-<li><code>_history</code> = Sufixo para tabelas de histórico de alteração</li>
-</ul>
-<hr />
-<h2 id="entidades-principais">Entidades Principais<a class="headerlink" href="#entidades-principais" title="Permanent link">#</a></h2>
-<h3 id="users">users<a class="headerlink" href="#users" title="Permanent link">#</a></h3>
+<p>This page documents how Educado actually runs in the deployed environment: the topology, the build strategies, the
+domains, and the environment variables read by the code. The variable table below is kept in sync with the
+<code>process.env</code> reads in <code>educado-api/src</code>; when a new one is introduced, add it here in the same commit.</p>
+<p>For the local development setup see the <a href="../../../handbook/back-end/getting-started/">Back End Getting Started</a> and the
+<a href="../../../handbook/web/getting-started/">Web Getting Started</a> guides.</p>
+<h2 id="topology">Topology<a class="headerlink" href="#topology" title="Permanent link">#</a></h2>
+<p>Everything runs on a single VPS managed by <strong>Coolify 4.3.1</strong> (version observed in the panel on 2026-08-13), a self
+hosted PaaS. Coolify provisions the containers, manages the environment variables and configures <strong>Traefik</strong> as the
+reverse proxy, which terminates TLS and routes the public hostnames to the right container. Public traffic does not
+reach Traefik directly: a <strong>Cloudflare Tunnel</strong> sits in front of the VPS, so Cloudflare is the first hop for every
+request.</p>
+<div class="highlight"><pre><span></span><code>                Internet
+                    |
+              +-----v-------------+
+              | Cloudflare        |  DNS, TLS at the edge, Tunnel to the VPS
+              | (Tunnel, Free)    |  request body limit: 100 MB
+              +-----+-------------+
+                    |
+                 (443/tcp)
+                    |
+              +-----v------+
+              |  Traefik   |  TLS termination, routing (managed by Coolify)
+              +--+------+--+
+                 |      |
+   educado.tominho.com  api-educado.tominho.com
+                 |      |
+       +---------v+    +v-----------------+
+       | web      |    | api (Express)    |
+       | nginx    |    | node build/index.js
+       +----------+    +--+-------+-------+
+                          |       |
+                          |       +-------------------+
+              +-----------v--+  +-v---------+  +------v------+
+              | PostgreSQL 16|  | Redis 7.2 |  | MinIO (S3)  |
+              +--------------+  +-----+-----+  +-------------+
+                                      |
+                              +-------v----------+
+                              | email worker     |
+                              | node build/workers/email-worker.js
+                              +------------------+
+</code></pre></div>
+<p>All application containers share the internal Coolify Docker network, so the API reaches PostgreSQL, Redis and MinIO by
+service name. Only Traefik publishes ports to the internet: the databases and the object storage are never exposed
+directly.</p>
+<div class="admonition warning">
+<p class="admonition-title">Cloudflare caps the request body at 100 MB</p>
+<p>On the Cloudflare Free plan the maximum request body size is <strong>100 MB</strong>, and that ceiling applies to every
+request that crosses the tunnel, including media uploads. The API code accounts for it explicitly: the comment
+above the legacy direct upload route in <code>src/routes/media/upload-video.ts</code> (lines 30-31) marks the endpoint as
+"subject to the reverse-proxy body limit (Cloudflare Free = 100 MB)".</p>
+<p>This is why video upload uses the <strong>chunked flow</strong> (<code>/media/videos/init</code>,
+<code>/media/videos/:id/parts/:partNumber</code>, <code>/media/videos/:id/complete</code>): each part is bounded by the client side
+chunk size of 50 MB, comfortably below the ceiling. The legacy <code>POST /media/videos</code> route uploads the whole file
+in one request, so anything above 100 MB is rejected at the edge, before the API ever sees it. A failed large
+upload with no trace in the API logs is the signature of this limit.</p>
+</div>
+<h2 id="domains">Domains<a class="headerlink" href="#domains" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
+<th>Component</th>
+<th>Hostname</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador do usuário</td>
+<td>Web app</td>
+<td><a href="https://educado.tominho.com">https://educado.tominho.com</a></td>
 </tr>
 <tr>
-<td>name</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Nome</td>
+<td>API</td>
+<td><a href="https://api-educado.tominho.com">https://api-educado.tominho.com</a></td>
 </tr>
 <tr>
-<td>email</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL, UK</td>
-<td>E-mail</td>
-</tr>
-<tr>
-<td>password_hash</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Senha (hash)</td>
-</tr>
-<tr>
-<td>role</td>
-<td>VARCHAR(32)</td>
-<td>NOT NULL</td>
-<td>Enum: 'admin', 'creator', 'student'</td>
-</tr>
-<tr>
-<td>status</td>
-<td>VARCHAR(32)</td>
-<td>NOT NULL</td>
-<td>Enum: 'active', 'pending', 'rejected', 'inactive'</td>
-</tr>
-<tr>
-<td>avatar_url</td>
-<td>VARCHAR(255)</td>
-<td></td>
-<td>URL da imagem de perfil</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
+<td>Swagger UI</td>
+<td><a href="https://api-educado.tominho.com/docs/">https://api-educado.tominho.com/docs/</a></td>
 </tr>
 </tbody>
 </table>
-<h4 id="historico-users_history-espelha-a-estrutura-incluindo-quem-alterou">Histórico: users_history (espelha a estrutura, incluindo quem alterou)<a class="headerlink" href="#historico-users_history-espelha-a-estrutura-incluindo-quem-alterou" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="roles">roles<a class="headerlink" href="#roles" title="Permanent link">#</a></h3>
+<h2 id="deployed-components">Deployed components<a class="headerlink" href="#deployed-components" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
+<th>Component</th>
+<th>Build strategy</th>
+<th>Start command</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador do papel</td>
+<td>API</td>
+<td>Nixpacks</td>
+<td><code>node build/index.js</code></td>
+<td>Express server plus Swagger UI.</td>
 </tr>
 <tr>
-<td>name</td>
-<td>VARCHAR(32)</td>
-<td>UK</td>
-<td>Nome do papel</td>
+<td>Email worker</td>
+<td>Nixpacks</td>
+<td><code>node build/workers/email-worker.js</code></td>
+<td>Same repository and build, separate process. No public domain.</td>
 </tr>
 <tr>
-<td>description</td>
-<td>TEXT</td>
-<td></td>
-<td>Descrição</td>
+<td>Web</td>
+<td>Dockerfile</td>
+<td><code>nginx -g "daemon off;"</code></td>
+<td>Multi stage build: Node 20 builds, nginx serves <code>/dist</code>.</td>
 </tr>
 <tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
+<td>PostgreSQL 16</td>
+<td>Coolify resource</td>
+<td>managed</td>
+<td>Persistent volume.</td>
 </tr>
 <tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
+<td>Redis 7.2</td>
+<td>Coolify resource</td>
+<td>managed</td>
+<td>Password protected.</td>
 </tr>
 <tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
+<td>MinIO</td>
+<td>Docker Compose</td>
+<td>managed</td>
+<td>See the caveat below.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="historico-roles_history">Histórico: roles_history<a class="headerlink" href="#historico-roles_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="permissions">permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">MinIO is not in the Coolify 4.3.1 catalog</p>
+<p>MinIO was removed from the Coolify service catalog in 4.3.1, so it cannot be added as a one click resource
+(observed in the Coolify panel on 2026-08-13; re-check when the instance is upgraded). It is
+deployed as a <strong>Docker Compose</strong> resource inside Coolify instead. When rebuilding the environment from scratch,
+do not look for it in the service list: create a Compose resource with the MinIO image, attach a persistent volume
+and create the media bucket before pointing the API at it.</p>
+</div>
+<h3 id="web-build-argument">Web build argument<a class="headerlink" href="#web-build-argument" title="Permanent link">#</a></h3>
+<p>The web application is a static bundle, so the API URL is baked in <strong>at build time</strong>, not at runtime. The Dockerfile
+declares:</p>
+<div class="highlight"><pre><span></span><code><span class="k">ARG</span><span class="w"> </span>VITE_API_URL
+<span class="k">ENV</span><span class="w"> </span><span class="nv">VITE_API_URL</span><span class="o">=</span><span class="si">${</span><span class="nv">VITE_API_URL</span><span class="si">}</span>
+<span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<p><code>VITE_API_URL</code> must be set as a <strong>build argument</strong> in Coolify (value: <code>https://api-educado.tominho.com</code>). Setting
+it only as a runtime environment variable has no effect: the bundle will fall back to <code>http://localhost:5001</code> and the
+deployed site will fail to reach the API. Changing the API URL requires a rebuild, not a restart.</p>
+<p>nginx serves the bundle with an SPA fallback (<code>try_files $uri $uri/ /index.html</code>) and long lived cache headers for
+hashed assets.</p>
+<h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">#</a></h2>
+<h3 id="api-and-email-worker">API and email worker<a class="headerlink" href="#api-and-email-worker" title="Permanent link">#</a></h3>
+<p>Both processes are built from the same repository and take the same variables.</p>
 <table>
 <thead>
 <tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
+<th>Variable</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador da permissão</td>
+<td><code>NODE_ENV</code></td>
+<td>Yes</td>
+<td>Must be exactly <code>production</code> in the deployed environment. See the trap below.</td>
 </tr>
 <tr>
-<td>name</td>
-<td>VARCHAR(64)</td>
-<td>UK</td>
-<td>Nome da permissão</td>
+<td><code>PORT</code></td>
+<td>No</td>
+<td>Port the Express server listens on. Defaults to <code>5000</code> when unset (<code>src/index.ts:41</code>).</td>
 </tr>
 <tr>
-<td>description</td>
-<td>TEXT</td>
-<td></td>
-<td>Descrição</td>
+<td><code>POSTGRES_URI</code></td>
+<td>Yes (production)</td>
+<td>PostgreSQL connection string. Read <strong>only</strong> when <code>NODE_ENV === 'production'</code>.</td>
 </tr>
 <tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
+<td><code>POSTGRES_URI_DEV</code></td>
+<td>Yes (non production)</td>
+<td>Connection string used whenever <code>NODE_ENV</code> is not <code>production</code>.</td>
 </tr>
 <tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
+<td><code>ACCESS_TOKEN_SECRET</code></td>
+<td>Yes</td>
+<td>Secret used to sign and verify JWTs. Generate with <code>openssl rand -base64 48</code>.</td>
 </tr>
 <tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
+<td><code>JWT_SECRET</code></td>
+<td>No (alias)</td>
+<td>Accepted alias of <code>ACCESS_TOKEN_SECRET</code>, read in <code>src/config/jwt.ts:7</code> as <code>process.env.ACCESS_TOKEN_SECRET ?? process.env.JWT_SECRET</code>. <code>ACCESS_TOKEN_SECRET</code> wins when both are set. Set one, not both.</td>
 </tr>
 <tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
+<td><code>FRONTEND_ORIGIN</code></td>
+<td>Yes (production)</td>
+<td>Comma separated CORS allowlist, for example <code>https://educado.tominho.com</code>.</td>
+</tr>
+<tr>
+<td><code>S3_ENDPOINTS</code></td>
+<td>No, but it overrides <code>S3_ENDPOINT</code></td>
+<td>Comma separated list of S3/MinIO endpoints, tried in order. <strong>Takes precedence over <code>S3_ENDPOINT</code>.</strong> See the trap below.</td>
+</tr>
+<tr>
+<td><code>S3_ENDPOINT</code></td>
+<td>Yes, unless <code>S3_ENDPOINTS</code> is set</td>
+<td>Single MinIO/S3 endpoint URL. Ignored whenever <code>S3_ENDPOINTS</code> is set and non empty. Defaults to <code>http://localhost:9000</code>.</td>
+</tr>
+<tr>
+<td><code>S3_REGION</code></td>
+<td>Yes</td>
+<td>Region string, for example <code>us-east-1</code>. Defaults to <code>us-east-1</code>.</td>
+</tr>
+<tr>
+<td><code>S3_ACCESS_KEY</code></td>
+<td>Yes</td>
+<td>Object storage access key. Defaults to <code>minioadmin</code>.</td>
+</tr>
+<tr>
+<td><code>S3_SECRET_KEY</code></td>
+<td>Yes</td>
+<td>Object storage secret key. Defaults to <code>minioadmin</code>.</td>
+</tr>
+<tr>
+<td><code>S3_BUCKET</code></td>
+<td>Yes</td>
+<td>Bucket holding media assets, for example <code>educado-media</code>.</td>
+</tr>
+<tr>
+<td><code>S3_MAX_ATTEMPTS</code></td>
+<td>No</td>
+<td>How many times each endpoint is retried on a transient network error (<code>EAI_AGAIN</code>, <code>ENOTFOUND</code>, <code>ECONNRESET</code>, <code>ETIMEDOUT</code>). Defaults to <code>3</code>. Values below 1 or unparseable fall back to the default.</td>
+</tr>
+<tr>
+<td><code>S3_RETRY_DELAY_MS</code></td>
+<td>No</td>
+<td>Delay in milliseconds between those retries. Defaults to <code>150</code>. Same fallback rule as above.</td>
+</tr>
+<tr>
+<td><code>EMAIL_API_KEY</code></td>
+<td>Yes</td>
+<td>Resend API key. Without it the worker cannot deliver.</td>
+</tr>
+<tr>
+<td><code>EMAIL_FROM</code></td>
+<td>Yes</td>
+<td>Sender address used on transactional email.</td>
+</tr>
+<tr>
+<td><code>SYSTEM_REVIEWER_EMAIL</code></td>
+<td>No</td>
+<td>Identity recorded as the reviewer when a creator registration is auto approved by verified email domain (<code>AUTO_EMAIL_DOMAIN_VERIFIED</code>). Read in <code>src/application/verification/email-verification-service.ts:22</code>. Defaults to <code>system@educado.local</code>, an address that does not resolve, so set a real mailbox if the audit trail matters.</td>
+</tr>
+<tr>
+<td><code>CERTIFICATE_VERIFICATION_URL</code></td>
+<td>Yes (production)</td>
+<td>Base URL printed on every issued certificate PDF. See the trap below: the built in default points outside the project.</td>
+</tr>
+<tr>
+<td><code>REDIS_HOST</code></td>
+<td>Yes</td>
+<td>Redis hostname. Defaults to <code>127.0.0.1</code> if unset, which is wrong in a container.</td>
+</tr>
+<tr>
+<td><code>REDIS_PORT</code></td>
+<td>Yes</td>
+<td>Redis port. Defaults to <code>6379</code>.</td>
+</tr>
+<tr>
+<td><code>REDIS_PASSWORD</code></td>
+<td>Yes, when Redis has a password</td>
+<td>Read in <code>src/infrastructure/queue/redis.ts</code>. Omitting it makes every queue operation fail with <code>NOAUTH</code>.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="historico-permissions_history">Histórico: permissions_history<a class="headerlink" href="#historico-permissions_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="roles_permissions">roles_permissions<a class="headerlink" href="#roles_permissions" title="Permanent link">#</a></h3>
+<h3 id="web">Web<a class="headerlink" href="#web" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
+<th>Variable</th>
+<th>Scope</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>role_id</td>
-<td>UUID</td>
-<td>PK, FK -&gt; roles(id)</td>
-<td>Papel</td>
-</tr>
-<tr>
-<td>permission_id</td>
-<td>UUID</td>
-<td>PK, FK -&gt; permissions(id)</td>
-<td>Permissão</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
+<td><code>VITE_API_URL</code></td>
+<td><strong>Build time</strong></td>
+<td>Base URL of the API. Must be a Docker build argument, not a runtime variable.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="historico-roles_permissions_history">Histórico: roles_permissions_history<a class="headerlink" href="#historico-roles_permissions_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="courses">courses<a class="headerlink" href="#courses" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador do curso</td>
-</tr>
-<tr>
-<td>title</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Título</td>
-</tr>
-<tr>
-<td>description</td>
-<td>TEXT</td>
-<td></td>
-<td>Descrição</td>
-</tr>
-<tr>
-<td>creator_id</td>
-<td>UUID</td>
-<td>FK -&gt; users(id)</td>
-<td>Criador do curso</td>
-</tr>
-<tr>
-<td>status</td>
-<td>VARCHAR(32)</td>
-<td>NOT NULL</td>
-<td>Enum: 'active', 'inactive', 'deleted'</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-courses_history">Histórico: courses_history<a class="headerlink" href="#historico-courses_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="modules">modules<a class="headerlink" href="#modules" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador do módulo</td>
-</tr>
-<tr>
-<td>course_id</td>
-<td>UUID</td>
-<td>FK -&gt; courses(id)</td>
-<td>Curso</td>
-</tr>
-<tr>
-<td>title</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Título</td>
-</tr>
-<tr>
-<td>description</td>
-<td>TEXT</td>
-<td></td>
-<td>Descrição</td>
-</tr>
-<tr>
-<td>order</td>
-<td>INT</td>
-<td></td>
-<td>Ordem do módulo</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-modules_history">Histórico: modules_history<a class="headerlink" href="#historico-modules_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="lessons">lessons<a class="headerlink" href="#lessons" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador da aula</td>
-</tr>
-<tr>
-<td>module_id</td>
-<td>UUID</td>
-<td>FK -&gt; modules(id)</td>
-<td>Módulo</td>
-</tr>
-<tr>
-<td>title</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Título</td>
-</tr>
-<tr>
-<td>content</td>
-<td>TEXT</td>
-<td></td>
-<td>Conteúdo</td>
-</tr>
-<tr>
-<td>order</td>
-<td>INT</td>
-<td></td>
-<td>Ordem da aula</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-lessons_history">Histórico: lessons_history<a class="headerlink" href="#historico-lessons_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="exercises">exercises<a class="headerlink" href="#exercises" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador do exercício</td>
-</tr>
-<tr>
-<td>lesson_id</td>
-<td>UUID</td>
-<td>FK -&gt; lessons(id)</td>
-<td>Aula</td>
-</tr>
-<tr>
-<td>title</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Título</td>
-</tr>
-<tr>
-<td>description</td>
-<td>TEXT</td>
-<td></td>
-<td>Descrição</td>
-</tr>
-<tr>
-<td>order</td>
-<td>INT</td>
-<td></td>
-<td>Ordem</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-exercises_history">Histórico: exercises_history<a class="headerlink" href="#historico-exercises_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="enrollments">enrollments<a class="headerlink" href="#enrollments" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador da matrícula</td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>UUID</td>
-<td>FK -&gt; users(id)</td>
-<td>Aluno matriculado</td>
-</tr>
-<tr>
-<td>course_id</td>
-<td>UUID</td>
-<td>FK -&gt; courses(id)</td>
-<td>Curso</td>
-</tr>
-<tr>
-<td>status</td>
-<td>VARCHAR(32)</td>
-<td>NOT NULL</td>
-<td>Enum: 'active', 'cancelled'</td>
-</tr>
-<tr>
-<td>enrolled_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td>Data da matrícula</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-enrollments_history">Histórico: enrollments_history<a class="headerlink" href="#historico-enrollments_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="progress">progress<a class="headerlink" href="#progress" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador do progresso</td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>UUID</td>
-<td>FK -&gt; users(id)</td>
-<td>Usuário</td>
-</tr>
-<tr>
-<td>course_id</td>
-<td>UUID</td>
-<td>FK -&gt; courses(id)</td>
-<td>Curso</td>
-</tr>
-<tr>
-<td>module_id</td>
-<td>UUID</td>
-<td>FK -&gt; modules(id)</td>
-<td>Módulo</td>
-</tr>
-<tr>
-<td>lesson_id</td>
-<td>UUID</td>
-<td>FK -&gt; lessons(id)</td>
-<td>Aula</td>
-</tr>
-<tr>
-<td>progress_pct</td>
-<td>NUMERIC(5,2)</td>
-<td></td>
-<td>Percentual de conclusão</td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td>Última atualização</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-progress_history">Histórico: progress_history<a class="headerlink" href="#historico-progress_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="media">media<a class="headerlink" href="#media" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador da mídia</td>
-</tr>
-<tr>
-<td>owner_id</td>
-<td>UUID</td>
-<td>FK -&gt; users(id)</td>
-<td>Dono da mídia</td>
-</tr>
-<tr>
-<td>url</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Caminho/URL do arquivo</td>
-</tr>
-<tr>
-<td>type</td>
-<td>VARCHAR(32)</td>
-<td></td>
-<td>Tipo (imagem, vídeo, áudio)</td>
-</tr>
-<tr>
-<td>description</td>
-<td>TEXT</td>
-<td></td>
-<td>Descrição</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-media_history">Histórico: media_history<a class="headerlink" href="#historico-media_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="course_media">course_media<a class="headerlink" href="#course_media" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador</td>
-</tr>
-<tr>
-<td>course_id</td>
-<td>UUID</td>
-<td>FK -&gt; courses(id)</td>
-<td>Curso</td>
-</tr>
-<tr>
-<td>media_id</td>
-<td>UUID</td>
-<td>FK -&gt; media(id)</td>
-<td>Mídia</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-course_media_history">Histórico: course_media_history<a class="headerlink" href="#historico-course_media_history" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="notifications">notifications<a class="headerlink" href="#notifications" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restrições</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>UUID</td>
-<td>PK</td>
-<td>Identificador da notificação</td>
-</tr>
-<tr>
-<td>sender_id</td>
-<td>UUID</td>
-<td>FK -&gt; users(id)</td>
-<td>Remetente</td>
-</tr>
-<tr>
-<td>recipient_id</td>
-<td>UUID</td>
-<td>FK -&gt; users(id)</td>
-<td>Destinatário</td>
-</tr>
-<tr>
-<td>title</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
-<td>Título</td>
-</tr>
-<tr>
-<td>message</td>
-<td>TEXT</td>
-<td>NOT NULL</td>
-<td>Mensagem</td>
-</tr>
-<tr>
-<td>status</td>
-<td>VARCHAR(32)</td>
-<td>NOT NULL</td>
-<td>Enum: 'sent', 'read'</td>
-</tr>
-<tr>
-<td>sent_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Data envio</td>
-</tr>
-<tr>
-<td>read_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Data leitura</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td>TIMESTAMP</td>
-<td></td>
-<td>Soft delete</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td>TIMESTAMP</td>
-<td>DEFAULT now()</td>
-<td></td>
-</tr>
-<tr>
-<td>version</td>
-<td>INT</td>
-<td>DEFAULT 1</td>
-<td>Controle de versão</td>
-</tr>
-</tbody>
-</table>
-<h4 id="historico-notifications_history">Histórico: notifications_history<a class="headerlink" href="#historico-notifications_history" title="Permanent link">#</a></h4>
-<hr />
-<h2 id="observacoes-gerais">Observações Gerais<a class="headerlink" href="#observacoes-gerais" title="Permanent link">#</a></h2>
-<ul>
-<li><strong>Cada tabela possui sua tabela de histórico</strong>, espelhando campos e incluindo usuário/responsável pela alteração.</li>
-<li><strong>Soft delete</strong>: Todos os SELECTs relevantes devem filtrar por <code>deleted_at IS NULL</code>.</li>
-<li><strong>Controle de permissão</strong>: Use a estrutura de roles/permissions para RBAC, mesmo com uso restrito (admin/creator/student).</li>
-<li><strong>Relacionamentos</strong>: Todos os FKs estão explícitos.</li>
-<li><strong>Versão</strong>: O campo <code>version</code> deve ser incrementado a cada alteração, auxiliando o versionamento e a auditoria.</li>
-<li><strong>Auditoria</strong>: As tabelas de histórico devem registrar o usuário responsável pela mudança (ex: campo <code>changed_by</code>).</li>
-</ul>
-<hr />
-<h2 id="diagrama-entidade-relacionamento-erd-sugestao-visual">Diagrama Entidade-Relacionamento (ERD) - [Sugestão visual]<a class="headerlink" href="#diagrama-entidade-relacionamento-erd-sugestao-visual" title="Permanent link">#</a></h2>
-<p>Para a versão visual, recomenda-se utilizar ferramentas como <strong>dbdiagram.io</strong> ou <strong>draw.io</strong> com as tabelas acima.</p>
-<hr />
-<p>Se precisar do <strong>DDL em SQL</strong>, modelo visual ou ajustes finos de relacionamento, me avise antes de seguir. Se algum campo, relação ou comportamento ficou de fora, só apontar.</p>
-<hr />
+<h2 id="operational-traps">Operational traps<a class="headerlink" href="#operational-traps" title="Permanent link">#</a></h2>
+<div class="admonition danger">
+<p class="admonition-title"><code>NODE_ENV</code> must be exactly <code>production</code></p>
+<p><code>src/config/database.ts</code> selects the connection string like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">isProd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;production&#39;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">postgresUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">isProd</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">process.env.POSTGRES_URI</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.POSTGRES_URI_DEV</span>
+</code></pre></div>
+<p>Any other value, including <code>staging</code>, makes the API look for <code>POSTGRES_URI_DEV</code>. In a deployed environment that
+variable does not exist, the connection fails, and the process exits with <code>process.exit(1)</code>, which the supervisor
+restarts, producing a crash loop. If the API is restarting endlessly right after a deploy, check <code>NODE_ENV</code>
+first.</p>
+<p>The same flag also drives HTTPS enforcement, CORS strictness and whether <code>sequelize.sync()</code> is allowed to alter
+tables, so the value is not cosmetic.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title"><code>S3_ENDPOINTS</code> silently overrides <code>S3_ENDPOINT</code></p>
+<p>The two variables look interchangeable and are not. <code>src/infrastructure/storage/s3/s3-client.ts:50</code> resolves the
+endpoint list like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">rawEndpoints</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">S3_ENDPOINTS</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">S3_ENDPOINT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">DEFAULT_S3_ENDPOINT</span>
+</code></pre></div>
+<p><code>S3_ENDPOINTS</code> (<strong>plural</strong>) is read first. If it is set to anything non empty, <code>S3_ENDPOINT</code> (singular) is never
+read at all. Editing the singular variable to repoint storage while a stale plural one is still present in the
+Coolify environment changes nothing, and the failure looks like a caching or DNS problem rather than a
+configuration one. When storage points at the wrong place, check <code>S3_ENDPOINTS</code> <strong>before</strong> <code>S3_ENDPOINT</code>.</p>
+<p>The plural form takes a comma separated list. Entries are trimmed, empties are dropped and duplicates are
+removed, then each endpoint is tried in order, which is what makes it useful: an internal Docker hostname first,
+a public URL as fallback. Falling back to <code>http://localhost:9000</code> in a container is the symptom of both being
+unset.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title"><code>CERTIFICATE_VERIFICATION_URL</code> defaults to a domain the project does not own</p>
+<p><code>src/application/certificates/certificate-pdf-service.ts:8</code> falls back to a hardcoded value:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">VERIFICATION_BASE_URL</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">CERTIFICATE_VERIFICATION_URL</span><span class="w"> </span><span class="o">||</span>
+<span class="w">  </span><span class="s1">&#39;https://educado.com/certificates/verify&#39;</span>
+</code></pre></div>
+<p><code>educado.com</code> is <strong>not</strong> a domain of this project. If the variable is not configured, every certificate issued in
+production is stamped with a verification link pointing at third party infrastructure, and nothing fails loudly:
+the PDF is generated, the student receives it, and the link only breaks when someone tries to verify it. Worse,
+already issued PDFs cannot be corrected after the fact.</p>
+<p>Set it explicitly on the API and the worker, and check it before the first certificate is issued in any new
+environment. The only verification surface that exists today is the public API route
+<code>GET /certificates/verify/:code</code>, so <code>https://api-educado.tominho.com/certificates/verify</code> is a value that
+actually resolves. There is no verification page in <code>educado-web</code> yet; once one exists, point the variable at it
+instead.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Redis with a password</p>
+<p><code>REDIS_PASSWORD</code> has no default. When the Redis resource requires authentication and the variable is missing,
+BullMQ connects but every command is rejected, so email jobs are enqueued and never delivered.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Schema changes in production</p>
+<p>In production <code>sequelize.sync()</code> runs without <code>alter</code>, so new columns are not created automatically. Structural
+changes must be applied deliberately before the deploy that depends on them.</p>
+</div>
+<h2 id="deploy-checklist">Deploy checklist<a class="headerlink" href="#deploy-checklist" title="Permanent link">#</a></h2>
+<ol>
+<li>Confirm <code>NODE_ENV=production</code> on both the API and the worker.</li>
+<li>Confirm <code>POSTGRES_URI</code>, <code>REDIS_HOST</code>, <code>REDIS_PORT</code> and <code>REDIS_PASSWORD</code> point at the Coolify resources.</li>
+<li>Confirm the S3 variables point at MinIO and that the bucket exists. Check <code>S3_ENDPOINTS</code> first: when it is set it
+   overrides <code>S3_ENDPOINT</code> entirely.</li>
+<li>Confirm <code>CERTIFICATE_VERIFICATION_URL</code> is set, so certificates are not stamped with the <code>educado.com</code> default.</li>
+<li>Confirm <code>FRONTEND_ORIGIN</code> contains the deployed web origin, otherwise the browser blocks every request.</li>
+<li>For the web app, confirm <code>VITE_API_URL</code> is set as a <strong>build argument</strong> and trigger a rebuild after changing it.</li>
+<li>After deploying, check <a href="https://api-educado.tominho.com/docs/">https://api-educado.tominho.com/docs/</a> and load the
+   web app once to validate the API URL that was compiled into the bundle.</li>
+</ol>
 <p><a href="../../../">← Back to Main Page</a></p>
 
 
