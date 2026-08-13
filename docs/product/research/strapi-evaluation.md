@@ -86,6 +86,16 @@ Integrating Strapi introduces a service-oriented architecture. The infrastructur
 
 ![architecture](../../assets/strapi/architecture.svg)
 
+!!! warning "This diagram is historical and does not reflect the current stack"
+
+    The diagram above was drawn during the evaluation and is kept as a record of it. Three of its boxes are labelled
+    **MongoDB**, which was never the database of the implemented system: Educado runs on **PostgreSQL 16** through
+    Sequelize. Read every MongoDB box as "the platform database".
+
+    The labels were deliberately left untouched so the artifact still matches the analysis it documents. For the
+    stack actually in use, see [System Architecture](../../development/technical/architecture.md) and
+    [Database Schema](../../development/technical/database-schema.md).
+
 
 ### Solution 1: Centralized Proxy via NodeJS
 
@@ -119,7 +129,7 @@ In this model, each frontend communicates directly with the service it needs. Th
 | Pros                                                                                                                | Cons                                                                                                             |
 | :------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------- |
 | ✅ **Accelerated Development:** Leverages a fully functional backend designed for content management.               | ❌ **New Dependency:** Adds a new, large system to learn, manage, and maintain.                                  |
-| ✅ **Rich Feature Set:** Includes media library, draft/publish, roles, i18n, etc., out-of-the-box.                  | ❌ **Additional Database:** Requires a relational database (Postgres) in addition to our existing MongoDB.       |
+| ✅ **Rich Feature Set:** Includes media library, draft/publish, roles, i18n, etc., out-of-the-box.                  | ❌ **Additional Database:** Requires its own database instance, separate from the one already backing the platform, so content and application data end up split across two stores to keep in sync and back up. |
 | ✅ **Excellent Developer Tooling:** OpenAPI/Swagger support and type-safe client generation streamline integration. | ❌ **Potential Overkill:** The platform has more features than we may immediately need.                          |
 | ✅ **Flexible Data Modeling:** The Content-Type Builder is powerful and intuitive.                                  | ❌ **Custom Frontend Required:** The native admin UI is not sufficient for our end-user (content creator) goals. |
 | ✅ **Docker-Based Deployment:** Integrates easily with our existing infrastructure.                                 |                                                                                                                  |

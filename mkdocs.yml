@@ -121,6 +121,7 @@ nav:
           - API Documentation: development/technical/api.md
           - System Architecture: development/technical/architecture.md
           - Database Schema: development/technical/database-schema.md
+          - Deployment & Infrastructure: development/technical/deployment.md
           - Tools & Dependencies: development/tools.md
   - Developer Handbook:
       - Mobile:
@@ -131,6 +132,8 @@ nav:
           - FAQ: handbook/mobile/faq.md
       - Back End:
           - Getting Started: handbook/back-end/getting-started.md
+      - Web:
+          - Getting Started: handbook/web/getting-started.md
       - Documentation:
           - Getting Started: handbook/docs/getting-started.md
           - Workflow: handbook/docs/workflow.md

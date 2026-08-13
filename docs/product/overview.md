@@ -45,12 +45,15 @@ Educado is currently in active development by international teams and aims to pr
 
 ## Technical Specifications
 
-| Attribute             | Details                                                                                                 |
-| --------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Platform**          | Web for creators/admins; Mobile app (Android/iOS) for students.                                         |
-| **Technology Stack**  | Frontend: React Native (mobile) / Vue.js (web) <br> Backend: Node.js (NestJS) <br> Database: PostgreSQL |
-| **Hosting**           | Cloud-native, containerized, deployable on AWS/GCP/Azure.                                               |
-| **Supported Devices** | Android (priority), iOS, Web browsers (desktop).                                                        |
+| Attribute             | Details                                                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Platform**          | Web for creators/admins; mobile app (Android first) for students.                                                                          |
+| **Technology Stack**  | Mobile: Expo SDK 56 + React Native <br> Web: Vite + TypeScript, no UI framework, served by nginx <br> Backend: Node.js 20 + Express 5 + TypeScript |
+| **Data Stores**       | PostgreSQL 16 (Sequelize), Redis 7.2 (BullMQ queue), MinIO for S3 compatible media storage.                                                |
+| **Integrations**      | Resend for transactional email; JWT for authentication.                                                                                    |
+| **Hosting**           | Containerised and deployed with Coolify 4.3.1 on the project's own VPS, behind Traefik. See [Deployment & Infrastructure](../development/technical/deployment.md). |
+| **Public URLs**       | Web: [https://educado.tominho.com](https://educado.tominho.com) <br> API: [https://api-educado.tominho.com](https://api-educado.tominho.com) |
+| **Supported Devices** | Android (priority), web browsers (desktop). iOS is not part of the current scope.                                                          |
 
 ---
 
