@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.7.0] - 2026-08-13
+
+### Added
+
+- Deployment & Infrastructure page documenting the Coolify topology, domains, build strategies and the complete
+  environment variable table
+- Web Developer Handbook with a Getting Started guide for `educado-web`
+- Back End Getting Started guide, previously an empty stub, covering local infrastructure, environment setup, the
+  email worker, tests and troubleshooting
+
+### Changed
+
+- System Architecture rewritten against the implemented system (PostgreSQL with Sequelize, Express 5, layered API,
+  Vite web app, Expo mobile app, BullMQ email pipeline, JWT role model)
+- API Documentation now uses the real base URL and the routers actually mounted by the application, with Swagger
+  pointed out as the canonical source
+- Tools & Dependencies now lists the toolchain in use (GitHub Actions, Coolify, Nixpacks, Docker, PostgreSQL, Redis,
+  MinIO, Resend, Expo/EAS, Swagger, Jest)
+- Product Overview technical specifications corrected: Express 5 instead of NestJS, Vite instead of Vue.js, and
+  self hosted Coolify deployment instead of generic public cloud
+
+### Removed
+
+- Content from an unrelated project in the System Architecture page (MongoDB, Vue.js, doctor and administrator
+  domain models)
+
 ## [2.6.2] - 2025-12-02
 ### Added
 - Added documentation for EAS Build and updating the app

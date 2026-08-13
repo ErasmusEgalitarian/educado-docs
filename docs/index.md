@@ -45,6 +45,7 @@ overview to technical and configuration details.
 | [API Specification](development/technical/api.md)                         | API definitions and guidelines       |
 | [System Architecture](development/technical/architecture.md)              | High-level system design             |
 | [Database Schema](development/technical/database-schema.md)               | Database models and relationships    |
+| [Deployment & Infrastructure](development/technical/deployment.md)        | Runtime topology, hosting and environment variables |
 | [Development Lifecycle](development/lifecycle.md)                         | Stages of the development process    |
 | [Tools & Dependencies](development/tools.md)                              | List of required tools and libraries |
 
@@ -54,6 +55,7 @@ overview to technical and configuration details.
 |---------------------------------------------------|-------------------------------------------------|
 | [Mobile](handbook/mobile/getting-started.md)      | How to set up the mobile app for development    |
 | [Back End](handbook/back-end/getting-started.md)  | How to set up the back end for development      |
+| [Web](handbook/web/getting-started.md)            | How to set up the web application for development |
 | [Documentation](handbook/docs/getting-started.md) | How to set up the documentation for development |
 
 ### 🔗 References

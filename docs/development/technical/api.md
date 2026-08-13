@@ -2,244 +2,228 @@
 
 [← Back to Main Page](../../index.md)
 
-This documentation provides a comprehensive overview of the API for managing users, courses, content, enrollment, media, notifications, and progress within the Educado platform.
+This page is a map of the Educado REST API: base URLs, authentication, and the routers that are actually mounted by
+the application.
 
----
+!!! important "Swagger is the canonical source"
+
+    The OpenAPI document lives in the API repository (`educado-api/src/docs/swagger.ts`) and is served by the API
+    itself. Request and response schemas, field names and status codes are authoritative there, not here.
+
+    - Deployed: [https://api-educado.tominho.com/docs/](https://api-educado.tominho.com/docs/)
+    - Local: `http://localhost:5001/docs/`
+
+    If this page and Swagger disagree, Swagger wins and this page is the bug.
 
 ## Base URL
 
-The base URL for all API requests is:
+| Environment | Base URL                                                           |
+| ----------- | ------------------------------------------------------------------ |
+| Production  | [https://api-educado.tominho.com](https://api-educado.tominho.com) |
+| Local       | `http://localhost:5001` (see `PORT` in the API `.env`)         |
 
+There is no `/api` prefix. Routers are mounted directly at the root, so a course listing is
+`GET https://api-educado.tominho.com/courses`.
 
-[https://api.educado.com](https://api.educado.com)
-
-
----
+The web application reads the base URL from `VITE_API_URL` at build time and falls back to `http://localhost:5001`.
 
 ## Authentication
 
-All requests requiring authentication must include a **Bearer token** in the `Authorization` header. The token is obtained after a successful login.
+Protected requests carry a JWT in the `Authorization` header:
 
-**Example:**
-
+```http
 Authorization: Bearer <your-jwt-token>
----
+```
 
-## Endpoints
+Tokens are issued by the login endpoints (`POST /auth/login`, `POST /user/login`, and the student login endpoints
+under `/student/auth`). The token payload carries the subject (`sub`) and the `role`, which is one of `ADMIN`,
+`STUDENT` or `USER` (content creator). Routes guard themselves with `requireAuth` and `requireRole`.
 
-### 1. **User Management**
+`GET /media/:id/stream` also accepts the token as a `token` query parameter so that `<img>` and `<video>` tags
+can load protected assets.
 
-| Endpoint          | Method   | Description                             |
-| ----------------- | -------- | --------------------------------------- |
-| `/api/register`   | `POST`   | Registers a new user (student/creator). |
-| `/api/login`      | `POST`   | Logs in a user and returns a JWT token. |
-| `/api/users`      | `GET`    | Lists all users (Admin only).           |
-| `/api/users/{id}` | `GET`    | Retrieves details of a user.            |
-| `/api/users/{id}` | `PUT`    | Edits a user profile.                   |
-| `/api/users/{id}` | `DELETE` | Deactivates a user (soft delete).       |
+Errors use machine readable codes, for example:
 
-#### 1.1 User Registration
+```json
+{ "code": "UNAUTHORIZED" }
+```
 
-* **URL:** `/api/register`
-* **Method:** `POST`
-* **Request Body:**
+## Mounted routers
 
-  ```json
-  {
-    "name": "Alice",
-    "email": "alice@example.com",
-    "password": "Password123",
-    "role": "student" or "creator"
-  }
-  ```
-* **Responses:**
+These are the routers mounted in `educado-api/src/index.ts`.
 
-  * **201 Created**
-  * **400 Bad Request**
+| Mount point                     | Purpose                                                                    |
+| ------------------------------- | -------------------------------------------------------------------------- |
+| `/user`                       | Legacy user login and identity lookup.                                     |
+| `/auth`                       | Creator registration, login and password reset.                            |
+| `/admin`                      | Administrative review of users, registrations and media.                   |
+| `/me`                         | Everything scoped to the authenticated user (profile, avatar, media).      |
+| `/courses`                    | Course CRUD and activation for creators and admins.                        |
+| `/sections`                   | Sections inside a course.                                                  |
+| `/activities`                 | Activities inside a section.                                               |
+| `/progress`                   | Progress records per user and course.                                      |
+| `/certificates`               | Certificate issuing, listing and public verification.                      |
+| `/tags`                       | Course tags.                                                               |
+| `/institutions`               | Partner institutions.                                                      |
+| `/account/email-verification` | Send and confirm the email verification code.                              |
+| `/media`                      | Image and video upload, metadata and streaming.                            |
+| `/student`                    | The mobile app surface (auth, profile, enrollments, progress, gamification). |
+| `/catalog`                    | Public course discovery.                                                   |
+| `/leaderboard`                | Global and per course rankings.                                            |
+| `/docs`                       | Swagger UI.                                                                |
 
-#### 1.2 User Login
+## Endpoint reference
 
-* **URL:** `/api/login`
-* **Method:** `POST`
-* **Request Body:**
+### Auth and users
 
-  ```json
-  {
-    "email": "alice@example.com",
-    "password": "Password123"
-  }
-  ```
-* **Responses:**
+| Endpoint                              | Method | Description                                     |
+| ------------------------------------- | ------ | ----------------------------------------------- |
+| `/auth/registrations`               | POST   | Submit a creator registration.                  |
+| `/auth/registrations/me/profile`    | PUT    | Update the profile of your own registration.    |
+| `/auth/registrations/:userId/profile` | PUT  | Update another registration profile (admin).    |
+| `/auth/registrations/me/status`     | GET    | Check the status of your registration.          |
+| `/auth/login`                       | POST   | Log in and receive a JWT.                       |
+| `/auth/password-reset/request`      | POST   | Request a reset code.                           |
+| `/auth/password-reset/verify`       | POST   | Verify the reset code.                          |
+| `/auth/password-reset/reset`        | POST   | Set the new password.                           |
+| `/user/login`                       | POST   | Legacy login.                                   |
+| `/user/me`                          | POST   | Resolve the current user.                       |
+| `/account/email-verification/send`    | POST   | Send an email verification code.                |
+| `/account/email-verification/confirm` | POST   | Confirm the code.                               |
 
-  * **200 OK**: `{ "token": "<jwt-token>" }`
-  * **401 Unauthorized**
+### Authenticated user (`/me`)
 
-#### 1.3 Get User List (Admin only)
+| Endpoint                     | Method | Description                          |
+| ---------------------------- | ------ | ------------------------------------ |
+| `/me/profile`              | GET    | Read your profile.                   |
+| `/me/profile`              | PUT    | Update your profile.                 |
+| `/me/avatar`               | PUT    | Set the avatar from a media asset.   |
+| `/me/avatar`               | DELETE | Remove the avatar.                   |
+| `/me/courses`              | GET    | Courses you own or are enrolled in.  |
+| `/me/media`                | GET    | Media assets you own.                |
+| `/me/password/request-code` | POST  | Request a password change code.      |
+| `/me/account`              | DELETE | Delete your own account.             |
 
-* **URL:** `/api/users`
-* **Method:** `GET`
-* **Response:** `[{ "_id": "...", "name": "...", "email": "...", "role": "student" }]`
+### Administration (`/admin`)
 
-#### 1.4 Get User Details
+| Endpoint                                | Method | Description                              |
+| --------------------------------------- | ------ | ---------------------------------------- |
+| `/admin/users`                        | GET    | List users.                              |
+| `/admin/users/:userId`                | GET    | User detail.                             |
+| `/admin/users/:userId/role`           | PATCH  | Change a user role.                      |
+| `/admin/users/:userId`                | DELETE | Remove a user.                           |
+| `/admin/registrations`                | GET    | List pending registrations.              |
+| `/admin/registrations/:userId/approve` | POST  | Approve a creator registration.          |
+| `/admin/registrations/:userId/reject` | POST   | Reject a creator registration.           |
+| `/admin/media`                        | GET    | List media across the platform.          |
 
-* **URL:** `/api/users/{id}`
-* **Method:** `GET`
-* **Response:** `{ "_id": "...", "name": "...", "email": "...", "role": "...", ... }`
+### Content
 
-#### 1.5 Edit User Profile
+| Endpoint                       | Method | Description                          |
+| ------------------------------ | ------ | ------------------------------------ |
+| `/courses`                   | GET    | List courses.                        |
+| `/courses`                   | POST   | Create a course.                     |
+| `/courses/:id`               | GET    | Course detail.                       |
+| `/courses/:id`               | PUT    | Update a course.                     |
+| `/courses/:id/activate`      | POST   | Publish a course.                    |
+| `/courses/:id/deactivate`    | POST   | Unpublish a course.                  |
+| `/courses/:id`               | DELETE | Delete a course.                     |
+| `/sections`                  | GET    | List sections.                       |
+| `/sections`                  | POST   | Create a section.                    |
+| `/sections/:id`              | GET    | Section detail.                      |
+| `/sections/:id`              | PUT    | Update a section.                    |
+| `/sections/:id`              | DELETE | Delete a section.                    |
+| `/activities/section/:sectionId` | GET | Activities of a section.            |
+| `/activities/:id`            | GET    | Activity detail.                     |
+| `/activities`                | POST   | Create an activity.                  |
+| `/activities/:id`            | PUT    | Update an activity.                  |
+| `/activities/:id`            | DELETE | Delete an activity.                  |
+| `/tags`                      | GET    | List tags.                           |
+| `/tags/:id`                  | GET    | Tag detail.                          |
+| `/tags`                      | POST   | Create a tag.                        |
+| `/tags/:id`                  | PUT    | Update a tag.                        |
+| `/tags/:id`                  | DELETE | Delete a tag.                        |
+| `/institutions`              | GET    | List institutions.                   |
+| `/institutions/:id`          | GET    | Institution detail.                  |
+| `/institutions`              | POST   | Create an institution.               |
+| `/institutions/:id`          | PUT    | Update an institution.               |
+| `/institutions/:id`          | DELETE | Delete an institution.               |
 
-* **URL:** `/api/users/{id}`
-* **Method:** `PUT`
-* **Request Body:**
+### Catalog and leaderboard
 
-  ```json
-  {
-    "name": "Alice Updated",
-    "email": "alice.updated@example.com"
-  }
-  ```
-* **Response:** `{ "message": "User updated successfully", "user": { ... } }`
+| Endpoint                          | Method | Description                         |
+| --------------------------------- | ------ | ----------------------------------- |
+| `/catalog/courses`              | GET    | Browse the published catalog.       |
+| `/catalog/courses/:id`          | GET    | Public course detail.               |
+| `/catalog/courses/:id/reviews`  | GET    | Reviews of a course.                |
+| `/catalog/categories`           | GET    | Catalog categories.                 |
+| `/leaderboard/global`           | GET    | Global ranking.                     |
+| `/leaderboard/courses/:courseId` | GET   | Ranking within a course.            |
 
-#### 1.6 Deactivate User
+### Student surface (`/student`)
 
-* **URL:** `/api/users/{id}`
-* **Method:** `DELETE`
-* **Response:** `{ "message": "User deactivated successfully" }`
+| Endpoint                                  | Method | Description                              |
+| ----------------------------------------- | ------ | ---------------------------------------- |
+| `/student/auth/register`                | POST   | Register a student.                      |
+| `/student/auth/device-login`            | POST   | Log in with a device identifier.         |
+| `/student/auth/phone-login`             | POST   | Log in with a phone number.              |
+| `/student/auth/email-login`             | POST   | Log in with email and password.          |
+| `/student/profile`                      | GET    | Student profile.                         |
+| `/student/profile`                      | PUT    | Update the student profile.              |
+| `/student/account`                      | DELETE | Delete the student account.              |
+| `/student/enrollments`                  | POST   | Enroll in a course.                      |
+| `/student/enrollments`                  | GET    | List enrollments.                        |
+| `/student/enrollments/:courseId`        | GET    | Enrollment detail.                       |
+| `/student/enrollments/:courseId`        | DELETE | Cancel an enrollment.                    |
+| `/student/progress/courses`             | GET    | Progress across courses.                 |
+| `/student/progress/courses/:courseId`   | GET    | Progress in one course.                  |
+| `/student/activities/:activityId/answer` | POST  | Submit an activity answer.               |
+| `/student/gamification/summary`         | GET    | Points, streak and level summary.        |
+| `/student/gamification/badges`          | GET    | Badges earned.                           |
+| `/student/gamification/points-history`  | GET    | Points ledger.                           |
+| `/student/reviews`                      | POST   | Review a course.                         |
+| `/student/reviews/check/:courseId`      | GET    | Whether the course was already reviewed. |
+| `/student/certificates`                 | GET    | Certificates earned.                     |
+| `/student/certificates/:id/pdf`         | GET    | Download a certificate as PDF.           |
 
----
+### Progress and certificates (creator/admin view)
 
-### 2. **Course Management**
+| Endpoint                                                       | Method | Description                       |
+| -------------------------------------------------------------- | ------ | --------------------------------- |
+| `/progress/:username/courses`                                | GET    | Progress records of a user.       |
+| `/progress/:username/courses/:courseId`                      | GET    | Progress in one course.           |
+| `/progress/:username/courses/:courseId/sections/:sectionId`  | POST   | Record section progress.          |
+| `/progress/:username/courses/:courseId/complete`             | PUT    | Mark a course as complete.        |
+| `/certificates/:username`                                    | GET    | Certificates of a user.           |
+| `/certificates`                                              | POST   | Issue a certificate.              |
+| `/certificates/verify/:code`                                 | GET    | Public certificate verification.  |
 
-| Endpoint            | Method   | Description                           |
-| ------------------- | -------- | ------------------------------------- |
-| `/api/courses`      | `POST`   | Creates a new course (creator/admin). |
-| `/api/courses`      | `GET`    | Lists all courses.                    |
-| `/api/courses/{id}` | `GET`    | Gets course details.                  |
-| `/api/courses/{id}` | `PUT`    | Updates a course.                     |
-| `/api/courses/{id}` | `DELETE` | Deactivates a course (soft delete).   |
+### Media (`/media`)
 
-#### 2.1 Create Course
-
-* **URL:** `/api/courses`
-* **Method:** `POST`
-* **Request Body:**
-
-  ```json
-  {
-    "title": "Waste Sorting Basics",
-    "description": "Learn how to separate waste.",
-    "creator_id": "uuid-of-creator"
-  }
-  ```
-* **Response:** `{ "message": "Course created successfully", "course": { ... } }`
-
-#### 2.2 List Courses
-
-* **URL:** `/api/courses`
-* **Method:** `GET`
-* **Response:** `[ { "_id": "...", "title": "...", ... } ]`
-
-#### 2.3 Course Details
-
-* **URL:** `/api/courses/{id}`
-* **Method:** `GET`
-* **Response:** `{ "_id": "...", "title": "...", ... }`
-
-#### 2.4 Update Course
-
-* **URL:** `/api/courses/{id}`
-* **Method:** `PUT`
-* **Request Body:**
-
-  ```json
-  {
-    "title": "Updated Course Title",
-    "description": "New description."
-  }
-  ```
-* **Response:** `{ "message": "Course updated successfully", "course": { ... } }`
-
-#### 2.5 Deactivate Course
-
-* **URL:** `/api/courses/{id}`
-* **Method:** `DELETE`
-* **Response:** `{ "message": "Course deactivated successfully" }`
-
----
-
-### 3. **Module, Lesson, and Exercise Management**
-
-| Endpoint                            | Method   | Description                      |
-| ----------------------------------- | -------- | -------------------------------- |
-| `/api/courses/{courseId}/modules`   | `POST`   | Creates a module in a course.    |
-| `/api/modules/{id}`                 | `PUT`    | Updates a module.                |
-| `/api/modules/{id}`                 | `DELETE` | Deactivates a module.            |
-| `/api/modules/{moduleId}/lessons`   | `POST`   | Creates a lesson in a module.    |
-| `/api/lessons/{id}`                 | `PUT`    | Updates a lesson.                |
-| `/api/lessons/{id}`                 | `DELETE` | Deactivates a lesson.            |
-| `/api/lessons/{lessonId}/exercises` | `POST`   | Creates an exercise in a lesson. |
-| `/api/exercises/{id}`               | `PUT`    | Updates an exercise.             |
-| `/api/exercises/{id}`               | `DELETE` | Deactivates an exercise.         |
-
----
-
-### 4. **Enrollment**
-
-| Endpoint                         | Method   | Description                                 |
-| -------------------------------- | -------- | ------------------------------------------- |
-| `/api/courses/{courseId}/enroll` | `POST`   | Enrolls the authenticated user in a course. |
-| `/api/enrollments`               | `GET`    | Lists enrollments for authenticated user.   |
-| `/api/enrollments/{id}`          | `DELETE` | Cancels an enrollment (soft delete).        |
-
----
-
-### 5. **Progress Tracking**
-
-| Endpoint        | Method | Description                                        |
-| --------------- | ------ | -------------------------------------------------- |
-| `/api/progress` | `GET`  | Lists progress records for the authenticated user. |
-| `/api/progress` | `POST` | Updates or creates a progress record.              |
-
----
-
-### 6. **Media Management**
-
-| Endpoint                  | Method   | Description                          |
-| ------------------------- | -------- | ------------------------------------ |
-| `/api/media`              | `POST`   | Uploads media (image, video, audio). |
-| `/api/media`              | `GET`    | Lists all media for the user.        |
-| `/api/media/{id}`         | `GET`    | Gets media details.                  |
-| `/api/media/{id}`         | `PUT`    | Updates media metadata.              |
-| `/api/media/{id}`         | `DELETE` | Deletes (deactivates) media.         |
-| `/api/courses/{id}/media` | `POST`   | Associates media to a course.        |
-| `/api/courses/{id}/media` | `DELETE` | Removes media from a course.         |
-
----
-
-### 7. **Notifications**
-
-| Endpoint                  | Method   | Description                       |
-| ------------------------- | -------- | --------------------------------- |
-| `/api/notifications`      | `POST`   | Creates a notification.           |
-| `/api/notifications`      | `GET`    | Lists notifications for the user. |
-| `/api/notifications/{id}` | `PUT`    | Updates a notification.           |
-| `/api/notifications/{id}` | `DELETE` | Deletes a notification.           |
-
----
+| Endpoint                       | Method | Description                                   |
+| ------------------------------ | ------ | --------------------------------------------- |
+| `/media/images`              | POST   | Upload an image.                              |
+| `/media/images/:id`          | GET    | Image metadata and access.                    |
+| `/media/images/:id/metadata` | POST / PUT | Update image metadata.                    |
+| `/media/images/:id`          | DELETE | Delete an image.                              |
+| `/media/videos`              | POST   | Upload a video.                               |
+| `/media/videos/init`         | POST   | Start a multipart video upload.               |
+| `/media/videos/:id/complete` | POST   | Complete a multipart upload.                  |
+| `/media/videos/:id/abort`    | POST   | Abort a multipart upload.                     |
+| `/media/videos/:id`          | GET    | Video metadata and access.                    |
+| `/media/videos/:id/metadata` | POST / PUT | Update video metadata.                    |
+| `/media/videos/:id`          | DELETE | Delete a video.                               |
+| `/media/:id/stream`          | GET    | Stream an asset, token accepted in the query. |
 
 ## Response Codes
 
-* `200 OK` – Request succeeded.
-* `201 Created` – Resource created successfully.
-* `400 Bad Request` – Invalid input.
-* `401 Unauthorized` – Authentication required or failed.
-* `403 Forbidden` – Insufficient permissions.
-* `404 Not Found` – Resource not found.
-* `409 Conflict` – Resource conflict (e.g., duplicate email).
-* `500 Internal Server Error` – Unhandled error.
-
----
-
-For further details on request/response formats, refer to the **OpenAPI/Swagger** specification.
+- `200 OK`: request succeeded.
+- `201 Created`: resource created successfully.
+- `400 Bad Request`: invalid input.
+- `401 Unauthorized`: authentication required or failed.
+- `403 Forbidden`: insufficient permissions.
+- `404 Not Found`: resource not found.
+- `409 Conflict`: resource conflict (for example, duplicate email).
+- `500 Internal Server Error`: unhandled error.
 
 [← Back to Main Page](../../index.md)
