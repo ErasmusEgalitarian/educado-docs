@@ -9,8 +9,8 @@ See the [Developer Handbook](docs/handbook/docs/getting-started.md) for instruct
 
 ## License
 
-This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
-For more details, see the [LICENSE](https://license/) file.
+This project is licensed under the **Apache License 2.0 (Apache-2.0)**.
+For more details, see the [LICENSE](LICENSE) file.
 
 ## Contributing
 

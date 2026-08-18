@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.8.0] - 2026-08-18
+
+### Added
+
+- `CODE_OF_CONDUCT.md`, previously missing from the repository
+- `SECURITY.md`, previously missing from the repository, documenting how to report vulnerabilities
+
+### Changed
+
+- Project license switched from GPL-3.0 to Apache-2.0, to be consistent with the other three Educado
+  repositories (`api`, `web`, `app`)
+- README License section corrected: it now points to the actual `LICENSE` file and names Apache License 2.0
+  instead of the stale GPL-3.0 reference
+
 ## [2.7.0] - 2026-08-13
 
 ### Added
